@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Dashboard Prime — Produção Diária</title>
+<meta name="theme-color" content="#1F4E78">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <img src="icons/icon-192.png" alt="" class="logo">
+    <div>
+      <h1>Dashboard Prime — Produção Diária</h1>
+      <p class="subtitle">Carregue os relatórios de turno e gere o dashboard do dia</p>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <section class="card" id="card-upload">
+    <h2>1. Relatórios do dia</h2>
+    <p class="hint">Carregue o relatório de produção de cada turno (PDF ou Excel). Pode carregar só um turno se o outro ainda não saiu.</p>
+
+    <div class="upload-grid">
+      <label class="upload-slot">
+        <span class="upload-label">Turno Dia</span>
+        <input type="file" id="file-dia" accept=".pdf,.xlsx">
+        <span class="upload-filename" id="file-dia-name">Nenhum arquivo</span>
+      </label>
+      <label class="upload-slot">
+        <span class="upload-label">Turno Noite</span>
+        <input type="file" id="file-noite" accept=".pdf,.xlsx">
+        <span class="upload-filename" id="file-noite-name">Nenhum arquivo</span>
+      </label>
+    </div>
+
+    <button class="btn-primary" id="btn-gerar" disabled>Gerar dashboard do dia</button>
+    <div id="status-log" class="status-log" aria-live="polite"></div>
+  </section>
+
+  <section class="card" id="card-config">
+    <button class="toggle-config" id="toggle-config" type="button" aria-expanded="false">
+      ⚙ Configurar gramatura por tipo de papel
+    </button>
+    <div id="config-body" class="config-body hidden">
+      <p class="hint">Peso (kg) = área total do pedido (m²) × gramatura do papel (kg/m²) abaixo. Os valores padrão vieram da planilha de Programação — ajuste se algum tipo estiver errado, ou adicione um tipo novo.</p>
+      <table id="tabela-gramatura" class="tabela-config"></table>
+      <div class="config-actions">
+        <button class="btn-secondary" id="btn-add-papel" type="button">+ adicionar tipo de papel</button>
+        <button class="btn-secondary" id="btn-reset-gramatura" type="button">restaurar padrão</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="card hidden" id="card-dashboard">
+    <div class="dash-header">
+      <div>
+        <h2 id="dash-title">DASHBOARD DE PRODUÇÃO — DIA</h2>
+        <p class="dash-subtitle" id="dash-subtitle"></p>
+      </div>
+      <button class="btn-primary" id="btn-baixar-excel">⬇ Baixar Excel</button>
+    </div>
+
+    <div class="kpi-row" id="kpi-row"></div>
+
+    <div class="chart-row">
+      <div class="chart-card">
+        <h3>Peso produzido por cliente (kg)</h3>
+        <canvas id="chart-clientes"></canvas>
+      </div>
+      <div class="chart-card">
+        <h3>Comparativo Dia × Noite</h3>
+        <canvas id="chart-turnos"></canvas>
+      </div>
+    </div>
+
+    <div class="table-card">
+      <h3>Resumo por cliente</h3>
+      <div class="table-scroll">
+        <table id="tabela-clientes"></table>
+      </div>
+    </div>
+
+    <div class="table-card">
+      <h3>Detalhado (por OP)</h3>
+      <div class="table-scroll">
+        <table id="tabela-detalhado"></table>
+      </div>
+    </div>
+
+    <div class="notes-card" id="notes-card"></div>
+  </section>
+
+</main>
+
+<footer>
+  <p>Metodologia: velocidade = metros lineares ÷ 420 min efetivos por turno carregado. Peso = área do pedido × gramatura do papel (tabela configurável). Funciona totalmente no navegador — nenhum arquivo é enviado para fora do seu dispositivo.</p>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.4/chart.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/exceljs/4.4.0/exceljs.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

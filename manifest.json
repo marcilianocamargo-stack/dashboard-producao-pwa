@@ -1,0 +1,17 @@
+{
+  "name": "Dashboard Prime — Produção Diária",
+  "short_name": "Prime Diário",
+  "description": "Carregue os relatórios de turno (dia e noite) e gere o dashboard diário de produção da onduladeira.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#1F4E78",
+  "theme_color": "#1F4E78",
+  "orientation": "any",
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "maskable" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
