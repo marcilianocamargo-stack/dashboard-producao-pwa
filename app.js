@@ -809,44 +809,89 @@ async function baixarExcel(views) {
   const ordem = ["dia", "noite", "total"].filter((k) => views[k]);
   const total = views.total;
 
+  // Painel único (pensado pra telão da fábrica): 3 blocos lado a lado —
+  // Dia, Noite e Total — cada um com peso/chapas/velocidade e a lista de
+  // tipos de papel produzidos com o % do peso de cada um.
+  const TODAS_COLS = "BCDEFGHIJKL";
+  const blocoCols = { dia: ["B", "D"], noite: ["F", "H"], total: ["J", "L"] };
+
   const geral = wb.addWorksheet("Resumo Geral");
   geral.views = [{ showGridLines: false }];
-  geral.mergeCells("B2:K3");
+  geral.mergeCells("B2:L3");
   const titleCell = geral.getCell("B2");
   titleCell.value = `PRODUÇÃO — ${total && total.dataRef ? total.dataRef.split("-").reverse().join("/") : new Date().toLocaleDateString("pt-BR")}`;
-  titleCell.font = { bold: true, size: 16, color: { argb: "FFFFFFFF" }, name: "Arial" };
-  titleCell.alignment = { vertical: "middle", indent: 1 };
-  for (let col = 2; col <= 11; col++) {
-    geral.getRow(2).getCell(col).fill = { type: "pattern", pattern: "solid", fgColor: { argb: EXCEL_CORES.AZUL_ESCURO } };
-    geral.getRow(3).getCell(col).fill = { type: "pattern", pattern: "solid", fgColor: { argb: EXCEL_CORES.AZUL_ESCURO } };
+  titleCell.font = { bold: true, size: 20, color: { argb: "FFFFFFFF" }, name: "Arial" };
+  titleCell.alignment = { vertical: "middle", horizontal: "center" };
+  for (const col of TODAS_COLS) {
+    const c = col.charCodeAt(0) - 64;
+    geral.getRow(2).getCell(c).fill = { type: "pattern", pattern: "solid", fgColor: { argb: EXCEL_CORES.AZUL_ESCURO } };
+    geral.getRow(3).getCell(c).fill = { type: "pattern", pattern: "solid", fgColor: { argb: EXCEL_CORES.AZUL_ESCURO } };
   }
 
-  const blocoCols = { dia: ["B", "D"], noite: ["E", "G"], total: ["H", "K"] };
+  const maxPapeis = Math.max(1, ...["dia", "noite", "total"].map((k) => (views[k] ? views[k].papeis.length : 0)));
+  const PAPEL_START_ROW = 13;
+
   ["dia", "noite", "total"].forEach((key) => {
     const [c1, c2] = blocoCols[key];
     const dv = views[key];
+
     geral.mergeCells(`${c1}6:${c2}6`);
     const lab = geral.getCell(`${c1}6`);
     lab.value = `PRODUÇÃO ${VIEW_LABELS[key].toUpperCase()}`;
-    lab.font = { bold: true, size: 11, color: { argb: "FFFFFFFF" }, name: "Arial" };
+    lab.font = { bold: true, size: 13, color: { argb: "FFFFFFFF" }, name: "Arial" };
     lab.fill = { type: "pattern", pattern: "solid", fgColor: { argb: EXCEL_CORES.AZUL_MEDIO } };
     lab.alignment = { horizontal: "center", vertical: "middle" };
 
     geral.mergeCells(`${c1}7:${c2}9`);
     const val = geral.getCell(`${c1}7`);
     val.value = dv ? Math.round(dv.pesoTotal) : "—";
-    val.numFmt = "#,##0";
-    val.font = { bold: true, size: 22, name: "Arial" };
+    if (dv) val.numFmt = "#,##0";
+    val.font = { bold: true, size: 28, name: "Arial" };
     val.fill = { type: "pattern", pattern: "solid", fgColor: { argb: key === "total" ? EXCEL_CORES.CIANO : EXCEL_CORES.CIANO_CLARO } };
     val.alignment = { horizontal: "center", vertical: "middle" };
-
     geral.mergeCells(`${c1}10:${c2}10`);
-    const sub = geral.getCell(`${c1}10`);
-    sub.value = dv ? `${Math.round(dv.totalChapas).toLocaleString("pt-BR")} chapas  ·  ${dv.velocidadeMedia.toFixed(2)} m/min` : "Sem relatório carregado";
-    sub.font = { italic: true, size: 9, color: { argb: "FF595959" }, name: "Arial" };
+    geral.getCell(`${c1}10`).value = "kg produzidos";
+    geral.getCell(`${c1}10`).font = { italic: true, size: 9, color: { argb: "FF595959" }, name: "Arial" };
+    geral.getCell(`${c1}10`).alignment = { horizontal: "center" };
+
+    geral.mergeCells(`${c1}11:${c2}11`);
+    const sub = geral.getCell(`${c1}11`);
+    sub.value = dv
+      ? `${Math.round(dv.totalChapas).toLocaleString("pt-BR")} chapas   ·   ${dv.velocidadeMedia.toFixed(2)} m/min`
+      : "Sem relatório carregado";
+    sub.font = { bold: true, size: 11, color: { argb: "FF1F4E78" }, name: "Arial" };
     sub.alignment = { horizontal: "center" };
+
+    geral.mergeCells(`${c1}${PAPEL_START_ROW}:${c2}${PAPEL_START_ROW}`);
+    const papelHdr = geral.getCell(`${c1}${PAPEL_START_ROW}`);
+    papelHdr.value = "TIPOS DE PAPEL (% DO PESO)";
+    papelHdr.font = { bold: true, size: 9, color: { argb: "FFFFFFFF" }, name: "Arial" };
+    papelHdr.fill = { type: "pattern", pattern: "solid", fgColor: { argb: EXCEL_CORES.AZUL_ESCURO } };
+    papelHdr.alignment = { horizontal: "center", vertical: "middle" };
+
+    for (let i = 0; i < maxPapeis; i++) {
+      const r = PAPEL_START_ROW + 1 + i;
+      geral.mergeCells(`${c1}${r}:${c2}${r}`);
+      const cell = geral.getCell(`${c1}${r}`);
+      const pl = dv && dv.papeis[i];
+      if (pl) {
+        const pct = dv.pesoTotal > 0 ? (pl.peso / dv.pesoTotal) * 100 : 0;
+        cell.value = `${pl.papel} — ${pct.toFixed(0)}%`;
+        cell.font = { size: 12, name: "Arial", bold: i === 0 };
+      }
+      cell.alignment = { horizontal: "center" };
+      cell.fill = { type: "pattern", pattern: "solid", fgColor: { argb: i % 2 === 0 ? "FFFFFFFF" : EXCEL_CORES.CINZA } };
+    }
   });
-  for (const col of "BCDEFGHIJK") geral.getColumn(col.charCodeAt(0) - 64).width = 13;
+
+  for (const col of TODAS_COLS) geral.getColumn(col.charCodeAt(0) - 64).width = 12;
+  geral.getColumn("E".charCodeAt(0) - 64).width = 3;
+  geral.getColumn("I".charCodeAt(0) - 64).width = 3;
+  geral.getRow(2).height = 20;
+  geral.getRow(3).height = 20;
+  for (let r = PAPEL_START_ROW + 1; r <= PAPEL_START_ROW + maxPapeis; r++) geral.getRow(r).height = 18;
+
+  wb.views = [{ activeTab: 0 }];
 
   ordem.forEach((key) => gerarAbasDaVisao(wb, VIEW_LABELS[key], views[key]));
 
