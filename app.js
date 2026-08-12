@@ -466,6 +466,8 @@ function renderDashboard(d) {
       <div class="kpi-value">${val}${unit ? ` <small style="font-size:0.9rem">${unit}</small>` : ""}</div>
     </div>`).join("");
 
+  renderTurnoCards(d);
+
   // gráfico clientes
   const topClientes = d.clientes.slice(0, 8);
   if (chartClientes) chartClientes.destroy();
@@ -527,6 +529,36 @@ function renderDashboard(d) {
     : "";
 
   document.getElementById("card-dashboard").scrollIntoView({ behavior: "smooth" });
+}
+
+function turnoCardHtml(titulo, dados, extraClass = "") {
+  if (!dados) {
+    return `<div class="turno-card ${extraClass}">
+      <div class="turno-card-title">${titulo}</div>
+      <div class="turno-card-empty">Sem relatório carregado</div>
+    </div>`;
+  }
+  return `<div class="turno-card ${extraClass}">
+    <div class="turno-card-title">${titulo}</div>
+    <div class="turno-card-metric"><span class="turno-card-val">${fmt(dados.peso, 0)}</span><span class="turno-card-unit">kg</span></div>
+    <div class="turno-card-rows">
+      <div><span>CHAPAS</span><b>${fmt(dados.chapas, 0)}</b></div>
+      <div><span>VELOCIDADE</span><b>${fmt(dados.velocidade, 2)} m/min</b></div>
+    </div>
+  </div>`;
+}
+
+function renderTurnoCards(d) {
+  const dadosDia = d.porTurno.dia || null;
+  const dadosNoite = d.porTurno.noite || null;
+  const dadosTotal = d.turnos.length
+    ? { peso: d.pesoTotal, chapas: d.totalChapas, velocidade: d.velocidadeMedia }
+    : null;
+
+  document.getElementById("turno-row").innerHTML =
+    turnoCardHtml("Produção do dia", dadosDia) +
+    turnoCardHtml("Produção da noite", dadosNoite) +
+    turnoCardHtml("Total (dia + noite)", dadosTotal, "turno-card-total");
 }
 
 // ------------------------------------------------------------- EXCEL ------
