@@ -414,6 +414,17 @@ function computeDashboard(turnosFiltro) {
   }
   const clientes = Object.values(porCliente).sort((a, b) => b.peso - a.peso);
 
+  // por tipo de papel (ex.: P50D, P25B)
+  const porPapel = {};
+  for (const r of allRows) {
+    const k = r.PAPEL || "(sem papel)";
+    if (!porPapel[k]) porPapel[k] = { papel: k, peso: 0, chapas: 0, registros: 0 };
+    porPapel[k].peso += r.peso_kg || 0;
+    porPapel[k].chapas += r.produzido_chapas || 0;
+    porPapel[k].registros += 1;
+  }
+  const papeis = Object.values(porPapel).sort((a, b) => b.peso - a.peso);
+
   // por turno (pra comparativo dia x noite)
   const porTurno = {};
   for (const t of turnos) {
@@ -434,7 +445,7 @@ function computeDashboard(turnosFiltro) {
   return {
     turnos, nTurnos, allRows, rowsOk,
     velocidadeMedia, larguraMedia, pesoTotal, totalChapas, nOpsSuspeitas,
-    clientes, porTurno, dataRef,
+    clientes, papeis, porTurno, dataRef,
   };
 }
 
@@ -533,6 +544,11 @@ function renderDashboard(d) {
   tCli.innerHTML = `<thead><tr><th>Cliente</th><th>Peso (kg)</th><th>Chapas</th><th>Registros</th></tr></thead>
     <tbody>${d.clientes.map((c) => `<tr><td>${c.cliente}</td><td class="num">${fmt(c.peso, 0)}</td><td class="num">${fmt(c.chapas, 0)}</td><td class="num">${c.registros}</td></tr>`).join("")}</tbody>`;
 
+  // tabela tipo de papel
+  const tPapel = document.getElementById("tabela-papel");
+  tPapel.innerHTML = `<thead><tr><th>Papel</th><th>Peso (kg)</th><th>Chapas</th><th>Registros</th></tr></thead>
+    <tbody>${d.papeis.map((p) => `<tr><td>${p.papel}</td><td class="num">${fmt(p.peso, 0)}</td><td class="num">${fmt(p.chapas, 0)}</td><td class="num">${p.registros}</td></tr>`).join("")}</tbody>`;
+
   // tabela detalhado
   const tDet = document.getElementById("tabela-detalhado");
   tDet.innerHTML = `<thead><tr><th>Turno</th><th>OP</th><th>Cliente</th><th>Papel</th><th>Largura (mm)</th><th>Compr. (m)</th><th>Chapas</th><th>Peso (kg)</th><th>Suspeita</th></tr></thead>
@@ -607,12 +623,27 @@ function renderViewTabs() {
 }
 
 // ------------------------------------------------------------- EXCEL ------
-async function baixarExcel(d) {
-  const wb = new ExcelJS.Workbook();
-  const AZUL_ESCURO = "FF1F4E78", AZUL_MEDIO = "FF2E75B6", CIANO = "FF9DC3E6",
-        CIANO_CLARO = "FFDDEBF7", CINZA = "FFF2F2F2";
+const EXCEL_CORES = {
+  AZUL_ESCURO: "FF1F4E78", AZUL_MEDIO: "FF2E75B6", CIANO: "FF9DC3E6",
+  CIANO_CLARO: "FFDDEBF7", CINZA: "FFF2F2F2",
+};
+const VIEW_LABELS = { dia: "Dia", noite: "Noite", total: "Total" };
 
-  const detSheet = wb.addWorksheet("Detalhado");
+function headerRow(sheet) {
+  sheet.getRow(1).eachCell((c) => {
+    c.font = { bold: true, color: { argb: "FFFFFFFF" }, name: "Arial" };
+    c.fill = { type: "pattern", pattern: "solid", fgColor: { argb: EXCEL_CORES.AZUL_ESCURO } };
+  });
+}
+
+// Replica, para uma visão (Dia / Noite / Total), as mesmas informações
+// mostradas na tela: KPIs, tabela detalhada por OP (com o tipo de papel),
+// resumo por cliente e resumo por tipo de papel.
+function gerarAbasDaVisao(wb, label, d) {
+  const { AZUL_ESCURO, AZUL_MEDIO, CIANO, CINZA } = EXCEL_CORES;
+  const detNome = `Detalhado_${label}`;
+
+  const detSheet = wb.addWorksheet(detNome);
   detSheet.columns = [
     { header: "Turno", key: "turno", width: 10 },
     { header: "OP", key: "OP", width: 10 },
@@ -624,10 +655,7 @@ async function baixarExcel(d) {
     { header: "Peso (kg)", key: "peso_kg", width: 12 },
     { header: "Suspeita", key: "susp", width: 10 },
   ];
-  detSheet.getRow(1).eachCell((c) => {
-    c.font = { bold: true, color: { argb: "FFFFFFFF" }, name: "Arial" };
-    c.fill = { type: "pattern", pattern: "solid", fgColor: { argb: AZUL_ESCURO } };
-  });
+  headerRow(detSheet);
   d.allRows.forEach((r) => {
     detSheet.addRow({
       turno: r.turno.toUpperCase(), OP: r.OP, CLIENTE: r.CLIENTE, PAPEL: r.PAPEL,
@@ -641,36 +669,55 @@ async function baixarExcel(d) {
   detSheet.getColumn("produzido_chapas").numFmt = "#,##0";
   detSheet.getColumn("peso_kg").numFmt = "#,##0.0";
 
-  const rc = wb.addWorksheet("Resumo_Cliente");
+  const rcNome = `Resumo_Cliente_${label}`;
+  const rc = wb.addWorksheet(rcNome);
   rc.columns = [
     { header: "Cliente", key: "c", width: 34 },
     { header: "Peso (kg)", key: "peso", width: 13 },
     { header: "Chapas", key: "chapas", width: 12 },
     { header: "Registros", key: "reg", width: 11 },
   ];
-  rc.getRow(1).eachCell((c) => {
-    c.font = { bold: true, color: { argb: "FFFFFFFF" }, name: "Arial" };
-    c.fill = { type: "pattern", pattern: "solid", fgColor: { argb: AZUL_ESCURO } };
-  });
+  headerRow(rc);
   d.clientes.forEach((cl, i) => {
     const r = i + 2;
     rc.addRow({
       c: cl.cliente,
-      peso: { formula: `SUMIFS(Detalhado!H2:H${lastRow},Detalhado!C2:C${lastRow},A${r})` },
-      chapas: { formula: `SUMIFS(Detalhado!G2:G${lastRow},Detalhado!C2:C${lastRow},A${r})` },
-      reg: { formula: `COUNTIFS(Detalhado!C2:C${lastRow},A${r})` },
+      peso: { formula: `SUMIFS(${detNome}!H2:H${lastRow},${detNome}!C2:C${lastRow},A${r})` },
+      chapas: { formula: `SUMIFS(${detNome}!G2:G${lastRow},${detNome}!C2:C${lastRow},A${r})` },
+      reg: { formula: `COUNTIFS(${detNome}!C2:C${lastRow},A${r})` },
     });
   });
   rc.getColumn("peso").numFmt = "#,##0";
   rc.getColumn("chapas").numFmt = "#,##0";
 
-  const ws = wb.addWorksheet("Dashboard");
-  wb.views = [{ activeTab: 2 }];
+  // resumo por tipo de papel (ex.: P50D, P25B)
+  const rpNome = `Resumo_Papel_${label}`;
+  const rp = wb.addWorksheet(rpNome);
+  rp.columns = [
+    { header: "Papel", key: "p", width: 14 },
+    { header: "Peso (kg)", key: "peso", width: 13 },
+    { header: "Chapas", key: "chapas", width: 12 },
+    { header: "Registros", key: "reg", width: 11 },
+  ];
+  headerRow(rp);
+  d.papeis.forEach((pl, i) => {
+    const r = i + 2;
+    rp.addRow({
+      p: pl.papel,
+      peso: { formula: `SUMIFS(${detNome}!H2:H${lastRow},${detNome}!D2:D${lastRow},A${r})` },
+      chapas: { formula: `SUMIFS(${detNome}!G2:G${lastRow},${detNome}!D2:D${lastRow},A${r})` },
+      reg: { formula: `COUNTIFS(${detNome}!D2:D${lastRow},A${r})` },
+    });
+  });
+  rp.getColumn("peso").numFmt = "#,##0";
+  rp.getColumn("chapas").numFmt = "#,##0";
+
+  const ws = wb.addWorksheet(`Dashboard_${label}`);
   ws.views = [{ showGridLines: false }];
 
   ws.mergeCells("B2:J3");
   const titleCell = ws.getCell("B2");
-  titleCell.value = `DASHBOARD DE PRODUÇÃO — ${d.dataRef ? d.dataRef.split("-").reverse().join("/") : "DIA"}`;
+  titleCell.value = `DASHBOARD DE PRODUÇÃO — ${d.dataRef ? d.dataRef.split("-").reverse().join("/") : ""} — ${label.toUpperCase()}`;
   titleCell.font = { bold: true, size: 16, color: { argb: "FFFFFFFF" }, name: "Arial" };
   titleCell.alignment = { vertical: "middle", indent: 1 };
   for (let col = 2; col <= 10; col++) {
@@ -679,17 +726,17 @@ async function baixarExcel(d) {
   }
 
   const kpiDefs = [
-    ["VELOCIDADE MÉDIA (m/min)", `SUM(Detalhado!F2:F${lastRow})*0+${d.velocidadeMedia.toFixed(2)}`, "0.00"],
+    ["VELOCIDADE MÉDIA (m/min)", d.velocidadeMedia.toFixed(2), "0.00"],
     ["LARGURA MÉDIA (mm)", d.larguraMedia != null ? d.larguraMedia.toFixed(0) : 0, "0"],
-    ["PESO TOTAL (kg)", `SUM(Resumo_Cliente!B2:B${d.clientes.length + 1})`, "#,##0"],
-    ["CHAPAS PRODUZIDAS", `SUM(Resumo_Cliente!C2:C${d.clientes.length + 1})`, "#,##0"],
+    ["PESO TOTAL (kg)", `SUM(${rcNome}!B2:B${d.clientes.length + 1})`, "#,##0"],
+    ["CHAPAS PRODUZIDAS", `SUM(${rcNome}!C2:C${d.clientes.length + 1})`, "#,##0"],
   ];
   const cols = [["B", "C"], ["D", "E"], ["F", "G"], ["H", "J"]];
-  kpiDefs.forEach(([label, formula, fmtNum], i) => {
+  kpiDefs.forEach(([label2, formula, fmtNum], i) => {
     const [c1, c2] = cols[i];
     ws.mergeCells(`${c1}6:${c2}6`);
     const lab = ws.getCell(`${c1}6`);
-    lab.value = label;
+    lab.value = label2;
     lab.font = { bold: true, size: 10, color: { argb: "FFFFFFFF" }, name: "Arial" };
     lab.fill = { type: "pattern", pattern: "solid", fgColor: { argb: AZUL_MEDIO } };
     lab.alignment = { horizontal: "center", vertical: "middle", wrapText: true };
@@ -725,16 +772,90 @@ async function baixarExcel(d) {
     ws.getRow(r).getCell(5).value = cl.registros;
   });
 
+  // resumo por tipo de papel, logo abaixo do resumo por cliente
+  row = hdrRow + d.clientes.length + 2;
+  ws.mergeCells(`B${row}:J${row}`);
+  ws.getCell(`B${row}`).value = "Resumo por tipo de papel";
+  ws.getCell(`B${row}`).font = { bold: true, color: { argb: "FF1F4E78" }, name: "Arial" };
+  for (let c = 2; c <= 10; c++) ws.getRow(row).getCell(c).fill = { type: "pattern", pattern: "solid", fgColor: { argb: CINZA } };
+  row += 1;
+  const hdrRowPapel = row;
+  ["Papel", "Peso (kg)", "Chapas", "Registros"].forEach((h, i) => {
+    const cell = ws.getRow(hdrRowPapel).getCell(2 + i);
+    cell.value = h;
+    cell.font = { bold: true, color: { argb: "FFFFFFFF" }, name: "Arial" };
+    cell.fill = { type: "pattern", pattern: "solid", fgColor: { argb: AZUL_ESCURO } };
+  });
+  d.papeis.forEach((pl, i) => {
+    const r = hdrRowPapel + 1 + i;
+    ws.getRow(r).getCell(2).value = pl.papel;
+    ws.getRow(r).getCell(3).value = Math.round(pl.peso);
+    ws.getRow(r).getCell(3).numFmt = "#,##0";
+    ws.getRow(r).getCell(4).value = Math.round(pl.chapas);
+    ws.getRow(r).getCell(4).numFmt = "#,##0";
+    ws.getRow(r).getCell(5).value = pl.registros;
+  });
+
   ws.getColumn(2).width = 26;
   for (const col of "CDEFGHIJ") ws.getColumn(col.charCodeAt(0) - 64).width = 13;
+}
+
+// Gera um único Excel replicando as 3 visões do app (Dia, Noite, Total),
+// cada uma com dashboard, tabela detalhada (com tipo de papel), resumo por
+// cliente e resumo por tipo de papel.
+async function baixarExcel(views) {
+  const wb = new ExcelJS.Workbook();
+
+  const ordem = ["dia", "noite", "total"].filter((k) => views[k]);
+  const total = views.total;
+
+  const geral = wb.addWorksheet("Resumo Geral");
+  geral.views = [{ showGridLines: false }];
+  geral.mergeCells("B2:K3");
+  const titleCell = geral.getCell("B2");
+  titleCell.value = `PRODUÇÃO — ${total && total.dataRef ? total.dataRef.split("-").reverse().join("/") : new Date().toLocaleDateString("pt-BR")}`;
+  titleCell.font = { bold: true, size: 16, color: { argb: "FFFFFFFF" }, name: "Arial" };
+  titleCell.alignment = { vertical: "middle", indent: 1 };
+  for (let col = 2; col <= 11; col++) {
+    geral.getRow(2).getCell(col).fill = { type: "pattern", pattern: "solid", fgColor: { argb: EXCEL_CORES.AZUL_ESCURO } };
+    geral.getRow(3).getCell(col).fill = { type: "pattern", pattern: "solid", fgColor: { argb: EXCEL_CORES.AZUL_ESCURO } };
+  }
+
+  const blocoCols = { dia: ["B", "D"], noite: ["E", "G"], total: ["H", "K"] };
+  ["dia", "noite", "total"].forEach((key) => {
+    const [c1, c2] = blocoCols[key];
+    const dv = views[key];
+    geral.mergeCells(`${c1}6:${c2}6`);
+    const lab = geral.getCell(`${c1}6`);
+    lab.value = `PRODUÇÃO ${VIEW_LABELS[key].toUpperCase()}`;
+    lab.font = { bold: true, size: 11, color: { argb: "FFFFFFFF" }, name: "Arial" };
+    lab.fill = { type: "pattern", pattern: "solid", fgColor: { argb: EXCEL_CORES.AZUL_MEDIO } };
+    lab.alignment = { horizontal: "center", vertical: "middle" };
+
+    geral.mergeCells(`${c1}7:${c2}9`);
+    const val = geral.getCell(`${c1}7`);
+    val.value = dv ? Math.round(dv.pesoTotal) : "—";
+    val.numFmt = "#,##0";
+    val.font = { bold: true, size: 22, name: "Arial" };
+    val.fill = { type: "pattern", pattern: "solid", fgColor: { argb: key === "total" ? EXCEL_CORES.CIANO : EXCEL_CORES.CIANO_CLARO } };
+    val.alignment = { horizontal: "center", vertical: "middle" };
+
+    geral.mergeCells(`${c1}10:${c2}10`);
+    const sub = geral.getCell(`${c1}10`);
+    sub.value = dv ? `${Math.round(dv.totalChapas).toLocaleString("pt-BR")} chapas  ·  ${dv.velocidadeMedia.toFixed(2)} m/min` : "Sem relatório carregado";
+    sub.font = { italic: true, size: 9, color: { argb: "FF595959" }, name: "Arial" };
+    sub.alignment = { horizontal: "center" };
+  });
+  for (const col of "BCDEFGHIJK") geral.getColumn(col.charCodeAt(0) - 64).width = 13;
+
+  ordem.forEach((key) => gerarAbasDaVisao(wb, VIEW_LABELS[key], views[key]));
 
   const buffer = await wb.xlsx.writeBuffer();
   const blob = new Blob([buffer], { type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" });
   const a = document.createElement("a");
-  const dataLabel = d.dataRef || new Date().toISOString().slice(0, 10);
-  const viewLabel = d.turnos.length > 1 ? "total" : (d.turnos[0] || "total");
+  const dataLabel = (total && total.dataRef) || new Date().toISOString().slice(0, 10);
   a.href = URL.createObjectURL(blob);
-  a.download = `dashboard_producao_${dataLabel}_${viewLabel}.xlsx`;
+  a.download = `dashboard_producao_${dataLabel}.xlsx`;
   a.click();
 }
 
@@ -828,8 +949,9 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   document.getElementById("btn-baixar-excel").addEventListener("click", () => {
-    const d = state.dashboards[state.activeView];
-    if (d) baixarExcel(d);
+    if (state.dashboards && (state.dashboards.dia || state.dashboards.noite || state.dashboards.total)) {
+      baixarExcel(state.dashboards);
+    }
   });
 
   const toggleBtn = document.getElementById("toggle-config");
