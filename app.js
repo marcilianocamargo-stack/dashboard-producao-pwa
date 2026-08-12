@@ -48,7 +48,8 @@ const DATA_RE = /(\d{1,2}[/\-]\d{1,2}[/\-]\d{2,4})/;
 const state = {
   gramatura: loadGramatura(),
   arquivos: { dia: null, noite: null }, // cada um: {ok, nomeArquivo, rows, warnings, dataTexto}
-  dashboard: null,
+  dashboards: {}, // { dia, noite, total } — um dashboard completo por visão
+  activeView: null, // "dia" | "noite" | "total"
 };
 
 function loadGramatura() {
@@ -372,8 +373,8 @@ function normalizarLinhaPdf(o) {
 }
 
 // ------------------------------------------------------- CÁLCULO KPIs -----
-function computeDashboard() {
-  const turnos = ["dia", "noite"].filter((t) => state.arquivos[t] && state.arquivos[t].ok);
+function computeDashboard(turnosFiltro) {
+  const turnos = (turnosFiltro || ["dia", "noite"]).filter((t) => state.arquivos[t] && state.arquivos[t].ok);
   const nTurnos = turnos.length;
   let allRows = [];
   for (const t of turnos) {
@@ -437,6 +438,24 @@ function computeDashboard() {
   };
 }
 
+function computeAllViews() {
+  const carregados = ["dia", "noite"].filter((t) => state.arquivos[t] && state.arquivos[t].ok);
+  const views = {};
+  if (carregados.includes("dia")) {
+    views.dia = computeDashboard(["dia"]);
+    views.dia.tituloView = "DASHBOARD DE PRODUÇÃO — TURNO DIA";
+  }
+  if (carregados.includes("noite")) {
+    views.noite = computeDashboard(["noite"]);
+    views.noite.tituloView = "DASHBOARD DE PRODUÇÃO — TURNO NOITE";
+  }
+  if (carregados.length) {
+    views.total = computeDashboard(carregados);
+    views.total.tituloView = "DASHBOARD DE PRODUÇÃO — DIA + NOITE (TOTAL)";
+  }
+  return views;
+}
+
 // ------------------------------------------------------------ RENDER ------
 function fmt(n, dec = 0) {
   if (n === null || n === undefined || isNaN(n)) return "—";
@@ -447,6 +466,7 @@ let chartClientes, chartTurnos;
 
 function renderDashboard(d) {
   document.getElementById("card-dashboard").classList.remove("hidden");
+  document.getElementById("dash-title").textContent = d.tituloView || "DASHBOARD DE PRODUÇÃO";
 
   const subtitleBits = [];
   if (d.dataRef) subtitleBits.push(`Data: ${d.dataRef.split("-").reverse().join("/")}`);
@@ -466,8 +486,6 @@ function renderDashboard(d) {
       <div class="kpi-value">${val}${unit ? ` <small style="font-size:0.9rem">${unit}</small>` : ""}</div>
     </div>`).join("");
 
-  renderTurnoCards(d);
-
   // gráfico clientes
   const topClientes = d.clientes.slice(0, 8);
   if (chartClientes) chartClientes.destroy();
@@ -484,25 +502,31 @@ function renderDashboard(d) {
     },
   });
 
-  // gráfico dia x noite
-  const turnosLabels = d.turnos.map((t) => t.toUpperCase());
-  if (chartTurnos) chartTurnos.destroy();
-  chartTurnos = new Chart(document.getElementById("chart-turnos"), {
-    type: "bar",
-    data: {
-      labels: ["Velocidade (m/min)", "Peso (kg) ÷100", "Chapas ÷100"],
-      datasets: d.turnos.map((t, i) => ({
-        label: t.toUpperCase(),
-        backgroundColor: i === 0 ? "#2E75B6" : "#1BAF7A",
-        data: [
-          d.porTurno[t].velocidade,
-          d.porTurno[t].peso / 100,
-          d.porTurno[t].chapas / 100,
-        ],
-      })),
-    },
-    options: { plugins: { legend: { display: turnosLabels.length > 1 } } },
-  });
+  // gráfico dia x noite — só faz sentido quando a visão tem os dois turnos
+  const chartCardTurnos = document.getElementById("chart-card-turnos");
+  if (d.turnos.length > 1) {
+    chartCardTurnos.classList.remove("hidden");
+    if (chartTurnos) chartTurnos.destroy();
+    chartTurnos = new Chart(document.getElementById("chart-turnos"), {
+      type: "bar",
+      data: {
+        labels: ["Velocidade (m/min)", "Peso (kg) ÷100", "Chapas ÷100"],
+        datasets: d.turnos.map((t, i) => ({
+          label: t.toUpperCase(),
+          backgroundColor: i === 0 ? "#2E75B6" : "#1BAF7A",
+          data: [
+            d.porTurno[t].velocidade,
+            d.porTurno[t].peso / 100,
+            d.porTurno[t].chapas / 100,
+          ],
+        })),
+      },
+      options: { plugins: { legend: { display: true } } },
+    });
+  } else {
+    chartCardTurnos.classList.add("hidden");
+    if (chartTurnos) { chartTurnos.destroy(); chartTurnos = null; }
+  }
 
   // tabela clientes
   const tCli = document.getElementById("tabela-clientes");
@@ -559,6 +583,27 @@ function renderTurnoCards(d) {
     turnoCardHtml("Produção do dia", dadosDia) +
     turnoCardHtml("Produção da noite", dadosNoite) +
     turnoCardHtml("Total (dia + noite)", dadosTotal, "turno-card-total");
+}
+
+function renderViewTabs() {
+  const tabs = [
+    { key: "dia", label: "Turno Dia" },
+    { key: "noite", label: "Turno Noite" },
+    { key: "total", label: "Dia + Noite (Total)" },
+  ];
+  const el = document.getElementById("view-tabs");
+  el.innerHTML = tabs.map((t) => {
+    const disponivel = !!state.dashboards[t.key];
+    const ativo = state.activeView === t.key;
+    return `<button type="button" class="view-tab${ativo ? " active" : ""}" data-view="${t.key}" ${disponivel ? "" : "disabled"}>${t.label}</button>`;
+  }).join("");
+  el.querySelectorAll(".view-tab").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      state.activeView = btn.dataset.view;
+      renderViewTabs();
+      renderDashboard(state.dashboards[state.activeView]);
+    });
+  });
 }
 
 // ------------------------------------------------------------- EXCEL ------
@@ -687,8 +732,9 @@ async function baixarExcel(d) {
   const blob = new Blob([buffer], { type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" });
   const a = document.createElement("a");
   const dataLabel = d.dataRef || new Date().toISOString().slice(0, 10);
+  const viewLabel = d.turnos.length > 1 ? "total" : (d.turnos[0] || "total");
   a.href = URL.createObjectURL(blob);
-  a.download = `dashboard_producao_${dataLabel}.xlsx`;
+  a.download = `dashboard_producao_${dataLabel}_${viewLabel}.xlsx`;
   a.click();
 }
 
@@ -773,12 +819,17 @@ document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("file-noite").addEventListener("change", (e) => handleFileInput("noite", e.target.files[0]));
 
   document.getElementById("btn-gerar").addEventListener("click", () => {
-    state.dashboard = computeDashboard();
-    renderDashboard(state.dashboard);
+    state.dashboards = computeAllViews();
+    renderTurnoCards(state.dashboards.total || null);
+    const ordemPreferida = ["total", "dia", "noite"];
+    state.activeView = ordemPreferida.find((k) => state.dashboards[k]) || null;
+    renderViewTabs();
+    if (state.activeView) renderDashboard(state.dashboards[state.activeView]);
   });
 
   document.getElementById("btn-baixar-excel").addEventListener("click", () => {
-    if (state.dashboard) baixarExcel(state.dashboard);
+    const d = state.dashboards[state.activeView];
+    if (d) baixarExcel(d);
   });
 
   const toggleBtn = document.getElementById("toggle-config");

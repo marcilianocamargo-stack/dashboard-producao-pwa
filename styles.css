@@ -176,8 +176,23 @@ main { max-width: 980px; margin: 16px auto; padding: 0 12px 40px; }
 .turno-card-rows b { font-size: 0.95rem; color: var(--texto); }
 .turno-card-empty { color: var(--texto-suave); font-size: 0.85rem; padding: 18px 0; }
 
+.view-tabs { display: flex; gap: 8px; margin: 4px 0 18px; flex-wrap: wrap; }
+.view-tab {
+  background: var(--cinza-claro);
+  color: var(--azul-escuro);
+  border: 1px solid var(--borda);
+  border-radius: 20px;
+  padding: 8px 18px;
+  font-size: 0.85rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+.view-tab.active { background: var(--azul-escuro); color: white; border-color: var(--azul-escuro); }
+.view-tab:disabled { opacity: 0.45; cursor: not-allowed; }
+
 .chart-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 20px 0; }
 @media (max-width: 700px) { .chart-row { grid-template-columns: 1fr; } }
+.chart-row:has(.chart-card.hidden) { grid-template-columns: 1fr; }
 .chart-card { border: 1px solid var(--borda); border-radius: 8px; padding: 10px; background: var(--cinza-claro); }
 .chart-card h3 { margin: 0 0 8px; font-size: 0.9rem; color: var(--azul-escuro); }
 .chart-card canvas { background: white; border-radius: 6px; }
