@@ -173,9 +173,18 @@ function renderPainel() {
     heroBox.classList.add(positivo ? "tl-positivo" : "tl-negativo");
     estamosEl.innerHTML = `${fmtSigned(p.ondeEstamosKg)} <small>kg</small>`;
     const diasTxt = `${fmtSigned(p.ondeEstamosDias, 1)} dia(s) de produção`;
+    // "recuperar no próximo turno" só faz sentido pra um atraso pequeno
+    // (menos de meio dia = 1 turno). Atrasos maiores precisam do número
+    // real de dias — prometer "próximo turno" com -2,2 dias de atraso, por
+    // exemplo, é impossível e passa confiança errada pro time.
+    const diasAtraso = Math.abs(p.ondeEstamosDias);
+    const diasParaRecuperar = Math.ceil(diasAtraso);
+    const acaoRecuperar = diasAtraso <= 0.5
+      ? "recuperar no próximo turno"
+      : `recuperar em ${diasParaRecuperar} dia${diasParaRecuperar > 1 ? "s" : ""} mantendo o reforço`;
     estamosSubEl.textContent = positivo
       ? `Adiantado — ${diasTxt}`
-      : `Atrasado — ${diasTxt} · recuperar no próximo turno`;
+      : `Atrasado — ${diasTxt} · ${acaoRecuperar}`;
   } else {
     estamosEl.textContent = "—";
     estamosSubEl.textContent = "aguardando o primeiro dia do mês";
