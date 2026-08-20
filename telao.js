@@ -55,17 +55,20 @@ function contarDiasUteis(ano, mesIdx, diaIni, diaFim) {
   return n;
 }
 
-function mergePapeis(...listas) {
+function mergePorChave(chave, ...listas) {
   const mapa = {};
   for (const lista of listas) {
-    for (const p of lista || []) {
-      if (!mapa[p.papel]) mapa[p.papel] = { papel: p.papel, chapas: 0, peso: 0 };
-      mapa[p.papel].chapas += p.chapas || 0;
-      mapa[p.papel].peso += p.peso || 0;
+    for (const item of lista || []) {
+      const k = item[chave];
+      if (!mapa[k]) mapa[k] = { [chave]: k, chapas: 0, peso: 0 };
+      mapa[k].chapas += item.chapas || 0;
+      mapa[k].peso += item.peso || 0;
     }
   }
   return Object.values(mapa).sort((a, b) => b.peso - a.peso);
 }
+function mergePapeis(...listas) { return mergePorChave("papel", ...listas); }
+function mergeClientes(...listas) { return mergePorChave("cliente", ...listas); }
 
 // ------------------------------------------------------ DADOS DE DEMO -----
 // Padrão fixo de "% da meta diária batida" por dia — inclui altos e baixos
@@ -79,6 +82,7 @@ const DEMO_FATORES = [
 ];
 
 const PAPEIS_DEMO = ["P25B", "P50D", "P70D", "PK45C"];
+const CLIENTES_DEMO = ["UPAPER", "RENOVAPEL RECICLAGEM DE PAPEIS LTDA", "DR EMBALAGENS", "SÃO MIGUEL"];
 
 function gerarDadosDemo(ano, mesIdx, metaDiaria) {
   const daysInMonth = new Date(ano, mesIdx + 1, 0).getDate();
@@ -98,6 +102,8 @@ function gerarDadosDemo(ano, mesIdx, metaDiaria) {
       const chapas = Math.round(peso / 3.3);
       const papelA = PAPEIS_DEMO[d % PAPEIS_DEMO.length];
       const papelB = PAPEIS_DEMO[(d + offset + 1) % PAPEIS_DEMO.length];
+      const clienteA = CLIENTES_DEMO[d % CLIENTES_DEMO.length];
+      const clienteB = CLIENTES_DEMO[(d + offset + 2) % CLIENTES_DEMO.length];
       const splitA = 0.62;
       return {
         peso,
@@ -106,6 +112,10 @@ function gerarDadosDemo(ano, mesIdx, metaDiaria) {
         papeis: peso > 0 ? [
           { papel: papelA, chapas: Math.round(chapas * splitA), peso: Math.round(peso * splitA) },
           { papel: papelB, chapas: Math.round(chapas * (1 - splitA)), peso: Math.round(peso * (1 - splitA)) },
+        ] : [],
+        clientes: peso > 0 ? [
+          { cliente: clienteA, chapas: Math.round(chapas * 0.7), peso: Math.round(peso * 0.7) },
+          { cliente: clienteB, chapas: Math.round(chapas * 0.3), peso: Math.round(peso * 0.3) },
         ] : [],
       };
     };
@@ -121,6 +131,7 @@ function gerarDadosDemo(ano, mesIdx, metaDiaria) {
         chapas: diaTurno.chapas + noiteTurno.chapas,
         velocidade: totalPeso > 0 ? (diaTurno.velocidade + noiteTurno.velocidade) / 2 : 0,
         papeis: mergePapeis(diaTurno.papeis, noiteTurno.papeis),
+        clientes: mergeClientes(diaTurno.clientes, noiteTurno.clientes),
       },
     };
   }
@@ -187,6 +198,7 @@ function montarPainel() {
 
 // --------------------------------------------------------------- RENDER --
 let tlChart = null;
+let tlChartClientes = null;
 
 function renderRelogio() {
   const agora = new Date();
@@ -254,11 +266,14 @@ function renderPainel() {
   setTurno("total", p.ultimoDiaEntry ? p.ultimoDiaEntry.total : null);
 
   const tituloTurnos = document.getElementById("tl-turnos-titulo");
+  const tituloClientes = document.getElementById("tl-clientes-titulo");
   if (p.ultimoDiaStr) {
     const [y, m, d] = p.ultimoDiaStr.split("-");
     tituloTurnos.textContent = `Produção do dia ${d}/${m}`;
+    tituloClientes.textContent = `Peso produzido por cliente (kg) — dia ${d}/${m}`;
   } else {
     tituloTurnos.textContent = "Produção do dia anterior";
+    tituloClientes.textContent = "Peso produzido por cliente (kg)";
   }
 
   document.getElementById("tl-demo-badge").classList.toggle("hidden", !p.isDemo);
@@ -266,6 +281,31 @@ function renderPainel() {
     `Atualizado às ${new Date().toLocaleTimeString("pt-BR")}${p.isDemo ? " · dados de demonstração" : ""}`;
 
   renderGrafico(p);
+  renderGraficoClientes(p);
+}
+
+function renderGraficoClientes(p) {
+  const clientes = ((p.ultimoDiaEntry && p.ultimoDiaEntry.total.clientes) || []).slice(0, 6);
+  const ctx = document.getElementById("tl-chart-clientes");
+  if (tlChartClientes) tlChartClientes.destroy();
+  tlChartClientes = new Chart(ctx, {
+    type: "bar",
+    data: {
+      labels: clientes.map((c) => c.cliente),
+      datasets: [{ data: clientes.map((c) => Math.round(c.peso)), backgroundColor: "#2E75B6", borderRadius: 3 }],
+    },
+    options: {
+      indexAxis: "y",
+      responsive: true,
+      maintainAspectRatio: false,
+      animation: false,
+      plugins: { legend: { display: false } },
+      scales: {
+        x: { title: { display: true, text: "kg", font: { size: 10 } }, ticks: { font: { size: 9 } } },
+        y: { ticks: { font: { size: 10 } } },
+      },
+    },
+  });
 }
 
 function renderGrafico(p) {

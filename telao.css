@@ -83,7 +83,7 @@ html, body.tl-body {
   flex: 1 1 auto;
   min-height: 0;
   display: grid;
-  grid-template-columns: 2.1fr 1fr;
+  grid-template-columns: 1.5fr 1.1fr 1fr;
   gap: 1.2vw;
 }
 
