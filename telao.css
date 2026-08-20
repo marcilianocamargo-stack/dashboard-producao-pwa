@@ -122,8 +122,6 @@ html, body.tl-body {
 
 .tl-turno-papeis {
   margin-top: .6vh;
-  padding-top: .5vh;
-  border-top: 1px dashed var(--borda);
   font-size: 1.15vh;
   color: var(--azul-escuro);
   font-weight: bold;
