@@ -3,9 +3,18 @@
  * geração do Excel de saída. Nenhum arquivo sai do dispositivo do usuário.
  *
  * Método (mesmo do dashboard geral):
- *   velocidade média (m/min) = metros lineares (comprimento × chapas) / (420 min × nº de turnos carregados)
+ *   arranjo (chapas por passada de bobina) = mesma lógica de sugestão de
+ *     bobina do app de Programação da Onduladeira: maior nº de chapas de uma
+ *     largura que cabem num formato de bobina (500–1600mm) com ponta mínima
+ *     de 20mm, respeitando MAX_ARRANJO
+ *   metros lineares de bobina = (comprimento × chapas) / arranjo — cada
+ *     passada de bobina entrega "arranjo" chapas de uma vez, então sem essa
+ *     divisão pedidos com faca dupla/tripla contam a mesma passada mais de
+ *     uma vez
+ *   velocidade média (m/min) = metros lineares de bobina / (420 min × nº de turnos carregados)
  *   largura média (mm) = média ponderada por chapas produzidas
  *   peso (kg) = (largura_m × comprimento_m × chapas) × gramatura do papel (kg/m²) — tabela configurável
+ *     (não depende do arranjo: é a produção real de chapas, saiam elas juntas ou não)
  * Linhas com MEDIDA fisicamente implausível (comprimento >5m ou ≤0; largura >1650mm ou ≤50mm)
  * são excluídas das médias e do peso, mas continuam na tabela detalhada.
  */
@@ -13,20 +22,122 @@
 // ------------------------------------------------------------------ CONFIG
 const TURNO_MIN_EFETIVOS = 420;
 
-// Gramatura padrão (kg de peso por m² de chapa) — vem da Tabela de
-// Especificações Técnicas dos Produtos da Prime (Companhia Paranaense de
-// Papel Ondulado), gr/m² ÷ 1000. O sufixo do código indica a onda:
-// B = Onda B, C = Onda C, D = Parede Dupla (Onda B/C).
-// "PW80B" e "P30B" não constam na tabela oficial — mantido valor
-// aproximado; revise em "Configurar gramatura" se souber o valor correto.
-const GRAMATURA_PADRAO = {
-  "P70D": 0.632, "P55B": 0.398, "P55D": 0.568, "P50D": 0.538,
-  "P80B": 0.514, "PW80B": 0.514, "P70B": 0.458, "P60C": 0.440,
-  "P60B": 0.428, "P45B": 0.365, "P50C": 0.399, "PW50B": 0.388,
-  "P50B": 0.388, "PW40B": 0.365, "P40C": 0.365, "P35B": 0.345,
-  "P40B": 0.355, "P30B": 0.365, "P25B": 0.315, "P25C": 0.324,
-  "PK45C": 0.389,
+// Arranjo = nº de chapas cortadas lado a lado numa única passada de bobina.
+// O relatório diário de produção não registra o arranjo usado em cada OP,
+// então ele é inferido pela largura do produto, com a mesma lógica de
+// sugestão de bobina do app de Programação da Onduladeira.
+// MAX_ARRANJO limitado a 2 porque o slitter está quebrado (ago/2026) e a
+// máquina só está conseguindo cortar 2 chapas por passada, mesmo quando a
+// largura permitiria 3. Quando o slitter for consertado, volte para 3
+// (limite físico da máquina).
+const MAX_ARRANJO = 2;
+const FORMATOS_BOBINA = Array.from({ length: 23 }, (_, i) => 500 + i * 50); // 500..1600mm, de 50 em 50
+
+function arranjoParaLargura(largMM) {
+  if (!largMM) return 1;
+  let melhor = null;
+  for (const bobina of FORMATOS_BOBINA) {
+    let a = Math.floor((bobina - 20) / largMM);
+    if (a > MAX_ARRANJO) a = MAX_ARRANJO;
+    if (a < 1) continue;
+    const refile = (bobina - a * largMM) / bobina;
+    if (!melhor || a > melhor.arranjo || (a === melhor.arranjo && refile < melhor.refile)) {
+      melhor = { arranjo: a, refile };
+    }
+  }
+  return melhor ? melhor.arranjo : 1;
+}
+
+// Tabela oficial de Especificações Técnicas dos Produtos da Prime
+// (Companhia Paranaense de Papel Ondulado) — fonte única para a conversão
+// papel → peso. gr_m2 é gramatura em g/m²; o cálculo de peso usa kg/m²
+// (gr_m2 ÷ 1000). Isso substitui qualquer valor "aproximado" digitado à
+// mão: se um código não está aqui, o peso fica sem cálculo (null) até
+// alguém cadastrar o valor certo em "Configurar gramatura".
+const TABELA_PAPEL = {
+  onda_simples: [
+    { codigo: "P25", coluna_min_kgf_cm: 2.5, gr_m2_onda_b: 315, gr_m2_onda_c: 324 },
+    { codigo: "P35", coluna_min_kgf_cm: 3.5, gr_m2_onda_b: 345, gr_m2_onda_c: 354 },
+    { codigo: "P40", coluna_min_kgf_cm: 4.0, gr_m2_onda_b: 355, gr_m2_onda_c: 365 },
+    { codigo: "P45", coluna_min_kgf_cm: 4.5, gr_m2_onda_b: 365, gr_m2_onda_c: 375 },
+    { codigo: "P50", coluna_min_kgf_cm: 5.0, gr_m2_onda_b: 388, gr_m2_onda_c: 399 },
+    { codigo: "P55", coluna_min_kgf_cm: 5.5, gr_m2_onda_b: 398, gr_m2_onda_c: 409 },
+    { codigo: "P60", coluna_min_kgf_cm: 6.0, gr_m2_onda_b: 428, gr_m2_onda_c: 440 },
+    { codigo: "P70", coluna_min_kgf_cm: 7.0, gr_m2_onda_b: 458, gr_m2_onda_c: 470 },
+    { codigo: "P80", coluna_min_kgf_cm: 8.0, gr_m2_onda_b: 514, gr_m2_onda_c: 528 },
+    { codigo: "P85", coluna_min_kgf_cm: 8.5, gr_m2_onda_b: 560, gr_m2_onda_c: 576 },
+  ],
+  papelao_branco: [
+    { codigo: "PW40", coluna_min_kgf_cm: 4.0, gr_m2_onda_b: 365, gr_m2_onda_c: 375 },
+    { codigo: "PW50", coluna_min_kgf_cm: 5.0, gr_m2_onda_b: 388, gr_m2_onda_c: 399 },
+  ],
+  // Código da tabela já vem com sufixo "B" de grade (não é onda). Ex.:
+  // "PK45B" = grade do papel kraft; a onda real do produto (B ou C)
+  // substitui esse sufixo na montagem do código final — ver
+  // construirGramaturaPadrao().
+  papelao_kraft: [
+    { codigo: "PK40B", coluna_min_kgf_cm: 4.0, gr_m2_onda_b: 345, gr_m2_onda_c: 355 },
+    { codigo: "PK45B", coluna_min_kgf_cm: 4.5, gr_m2_onda_b: 378, gr_m2_onda_c: 389 },
+    { codigo: "PK50B", coluna_min_kgf_cm: 5.0, gr_m2_onda_b: 408, gr_m2_onda_c: 419 },
+    { codigo: "PK70B", coluna_min_kgf_cm: 7.0, gr_m2_onda_b: 448, gr_m2_onda_c: 460 },
+    { codigo: "PK80B", coluna_min_kgf_cm: 8.0, gr_m2_onda_b: 504, gr_m2_onda_c: 518 },
+  ],
+  // Código já é o código final (não tem variante B/C separada).
+  parede_dupla: [
+    { codigo: "P50D", coluna_min_kgf_cm: 5.0, gr_m2: 538 },
+    { codigo: "P55D", coluna_min_kgf_cm: 5.5, gr_m2: 568 },
+    { codigo: "P70D", coluna_min_kgf_cm: 7.0, gr_m2: 632 },
+    { codigo: "P80D", coluna_min_kgf_cm: 8.0, gr_m2: 662 },
+  ],
+  // Papel especial Piquiri. NÃO entra no mapa padrão de gramatura: dois
+  // dos seus códigos ("P40B", "P50B") são iguais, caractere a caractere,
+  // a códigos padrão de onda_simples (P40+onda B, P50+onda B), mas com
+  // gramatura diferente. Numa busca exata isso é uma colisão real — sem
+  // uma marca extra no relatório dizendo "isto é Piquiri", não dá pra
+  // saber qual peso está certo, então preferimos deixar de fora a
+  // cadastrar o valor errado calado. Se precisar, cadastre manualmente em
+  // "Configurar gramatura" (ex.: "PIQUIRIB", "PIQUIRIC" — código que não
+  // colida com os padrão).
+  papel_piquiri: [
+    { codigo: "Piquiri B", coluna_min_kgf_cm: 4.3, gr_m2: 427 },
+    { codigo: "Piquiri C", coluna_min_kgf_cm: 3.6, gr_m2: 379 },
+    { codigo: "Piquiri C 1ª", coluna_min_kgf_cm: 3.8, gr_m2: 440 },
+    { codigo: "P40B", coluna_min_kgf_cm: 4.0, gr_m2: 365 },
+    { codigo: "P50B", coluna_min_kgf_cm: 5.0, gr_m2: 410 },
+  ],
 };
+
+// Monta o mapa código final → kg/m² (busca exata, sem aproximação) usado
+// no cálculo de peso. Regra de montagem de código:
+//   - onda_simples / papelao_branco: código da tabela + letra da onda
+//     usada (B ou C). Ex.: "P50" + onda B => "P50B" = 0,388 kg/m².
+//   - papelao_kraft: base = código da tabela sem o "B" final de grade,
+//     + onda usada. Ex.: "PK45B" (tabela) => base "PK45" => onda C =
+//     "PK45C" = 0,389 kg/m² (onda B = "PK45B" = 0,378 kg/m²).
+//   - parede_dupla: código da tabela já é o código final, busca direta.
+//   - papel_piquiri: propositalmente fora (ver comentário acima).
+function construirGramaturaPadrao() {
+  const mapa = {};
+  for (const item of TABELA_PAPEL.onda_simples) {
+    mapa[`${item.codigo}B`] = item.gr_m2_onda_b / 1000;
+    mapa[`${item.codigo}C`] = item.gr_m2_onda_c / 1000;
+  }
+  for (const item of TABELA_PAPEL.papelao_branco) {
+    mapa[`${item.codigo}B`] = item.gr_m2_onda_b / 1000;
+    mapa[`${item.codigo}C`] = item.gr_m2_onda_c / 1000;
+  }
+  for (const item of TABELA_PAPEL.papelao_kraft) {
+    const base = item.codigo.replace(/B$/, "");
+    mapa[`${base}B`] = item.gr_m2_onda_b / 1000;
+    mapa[`${base}C`] = item.gr_m2_onda_c / 1000;
+  }
+  for (const item of TABELA_PAPEL.parede_dupla) {
+    mapa[item.codigo] = item.gr_m2 / 1000;
+  }
+  return mapa;
+}
+
+const GRAMATURA_PADRAO = construirGramaturaPadrao();
 
 const CANONICALIZACAO_CLIENTES = {
   "HARMONY": "HARMONY EMBALAGENS",
@@ -54,13 +165,34 @@ const state = {
 
 function loadGramatura() {
   try {
-    const saved = localStorage.getItem("prime_gramatura_v1");
-    if (saved) return JSON.parse(saved);
+    const saved = localStorage.getItem("prime_gramatura_v2");
+    if (saved) {
+      // Mescla com a TABELA_PAPEL atual: sem isso, um código novo
+      // adicionado à tabela oficial depois que o navegador já tinha um
+      // cadastro salvo nunca aparecia (o blob salvo "vencia" o padrão),
+      // deixando papéis (ex.: onda C de um código que só existia com
+      // onda B) sem gramatura pra sempre, mesmo já cadastrados na tabela
+      // oficial. Valores já salvos (inclusive edições manuais do usuário)
+      // continuam tendo prioridade sobre o padrão.
+      return { ...GRAMATURA_PADRAO, ...JSON.parse(saved) };
+    }
+    // Migração do formato antigo (valores digitados à mão, alguns
+    // aproximados): mantém só os códigos que não existem na tabela
+    // oficial nova (cadastros extras do usuário); o resto passa a vir da
+    // TABELA_PAPEL, não do que estava salvo no navegador.
+    const antigo = localStorage.getItem("prime_gramatura_v1");
+    if (antigo) {
+      const extras = {};
+      for (const [papel, valor] of Object.entries(JSON.parse(antigo))) {
+        if (!(papel in GRAMATURA_PADRAO)) extras[papel] = valor;
+      }
+      return { ...GRAMATURA_PADRAO, ...extras };
+    }
   } catch (e) { /* ignore */ }
   return { ...GRAMATURA_PADRAO };
 }
 function saveGramatura() {
-  localStorage.setItem("prime_gramatura_v1", JSON.stringify(state.gramatura));
+  localStorage.setItem("prime_gramatura_v2", JSON.stringify(state.gramatura));
 }
 
 // ------------------------------------------------------------- UTILS ------
@@ -384,9 +516,11 @@ function computeDashboard(turnosFiltro) {
   for (const r of allRows) {
     if (!r.medida_suspeita) {
       const gram = state.gramatura[r.PAPEL];
-      r.metros_lineares = r.comprimento_m * r.produzido_chapas;
+      r.arranjo = arranjoParaLargura(r.largura_mm);
+      r.metros_lineares = (r.comprimento_m * r.produzido_chapas) / r.arranjo;
       r.peso_kg = gram != null ? (r.largura_mm / 1000) * r.comprimento_m * r.produzido_chapas * gram : null;
     } else {
+      r.arranjo = null;
       r.metros_lineares = 0;
       r.peso_kg = null;
     }
@@ -652,6 +786,7 @@ function gerarAbasDaVisao(wb, label, d) {
     { header: "Largura (mm)", key: "largura_mm", width: 13 },
     { header: "Compr. (m)", key: "comprimento_m", width: 12 },
     { header: "Chapas", key: "produzido_chapas", width: 10 },
+    { header: "Arranjo", key: "arranjo", width: 10 },
     { header: "Peso (kg)", key: "peso_kg", width: 12 },
     { header: "Suspeita", key: "susp", width: 10 },
   ];
@@ -660,7 +795,7 @@ function gerarAbasDaVisao(wb, label, d) {
     detSheet.addRow({
       turno: r.turno.toUpperCase(), OP: r.OP, CLIENTE: r.CLIENTE, PAPEL: r.PAPEL,
       largura_mm: r.largura_mm, comprimento_m: r.comprimento_m, produzido_chapas: r.produzido_chapas,
-      peso_kg: r.peso_kg, susp: r.medida_suspeita ? 1 : 0,
+      arranjo: r.arranjo, peso_kg: r.peso_kg, susp: r.medida_suspeita ? 1 : 0,
     });
   });
   const lastRow = d.allRows.length + 1;
@@ -682,7 +817,7 @@ function gerarAbasDaVisao(wb, label, d) {
     const r = i + 2;
     rc.addRow({
       c: cl.cliente,
-      peso: { formula: `SUMIFS(${detNome}!H2:H${lastRow},${detNome}!C2:C${lastRow},A${r})` },
+      peso: { formula: `SUMIFS(${detNome}!I2:I${lastRow},${detNome}!C2:C${lastRow},A${r})` },
       chapas: { formula: `SUMIFS(${detNome}!G2:G${lastRow},${detNome}!C2:C${lastRow},A${r})` },
       reg: { formula: `COUNTIFS(${detNome}!C2:C${lastRow},A${r})` },
     });
@@ -704,7 +839,7 @@ function gerarAbasDaVisao(wb, label, d) {
     const r = i + 2;
     rp.addRow({
       p: pl.papel,
-      peso: { formula: `SUMIFS(${detNome}!H2:H${lastRow},${detNome}!D2:D${lastRow},A${r})` },
+      peso: { formula: `SUMIFS(${detNome}!I2:I${lastRow},${detNome}!D2:D${lastRow},A${r})` },
       chapas: { formula: `SUMIFS(${detNome}!G2:G${lastRow},${detNome}!D2:D${lastRow},A${r})` },
       reg: { formula: `COUNTIFS(${detNome}!D2:D${lastRow},A${r})` },
     });
