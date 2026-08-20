@@ -306,6 +306,19 @@ function extrairDataTexto(fullText) {
   return `${yyyy}-${mm}-${dd}`;
 }
 
+// Usada no carregamento em lote, onde não há um "slot" (Turno Dia / Turno
+// Noite) escolhido manualmente — o turno vem do próprio título do relatório
+// (mesmo padrão "DD/MM/AAAA ... TURNO: DIA|NOITE" usado em extrairDataTexto).
+function extrairTurnoTexto(fullText) {
+  if (!fullText) return null;
+  const m = fullText.match(TITULO_RE);
+  if (!m) return null;
+  const t = m[2].toUpperCase();
+  if (t.includes("NOITE")) return "noite";
+  if (t.includes("DIA")) return "dia";
+  return null;
+}
+
 function isIdToken(tok) {
   return /^\d{4,7}$/.test((tok || "").trim());
 }
@@ -485,6 +498,9 @@ async function extrairDePdf(arrayBuffer) {
 }
 
 // --------------------------------------------------------- PARSE FILE -----
+// turnoLabel: "dia"/"noite" quando vem de um slot escolhido manualmente
+// (tela 1). Passe null/undefined no carregamento em lote — nesse caso o
+// turno é detectado pelo título do próprio relatório (extrairTurnoTexto).
 async function parseFile(file, turnoLabel) {
   const buf = await file.arrayBuffer();
   const ext = file.name.split(".").pop().toLowerCase();
@@ -523,7 +539,7 @@ async function parseFile(file, turnoLabel) {
   return {
     ok: true,
     nomeArquivo: file.name,
-    turno: turnoLabel,
+    turno: turnoLabel || extrairTurnoTexto(texto),
     dataTexto,
     rows: objRows,
     warnings,
@@ -1141,6 +1157,80 @@ async function handleFileInput(slot, file) {
   atualizarBotaoGerar();
 }
 
+// ------------------------------------------------- CARREGAMENTO EM LOTE ---
+function logLote(msg, tipo = "") {
+  const el = document.getElementById("status-lote");
+  const span = document.createElement("div");
+  if (tipo) span.className = tipo;
+  span.textContent = msg;
+  el.appendChild(span);
+}
+function clearLote() { document.getElementById("status-lote").innerHTML = ""; }
+
+// Roda o mesmo cálculo do botão "Gerar dashboard do dia" (computeAllViews +
+// salvarHistoricoDia) pra um dia do lote, sem depender do que está carregado
+// nos slots da tela 1 — troca state.arquivos temporariamente e devolve como
+// estava, pra não bagunçar o que o usuário já tinha carregado ali.
+function processarDiaDoLote(arquivosDoDia) {
+  const backup = state.arquivos;
+  state.arquivos = arquivosDoDia;
+  const dashboards = computeAllViews();
+  salvarHistoricoDia(dashboards);
+  state.arquivos = backup;
+  return dashboards;
+}
+
+async function handleLoteInput(fileList) {
+  const files = Array.from(fileList || []);
+  const nameEl = document.getElementById("file-lote-name");
+  clearLote();
+  if (!files.length) { nameEl.textContent = "Nenhum arquivo"; return; }
+
+  nameEl.textContent = `Lendo ${files.length} arquivo(s)…`;
+  logLote(`Lendo ${files.length} arquivo(s)…`);
+
+  const porData = {}; // { "AAAA-MM-DD": { dia: resultado, noite: resultado } }
+  for (const file of files) {
+    let resultado;
+    try {
+      resultado = await parseFile(file, null);
+    } catch (e) {
+      logLote(`✗ ${file.name}: ${e.message || e}`, "erro");
+      continue;
+    }
+    if (!resultado.ok) {
+      logLote(`✗ ${file.name}: ${resultado.error}`, "erro");
+      continue;
+    }
+    if (!resultado.dataTexto) {
+      logLote(`⚠ ${file.name}: não consegui identificar a data no relatório — ignorado.`, "aviso");
+      continue;
+    }
+    if (!resultado.turno) {
+      logLote(`⚠ ${file.name}: não consegui identificar se é turno DIA ou NOITE — ignorado.`, "aviso");
+      continue;
+    }
+    if (!porData[resultado.dataTexto]) porData[resultado.dataTexto] = {};
+    if (porData[resultado.dataTexto][resultado.turno]) {
+      logLote(`⚠ ${file.name}: já tinha outro arquivo pra ${resultado.turno.toUpperCase()} em ${resultado.dataTexto.split("-").reverse().join("/")} — este substituiu o anterior.`, "aviso");
+    }
+    porData[resultado.dataTexto][resultado.turno] = resultado;
+  }
+
+  const datas = Object.keys(porData).sort();
+  for (const data of datas) {
+    const dashboards = processarDiaDoLote(porData[data]);
+    const ref = dashboards.total || dashboards.dia || dashboards.noite;
+    const turnosOk = Object.keys(porData[data]).filter((t) => porData[data][t].ok).map((t) => t.toUpperCase());
+    logLote(`✓ ${data.split("-").reverse().join("/")}: ${fmt(ref.pesoTotal, 0)} kg (${turnosOk.join(" + ")})`, "ok");
+  }
+
+  nameEl.textContent = `${files.length} arquivo(s) lidos — ${datas.length} dia(s) somados ao histórico do mês`;
+  if (datas.length) {
+    logLote(`Pronto — abra o Painel do Telão pra ver o mês atualizado.`, "ok");
+  }
+}
+
 function renderConfigGramatura() {
   const tbl = document.getElementById("tabela-gramatura");
   const entries = Object.entries(state.gramatura).sort((a, b) => b[1] - a[1]);
@@ -1180,6 +1270,7 @@ function renderConfigGramatura() {
 document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("file-dia").addEventListener("change", (e) => handleFileInput("dia", e.target.files[0]));
   document.getElementById("file-noite").addEventListener("change", (e) => handleFileInput("noite", e.target.files[0]));
+  document.getElementById("file-lote").addEventListener("change", (e) => handleLoteInput(e.target.files));
 
   document.getElementById("btn-gerar").addEventListener("click", () => {
     state.dashboards = computeAllViews();
