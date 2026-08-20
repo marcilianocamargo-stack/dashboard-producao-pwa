@@ -201,6 +201,7 @@ function salvarHistoricoDia(dashboards) {
   const mesRef = data.slice(0, 7);
   const hist = loadHistorico();
   if (!hist[mesRef]) hist[mesRef] = {};
+  const resumoPapeis = (dv) => (dv.papeis || []).map((p) => ({ papel: p.papel, chapas: p.chapas, peso: p.peso }));
   const entry = { data };
   for (const t of ["dia", "noite"]) {
     if (dashboards[t]) {
@@ -208,10 +209,11 @@ function salvarHistoricoDia(dashboards) {
         peso: dashboards[t].pesoTotal,
         chapas: dashboards[t].totalChapas,
         velocidade: dashboards[t].velocidadeMedia,
+        papeis: resumoPapeis(dashboards[t]),
       };
     }
   }
-  entry.total = { peso: ref.pesoTotal, chapas: ref.totalChapas, velocidade: ref.velocidadeMedia };
+  entry.total = { peso: ref.pesoTotal, chapas: ref.totalChapas, velocidade: ref.velocidadeMedia, papeis: resumoPapeis(ref) };
   hist[mesRef][data] = entry;
   saveHistorico(hist);
 }

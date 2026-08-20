@@ -42,6 +42,31 @@ function fmtSigned(n, dec = 0) {
   return `${sinal}${fmt(Math.abs(n), dec)}`;
 }
 
+// A fábrica produz normalmente só em dias úteis (segunda a sexta); sábado e
+// domingo só entram quando estão recuperando atraso. Por isso a meta diária
+// e o "onde estamos" usam dias úteis como base, não o total de dias do mês.
+function isDiaUtil(ano, mesIdx, dia) {
+  const dow = new Date(ano, mesIdx, dia).getDay(); // 0 = domingo, 6 = sábado
+  return dow !== 0 && dow !== 6;
+}
+function contarDiasUteis(ano, mesIdx, diaIni, diaFim) {
+  let n = 0;
+  for (let d = diaIni; d <= diaFim; d++) if (isDiaUtil(ano, mesIdx, d)) n++;
+  return n;
+}
+
+function mergePapeis(...listas) {
+  const mapa = {};
+  for (const lista of listas) {
+    for (const p of lista || []) {
+      if (!mapa[p.papel]) mapa[p.papel] = { papel: p.papel, chapas: 0, peso: 0 };
+      mapa[p.papel].chapas += p.chapas || 0;
+      mapa[p.papel].peso += p.peso || 0;
+    }
+  }
+  return Object.values(mapa).sort((a, b) => b.peso - a.peso);
+}
+
 // ------------------------------------------------------ DADOS DE DEMO -----
 // Padrão fixo de "% da meta diária batida" por dia — inclui altos e baixos
 // (turnos parados, manutenção etc.) pra mostrar o painel funcionando nos
@@ -53,21 +78,37 @@ const DEMO_FATORES = [
   0.87, 1.14, 1.03, 0.96, 0.64, 1.07, 1.09, 0.90, 1.00, 0.94, 1.02,
 ];
 
+const PAPEIS_DEMO = ["P25B", "P50D", "P70D", "PK45C"];
+
 function gerarDadosDemo(ano, mesIdx, metaDiaria) {
   const daysInMonth = new Date(ano, mesIdx + 1, 0).getDate();
   const diasDemo = Math.min(daysInMonth - 1, 18);
   const dados = {};
   for (let d = 1; d <= diasDemo; d++) {
-    const fator = DEMO_FATORES[(d - 1) % DEMO_FATORES.length];
+    const util = isDiaUtil(ano, mesIdx, d);
+    // fim de semana só produz nos dias de "recuperação" (fator baixo no dia
+    // útil anterior), pra ilustrar o mesmo padrão real da fábrica.
+    const recuperando = !util && DEMO_FATORES[(d - 2 + DEMO_FATORES.length) % DEMO_FATORES.length] < 0.7;
+    const fator = util ? DEMO_FATORES[(d - 1) % DEMO_FATORES.length] : (recuperando ? 0.55 : 0);
     const totalPeso = metaDiaria * fator;
     const shareDia = 0.5 + 0.06 * Math.sin(d * 1.7);
     const pesoDia = totalPeso * shareDia;
     const pesoNoite = totalPeso - pesoDia;
-    const mk = (peso, offset) => ({
-      peso,
-      chapas: Math.round(peso / 3.3),
-      velocidade: 68 + ((d * 7 + offset) % 20),
-    });
+    const mk = (peso, offset) => {
+      const chapas = Math.round(peso / 3.3);
+      const papelA = PAPEIS_DEMO[d % PAPEIS_DEMO.length];
+      const papelB = PAPEIS_DEMO[(d + offset + 1) % PAPEIS_DEMO.length];
+      const splitA = 0.62;
+      return {
+        peso,
+        chapas,
+        velocidade: peso > 0 ? 68 + ((d * 7 + offset) % 20) : 0,
+        papeis: peso > 0 ? [
+          { papel: papelA, chapas: Math.round(chapas * splitA), peso: Math.round(peso * splitA) },
+          { papel: papelB, chapas: Math.round(chapas * (1 - splitA)), peso: Math.round(peso * (1 - splitA)) },
+        ] : [],
+      };
+    };
     const diaTurno = mk(pesoDia, 0);
     const noiteTurno = mk(pesoNoite, 9);
     const dataStr = `${ano}-${String(mesIdx + 1).padStart(2, "0")}-${String(d).padStart(2, "0")}`;
@@ -75,7 +116,12 @@ function gerarDadosDemo(ano, mesIdx, metaDiaria) {
       data: dataStr,
       dia: diaTurno,
       noite: noiteTurno,
-      total: { peso: totalPeso, chapas: diaTurno.chapas + noiteTurno.chapas, velocidade: (diaTurno.velocidade + noiteTurno.velocidade) / 2 },
+      total: {
+        peso: totalPeso,
+        chapas: diaTurno.chapas + noiteTurno.chapas,
+        velocidade: totalPeso > 0 ? (diaTurno.velocidade + noiteTurno.velocidade) / 2 : 0,
+        papeis: mergePapeis(diaTurno.papeis, noiteTurno.papeis),
+      },
     };
   }
   return { dados, diasCorridos: diasDemo };
@@ -88,8 +134,9 @@ function montarPainel() {
   const mesIdx = agora.getMonth(); // 0-based
   const mesRef = `${ano}-${String(mesIdx + 1).padStart(2, "0")}`;
   const daysInMonth = new Date(ano, mesIdx + 1, 0).getDate();
+  const diasUteisNoMes = contarDiasUteis(ano, mesIdx, 1, daysInMonth);
   const metaMensal = loadMetaMensal();
-  const metaDiaria = metaMensal / daysInMonth;
+  const metaDiaria = metaMensal / diasUteisNoMes;
 
   const historico = loadHistorico();
   const mesReal = historico[mesRef] || {};
@@ -108,7 +155,8 @@ function montarPainel() {
     isDemo = true;
   }
 
-  const metaAcumulada = metaDiaria * diasCorridos;
+  const diasUteisCorridos = contarDiasUteis(ano, mesIdx, 1, diasCorridos);
+  const metaAcumulada = metaDiaria * diasUteisCorridos;
   let produzidoAcumulado = 0;
   const porDia = [];
   for (let d = 1; d <= daysInMonth; d++) {
@@ -116,13 +164,13 @@ function montarPainel() {
     const entry = dadosMes[dataStr];
     const peso = entry ? entry.total.peso : null;
     if (peso !== null && d <= diasCorridos) produzidoAcumulado += peso;
-    porDia.push({ dia: d, peso });
+    porDia.push({ dia: d, peso, util: isDiaUtil(ano, mesIdx, d) });
   }
 
   const ondeEstamosKg = produzidoAcumulado - metaAcumulada;
   const ondeEstamosDias = metaDiaria > 0 ? ondeEstamosKg / metaDiaria : 0;
-  const ritmoMedioDiario = diasCorridos > 0 ? produzidoAcumulado / diasCorridos : 0;
-  const projecaoFechamento = ritmoMedioDiario * daysInMonth;
+  const ritmoMedioPorDiaUtil = diasUteisCorridos > 0 ? produzidoAcumulado / diasUteisCorridos : 0;
+  const projecaoFechamento = ritmoMedioPorDiaUtil * diasUteisNoMes;
   const projecaoPct = metaMensal > 0 ? (projecaoFechamento / metaMensal) * 100 : 0;
 
   const ultimoDiaStr = diasCorridos > 0
@@ -131,7 +179,7 @@ function montarPainel() {
   const ultimoDiaEntry = ultimoDiaStr ? dadosMes[ultimoDiaStr] : null;
 
   return {
-    ano, mesIdx, daysInMonth, metaMensal, metaDiaria, diasCorridos,
+    ano, mesIdx, daysInMonth, diasUteisNoMes, metaMensal, metaDiaria, diasCorridos, diasUteisCorridos,
     metaAcumulada, produzidoAcumulado, ondeEstamosKg, ondeEstamosDias,
     projecaoFechamento, projecaoPct, porDia, ultimoDiaStr, ultimoDiaEntry, isDemo,
   };
@@ -162,7 +210,7 @@ function renderPainel() {
       : "sem dados lançados ainda";
 
   document.getElementById("kpi-meta-diaria").textContent = fmt(p.metaDiaria);
-  document.getElementById("kpi-meta-diaria-sub").textContent = `${p.daysInMonth} dias no mês`;
+  document.getElementById("kpi-meta-diaria-sub").textContent = `${p.diasUteisNoMes} dias úteis no mês (${p.daysInMonth} no total)`;
 
   const heroBox = document.getElementById("kpi-hero");
   const estamosEl = document.getElementById("kpi-estamos");
@@ -195,6 +243,11 @@ function renderPainel() {
     document.getElementById(`tl-${prefixo}-peso`).textContent = dados ? fmt(dados.peso) : "—";
     document.getElementById(`tl-${prefixo}-chapas`).textContent = dados ? fmt(dados.chapas) : "—";
     document.getElementById(`tl-${prefixo}-vel`).textContent = dados ? `${fmt(dados.velocidade, 2)} m/min` : "—";
+    const papeisEl = document.getElementById(`tl-${prefixo}-papeis`);
+    const papeis = (dados && dados.papeis) || [];
+    papeisEl.textContent = papeis.length
+      ? papeis.map((p) => `${p.papel} ${fmt(p.chapas, 0)}`).join("  ·  ")
+      : "—";
   };
   setTurno("dia", p.ultimoDiaEntry ? p.ultimoDiaEntry.dia : null);
   setTurno("noite", p.ultimoDiaEntry ? p.ultimoDiaEntry.noite : null);
@@ -218,11 +271,16 @@ function renderPainel() {
 function renderGrafico(p) {
   const labels = p.porDia.map((x) => x.dia);
   const realizado = p.porDia.map((x) => (x.dia <= p.diasCorridos ? Math.round(x.peso || 0) : null));
+  // Sábado/domingo não têm meta (produção só acontece lá quando estão
+  // recuperando atraso) — por isso o alvo de comparação cai pra zero nesses
+  // dias, em vez de cobrar a meta de dia útil num dia que não deveria nem
+  // ter produção.
   const cores = p.porDia.map((x) => {
     if (x.dia > p.diasCorridos || x.peso === null) return "#D9D9D9";
-    return x.peso >= p.metaDiaria ? "#2E75B6" : "#C0392B";
+    const alvo = x.util ? p.metaDiaria : 0;
+    return x.peso >= alvo ? "#2E75B6" : "#C0392B";
   });
-  const metaLinha = p.porDia.map(() => Math.round(p.metaDiaria));
+  const metaLinha = p.porDia.map((x) => x.util ? Math.round(p.metaDiaria) : 0);
 
   const ctx = document.getElementById("tl-chart-mes");
   if (tlChart) tlChart.destroy();
