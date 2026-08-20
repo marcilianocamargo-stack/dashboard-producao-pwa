@@ -19,10 +19,22 @@
       <h1>Dashboard Prime — Produção Diária</h1>
       <p class="subtitle">Carregue os relatórios de turno e gere o dashboard do dia</p>
     </div>
+    <a class="btn-telao-link" href="telao.html" target="_blank" rel="noopener">📺 Abrir Painel do Telão</a>
   </div>
 </header>
 
 <main>
+
+  <section class="card" id="card-meta">
+    <h2>Meta mensal de produção</h2>
+    <p class="hint">Usada pelo Painel do Telão para calcular a meta diária e o indicador "estamos em". Cada dia gerado abaixo entra automaticamente no histórico do mês.</p>
+    <div class="meta-row">
+      <label for="in-meta-mensal">Meta do mês (kg)</label>
+      <input type="number" id="in-meta-mensal" step="1000" min="0">
+      <button class="btn-secondary" id="btn-salvar-meta" type="button">Salvar meta</button>
+      <span class="meta-feedback" id="meta-feedback"></span>
+    </div>
+  </section>
 
   <section class="card" id="card-upload">
     <h2>1. Relatórios do dia</h2>

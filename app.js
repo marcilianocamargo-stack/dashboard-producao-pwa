@@ -155,12 +155,74 @@ const PAPEL_RE = /P\s?W?\s?\d{2,3}\s?[A-Z]\s*$/i;
 const TITULO_RE = /(\d{1,2}[/\-]\d{1,2}[/\-]\d{2,4}).{0,25}?TURNO[\s:\-]+([A-ZÀ-Ü]+)/i;
 const DATA_RE = /(\d{1,2}[/\-]\d{1,2}[/\-]\d{2,4})/;
 
+// --------------------------------------------------- HISTÓRICO MENSAL -----
+// Guarda, por mês (chave "AAAA-MM"), os totais de cada dia já gerado no
+// dashboard (peso/chapas/velocidade por turno + total). É o que alimenta o
+// Painel do Telão (telao.html): meta mensal, "onde estamos" e o calendário
+// do mês. Fica só no navegador (mesma filosofia do resto do app) — se o
+// telão rodar num aparelho diferente de quem sobe os relatórios, os dois
+// precisam estar no mesmo navegador/perfil, ou o histórico precisa ser
+// migrado para um armazenamento compartilhado (ex.: servidor/VPS).
+const HISTORICO_KEY = "prime_historico_mensal_v1";
+const META_MENSAL_KEY = "prime_meta_mensal_v1";
+const META_MENSAL_PADRAO = 150000; // 150 toneladas
+
+function loadHistorico() {
+  try {
+    const saved = localStorage.getItem(HISTORICO_KEY);
+    if (saved) return JSON.parse(saved);
+  } catch (e) { /* ignore */ }
+  return {};
+}
+function saveHistorico(hist) {
+  localStorage.setItem(HISTORICO_KEY, JSON.stringify(hist));
+}
+
+function loadMetaMensal() {
+  try {
+    const saved = localStorage.getItem(META_MENSAL_KEY);
+    if (saved) {
+      const v = parseFloat(saved);
+      if (!isNaN(v) && v > 0) return v;
+    }
+  } catch (e) { /* ignore */ }
+  return META_MENSAL_PADRAO;
+}
+function saveMetaMensal(v) {
+  localStorage.setItem(META_MENSAL_KEY, String(v));
+}
+
+// Salva os totais do dia gerado (peso/chapas/velocidade por turno) no
+// histórico mensal, para o Painel do Telão acumular ao longo do mês.
+function salvarHistoricoDia(dashboards) {
+  const ref = dashboards.total || dashboards.dia || dashboards.noite;
+  if (!ref || !ref.dataRef) return;
+  const data = ref.dataRef; // "AAAA-MM-DD"
+  const mesRef = data.slice(0, 7);
+  const hist = loadHistorico();
+  if (!hist[mesRef]) hist[mesRef] = {};
+  const entry = { data };
+  for (const t of ["dia", "noite"]) {
+    if (dashboards[t]) {
+      entry[t] = {
+        peso: dashboards[t].pesoTotal,
+        chapas: dashboards[t].totalChapas,
+        velocidade: dashboards[t].velocidadeMedia,
+      };
+    }
+  }
+  entry.total = { peso: ref.pesoTotal, chapas: ref.totalChapas, velocidade: ref.velocidadeMedia };
+  hist[mesRef][data] = entry;
+  saveHistorico(hist);
+}
+
 // -------------------------------------------------------------- ESTADO ----
 const state = {
   gramatura: loadGramatura(),
   arquivos: { dia: null, noite: null }, // cada um: {ok, nomeArquivo, rows, warnings, dataTexto}
   dashboards: {}, // { dia, noite, total } — um dashboard completo por visão
   activeView: null, // "dia" | "noite" | "total"
+  metaMensal: loadMetaMensal(),
 };
 
 function loadGramatura() {
@@ -1126,6 +1188,19 @@ document.addEventListener("DOMContentLoaded", () => {
     state.activeView = ordemPreferida.find((k) => state.dashboards[k]) || null;
     renderViewTabs();
     if (state.activeView) renderDashboard(state.dashboards[state.activeView]);
+    salvarHistoricoDia(state.dashboards);
+  });
+
+  const inMeta = document.getElementById("in-meta-mensal");
+  inMeta.value = state.metaMensal;
+  document.getElementById("btn-salvar-meta").addEventListener("click", () => {
+    const v = parseFloat(inMeta.value);
+    if (isNaN(v) || v <= 0) { inMeta.value = state.metaMensal; return; }
+    state.metaMensal = v;
+    saveMetaMensal(v);
+    const fb = document.getElementById("meta-feedback");
+    fb.textContent = "✓ Meta salva.";
+    setTimeout(() => { fb.textContent = ""; }, 2500);
   });
 
   document.getElementById("btn-baixar-excel").addEventListener("click", () => {

@@ -29,6 +29,19 @@ body {
 .logo { width: 40px; height: 40px; border-radius: 8px; }
 .topbar h1 { font-size: 1.15rem; margin: 0; }
 .topbar .subtitle { margin: 2px 0 0; font-size: 0.85rem; color: #DDEBF7; }
+.topbar-inner > div:nth-child(2) { flex: 1; }
+.btn-telao-link {
+  background: var(--azul-medio);
+  color: white;
+  border: 1px solid var(--ciano);
+  border-radius: 6px;
+  padding: 8px 14px;
+  font-size: 0.82rem;
+  font-weight: bold;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.btn-telao-link:hover { background: var(--ciano); color: var(--azul-escuro); }
 
 main { max-width: 980px; margin: 16px auto; padding: 0 12px 40px; }
 
@@ -113,6 +126,14 @@ main { max-width: 980px; margin: 16px auto; padding: 0 12px 40px; }
 .tabela-config td { border-bottom: 1px solid var(--borda); padding: 4px 8px; }
 .tabela-config input { width: 100%; border: 1px solid var(--borda); border-radius: 4px; padding: 4px 6px; font-family: inherit; }
 .tabela-config button.remover { background: none; border: none; color: #B00020; cursor: pointer; font-size: 1rem; }
+
+.meta-row { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.meta-row label { font-weight: bold; color: var(--azul-escuro); font-size: 0.88rem; }
+.meta-row input[type=number] {
+  border: 1px solid var(--borda); border-radius: 6px; padding: 8px 10px; font-size: 0.95rem;
+  width: 160px; font-family: inherit;
+}
+.meta-feedback { color: #1B7A43; font-size: 0.85rem; font-weight: bold; }
 
 .hidden { display: none !important; }
 

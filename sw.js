@@ -1,4 +1,4 @@
-const CACHE_NAME = "prime-diario-v4";
+const CACHE_NAME = "prime-diario-v5";
 const APP_SHELL = [
   "./",
   "./index.html",
@@ -7,6 +7,9 @@ const APP_SHELL = [
   "./manifest.json",
   "./icons/icon-192.png",
   "./icons/icon-512.png",
+  "./telao.html",
+  "./telao.js",
+  "./telao.css",
 ];
 
 self.addEventListener("install", (event) => {

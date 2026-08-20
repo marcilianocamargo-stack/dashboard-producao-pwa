@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Painel de Produção — Telão</title>
+<meta name="theme-color" content="#1F4E78">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icons/icon-192.png">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="telao.css">
+</head>
+<body class="tl-body">
+
+<div class="tl-screen">
+
+  <header class="tl-header">
+    <img src="icons/icon-192.png" alt="" class="tl-logo">
+    <div class="tl-title-block">
+      <h1>PAINEL DE PRODUÇÃO — PRIME</h1>
+      <p id="tl-mes-nome">—</p>
+    </div>
+    <div class="tl-clock-block">
+      <div id="tl-relogio">--:--:--</div>
+      <div id="tl-data">—</div>
+    </div>
+    <a class="tl-config-btn" id="tl-config-btn" href="index.html" title="Configurar meta / carregar relatórios">⚙</a>
+  </header>
+
+  <section class="tl-kpi-row">
+    <div class="tl-kpi">
+      <div class="tl-kpi-label">META MENSAL</div>
+      <div class="tl-kpi-value" id="kpi-meta">—</div>
+      <div class="tl-kpi-sub" id="kpi-meta-sub">—</div>
+    </div>
+    <div class="tl-kpi">
+      <div class="tl-kpi-label">PRODUZIDO NO MÊS</div>
+      <div class="tl-kpi-value" id="kpi-produzido">—</div>
+      <div class="tl-kpi-sub" id="kpi-produzido-sub">—</div>
+    </div>
+    <div class="tl-kpi">
+      <div class="tl-kpi-label">META DIÁRIA</div>
+      <div class="tl-kpi-value" id="kpi-meta-diaria">—</div>
+      <div class="tl-kpi-sub" id="kpi-meta-diaria-sub">—</div>
+    </div>
+    <div class="tl-kpi tl-kpi-hero" id="kpi-hero">
+      <div class="tl-kpi-label">ESTAMOS EM</div>
+      <div class="tl-kpi-value tl-kpi-hero-value" id="kpi-estamos">—</div>
+      <div class="tl-kpi-sub tl-kpi-hero-sub" id="kpi-estamos-sub">—</div>
+    </div>
+  </section>
+
+  <section class="tl-mid-row">
+    <div class="tl-chart-card">
+      <h2>Produção diária do mês — realizado × meta</h2>
+      <div class="tl-chart-wrap"><canvas id="tl-chart-mes"></canvas></div>
+    </div>
+
+    <div class="tl-turnos-card">
+      <h2 id="tl-turnos-titulo">Produção do dia anterior</h2>
+      <div class="tl-turno-box" id="tl-box-dia">
+        <div class="tl-turno-nome">TURNO DIA</div>
+        <div class="tl-turno-val"><span id="tl-dia-peso">—</span><small>kg</small></div>
+        <div class="tl-turno-rows">
+          <div><span>CHAPAS</span><b id="tl-dia-chapas">—</b></div>
+          <div><span>VELOCIDADE</span><b id="tl-dia-vel">—</b></div>
+        </div>
+      </div>
+      <div class="tl-turno-box" id="tl-box-noite">
+        <div class="tl-turno-nome">TURNO NOITE</div>
+        <div class="tl-turno-val"><span id="tl-noite-peso">—</span><small>kg</small></div>
+        <div class="tl-turno-rows">
+          <div><span>CHAPAS</span><b id="tl-noite-chapas">—</b></div>
+          <div><span>VELOCIDADE</span><b id="tl-noite-vel">—</b></div>
+        </div>
+      </div>
+      <div class="tl-turno-box tl-turno-total" id="tl-box-total">
+        <div class="tl-turno-nome">TOTAL DO DIA</div>
+        <div class="tl-turno-val"><span id="tl-total-peso">—</span><small>kg</small></div>
+        <div class="tl-turno-rows">
+          <div><span>CHAPAS</span><b id="tl-total-chapas">—</b></div>
+          <div><span>VELOCIDADE</span><b id="tl-total-vel">—</b></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="tl-footer">
+    <span id="tl-demo-badge" class="tl-demo-badge hidden">⚠ Exibindo dados de demonstração — carregue relatórios reais em <strong>Abrir Painel do Telão</strong> na tela principal para substituir</span>
+    <span id="tl-atualizado">—</span>
+  </footer>
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.4/chart.umd.min.js"></script>
+<script src="telao.js"></script>
+</body>
+</html>
