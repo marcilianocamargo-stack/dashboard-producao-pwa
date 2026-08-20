@@ -1171,6 +1171,18 @@ function clearLote() { document.getElementById("status-lote").innerHTML = ""; }
 // salvarHistoricoDia) pra um dia do lote, sem depender do que está carregado
 // nos slots da tela 1 — troca state.arquivos temporariamente e devolve como
 // estava, pra não bagunçar o que o usuário já tinha carregado ali.
+// Corrige relatórios antigos em que a data impressa é sempre a do dia
+// seguinte ao da produção (turno noite: gerado depois da meia-noite; turno
+// dia: enviado só no dia seguinte). A partir do momento em que o app de
+// origem passou a datar pelo horário real do palete, essa correção deixa
+// de ser necessária — por isso é uma opção manual, não o padrão.
+function subtrairUmDia(dataStr) {
+  const [y, m, d] = dataStr.split("-").map(Number);
+  const dt = new Date(Date.UTC(y, m - 1, d));
+  dt.setUTCDate(dt.getUTCDate() - 1);
+  return dt.toISOString().slice(0, 10);
+}
+
 function processarDiaDoLote(arquivosDoDia) {
   const backup = state.arquivos;
   state.arquivos = arquivosDoDia;
@@ -1183,11 +1195,13 @@ function processarDiaDoLote(arquivosDoDia) {
 async function handleLoteInput(fileList) {
   const files = Array.from(fileList || []);
   const nameEl = document.getElementById("file-lote-name");
+  const corrigirData = document.getElementById("chk-lote-atrasar").checked;
   clearLote();
   if (!files.length) { nameEl.textContent = "Nenhum arquivo"; return; }
 
   nameEl.textContent = `Lendo ${files.length} arquivo(s)…`;
   logLote(`Lendo ${files.length} arquivo(s)…`);
+  if (corrigirData) logLote(`↺ Corrigindo a data de cada arquivo em −1 dia (relatórios antigos).`, "aviso");
 
   const porData = {}; // { "AAAA-MM-DD": { dia: resultado, noite: resultado } }
   for (const file of files) {
@@ -1206,6 +1220,7 @@ async function handleLoteInput(fileList) {
       logLote(`⚠ ${file.name}: não consegui identificar a data no relatório — ignorado.`, "aviso");
       continue;
     }
+    if (corrigirData) resultado.dataTexto = subtrairUmDia(resultado.dataTexto);
     if (!resultado.turno) {
       logLote(`⚠ ${file.name}: não consegui identificar se é turno DIA ou NOITE — ignorado.`, "aviso");
       continue;

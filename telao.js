@@ -220,7 +220,7 @@ function renderGrafico(p) {
   const realizado = p.porDia.map((x) => (x.dia <= p.diasCorridos ? Math.round(x.peso || 0) : null));
   const cores = p.porDia.map((x) => {
     if (x.dia > p.diasCorridos || x.peso === null) return "#D9D9D9";
-    return x.peso >= p.metaDiaria ? "#1BAF7A" : "#C0392B";
+    return x.peso >= p.metaDiaria ? "#2E75B6" : "#C0392B";
   });
   const metaLinha = p.porDia.map(() => Math.round(p.metaDiaria));
 

@@ -60,6 +60,10 @@
   <section class="card" id="card-lote">
     <h2>Carregar vários dias de uma vez (histórico do mês)</h2>
     <p class="hint">Selecione de uma vez todos os relatórios (dia e noite, PDF ou Excel) de vários dias já emitidos. O app identifica a data e o turno pelo conteúdo de cada relatório e soma cada dia direto no histórico do mês — sem precisar repetir "carregar + gerar" um dia de cada vez. Use isso pra preencher o Painel do Telão com dias que já passaram.</p>
+    <label class="checkbox-linha">
+      <input type="checkbox" id="chk-lote-atrasar">
+      Estes relatórios são antigos e saem com a data do dia seguinte ao da produção (atrasar a data em 1 dia ao importar)
+    </label>
     <label class="upload-slot" id="lote-slot">
       <span class="upload-label">Selecionar vários arquivos</span>
       <input type="file" id="file-lote" accept=".pdf,.xlsx" multiple>
