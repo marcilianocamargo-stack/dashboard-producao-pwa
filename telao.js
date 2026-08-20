@@ -280,7 +280,7 @@ function renderGrafico(p) {
     const alvo = x.util ? p.metaDiaria : 0;
     return x.peso >= alvo ? "#2E75B6" : "#C0392B";
   });
-  const metaLinha = p.porDia.map((x) => x.util ? Math.round(p.metaDiaria) : 0);
+  const metaLinha = p.porDia.map(() => Math.round(p.metaDiaria));
 
   const ctx = document.getElementById("tl-chart-mes");
   if (tlChart) tlChart.destroy();
