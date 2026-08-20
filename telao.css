@@ -101,6 +101,14 @@ html, body.tl-body {
 }
 .tl-chart-wrap { flex: 1; min-height: 0; position: relative; }
 
+.tl-legenda-cores {
+  display: flex; gap: 1vw; flex-wrap: wrap;
+  font-size: 1.1vh; color: var(--texto-suave);
+  margin-bottom: .6vh;
+}
+.tl-legenda-cores span { display: flex; align-items: center; gap: .3vw; }
+.tl-dot { width: 1vh; height: 1vh; border-radius: 50%; display: inline-block; }
+
 .tl-turnos-card { gap: .9vh; justify-content: flex-start; }
 .tl-turno-box {
   border: 1px solid var(--borda);

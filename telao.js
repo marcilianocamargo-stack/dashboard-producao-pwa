@@ -92,7 +92,7 @@ function gerarDadosDemo(ano, mesIdx, metaDiaria) {
     const util = isDiaUtil(ano, mesIdx, d);
     // fim de semana só produz nos dias de "recuperação" (fator baixo no dia
     // útil anterior), pra ilustrar o mesmo padrão real da fábrica.
-    const recuperando = !util && DEMO_FATORES[(d - 2 + DEMO_FATORES.length) % DEMO_FATORES.length] < 0.7;
+    const recuperando = !util && d > 2; // 1º fim de semana do mês fica de fora só pra também mostrar o caso "parado" na demonstração
     const fator = util ? DEMO_FATORES[(d - 1) % DEMO_FATORES.length] : (recuperando ? 0.55 : 0);
     const totalPeso = metaDiaria * fator;
     const shareDia = 0.5 + 0.06 * Math.sin(d * 1.7);
@@ -315,10 +315,14 @@ function renderGrafico(p) {
   // recuperando atraso) — por isso o alvo de comparação cai pra zero nesses
   // dias, em vez de cobrar a meta de dia útil num dia que não deveria nem
   // ter produção.
+  // Fim de semana não tem meta — comparar com a linha dos dias úteis ficaria
+  // enganoso (pareceria "abaixo da meta" mesmo quando é só produção extra,
+  // fora do padrão). Por isso ganha uma cor própria (verde = bônus),
+  // separada de azul (bateu a meta do dia útil) e vermelho (não bateu).
   const cores = p.porDia.map((x) => {
     if (x.dia > p.diasCorridos || x.peso === null) return "#D9D9D9";
-    const alvo = x.util ? p.metaDiaria : 0;
-    return x.peso >= alvo ? "#2E75B6" : "#C0392B";
+    if (!x.util) return x.peso > 0 ? "#1BAF7A" : "#D9D9D9";
+    return x.peso >= p.metaDiaria ? "#2E75B6" : "#C0392B";
   });
   const metaLinha = p.porDia.map(() => Math.round(p.metaDiaria));
 
