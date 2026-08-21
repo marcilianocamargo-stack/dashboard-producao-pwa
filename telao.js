@@ -260,6 +260,18 @@ function renderPainel() {
     papeisEl.textContent = papeis.length
       ? papeis.map((p) => `${p.papel} ${fmt(p.chapas, 0)}`).join("  ·  ")
       : "—";
+
+    const clientesEl = document.getElementById(`tl-${prefixo}-clientes`);
+    const clientes = (dados && dados.clientes) || [];
+    const TOP_CLIENTES = 3;
+    if (!clientes.length) {
+      clientesEl.textContent = "—";
+    } else {
+      const principais = clientes.slice(0, TOP_CLIENTES)
+        .map((c) => `<b>${c.cliente}</b> ${fmt(c.chapas, 0)}`).join("  ·  ");
+      const resto = clientes.length - TOP_CLIENTES;
+      clientesEl.innerHTML = principais + (resto > 0 ? `  ·  +${resto} outro(s)` : "");
+    }
   };
   setTurno("dia", p.ultimoDiaEntry ? p.ultimoDiaEntry.dia : null);
   setTurno("noite", p.ultimoDiaEntry ? p.ultimoDiaEntry.noite : null);
@@ -374,4 +386,17 @@ document.addEventListener("DOMContentLoaded", () => {
   renderPainel();
   setInterval(renderRelogio, 1000);
   setInterval(renderPainel, 60000); // re-lê o localStorage pra pegar dados novos gerados no app principal
+  registrarServiceWorker();
 });
+
+// Verifica de tempos em tempos se há uma versão nova publicada e recarrega
+// sozinho quando ela assume — a tela do telão normalmente é aberta direto
+// nessa página (sem passar pela tela 1), então precisa registrar o Service
+// Worker aqui também, não só em app.js.
+function registrarServiceWorker() {
+  if (!("serviceWorker" in navigator)) return;
+  navigator.serviceWorker.register("sw.js").then((reg) => {
+    setInterval(() => reg.update(), 5 * 60 * 1000);
+  }).catch(() => {});
+  navigator.serviceWorker.addEventListener("controllerchange", () => location.reload());
+}

@@ -83,7 +83,7 @@ html, body.tl-body {
   flex: 1 1 auto;
   min-height: 0;
   display: grid;
-  grid-template-columns: 1.5fr 1.1fr 1fr;
+  grid-template-columns: 1.4fr 1fr 1.15fr;
   gap: 1.2vw;
 }
 
@@ -121,20 +121,23 @@ html, body.tl-body {
 }
 .tl-turno-total { background: var(--ciano-claro); border-color: var(--azul-medio); }
 .tl-turno-nome { font-size: 1.3vh; font-weight: bold; color: var(--azul-escuro); letter-spacing: .4px; }
-.tl-turno-val { color: var(--azul-escuro); font-weight: bold; margin: .3vh 0; }
-.tl-turno-val span { font-size: 3.2vh; }
-.tl-turno-val small { font-size: 1.4vh; margin-left: .3vw; color: var(--texto-suave); font-weight: normal; }
-.tl-turno-rows { display: flex; justify-content: space-between; font-size: 1.2vh; }
-.tl-turno-rows span { color: var(--texto-suave); display: block; }
-.tl-turno-rows b { font-size: 1.35vh; color: var(--texto); }
 
-.tl-turno-papeis {
-  margin-top: .6vh;
+.tl-turno-hero-row { display: flex; gap: 1.1vw; margin: .4vh 0; }
+.tl-turno-hero { color: var(--azul-escuro); font-weight: bold; flex: 1; min-width: 0; }
+.tl-turno-hero span { font-size: 3.3vh; }
+.tl-turno-hero small { display: block; font-size: 1.15vh; color: var(--texto-suave); font-weight: normal; letter-spacing: .3px; }
+
+.tl-turno-vel { font-size: 1.2vh; color: var(--texto-suave); margin-bottom: .3vh; }
+.tl-turno-vel b { color: var(--texto); font-weight: bold; }
+
+.tl-turno-papeis, .tl-turno-clientes {
+  margin-top: .5vh;
   font-size: 1.15vh;
-  color: var(--azul-escuro);
-  font-weight: bold;
   line-height: 1.4;
 }
+.tl-turno-papeis { color: var(--azul-escuro); font-weight: bold; }
+.tl-turno-clientes { color: var(--texto-suave); }
+.tl-turno-clientes b { color: var(--texto); font-weight: bold; }
 
 /* ---------------------------------------------------------------- FOOTER */
 .tl-footer {

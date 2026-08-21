@@ -1,4 +1,4 @@
-const CACHE_NAME = "prime-diario-v14";
+const CACHE_NAME = "prime-diario-v15";
 const APP_SHELL = [
   "./",
   "./index.html",
@@ -26,15 +26,18 @@ self.addEventListener("activate", (event) => {
   );
 });
 
-// cache-first para o app shell e para bibliotecas de CDN (funcionam offline
-// depois da primeira visita); qualquer coisa nova é buscada na rede e
-// guardada no cache para a próxima vez.
 self.addEventListener("fetch", (event) => {
   if (event.request.method !== "GET") return;
-  event.respondWith(
-    caches.match(event.request).then((cached) => {
-      if (cached) return cached;
-      return fetch(event.request)
+  const sameOrigin = new URL(event.request.url).origin === self.location.origin;
+
+  if (sameOrigin) {
+    // Rede primeiro pros arquivos do próprio app: o Painel do Telão fica
+    // ligado dias seguidos sem ninguém apertar F5, então uma atualização
+    // publicada precisa aparecer sozinha na próxima carga. Cache-first
+    // prendia a versão antiga até alguém forçar um hard-refresh manual.
+    // O cache aqui é só um fallback pra continuar funcionando offline.
+    event.respondWith(
+      fetch(event.request)
         .then((response) => {
           if (response && response.status === 200) {
             const copy = response.clone();
@@ -42,7 +45,22 @@ self.addEventListener("fetch", (event) => {
           }
           return response;
         })
-        .catch(() => cached);
-    })
-  );
+        .catch(() => caches.match(event.request))
+    );
+  } else {
+    // Bibliotecas de CDN (xlsx/pdf.js/Chart.js/exceljs): cache-first, já que
+    // a URL inclui a versão — o conteúdo de uma URL já cacheada não muda.
+    event.respondWith(
+      caches.match(event.request).then((cached) => {
+        if (cached) return cached;
+        return fetch(event.request).then((response) => {
+          if (response && response.status === 200) {
+            const copy = response.clone();
+            caches.open(CACHE_NAME).then((cache) => cache.put(event.request, copy));
+          }
+          return response;
+        });
+      })
+    );
+  }
 });

@@ -1343,7 +1343,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
   renderConfigGramatura();
 
-  if ("serviceWorker" in navigator) {
-    navigator.serviceWorker.register("sw.js").catch(() => {});
-  }
+  registrarServiceWorker();
 });
+
+// Verifica de tempos em tempos se há uma versão nova publicada e recarrega
+// sozinho quando ela assume — importante pro Painel do Telão, que fica
+// ligado dias seguidos numa TV sem ninguém apertar F5.
+function registrarServiceWorker() {
+  if (!("serviceWorker" in navigator)) return;
+  navigator.serviceWorker.register("sw.js").then((reg) => {
+    setInterval(() => reg.update(), 5 * 60 * 1000);
+  }).catch(() => {});
+  navigator.serviceWorker.addEventListener("controllerchange", () => location.reload());
+}
