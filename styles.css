@@ -203,6 +203,11 @@ main { max-width: 980px; margin: 16px auto; padding: 0 12px 40px; }
 .turno-card-rows span { font-size: 0.72rem; color: var(--texto-suave); }
 .turno-card-rows b { font-size: 0.95rem; color: var(--texto); }
 .turno-card-empty { color: var(--texto-suave); font-size: 0.85rem; padding: 18px 0; }
+.turno-card-extra { text-align: left; font-size: 0.78rem; color: var(--texto-suave); margin-top: 8px; }
+.turno-card-extra b { color: var(--azul-escuro); }
+
+.btn-perigo { color: #B00020; border-color: #B00020; margin-top: 12px; }
+.btn-perigo:hover { background: #B00020; color: white; }
 
 .view-tabs { display: flex; gap: 8px; margin: 4px 0 18px; flex-wrap: wrap; }
 .view-tab {

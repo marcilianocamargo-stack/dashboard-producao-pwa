@@ -72,6 +72,17 @@
     <div id="status-lote" class="status-log" aria-live="polite"></div>
   </section>
 
+  <section class="card" id="card-consulta">
+    <h2>Consultar um dia do histórico</h2>
+    <p class="hint">Digite uma data pra ver o dashboard daquele dia específico (turnos, papel, cliente) direto do que já está salvo — sem precisar carregar os relatórios de novo. Também é aqui que dá pra apagar um dia que foi carregado com dado errado.</p>
+    <div class="meta-row">
+      <label for="in-consulta-data">Data</label>
+      <input type="date" id="in-consulta-data">
+      <button class="btn-secondary" id="btn-consulta-buscar" type="button">Buscar</button>
+    </div>
+    <div id="consulta-resultado"></div>
+  </section>
+
   <section class="card" id="card-config">
     <button class="toggle-config" id="toggle-config" type="button" aria-expanded="false">
       ⚙ Configurar gramatura por tipo de papel

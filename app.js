@@ -820,6 +820,75 @@ function renderTurnoCards(d) {
     turnoCardHtml("Total (dia + noite)", dadosTotal, "turno-card-total");
 }
 
+// --------------------------------------------------- CONSULTAR HISTÓRICO --
+function buscarHistoricoDia(dataStr) {
+  const mesRef = dataStr.slice(0, 7);
+  const hist = loadHistorico();
+  return (hist[mesRef] && hist[mesRef][dataStr]) || null;
+}
+
+function excluirHistoricoDia(dataStr) {
+  const mesRef = dataStr.slice(0, 7);
+  const hist = loadHistorico();
+  if (hist[mesRef] && hist[mesRef][dataStr]) {
+    delete hist[mesRef][dataStr];
+    saveHistorico(hist);
+    return true;
+  }
+  return false;
+}
+
+function turnoConsultaCardHtml(titulo, dados, extraClass = "") {
+  if (!dados) {
+    return `<div class="turno-card ${extraClass}">
+      <div class="turno-card-title">${titulo}</div>
+      <div class="turno-card-empty">Sem produção registrada</div>
+    </div>`;
+  }
+  const papeis = (dados.papeis || []).map((p) => `${p.papel} ${fmt(p.chapas, 0)}`).join(" · ") || "—";
+  const clientes = (dados.clientes || []).map((c) => `${c.cliente} ${fmt(c.chapas, 0)}`).join(" · ") || "—";
+  return `<div class="turno-card ${extraClass}">
+    <div class="turno-card-title">${titulo}</div>
+    <div class="turno-card-metric"><span class="turno-card-val">${fmt(dados.peso, 0)}</span><span class="turno-card-unit">kg</span></div>
+    <div class="turno-card-rows">
+      <div><span>CHAPAS</span><b>${fmt(dados.chapas, 0)}</b></div>
+      <div><span>VELOCIDADE</span><b>${fmt(dados.velocidade, 2)} m/min</b></div>
+    </div>
+    <div class="turno-card-extra"><b>Papel:</b> ${papeis}</div>
+    <div class="turno-card-extra"><b>Cliente:</b> ${clientes}</div>
+  </div>`;
+}
+
+function renderConsultaDia() {
+  const dataStr = document.getElementById("in-consulta-data").value;
+  const resEl = document.getElementById("consulta-resultado");
+  if (!dataStr) { resEl.innerHTML = ""; return; }
+
+  const entry = buscarHistoricoDia(dataStr);
+  const [y, m, d] = dataStr.split("-");
+  const dataFmt = `${d}/${m}/${y}`;
+
+  if (!entry) {
+    resEl.innerHTML = `<p class="hint">Nenhum dado salvo pra ${dataFmt}.</p>`;
+    return;
+  }
+
+  resEl.innerHTML = `
+    <p class="dash-subtitle" style="margin:12px 0 8px">Dashboard de ${dataFmt}</p>
+    <div class="turno-row">
+      ${turnoConsultaCardHtml("Turno Dia", entry.dia)}
+      ${turnoConsultaCardHtml("Turno Noite", entry.noite)}
+      ${turnoConsultaCardHtml("Total do dia", entry.total, "turno-card-total")}
+    </div>
+    <button class="btn-secondary btn-perigo" id="btn-consulta-excluir" type="button">🗑 Excluir este dia do histórico</button>
+  `;
+  document.getElementById("btn-consulta-excluir").addEventListener("click", () => {
+    if (!confirm(`Excluir o dia ${dataFmt} do histórico? Essa ação não pode ser desfeita.`)) return;
+    excluirHistoricoDia(dataStr);
+    renderConsultaDia();
+  });
+}
+
 function renderViewTabs() {
   const tabs = [
     { key: "dia", label: "Turno Dia" },
@@ -1315,6 +1384,11 @@ document.addEventListener("DOMContentLoaded", () => {
     fb.textContent = "✓ Meta salva.";
     setTimeout(() => { fb.textContent = ""; }, 2500);
   });
+
+  const inConsultaData = document.getElementById("in-consulta-data");
+  inConsultaData.value = new Date().toISOString().slice(0, 10);
+  document.getElementById("btn-consulta-buscar").addEventListener("click", renderConsultaDia);
+  inConsultaData.addEventListener("change", renderConsultaDia);
 
   document.getElementById("btn-baixar-excel").addEventListener("click", () => {
     if (state.dashboards && (state.dashboards.dia || state.dashboards.noite || state.dashboards.total)) {
