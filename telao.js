@@ -11,6 +11,29 @@ const HISTORICO_KEY = "prime_historico_mensal_v1";
 const META_MENSAL_KEY = "prime_meta_mensal_v1";
 const META_MENSAL_PADRAO = 150000;
 
+// Resumo de produção em tempo real (paletes registrados hoje pelo app de
+// etiquetas), publicado pelo mesmo GitHub Pages do app — sem depender de
+// carregar relatório manualmente.
+const RESUMO_HOJE_URL = "https://marcilianocamargo-stack.github.io/controle-producao-etiquetas/resumo-hoje.json";
+let resumoHoje = null;
+
+async function carregarResumoHoje() {
+  try {
+    const resp = await fetch(RESUMO_HOJE_URL + "?t=" + Date.now(), { cache: "no-store" });
+    if (resp.ok) resumoHoje = await resp.json();
+  } catch (e) { /* mantém o último valor conhecido se a rede falhar */ }
+}
+
+// Turno Dia: 06h-18h. Turno Noite: 18h-06h.
+function turnoAtual() {
+  const h = new Date().getHours();
+  return (h >= 6 && h < 18) ? "dia" : "noite";
+}
+function hojeStrBR() {
+  const d = new Date();
+  return `${String(d.getDate()).padStart(2, "0")}/${String(d.getMonth() + 1).padStart(2, "0")}/${d.getFullYear()}`;
+}
+
 const MESES_PT = ["janeiro","fevereiro","março","abril","maio","junho","julho","agosto","setembro","outubro","novembro","dezembro"];
 const DIAS_SEMANA_PT = ["domingo","segunda-feira","terça-feira","quarta-feira","quinta-feira","sexta-feira","sábado"];
 
@@ -198,7 +221,7 @@ function montarPainel() {
 
 // --------------------------------------------------------------- RENDER --
 let tlChart = null;
-let tlChartClientes = null;
+let tlChartTempoReal = null;
 
 function renderRelogio() {
   const agora = new Date();
@@ -273,48 +296,98 @@ function renderPainel() {
       clientesEl.innerHTML = principais + (resto > 0 ? `  ·  +${resto} outro(s)` : "");
     }
   };
-  setTurno("dia", p.ultimoDiaEntry ? p.ultimoDiaEntry.dia : null);
-  setTurno("noite", p.ultimoDiaEntry ? p.ultimoDiaEntry.noite : null);
-  setTurno("total", p.ultimoDiaEntry ? p.ultimoDiaEntry.total : null);
 
+  // Assim que existir dado real de hoje (publicado pelo app de etiquetas),
+  // os cartões de turno passam a mostrar ele em vez do último relatório
+  // carregado manualmente — cada turno "fecha" sozinho quando o horário
+  // vira e o outro turno começa a produzir.
   const tituloTurnos = document.getElementById("tl-turnos-titulo");
-  const tituloClientes = document.getElementById("tl-clientes-titulo");
-  if (p.ultimoDiaStr) {
-    const [y, m, d] = p.ultimoDiaStr.split("-");
-    tituloTurnos.textContent = `Produção do dia ${d}/${m}`;
-    tituloClientes.textContent = `Peso produzido por cliente (kg) — dia ${d}/${m}`;
+  const dadosHojeValidos = resumoHoje && resumoHoje.data === hojeStrBR() && resumoHoje.porTurno;
+  if (dadosHojeValidos) {
+    const dia = resumoHoje.porTurno.dia;
+    const noite = resumoHoje.porTurno.noite;
+    setTurno("dia", dia.paletes ? dia : null);
+    setTurno("noite", noite.paletes ? noite : null);
+    setTurno("total", { peso: resumoHoje.pesoHoje, chapas: resumoHoje.chapasHoje });
+    tituloTurnos.textContent = "Produção de hoje";
   } else {
-    tituloTurnos.textContent = "Produção do dia anterior";
-    tituloClientes.textContent = "Peso produzido por cliente (kg)";
+    setTurno("dia", p.ultimoDiaEntry ? p.ultimoDiaEntry.dia : null);
+    setTurno("noite", p.ultimoDiaEntry ? p.ultimoDiaEntry.noite : null);
+    setTurno("total", p.ultimoDiaEntry ? p.ultimoDiaEntry.total : null);
+    if (p.ultimoDiaStr) {
+      const [y, m, d] = p.ultimoDiaStr.split("-");
+      tituloTurnos.textContent = `Produção do dia ${d}/${m}`;
+    } else {
+      tituloTurnos.textContent = "Produção do dia anterior";
+    }
   }
+
+  // Barra de tempo real: escopada no turno vigente (não o dia inteiro) —
+  // meta do turno assumida como metade da meta diária.
+  const turno = turnoAtual();
+  const turnoLabel = turno === "dia" ? "Turno Dia" : "Turno Noite";
+  const pesoTurno = (dadosHojeValidos && resumoHoje.porTurno[turno].peso) || 0;
+  const tituloTempoReal = document.getElementById("tl-tempo-real-titulo");
+  tituloTempoReal.textContent =
+    `Produção hoje — ${turnoLabel} · ${fmt(pesoTurno)} kg de ${fmt(p.metaDiaria / 2)} kg`;
 
   document.getElementById("tl-demo-badge").classList.toggle("hidden", !p.isDemo);
   document.getElementById("tl-atualizado").textContent =
     `Atualizado às ${new Date().toLocaleTimeString("pt-BR")}${p.isDemo ? " · dados de demonstração" : ""}`;
 
   renderGrafico(p);
-  renderGraficoClientes(p);
+  renderGraficoTempoReal(p);
 }
 
-function renderGraficoClientes(p) {
-  const clientes = ((p.ultimoDiaEntry && p.ultimoDiaEntry.total.clientes) || []).slice(0, 6);
-  const ctx = document.getElementById("tl-chart-clientes");
-  if (tlChartClientes) tlChartClientes.destroy();
-  tlChartClientes = new Chart(ctx, {
-    type: "bar",
+// Barra única que sobe conforme os paletes são registrados hoje —
+// vermelha enquanto não bate a meta diária, azul assim que atinge/passa.
+function renderGraficoTempoReal(p) {
+  const dadosHojeValidos = resumoHoje && resumoHoje.data === hojeStrBR() && resumoHoje.porTurno;
+  const turno = turnoAtual();
+  const produzido = (dadosHojeValidos && resumoHoje.porTurno[turno].peso) || 0;
+  const meta = (p.metaDiaria || 0) / 2; // meta do turno = metade da meta diária
+  const atingiuMeta = meta > 0 && produzido >= meta;
+  const cor = atingiuMeta ? "#2E75B6" : "#C0392B";
+  const teto = Math.max(meta * 1.15, produzido * 1.1, 100);
+
+  const ctx = document.getElementById("tl-chart-tempo-real");
+  if (tlChartTempoReal) tlChartTempoReal.destroy();
+  tlChartTempoReal = new Chart(ctx, {
     data: {
-      labels: clientes.map((c) => c.cliente),
-      datasets: [{ data: clientes.map((c) => Math.round(c.peso)), backgroundColor: "#2E75B6", borderRadius: 3 }],
+      labels: [turno === "dia" ? "Turno Dia" : "Turno Noite"],
+      datasets: [
+        {
+          type: "bar",
+          label: "Produzido (kg)",
+          data: [Math.round(produzido)],
+          backgroundColor: [cor],
+          borderRadius: 6,
+          barPercentage: 0.4,
+          order: 2,
+        },
+        {
+          type: "line",
+          label: "Meta do turno (kg)",
+          data: [Math.round(meta)],
+          borderColor: "#1F4E78",
+          borderWidth: 2,
+          borderDash: [6, 4],
+          pointRadius: 0,
+          fill: false,
+          order: 1,
+        },
+      ],
     },
     options: {
-      indexAxis: "y",
       responsive: true,
       maintainAspectRatio: false,
       animation: false,
-      plugins: { legend: { display: false } },
+      plugins: {
+        legend: { display: true, position: "top", labels: { boxWidth: 14, font: { size: 11 } } },
+      },
       scales: {
-        x: { title: { display: true, text: "kg", font: { size: 10 } }, ticks: { font: { size: 9 } } },
-        y: { ticks: { font: { size: 10 } } },
+        y: { min: 0, max: teto, title: { display: true, text: "kg", font: { size: 10 } }, ticks: { font: { size: 9 } } },
+        x: { ticks: { font: { size: 10 } } },
       },
     },
   });
@@ -381,11 +454,17 @@ function renderGrafico(p) {
   });
 }
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", async () => {
   renderRelogio();
+  await carregarResumoHoje();
   renderPainel();
   setInterval(renderRelogio, 1000);
-  setInterval(renderPainel, 60000); // re-lê o localStorage pra pegar dados novos gerados no app principal
+  setInterval(async () => {
+    // re-lê o localStorage (relatórios carregados manualmente) e busca o
+    // resumo de tempo real publicado pelo app de etiquetas
+    await carregarResumoHoje();
+    renderPainel();
+  }, 60000);
   registrarServiceWorker();
 });
 
