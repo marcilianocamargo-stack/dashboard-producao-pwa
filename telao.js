@@ -215,8 +215,16 @@ function montarPainel() {
   return {
     ano, mesIdx, daysInMonth, diasUteisNoMes, metaMensal, metaDiaria, diasCorridos, diasUteisCorridos,
     metaAcumulada, produzidoAcumulado, ondeEstamosKg, ondeEstamosDias,
-    projecaoFechamento, projecaoPct, porDia, ultimoDiaStr, ultimoDiaEntry, isDemo,
+    projecaoFechamento, projecaoPct, porDia, ultimoDiaStr, ultimoDiaEntry, isDemo, dadosMes,
   };
+}
+
+// "DD/MM/YYYY" (formato que o app de etiquetas manda) -> "YYYY-MM-DD"
+// (formato que o relatório carregado manualmente usa como chave).
+function dataBRparaISO(dataBR){
+  const [d, m, y] = String(dataBR||"").split("/");
+  if (!d || !m || !y) return null;
+  return `${y}-${m.padStart(2,"0")}-${d.padStart(2,"0")}`;
 }
 
 // --------------------------------------------------------------- RENDER --
@@ -297,19 +305,28 @@ function renderPainel() {
   };
 
   // Os cartões de turno sempre mostram o ÚLTIMO turno já FECHADO de cada
-  // tipo (nunca o que está em andamento) — o resultado só troca quando
-  // aquele turno realmente termina (vira 18h ou 6h). Publicado pelo app de
-  // etiquetas junto com o resumo do dia.
+  // tipo (nunca o que está em andamento). Cruza as duas fontes: usa o
+  // tempo real (app de etiquetas) quando já existe dado pra aquela data;
+  // se não existir (datas de antes do sistema em tempo real existir),
+  // cai pro relatório carregado manualmente na tela de configuração —
+  // assim cobre o histórico antigo e segue sozinho a partir de hoje.
+  function turnoFechadoOuManual(fechado, tipo){
+    if (fechado && fechado.paletes) return fechado;
+    if (p.isDemo) return null;
+    const iso = dataBRparaISO(fechado && fechado.data);
+    const doMes = iso && p.dadosMes && p.dadosMes[iso];
+    return (doMes && doMes[tipo] && doMes[tipo].peso) ? doMes[tipo] : null;
+  }
+
   const tituloTurnos = document.getElementById("tl-turnos-titulo");
-  const temTurnosFechados = resumoHoje && resumoHoje.turnoDiaFechado && resumoHoje.turnoNoiteFechado;
-  if (temTurnosFechados) {
-    const dia = resumoHoje.turnoDiaFechado;
-    const noite = resumoHoje.turnoNoiteFechado;
-    setTurno("dia", dia.paletes ? dia : null);
-    setTurno("noite", noite.paletes ? noite : null);
+  if (resumoHoje && resumoHoje.turnoDiaFechado && resumoHoje.turnoNoiteFechado) {
+    const diaData = resumoHoje.turnoDiaFechado.data;
+    const noiteData = resumoHoje.turnoNoiteFechado.data;
+    setTurno("dia", turnoFechadoOuManual(resumoHoje.turnoDiaFechado, "dia"));
+    setTurno("noite", turnoFechadoOuManual(resumoHoje.turnoNoiteFechado, "noite"));
     setTurno("total", { peso: resumoHoje.pesoHoje, chapas: resumoHoje.chapasHoje });
-    document.querySelector("#tl-box-dia .tl-turno-nome").textContent = `TURNO DIA · ${dia.data}`;
-    document.querySelector("#tl-box-noite .tl-turno-nome").textContent = `TURNO NOITE · ${noite.data}`;
+    document.querySelector("#tl-box-dia .tl-turno-nome").textContent = `TURNO DIA · ${diaData}`;
+    document.querySelector("#tl-box-noite .tl-turno-nome").textContent = `TURNO NOITE · ${noiteData}`;
     tituloTurnos.textContent = "Último turno fechado de cada tipo";
   } else {
     setTurno("dia", p.ultimoDiaEntry ? p.ultimoDiaEntry.dia : null);
