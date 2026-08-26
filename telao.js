@@ -303,7 +303,6 @@ function renderPainel() {
   const setTurno = (prefixo, dados) => {
     document.getElementById(`tl-${prefixo}-peso`).textContent = dados ? fmt(dados.peso) : "—";
     document.getElementById(`tl-${prefixo}-chapas`).textContent = dados ? fmt(dados.chapas) : "—";
-    document.getElementById(`tl-${prefixo}-vel`).textContent = dados ? `${fmt(dados.velocidade, 2)} m/min` : "—";
     const papeisEl = document.getElementById(`tl-${prefixo}-papeis`);
     const papeis = (dados && dados.papeis) || [];
     papeisEl.textContent = papeis.length
