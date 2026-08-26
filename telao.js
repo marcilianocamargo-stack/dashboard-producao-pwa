@@ -221,7 +221,6 @@ function montarPainel() {
 
 // --------------------------------------------------------------- RENDER --
 let tlChart = null;
-let tlChartTempoReal = null;
 
 function renderRelogio() {
   const agora = new Date();
@@ -297,19 +296,21 @@ function renderPainel() {
     }
   };
 
-  // Assim que existir dado real de hoje (publicado pelo app de etiquetas),
-  // os cartões de turno passam a mostrar ele em vez do último relatório
-  // carregado manualmente — cada turno "fecha" sozinho quando o horário
-  // vira e o outro turno começa a produzir.
+  // Os cartões de turno sempre mostram o ÚLTIMO turno já FECHADO de cada
+  // tipo (nunca o que está em andamento) — o resultado só troca quando
+  // aquele turno realmente termina (vira 18h ou 6h). Publicado pelo app de
+  // etiquetas junto com o resumo do dia.
   const tituloTurnos = document.getElementById("tl-turnos-titulo");
-  const dadosHojeValidos = resumoHoje && resumoHoje.data === hojeStrBR() && resumoHoje.porTurno;
-  if (dadosHojeValidos) {
-    const dia = resumoHoje.porTurno.dia;
-    const noite = resumoHoje.porTurno.noite;
+  const temTurnosFechados = resumoHoje && resumoHoje.turnoDiaFechado && resumoHoje.turnoNoiteFechado;
+  if (temTurnosFechados) {
+    const dia = resumoHoje.turnoDiaFechado;
+    const noite = resumoHoje.turnoNoiteFechado;
     setTurno("dia", dia.paletes ? dia : null);
     setTurno("noite", noite.paletes ? noite : null);
     setTurno("total", { peso: resumoHoje.pesoHoje, chapas: resumoHoje.chapasHoje });
-    tituloTurnos.textContent = "Produção de hoje";
+    document.querySelector("#tl-box-dia .tl-turno-nome").textContent = `TURNO DIA · ${dia.data}`;
+    document.querySelector("#tl-box-noite .tl-turno-nome").textContent = `TURNO NOITE · ${noite.data}`;
+    tituloTurnos.textContent = "Último turno fechado de cada tipo";
   } else {
     setTurno("dia", p.ultimoDiaEntry ? p.ultimoDiaEntry.dia : null);
     setTurno("noite", p.ultimoDiaEntry ? p.ultimoDiaEntry.noite : null);
@@ -322,75 +323,32 @@ function renderPainel() {
     }
   }
 
-  // Barra de tempo real: escopada no turno vigente (não o dia inteiro) —
-  // meta do turno assumida como metade da meta diária.
+  // Número grande de tempo real: acumula o dia inteiro (não reseta na troca
+  // de turno) — vermelho enquanto não bate a meta diária cheia, azul assim
+  // que atinge/passa. Os cartões de turno ao lado (setTurno acima) ficam
+  // segmentados por turno, fechando cada um quando o horário vira.
   const turno = turnoAtual();
   const turnoLabel = turno === "dia" ? "Turno Dia" : "Turno Noite";
   const pesoHojeAtual = (resumoHoje && resumoHoje.pesoHoje) || 0;
-  const tituloTempoReal = document.getElementById("tl-tempo-real-titulo");
-  tituloTempoReal.textContent =
-    `Produção hoje — ${turnoLabel} em andamento · ${fmt(pesoHojeAtual)} kg de ${fmt(p.metaDiaria)} kg`;
+  const metaDiaria = p.metaDiaria || 0;
+  const atingiuMeta = metaDiaria > 0 && pesoHojeAtual >= metaDiaria;
+
+  document.getElementById("tl-tempo-real-titulo").textContent =
+    `Produção hoje — ${turnoLabel} em andamento`;
+
+  const numeroWrap = document.getElementById("tl-numero-hoje").parentElement;
+  numeroWrap.classList.toggle("tl-bateu", atingiuMeta);
+  numeroWrap.classList.toggle("tl-abaixo", !atingiuMeta);
+  document.getElementById("tl-numero-hoje").innerHTML =
+    `${fmt(pesoHojeAtual)}<small>kg</small>`;
+  document.getElementById("tl-numero-hoje-sub").textContent =
+    `de ${fmt(metaDiaria)} kg (meta diária)`;
 
   document.getElementById("tl-demo-badge").classList.toggle("hidden", !p.isDemo);
   document.getElementById("tl-atualizado").textContent =
     `Atualizado às ${new Date().toLocaleTimeString("pt-BR")}${p.isDemo ? " · dados de demonstração" : ""}`;
 
   renderGrafico(p);
-  renderGraficoTempoReal(p);
-}
-
-// Barra única que acumula o dia inteiro (não reseta na troca de turno) —
-// vermelha enquanto não bate a meta diária cheia, azul assim que atinge/passa.
-// Os cartões de turno ao lado (setTurno acima) que ficam segmentados por
-// turno, fechando cada um automaticamente quando o horário vira.
-function renderGraficoTempoReal(p) {
-  const produzido = (resumoHoje && resumoHoje.pesoHoje) || 0;
-  const meta = p.metaDiaria || 0;
-  const atingiuMeta = meta > 0 && produzido >= meta;
-  const cor = atingiuMeta ? "#2E75B6" : "#C0392B";
-  const teto = Math.max(meta * 1.15, produzido * 1.1, 100);
-
-  const ctx = document.getElementById("tl-chart-tempo-real");
-  if (tlChartTempoReal) tlChartTempoReal.destroy();
-  tlChartTempoReal = new Chart(ctx, {
-    data: {
-      labels: ["Hoje"],
-      datasets: [
-        {
-          type: "bar",
-          label: "Produzido (kg)",
-          data: [Math.round(produzido)],
-          backgroundColor: [cor],
-          borderRadius: 6,
-          barPercentage: 0.4,
-          order: 2,
-        },
-        {
-          type: "line",
-          label: "Meta diária (kg)",
-          data: [Math.round(meta)],
-          borderColor: "#1F4E78",
-          borderWidth: 2,
-          borderDash: [6, 4],
-          pointRadius: 0,
-          fill: false,
-          order: 1,
-        },
-      ],
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      animation: false,
-      plugins: {
-        legend: { display: true, position: "top", labels: { boxWidth: 14, font: { size: 11 } } },
-      },
-      scales: {
-        y: { min: 0, max: teto, title: { display: true, text: "kg", font: { size: 10 } }, ticks: { font: { size: 9 } } },
-        x: { ticks: { font: { size: 10 } } },
-      },
-    },
-  });
 }
 
 function renderGrafico(p) {

@@ -101,6 +101,30 @@ html, body.tl-body {
 }
 .tl-chart-wrap { flex: 1; min-height: 0; position: relative; }
 
+.tl-numero-card { align-items: center; }
+.tl-numero-wrap {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  border-radius: 10px;
+  transition: background-color .3s, color .3s;
+}
+.tl-numero-wrap.tl-abaixo { background: #FDEAEA; }
+.tl-numero-wrap.tl-bateu { background: #E4F1FB; }
+.tl-numero-grande {
+  font-size: 8vh;
+  font-weight: 900;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+.tl-numero-wrap.tl-abaixo .tl-numero-grande { color: #C0392B; }
+.tl-numero-wrap.tl-bateu .tl-numero-grande { color: #2E75B6; }
+.tl-numero-grande small { font-size: 3vh; font-weight: bold; margin-left: .3vw; }
+.tl-numero-sub { font-size: 1.6vh; color: var(--texto-suave); margin-top: .8vh; font-weight: bold; }
+
 .tl-legenda-cores {
   display: flex; gap: 1vw; flex-wrap: wrap;
   font-size: 1.1vh; color: var(--texto-suave);
@@ -154,3 +178,50 @@ html, body.tl-body {
   padding: .5vh .8vw; font-weight: bold;
 }
 .tl-demo-badge.hidden { display: none; }
+
+/* ------------------------------------------------------- CELULAR/TABLET
+ * O layout acima é calibrado pra TV (vh/vw, sem rolagem, texto legível de
+ * longe). Num celular, isso vira ilegível — aqui a tela passa a rolar
+ * verticalmente, os cartões empilham, e o texto usa px fixo (não vh, que
+ * varia com a barra do navegador do celular aparecendo/sumindo). */
+@media (max-width: 900px) {
+  html, body.tl-body { overflow: auto; }
+  .tl-screen {
+    height: auto;
+    min-height: 100vh;
+    padding: 12px;
+    gap: 12px;
+  }
+  .tl-header { flex-wrap: wrap; padding: 10px 14px; }
+  .tl-logo { width: 32px; height: 32px; }
+  .tl-title-block h1 { font-size: 16px; }
+  .tl-title-block p { font-size: 12px; }
+  #tl-relogio { font-size: 20px; }
+  #tl-data { font-size: 11px; }
+  .tl-config-btn { font-size: 20px; }
+
+  .tl-kpi-row { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .tl-kpi { padding: 12px 10px; }
+  .tl-kpi-label { font-size: 11px; }
+  .tl-kpi-value { font-size: 26px; }
+  .tl-kpi-value small { font-size: 13px; }
+  .tl-kpi-sub { font-size: 10px; }
+  .tl-kpi-hero-value { font-size: 30px; }
+  .tl-kpi-hero-sub { font-size: 11px; }
+
+  .tl-mid-row { grid-template-columns: 1fr; }
+  .tl-chart-card, .tl-turnos-card { min-height: 260px; }
+  .tl-chart-card h2, .tl-turnos-card h2 { font-size: 14px; }
+  .tl-legenda-cores { font-size: 10px; }
+  .tl-dot { width: 8px; height: 8px; }
+  .tl-numero-grande { font-size: 56px; }
+  .tl-numero-grande small { font-size: 20px; }
+  .tl-numero-sub { font-size: 13px; }
+
+  .tl-turno-nome { font-size: 12px; }
+  .tl-turno-hero span { font-size: 24px; }
+  .tl-turno-hero small { font-size: 10px; }
+  .tl-turno-vel, .tl-turno-papeis, .tl-turno-clientes { font-size: 11px; }
+
+  .tl-footer { flex-direction: column; align-items: flex-start; gap: 6px; font-size: 10px; }
+}
