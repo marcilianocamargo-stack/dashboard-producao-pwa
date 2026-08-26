@@ -192,6 +192,20 @@ function saveMetaMensal(v) {
   localStorage.setItem(META_MENSAL_KEY, String(v));
 }
 
+// Publica a meta mensal num arquivo compartilhado, pra qualquer aparelho
+// que abra o telão ver o mesmo valor sem precisar configurar localmente.
+// Melhor esforço: se falhar, a meta continua salva local e funcionando
+// nesse navegador -- só não propaga pros outros até a próxima tentativa.
+const META_MENSAL_WEBHOOK_URL = 'https://n8n.mcamargo.uk/webhook/meta-mensal';
+function publicarMetaMensal(v) {
+  fetch(META_MENSAL_WEBHOOK_URL, {
+    method: 'POST',
+    headers: {'Content-Type':'application/json'},
+    body: JSON.stringify({metaMensal: v}),
+    keepalive: true
+  }).catch(()=>{});
+}
+
 // Salva os totais do dia gerado (peso/chapas/velocidade por turno) no
 // histórico mensal, para o Painel do Telão acumular ao longo do mês.
 function salvarHistoricoDia(dashboards) {
@@ -1380,6 +1394,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (isNaN(v) || v <= 0) { inMeta.value = state.metaMensal; return; }
     state.metaMensal = v;
     saveMetaMensal(v);
+    publicarMetaMensal(v);
     const fb = document.getElementById("meta-feedback");
     fb.textContent = "✓ Meta salva.";
     setTimeout(() => { fb.textContent = ""; }, 2500);

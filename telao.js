@@ -24,6 +24,24 @@ async function carregarResumoHoje() {
   } catch (e) { /* mantém o último valor conhecido se a rede falhar */ }
 }
 
+// Meta mensal compartilhada — publicada pelo app.js sempre que alguém salva
+// a meta em QUALQUER aparelho, pra todo mundo ver o mesmo número (a meta
+// mensal ficava só no localStorage, por aparelho, e cada tela mostrava um
+// valor diferente). Sem essa fonte disponível (rede caiu, nunca foi
+// publicada ainda), cai pro localStorage local do próprio aparelho.
+const META_MENSAL_URL = "https://marcilianocamargo-stack.github.io/dashboard-producao-pwa/meta-mensal.json";
+let metaMensalCompartilhada = null;
+
+async function carregarMetaMensalCompartilhada() {
+  try {
+    const resp = await fetch(META_MENSAL_URL + "?t=" + Date.now(), { cache: "no-store" });
+    if (resp.ok) {
+      const dados = await resp.json();
+      if (dados && dados.metaMensal > 0) metaMensalCompartilhada = dados.metaMensal;
+    }
+  } catch (e) { /* mantém o último valor conhecido / cai pro local */ }
+}
+
 // Turno Dia: 06h-18h. Turno Noite: 18h-06h.
 function turnoAtual() {
   const h = new Date().getHours();
@@ -45,6 +63,7 @@ function loadHistorico() {
   return {};
 }
 function loadMetaMensal() {
+  if (metaMensalCompartilhada > 0) return metaMensalCompartilhada;
   try {
     const saved = localStorage.getItem(META_MENSAL_KEY);
     if (saved) {
@@ -431,13 +450,13 @@ function renderGrafico(p) {
 
 document.addEventListener("DOMContentLoaded", async () => {
   renderRelogio();
-  await carregarResumoHoje();
+  await Promise.all([carregarResumoHoje(), carregarMetaMensalCompartilhada()]);
   renderPainel();
   setInterval(renderRelogio, 1000);
   setInterval(async () => {
     // re-lê o localStorage (relatórios carregados manualmente) e busca o
-    // resumo de tempo real publicado pelo app de etiquetas
-    await carregarResumoHoje();
+    // resumo de tempo real e a meta mensal publicados pelos outros apps
+    await Promise.all([carregarResumoHoje(), carregarMetaMensalCompartilhada()]);
     renderPainel();
   }, 60000);
   registrarServiceWorker();
