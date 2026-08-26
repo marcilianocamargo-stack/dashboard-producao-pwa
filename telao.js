@@ -379,6 +379,14 @@ function renderPainel() {
   document.getElementById("tl-numero-hoje-sub").textContent =
     `de ${fmt(metaDiaria)} kg (meta diária)`;
 
+  // Só a produção do turno vigente (não o dia inteiro) — pra quem está
+  // trabalhando agora, principalmente à noite, ver o que ELE produziu,
+  // sem misturar com o que o turno anterior já tinha feito no mesmo dia.
+  const turnoAtualDados = resumoHoje && resumoHoje.turnoAtual;
+  document.getElementById("tl-numero-turno-atual").innerHTML = turnoAtualDados
+    ? `Só neste turno (${turnoLabel}): <b>${fmt(turnoAtualDados.peso)} kg</b> · ${fmt(turnoAtualDados.chapas)} chapas`
+    : "—";
+
   document.getElementById("tl-demo-badge").classList.toggle("hidden", !p.isDemo);
   document.getElementById("tl-atualizado").textContent =
     `Atualizado às ${new Date().toLocaleTimeString("pt-BR")}${p.isDemo ? " · dados de demonstração" : ""}`;

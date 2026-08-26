@@ -124,6 +124,17 @@ html, body.tl-body {
 .tl-numero-wrap.tl-bateu .tl-numero-grande { color: #2E75B6; }
 .tl-numero-grande small { font-size: 3vh; font-weight: bold; margin-left: .3vw; }
 .tl-numero-sub { font-size: 1.6vh; color: var(--texto-suave); margin-top: .8vh; font-weight: bold; }
+.tl-numero-turno-atual {
+  flex: 0 0 auto;
+  text-align: center;
+  font-size: 1.5vh;
+  color: var(--azul-escuro);
+  font-weight: bold;
+  padding-top: .8vh;
+  border-top: 1px dashed var(--borda);
+  margin-top: .6vh;
+}
+.tl-numero-turno-atual b { font-size: 1.9vh; }
 
 .tl-legenda-cores {
   display: flex; gap: 1vw; flex-wrap: wrap;
@@ -217,6 +228,8 @@ html, body.tl-body {
   .tl-numero-grande { font-size: 56px; }
   .tl-numero-grande small { font-size: 20px; }
   .tl-numero-sub { font-size: 13px; }
+  .tl-numero-turno-atual { font-size: 13px; }
+  .tl-numero-turno-atual b { font-size: 16px; }
 
   .tl-turno-nome { font-size: 12px; }
   .tl-turno-hero span { font-size: 24px; }
