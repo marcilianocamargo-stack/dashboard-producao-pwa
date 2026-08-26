@@ -326,10 +326,10 @@ function renderPainel() {
   // meta do turno assumida como metade da meta diária.
   const turno = turnoAtual();
   const turnoLabel = turno === "dia" ? "Turno Dia" : "Turno Noite";
-  const pesoTurno = (dadosHojeValidos && resumoHoje.porTurno[turno].peso) || 0;
+  const pesoHojeAtual = (resumoHoje && resumoHoje.pesoHoje) || 0;
   const tituloTempoReal = document.getElementById("tl-tempo-real-titulo");
   tituloTempoReal.textContent =
-    `Produção hoje — ${turnoLabel} · ${fmt(pesoTurno)} kg de ${fmt(p.metaDiaria / 2)} kg`;
+    `Produção hoje — ${turnoLabel} em andamento · ${fmt(pesoHojeAtual)} kg de ${fmt(p.metaDiaria)} kg`;
 
   document.getElementById("tl-demo-badge").classList.toggle("hidden", !p.isDemo);
   document.getElementById("tl-atualizado").textContent =
@@ -339,13 +339,13 @@ function renderPainel() {
   renderGraficoTempoReal(p);
 }
 
-// Barra única que sobe conforme os paletes são registrados hoje —
-// vermelha enquanto não bate a meta diária, azul assim que atinge/passa.
+// Barra única que acumula o dia inteiro (não reseta na troca de turno) —
+// vermelha enquanto não bate a meta diária cheia, azul assim que atinge/passa.
+// Os cartões de turno ao lado (setTurno acima) que ficam segmentados por
+// turno, fechando cada um automaticamente quando o horário vira.
 function renderGraficoTempoReal(p) {
-  const dadosHojeValidos = resumoHoje && resumoHoje.data === hojeStrBR() && resumoHoje.porTurno;
-  const turno = turnoAtual();
-  const produzido = (dadosHojeValidos && resumoHoje.porTurno[turno].peso) || 0;
-  const meta = (p.metaDiaria || 0) / 2; // meta do turno = metade da meta diária
+  const produzido = (resumoHoje && resumoHoje.pesoHoje) || 0;
+  const meta = p.metaDiaria || 0;
   const atingiuMeta = meta > 0 && produzido >= meta;
   const cor = atingiuMeta ? "#2E75B6" : "#C0392B";
   const teto = Math.max(meta * 1.15, produzido * 1.1, 100);
@@ -354,7 +354,7 @@ function renderGraficoTempoReal(p) {
   if (tlChartTempoReal) tlChartTempoReal.destroy();
   tlChartTempoReal = new Chart(ctx, {
     data: {
-      labels: [turno === "dia" ? "Turno Dia" : "Turno Noite"],
+      labels: ["Hoje"],
       datasets: [
         {
           type: "bar",
@@ -367,7 +367,7 @@ function renderGraficoTempoReal(p) {
         },
         {
           type: "line",
-          label: "Meta do turno (kg)",
+          label: "Meta diária (kg)",
           data: [Math.round(meta)],
           borderColor: "#1F4E78",
           borderWidth: 2,
