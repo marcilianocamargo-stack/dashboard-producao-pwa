@@ -29,6 +29,16 @@
         "papeis": [],
         "clientes": []
       }
+    },
+    "2099-03-04": {
+      "data": "2099-03-04",
+      "total": {
+        "peso": 4,
+        "chapas": 4,
+        "velocidade": 0,
+        "papeis": [],
+        "clientes": []
+      }
     }
   }
 }
