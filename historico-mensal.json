@@ -1345,6 +1345,67 @@
           }
         ]
       }
+    },
+    "2026-08-23": {
+      "data": "2026-08-23",
+      "dia": {
+        "peso": 1869.8429942000002,
+        "chapas": 1790,
+        "velocidade": 6.756095238095239,
+        "papeis": [
+          {
+            "papel": "P70D",
+            "chapas": 540,
+            "peso": 1101.78357408
+          },
+          {
+            "papel": "P50D",
+            "chapas": 1250,
+            "peso": 768.05942012
+          }
+        ],
+        "clientes": [
+          {
+            "cliente": "HARMONY EMBALAGENS",
+            "peso": 1205.8258016000002,
+            "chapas": 760
+          },
+          {
+            "cliente": "RM EMBALAGENS DE PAPELÃO LTDA",
+            "peso": 664.0171926,
+            "chapas": 1030
+          }
+        ]
+      },
+      "total": {
+        "peso": 1869.8429942000002,
+        "chapas": 1790,
+        "velocidade": 6.756095238095239,
+        "papeis": [
+          {
+            "papel": "P70D",
+            "chapas": 540,
+            "peso": 1101.78357408
+          },
+          {
+            "papel": "P50D",
+            "chapas": 1250,
+            "peso": 768.05942012
+          }
+        ],
+        "clientes": [
+          {
+            "cliente": "HARMONY EMBALAGENS",
+            "peso": 1205.8258016000002,
+            "chapas": 760
+          },
+          {
+            "cliente": "RM EMBALAGENS DE PAPELÃO LTDA",
+            "peso": 664.0171926,
+            "chapas": 1030
+          }
+        ]
+      }
     }
   },
   "2026-07": {
