@@ -1406,6 +1406,151 @@
           }
         ]
       }
+    },
+    "2026-08-21": {
+      "data": "2026-08-21",
+      "dia": {
+        "peso": 6063.049805220001,
+        "chapas": 7547,
+        "velocidade": 24.415839285714295,
+        "papeis": [
+          {
+            "papel": "P50D",
+            "chapas": 6022,
+            "peso": 5082.458771820001
+          },
+          {
+            "papel": "P70D",
+            "chapas": 865,
+            "peso": 605.168124
+          },
+          {
+            "papel": "P25B",
+            "chapas": 660,
+            "peso": 375.42290940000004
+          }
+        ],
+        "clientes": [
+          {
+            "cliente": "RM EMBALAGENS DE PAPELÃO LTDA",
+            "peso": 3649.0858212000003,
+            "chapas": 2870
+          },
+          {
+            "cliente": "HARMONY EMBALAGENS",
+            "peso": 1808.7958600200002,
+            "chapas": 3812
+          },
+          {
+            "cliente": "FAVINCO EMBALAGENS",
+            "peso": 344.373324,
+            "chapas": 655
+          },
+          {
+            "cliente": "FAVINCO REPOSIÇÃO",
+            "peso": 260.7948,
+            "chapas": 210
+          }
+        ]
+      },
+      "noite": {
+        "peso": 3310.6583100250004,
+        "chapas": 13310,
+        "velocidade": 25.26082142857143,
+        "papeis": [
+          {
+            "papel": "P25B",
+            "chapas": 10170,
+            "peso": 2559.38781735
+          },
+          {
+            "papel": "P35B",
+            "chapas": 2125,
+            "peso": 438.68000625
+          },
+          {
+            "papel": "P25C",
+            "chapas": 500,
+            "peso": 209.79000000000002
+          },
+          {
+            "papel": "P40B",
+            "chapas": 515,
+            "peso": 102.800486425
+          }
+        ],
+        "clientes": [
+          {
+            "cliente": "RM EMBALAGENS DE PAPELÃO LTDA",
+            "peso": 2142.6830302500002,
+            "chapas": 8480
+          },
+          {
+            "cliente": "HARMONY EMBALAGENS",
+            "peso": 1167.975279775,
+            "chapas": 4830
+          }
+        ]
+      },
+      "total": {
+        "peso": 9373.708115245001,
+        "chapas": 20857,
+        "velocidade": 24.83833035714286,
+        "papeis": [
+          {
+            "papel": "P50D",
+            "chapas": 6022,
+            "peso": 5082.458771820001
+          },
+          {
+            "papel": "P25B",
+            "chapas": 10830,
+            "peso": 2934.8107267500004
+          },
+          {
+            "papel": "P70D",
+            "chapas": 865,
+            "peso": 605.168124
+          },
+          {
+            "papel": "P35B",
+            "chapas": 2125,
+            "peso": 438.68000625
+          },
+          {
+            "papel": "P25C",
+            "chapas": 500,
+            "peso": 209.79000000000002
+          },
+          {
+            "papel": "P40B",
+            "chapas": 515,
+            "peso": 102.800486425
+          }
+        ],
+        "clientes": [
+          {
+            "cliente": "RM EMBALAGENS DE PAPELÃO LTDA",
+            "peso": 5791.7688514500005,
+            "chapas": 11350
+          },
+          {
+            "cliente": "HARMONY EMBALAGENS",
+            "peso": 2976.771139795,
+            "chapas": 8642
+          },
+          {
+            "cliente": "FAVINCO EMBALAGENS",
+            "peso": 344.373324,
+            "chapas": 655
+          },
+          {
+            "cliente": "FAVINCO REPOSIÇÃO",
+            "peso": 260.7948,
+            "chapas": 210
+          }
+        ]
+      }
     }
   },
   "2026-07": {
