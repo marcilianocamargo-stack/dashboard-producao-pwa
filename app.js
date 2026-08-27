@@ -1401,7 +1401,26 @@ function renderConfigGramatura() {
   });
 }
 
+const SENHA_UPLOAD = "0907";
+function configurarTelaBloqueio() {
+  const senhaInput = document.getElementById("lock-senha");
+  const erro = document.getElementById("lock-erro");
+  const tentar = () => {
+    if (senhaInput.value === SENHA_UPLOAD) {
+      localStorage.setItem("prime_upload_autorizado", "1");
+      document.body.classList.remove("bloqueado");
+    } else {
+      erro.textContent = "Senha incorreta.";
+      senhaInput.value = "";
+      senhaInput.focus();
+    }
+  };
+  document.getElementById("lock-entrar").addEventListener("click", tentar);
+  senhaInput.addEventListener("keydown", (e) => { if (e.key === "Enter") tentar(); });
+}
+
 document.addEventListener("DOMContentLoaded", () => {
+  configurarTelaBloqueio();
   document.getElementById("file-dia").addEventListener("change", (e) => handleFileInput("dia", e.target.files[0]));
   document.getElementById("file-noite").addEventListener("change", (e) => handleFileInput("noite", e.target.files[0]));
   document.getElementById("file-lote").addEventListener("change", (e) => handleLoteInput(e.target.files));

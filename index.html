@@ -12,6 +12,23 @@
 </head>
 <body>
 
+<script>
+  if (localStorage.getItem("prime_upload_autorizado") !== "1") {
+    document.body.classList.add("bloqueado");
+  }
+</script>
+
+<div class="lock-overlay" id="lock-overlay">
+  <div class="lock-card">
+    <img src="icons/icon-192.png" alt="" class="lock-logo">
+    <h2>Área restrita</h2>
+    <p>Essa tela é só de quem sobe os relatórios e calcula o dashboard.</p>
+    <input type="password" id="lock-senha" placeholder="Senha" inputmode="numeric" autocomplete="off">
+    <button class="btn-primary" id="lock-entrar" type="button">Entrar</button>
+    <span class="lock-erro" id="lock-erro"></span>
+  </div>
+</div>
+
 <header class="topbar">
   <div class="topbar-inner">
     <img src="icons/icon-192.png" alt="" class="logo">

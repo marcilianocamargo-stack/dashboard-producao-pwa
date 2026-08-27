@@ -13,6 +13,43 @@
 
 * { box-sizing: border-box; }
 
+body.bloqueado header, body.bloqueado main { display: none; }
+.lock-overlay { display: none; }
+body.bloqueado .lock-overlay {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  inset: 0;
+  height: 100vh;
+  background: var(--azul-escuro);
+  z-index: 1000;
+}
+.lock-card {
+  background: white;
+  border-radius: 12px;
+  padding: 32px 28px;
+  width: 90%;
+  max-width: 320px;
+  text-align: center;
+  box-shadow: 0 8px 24px rgba(0,0,0,.25);
+}
+.lock-logo { width: 56px; height: 56px; border-radius: 10px; margin-bottom: 12px; }
+.lock-card h2 { margin: 0 0 8px; color: var(--azul-escuro); }
+.lock-card p { margin: 0 0 18px; font-size: .88rem; color: var(--texto-suave); }
+.lock-card input {
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 1.1rem;
+  text-align: center;
+  letter-spacing: 4px;
+  border: 1px solid var(--borda);
+  border-radius: 6px;
+  margin-bottom: 12px;
+}
+.lock-card .btn-primary { width: 100%; }
+.lock-erro { display: block; margin-top: 10px; color: #C0392B; font-size: .85rem; font-weight: bold; min-height: 1em; }
+
 body {
   margin: 0;
   font-family: Arial, "Helvetica Neue", sans-serif;
