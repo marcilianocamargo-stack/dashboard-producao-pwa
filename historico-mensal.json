@@ -1666,6 +1666,57 @@
           }
         ]
       }
+    },
+    "2026-08-25": {
+      "data": "2026-08-25",
+      "noite": {
+        "peso": 2471.76468,
+        "chapas": 17505,
+        "velocidade": 19.631279761904764,
+        "papeis": [
+          {
+            "papel": "P25B",
+            "chapas": 17505,
+            "peso": 2471.76468
+          }
+        ],
+        "clientes": [
+          {
+            "cliente": "São Miguel",
+            "peso": 1435.53375,
+            "chapas": 10220
+          },
+          {
+            "cliente": "DR EMBALAGENS",
+            "peso": 1036.2309300000002,
+            "chapas": 7285
+          }
+        ]
+      },
+      "total": {
+        "peso": 2471.76468,
+        "chapas": 17505,
+        "velocidade": 19.631279761904764,
+        "papeis": [
+          {
+            "papel": "P25B",
+            "chapas": 17505,
+            "peso": 2471.76468
+          }
+        ],
+        "clientes": [
+          {
+            "cliente": "São Miguel",
+            "peso": 1435.53375,
+            "chapas": 10220
+          },
+          {
+            "cliente": "DR EMBALAGENS",
+            "peso": 1036.2309300000002,
+            "chapas": 7285
+          }
+        ]
+      }
     }
   },
   "2026-07": {
