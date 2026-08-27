@@ -1473,6 +1473,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   renderConfigGramatura();
 
+  configurarBotaoInstalar();
   registrarServiceWorker();
 });
 
@@ -1485,4 +1486,31 @@ function registrarServiceWorker() {
     setInterval(() => reg.update(), 5 * 60 * 1000);
   }).catch(() => {});
   navigator.serviceWorker.addEventListener("controllerchange", () => location.reload());
+}
+
+// Mostra o botão "Instalar app" só quando o navegador confirma que dá pra
+// instalar (Chrome/Edge/Android) -- sem isso, a opção de instalar fica
+// escondida num menu que quase ninguém acha sozinho.
+let deferredInstallPrompt = null;
+window.addEventListener("beforeinstallprompt", (e) => {
+  e.preventDefault();
+  deferredInstallPrompt = e;
+  const btn = document.getElementById("btn-instalar-app");
+  if (btn) btn.classList.remove("hidden");
+});
+window.addEventListener("appinstalled", () => {
+  deferredInstallPrompt = null;
+  const btn = document.getElementById("btn-instalar-app");
+  if (btn) btn.classList.add("hidden");
+});
+function configurarBotaoInstalar() {
+  const btn = document.getElementById("btn-instalar-app");
+  if (!btn) return;
+  btn.addEventListener("click", async () => {
+    if (!deferredInstallPrompt) return;
+    deferredInstallPrompt.prompt();
+    await deferredInstallPrompt.userChoice;
+    deferredInstallPrompt = null;
+    btn.classList.add("hidden");
+  });
 }

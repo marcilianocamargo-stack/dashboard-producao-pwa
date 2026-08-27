@@ -42,6 +42,18 @@ html, body.tl-body {
   color: white; text-decoration: none; font-size: 2.4vh; opacity: .6; padding: 0 .3vw;
 }
 .tl-config-btn:hover { opacity: 1; }
+.tl-instalar-btn {
+  background: var(--azul-medio);
+  color: white;
+  border: 1px solid var(--ciano);
+  border-radius: 6px;
+  padding: .8vh 1vw;
+  font-size: 1.3vh;
+  font-weight: bold;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.tl-instalar-btn:hover { background: var(--ciano); color: var(--azul-escuro); }
 
 /* ------------------------------------------------------------- KPI ROW */
 .tl-kpi-row {
