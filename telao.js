@@ -42,6 +42,23 @@ async function carregarMetaMensalCompartilhada() {
   } catch (e) { /* mantém o último valor conhecido / cai pro local */ }
 }
 
+// Histórico mensal compartilhado — publicado pelo app.js a cada dia
+// processado (em qualquer aparelho), pra o telão mostrar o mesmo mês em
+// qualquer tela. O histórico local (localStorage) continua servindo de
+// fallback pra dias que ainda não foram republicados no compartilhado.
+const HISTORICO_MENSAL_URL = "https://marcilianocamargo-stack.github.io/dashboard-producao-pwa/historico-mensal.json";
+let historicoMensalCompartilhado = {};
+
+async function carregarHistoricoMensalCompartilhado() {
+  try {
+    const resp = await fetch(HISTORICO_MENSAL_URL + "?t=" + Date.now(), { cache: "no-store" });
+    if (resp.ok) {
+      const dados = await resp.json();
+      if (dados && typeof dados === "object") historicoMensalCompartilhado = dados;
+    }
+  } catch (e) { /* mantém o último valor conhecido / cai pro local */ }
+}
+
 // Turno Dia: 06h-18h. Turno Noite: 18h-06h.
 function turnoAtual() {
   const h = new Date().getHours();
@@ -192,7 +209,9 @@ function montarPainel() {
   const metaDiaria = metaMensal / diasUteisNoMes;
 
   const historico = loadHistorico();
-  const mesReal = historico[mesRef] || {};
+  // Compartilhado tem prioridade (é o que outros aparelhos publicaram);
+  // local preenche dias que ainda não foram republicados dali.
+  const mesReal = { ...(historico[mesRef] || {}), ...(historicoMensalCompartilhado[mesRef] || {}) };
   const diasReais = Object.keys(mesReal).sort();
 
   let dadosMes, diasCorridos, isDemo;
@@ -457,13 +476,14 @@ function renderGrafico(p) {
 
 document.addEventListener("DOMContentLoaded", async () => {
   renderRelogio();
-  await Promise.all([carregarResumoHoje(), carregarMetaMensalCompartilhada()]);
+  await Promise.all([carregarResumoHoje(), carregarMetaMensalCompartilhada(), carregarHistoricoMensalCompartilhado()]);
   renderPainel();
   setInterval(renderRelogio, 1000);
   setInterval(async () => {
     // re-lê o localStorage (relatórios carregados manualmente) e busca o
-    // resumo de tempo real e a meta mensal publicados pelos outros apps
-    await Promise.all([carregarResumoHoje(), carregarMetaMensalCompartilhada()]);
+    // resumo de tempo real, a meta mensal e o histórico do mês publicados
+    // pelos outros apps
+    await Promise.all([carregarResumoHoje(), carregarMetaMensalCompartilhada(), carregarHistoricoMensalCompartilhado()]);
     renderPainel();
   }, 60000);
   registrarServiceWorker();

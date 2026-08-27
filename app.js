@@ -159,10 +159,10 @@ const DATA_RE = /(\d{1,2}[/\-]\d{1,2}[/\-]\d{2,4})/;
 // Guarda, por mês (chave "AAAA-MM"), os totais de cada dia já gerado no
 // dashboard (peso/chapas/velocidade por turno + total). É o que alimenta o
 // Painel do Telão (telao.html): meta mensal, "onde estamos" e o calendário
-// do mês. Fica só no navegador (mesma filosofia do resto do app) — se o
-// telão rodar num aparelho diferente de quem sobe os relatórios, os dois
-// precisam estar no mesmo navegador/perfil, ou o histórico precisa ser
-// migrado para um armazenamento compartilhado (ex.: servidor/VPS).
+// do mês. Continua salvo no navegador local, mas cada dia salvo aqui também
+// é publicado num arquivo compartilhado (ver publicarHistoricoDia) -- é
+// esse compartilhado que o telão lê primeiro, então qualquer aparelho vê o
+// mesmo histórico do mês, mesmo sem ter processado os relatórios ali.
 const HISTORICO_KEY = "prime_historico_mensal_v1";
 const META_MENSAL_KEY = "prime_meta_mensal_v1";
 const META_MENSAL_PADRAO = 150000; // 150 toneladas
@@ -176,6 +176,19 @@ function loadHistorico() {
 }
 function saveHistorico(hist) {
   localStorage.setItem(HISTORICO_KEY, JSON.stringify(hist));
+}
+
+// Publica o dia processado num arquivo compartilhado, mesmo esquema da meta
+// mensal -- assim qualquer aparelho que abra o telão vê o mesmo histórico do
+// mês, sem depender de ter processado os relatórios naquele navegador.
+const HISTORICO_MENSAL_WEBHOOK_URL = 'https://n8n.mcamargo.uk/webhook/historico-mensal';
+function publicarHistoricoDia(mesRef, data, entry) {
+  fetch(HISTORICO_MENSAL_WEBHOOK_URL, {
+    method: 'POST',
+    headers: {'Content-Type':'application/json'},
+    body: JSON.stringify({mesRef, data, entry}),
+    keepalive: true
+  }).catch(()=>{});
 }
 
 function loadMetaMensal() {
@@ -235,6 +248,7 @@ function salvarHistoricoDia(dashboards) {
   };
   hist[mesRef][data] = entry;
   saveHistorico(hist);
+  publicarHistoricoDia(mesRef, data, entry);
 }
 
 // -------------------------------------------------------------- ESTADO ----
@@ -1398,6 +1412,20 @@ document.addEventListener("DOMContentLoaded", () => {
     const fb = document.getElementById("meta-feedback");
     fb.textContent = "✓ Meta salva.";
     setTimeout(() => { fb.textContent = ""; }, 2500);
+  });
+
+  document.getElementById("btn-publicar-historico").addEventListener("click", () => {
+    const hist = loadHistorico();
+    const fb = document.getElementById("historico-feedback");
+    let total = 0;
+    for (const mesRef of Object.keys(hist)) {
+      for (const data of Object.keys(hist[mesRef])) {
+        publicarHistoricoDia(mesRef, data, hist[mesRef][data]);
+        total++;
+      }
+    }
+    fb.textContent = total ? `✓ ${total} dia(s) publicado(s).` : "Nenhum dia salvo neste aparelho ainda.";
+    setTimeout(() => { fb.textContent = ""; }, 4000);
   });
 
   const inConsultaData = document.getElementById("in-consulta-data");
