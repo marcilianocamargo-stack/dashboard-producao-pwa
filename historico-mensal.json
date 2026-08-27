@@ -9,6 +9,16 @@
         "papeis": [],
         "clientes": []
       }
+    },
+    "2099-01-05": {
+      "data": "2099-01-05",
+      "total": {
+        "peso": 5,
+        "chapas": 5,
+        "velocidade": 0,
+        "papeis": [],
+        "clientes": []
+      }
     }
   }
 }
