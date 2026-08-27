@@ -183,12 +183,26 @@ function saveHistorico(hist) {
 // mês, sem depender de ter processado os relatórios naquele navegador.
 const HISTORICO_MENSAL_WEBHOOK_URL = 'https://n8n.mcamargo.uk/webhook/historico-mensal';
 function publicarHistoricoDia(mesRef, data, entry) {
-  fetch(HISTORICO_MENSAL_WEBHOOK_URL, {
+  return fetch(HISTORICO_MENSAL_WEBHOOK_URL, {
     method: 'POST',
     headers: {'Content-Type':'application/json'},
     body: JSON.stringify({mesRef, data, entry}),
     keepalive: true
   }).catch(()=>{});
+}
+
+// Espera cada publicação terminar antes de mandar a próxima -- disparar
+// todas juntas fazia vários processos do lado do servidor escreverem no
+// mesmo arquivo compartilhado ao mesmo tempo e corromper o JSON.
+async function publicarHistoricoCompleto(hist) {
+  let total = 0;
+  for (const mesRef of Object.keys(hist)) {
+    for (const data of Object.keys(hist[mesRef])) {
+      await publicarHistoricoDia(mesRef, data, hist[mesRef][data]);
+      total++;
+    }
+  }
+  return total;
 }
 
 function loadMetaMensal() {
@@ -1414,16 +1428,14 @@ document.addEventListener("DOMContentLoaded", () => {
     setTimeout(() => { fb.textContent = ""; }, 2500);
   });
 
-  document.getElementById("btn-publicar-historico").addEventListener("click", () => {
+  document.getElementById("btn-publicar-historico").addEventListener("click", async () => {
     const hist = loadHistorico();
+    const btn = document.getElementById("btn-publicar-historico");
     const fb = document.getElementById("historico-feedback");
-    let total = 0;
-    for (const mesRef of Object.keys(hist)) {
-      for (const data of Object.keys(hist[mesRef])) {
-        publicarHistoricoDia(mesRef, data, hist[mesRef][data]);
-        total++;
-      }
-    }
+    btn.disabled = true;
+    fb.textContent = "Publicando…";
+    const total = await publicarHistoricoCompleto(hist);
+    btn.disabled = false;
     fb.textContent = total ? `✓ ${total} dia(s) publicado(s).` : "Nenhum dia salvo neste aparelho ainda.";
     setTimeout(() => { fb.textContent = ""; }, 4000);
   });
