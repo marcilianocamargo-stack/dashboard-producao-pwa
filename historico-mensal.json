@@ -59,6 +59,16 @@
         "papeis": [],
         "clientes": []
       }
+    },
+    "2099-03-07": {
+      "data": "2099-03-07",
+      "total": {
+        "peso": 7,
+        "chapas": 7,
+        "velocidade": 0,
+        "papeis": [],
+        "clientes": []
+      }
     }
   }
 }
