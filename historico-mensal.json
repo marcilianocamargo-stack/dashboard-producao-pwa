@@ -1,1 +1,204 @@
-{}
+{
+  "2026-08": {
+    "2026-08-03": {
+      "data": "2026-08-03",
+      "dia": {
+        "peso": 10368.53594162,
+        "chapas": 20577,
+        "velocidade": 44.01230357142856,
+        "papeis": [
+          {
+            "papel": "P50D",
+            "chapas": 7057,
+            "peso": 5631.777135120002
+          },
+          {
+            "papel": "P80B",
+            "chapas": 4030,
+            "peso": 2586.5304456
+          },
+          {
+            "papel": "P40B",
+            "chapas": 6155,
+            "peso": 842.9459025
+          },
+          {
+            "papel": "P70D",
+            "chapas": 865,
+            "peso": 605.168124
+          },
+          {
+            "papel": "P25B",
+            "chapas": 660,
+            "peso": 375.42290940000004
+          },
+          {
+            "papel": "PW40B",
+            "chapas": 1810,
+            "peso": 326.6914249999999
+          }
+        ],
+        "clientes": [
+          {
+            "cliente": "RM EMBALAGENS DE PAPELÃO LTDA",
+            "peso": 3649.0858212000003,
+            "chapas": 2870
+          },
+          {
+            "cliente": "Renovapel",
+            "peso": 2586.5304456,
+            "chapas": 4030
+          },
+          {
+            "cliente": "HARMONY EMBALAGENS",
+            "peso": 1808.7958600200002,
+            "chapas": 3812
+          },
+          {
+            "cliente": "Tolecaixas Indústria e Comércio Ltda",
+            "peso": 1169.6373274999999,
+            "chapas": 7965
+          },
+          {
+            "cliente": "ABAPEL COMERCIO DE EMBALAGENS LTDA",
+            "peso": 549.3183633,
+            "chapas": 1035
+          },
+          {
+            "cliente": "FAVINCO EMBALAGENS",
+            "peso": 344.373324,
+            "chapas": 655
+          },
+          {
+            "cliente": "FAVINCO REPOSIÇÃO",
+            "peso": 260.7948,
+            "chapas": 210
+          }
+        ]
+      },
+      "noite": {
+        "peso": 3310.6583100250004,
+        "chapas": 13310,
+        "velocidade": 25.26082142857143,
+        "papeis": [
+          {
+            "papel": "P25B",
+            "chapas": 10170,
+            "peso": 2559.38781735
+          },
+          {
+            "papel": "P35B",
+            "chapas": 2125,
+            "peso": 438.68000625
+          },
+          {
+            "papel": "P25C",
+            "chapas": 500,
+            "peso": 209.79000000000002
+          },
+          {
+            "papel": "P40B",
+            "chapas": 515,
+            "peso": 102.800486425
+          }
+        ],
+        "clientes": [
+          {
+            "cliente": "RM EMBALAGENS DE PAPELÃO LTDA",
+            "peso": 2142.6830302500002,
+            "chapas": 8480
+          },
+          {
+            "cliente": "HARMONY EMBALAGENS",
+            "peso": 1167.975279775,
+            "chapas": 4830
+          }
+        ]
+      },
+      "total": {
+        "peso": 13679.194251645002,
+        "chapas": 33887,
+        "velocidade": 34.6365625,
+        "papeis": [
+          {
+            "papel": "P50D",
+            "chapas": 7057,
+            "peso": 5631.777135120002
+          },
+          {
+            "papel": "P25B",
+            "chapas": 10830,
+            "peso": 2934.8107267500004
+          },
+          {
+            "papel": "P80B",
+            "chapas": 4030,
+            "peso": 2586.5304456
+          },
+          {
+            "papel": "P40B",
+            "chapas": 6670,
+            "peso": 945.746388925
+          },
+          {
+            "papel": "P70D",
+            "chapas": 865,
+            "peso": 605.168124
+          },
+          {
+            "papel": "P35B",
+            "chapas": 2125,
+            "peso": 438.68000625
+          },
+          {
+            "papel": "PW40B",
+            "chapas": 1810,
+            "peso": 326.6914249999999
+          },
+          {
+            "papel": "P25C",
+            "chapas": 500,
+            "peso": 209.79000000000002
+          }
+        ],
+        "clientes": [
+          {
+            "cliente": "RM EMBALAGENS DE PAPELÃO LTDA",
+            "peso": 5791.7688514500005,
+            "chapas": 11350
+          },
+          {
+            "cliente": "HARMONY EMBALAGENS",
+            "peso": 2976.771139795,
+            "chapas": 8642
+          },
+          {
+            "cliente": "Renovapel",
+            "peso": 2586.5304456,
+            "chapas": 4030
+          },
+          {
+            "cliente": "Tolecaixas Indústria e Comércio Ltda",
+            "peso": 1169.6373274999999,
+            "chapas": 7965
+          },
+          {
+            "cliente": "ABAPEL COMERCIO DE EMBALAGENS LTDA",
+            "peso": 549.3183633,
+            "chapas": 1035
+          },
+          {
+            "cliente": "FAVINCO EMBALAGENS",
+            "peso": 344.373324,
+            "chapas": 655
+          },
+          {
+            "cliente": "FAVINCO REPOSIÇÃO",
+            "peso": 260.7948,
+            "chapas": 210
+          }
+        ]
+      }
+    }
+  }
+}
