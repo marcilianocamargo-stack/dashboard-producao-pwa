@@ -1,8 +1,8 @@
 {
-  "name": "Dashboard Prime — Produção Diária",
-  "short_name": "Prime Diário",
-  "description": "Carregue os relatórios de turno (dia e noite) e gere o dashboard diário de produção da onduladeira.",
-  "start_url": "./index.html",
+  "name": "Painel de Produção — Prime",
+  "short_name": "Telão Prime",
+  "description": "Painel de produção diária da onduladeira, em tempo real.",
+  "start_url": "./telao.html",
   "scope": "./",
   "display": "standalone",
   "background_color": "#1F4E78",
