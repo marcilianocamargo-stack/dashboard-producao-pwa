@@ -192,50 +192,49 @@ html, body.tl-body {
 
 /* ------------------------------------------------------- CELULAR/TABLET
  * O layout acima é calibrado pra TV (vh/vw, sem rolagem, texto legível de
- * longe). O painel só é pensado pra tela larga (TV ou celular deitado) --
- * em pé, mostra um aviso pedindo pra girar em vez de tentar encaixar tudo
- * numa coluna estreita. */
-.tl-rotate-overlay {
-  display: none;
-}
-
-@media (max-width: 900px) and (orientation: portrait) {
-  .tl-screen { display: none; }
-  .tl-rotate-overlay {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-    height: 100vh;
-    width: 100vw;
-    box-sizing: border-box;
-    padding: 24px;
-    text-align: center;
-    background: var(--azul-escuro);
-    color: white;
-    font-family: Arial, "Helvetica Neue", sans-serif;
-  }
-  .tl-rotate-icone {
-    font-size: 64px;
-    animation: tl-gira 1.6s ease-in-out infinite;
-  }
-  .tl-rotate-overlay p {
-    font-size: 18px;
-    line-height: 1.5;
-    margin: 0;
-  }
-  @keyframes tl-gira {
-    0%, 100% { transform: rotate(0deg); }
-    50% { transform: rotate(-90deg); }
-  }
-}
-
-/* Celular deitado: mesma grade da TV, só que menor -- as unidades vh/vw já
- * escalam sozinhas com o tamanho da tela, então basta destravar a altura
- * mínima (celular deitado costuma ter menos de 450px de altura) e permitir
- * rolagem se algum conteúdo não couber. */
-@media (max-height: 500px) and (orientation: landscape) {
+ * longe). Num celular, isso vira ilegível — aqui a tela passa a rolar
+ * verticalmente, os cartões empilham, e o texto usa px fixo (não vh, que
+ * varia com a barra do navegador do celular aparecendo/sumindo). */
+@media (max-width: 900px) {
   html, body.tl-body { overflow: auto; }
-  .tl-screen { min-height: 100vh; height: auto; }
+  .tl-screen {
+    height: auto;
+    min-height: 100vh;
+    padding: 12px;
+    gap: 12px;
+  }
+  .tl-header { flex-wrap: wrap; padding: 10px 14px; }
+  .tl-logo { width: 32px; height: 32px; }
+  .tl-title-block h1 { font-size: 16px; }
+  .tl-title-block p { font-size: 12px; }
+  #tl-relogio { font-size: 20px; }
+  #tl-data { font-size: 11px; }
+  .tl-config-btn { font-size: 20px; }
+
+  .tl-kpi-row { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .tl-kpi { padding: 12px 10px; }
+  .tl-kpi-label { font-size: 11px; }
+  .tl-kpi-value { font-size: 26px; }
+  .tl-kpi-value small { font-size: 13px; }
+  .tl-kpi-sub { font-size: 10px; }
+  .tl-kpi-hero-value { font-size: 30px; }
+  .tl-kpi-hero-sub { font-size: 11px; }
+
+  .tl-mid-row { grid-template-columns: 1fr; }
+  .tl-chart-card, .tl-turnos-card { min-height: 260px; }
+  .tl-chart-card h2, .tl-turnos-card h2 { font-size: 14px; }
+  .tl-legenda-cores { font-size: 10px; }
+  .tl-dot { width: 8px; height: 8px; }
+  .tl-numero-grande { font-size: 56px; }
+  .tl-numero-grande small { font-size: 20px; }
+  .tl-numero-sub { font-size: 13px; }
+  .tl-numero-turno-atual { font-size: 13px; }
+  .tl-numero-turno-atual b { font-size: 16px; }
+
+  .tl-turno-nome { font-size: 12px; }
+  .tl-turno-hero span { font-size: 24px; }
+  .tl-turno-hero small { font-size: 10px; }
+  .tl-turno-vel, .tl-turno-papeis, .tl-turno-clientes { font-size: 11px; }
+
+  .tl-footer { flex-direction: column; align-items: flex-start; gap: 6px; font-size: 10px; }
 }
