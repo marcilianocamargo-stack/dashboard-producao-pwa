@@ -191,9 +191,10 @@ function publicarHistoricoDia(mesRef, data, entry) {
   }).catch(()=>{});
 }
 
-// Espera cada publicação terminar antes de mandar a próxima -- disparar
-// todas juntas fazia vários processos do lado do servidor escreverem no
-// mesmo arquivo compartilhado ao mesmo tempo e corromper o JSON.
+// Espera cada publicação terminar de verdade (o webhook só responde depois
+// que o histórico compartilhado foi escrito e enviado ao GitHub) antes de
+// mandar a próxima -- evita que vários processos do lado do servidor
+// disputem o mesmo arquivo ao mesmo tempo.
 async function publicarHistoricoCompleto(hist) {
   let total = 0;
   for (const mesRef of Object.keys(hist)) {
