@@ -1551,6 +1551,121 @@
           }
         ]
       }
+    },
+    "2026-08-24": {
+      "data": "2026-08-24",
+      "dia": {
+        "peso": 4370.267608750001,
+        "chapas": 6565,
+        "velocidade": 17.97136904761905,
+        "papeis": [
+          {
+            "papel": "P50D",
+            "chapas": 5815,
+            "peso": 4083.216568750001
+          },
+          {
+            "papel": "P25C",
+            "chapas": 750,
+            "peso": 287.05104
+          }
+        ],
+        "clientes": [
+          {
+            "cliente": "ABAPEL COMERCIO DE EMBALAGENS LTDA",
+            "peso": 4064.3546217500007,
+            "chapas": 6050
+          },
+          {
+            "cliente": "HARMONY EMBALAGENS",
+            "peso": 305.912987,
+            "chapas": 515
+          }
+        ]
+      },
+      "noite": {
+        "peso": 4589.086444750001,
+        "chapas": 8270,
+        "velocidade": 28.711565476190476,
+        "papeis": [
+          {
+            "papel": "P50D",
+            "chapas": 2820,
+            "peso": 2431.1892358000005
+          },
+          {
+            "papel": "P25B",
+            "chapas": 4890,
+            "peso": 1857.34547775
+          },
+          {
+            "papel": "P25C",
+            "chapas": 560,
+            "peso": 300.5517312
+          }
+        ],
+        "clientes": [
+          {
+            "cliente": "ABAPEL COMERCIO DE EMBALAGENS LTDA",
+            "peso": 3705.50330995,
+            "chapas": 6235
+          },
+          {
+            "cliente": "IPE EMBALAGENS",
+            "peso": 548.5069248,
+            "chapas": 610
+          },
+          {
+            "cliente": "PCBOX EMBALAGENS L",
+            "peso": 335.07621000000006,
+            "chapas": 1425
+          }
+        ]
+      },
+      "total": {
+        "peso": 8959.354053500003,
+        "chapas": 14835,
+        "velocidade": 23.34146726190476,
+        "papeis": [
+          {
+            "papel": "P50D",
+            "chapas": 8635,
+            "peso": 6514.4058045500005
+          },
+          {
+            "papel": "P25B",
+            "chapas": 4890,
+            "peso": 1857.34547775
+          },
+          {
+            "papel": "P25C",
+            "chapas": 1310,
+            "peso": 587.6027712
+          }
+        ],
+        "clientes": [
+          {
+            "cliente": "ABAPEL COMERCIO DE EMBALAGENS LTDA",
+            "peso": 7769.8579317,
+            "chapas": 12285
+          },
+          {
+            "cliente": "IPE EMBALAGENS",
+            "peso": 548.5069248,
+            "chapas": 610
+          },
+          {
+            "cliente": "PCBOX EMBALAGENS L",
+            "peso": 335.07621000000006,
+            "chapas": 1425
+          },
+          {
+            "cliente": "HARMONY EMBALAGENS",
+            "peso": 305.912987,
+            "chapas": 515
+          }
+        ]
+      }
     }
   },
   "2026-07": {
