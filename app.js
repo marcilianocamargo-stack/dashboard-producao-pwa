@@ -1408,7 +1408,7 @@ function configurarTelaBloqueio() {
   const tentar = () => {
     if (senhaInput.value === SENHA_UPLOAD) {
       localStorage.setItem("prime_upload_autorizado", "1");
-      document.body.classList.remove("bloqueado");
+      document.body.classList.add("autorizado");
     } else {
       erro.textContent = "Senha incorreta.";
       senhaInput.value = "";

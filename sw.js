@@ -1,4 +1,4 @@
-const CACHE_NAME = "prime-diario-v29";
+const CACHE_NAME = "prime-diario-v30";
 const APP_SHELL = [
   "./",
   "./index.html",

@@ -9,12 +9,30 @@
 <link rel="icon" href="icons/icon-192.png">
 <link rel="apple-touch-icon" href="icons/icon-192.png">
 <link rel="stylesheet" href="styles.css">
+<style>
+  /* Regra critica do bloqueio por senha, direto aqui (nao em styles.css):
+     um arquivo CSS externo pode ficar em cache/CDN desatualizado sem o
+     index.html perceber, e nesse caso a tela vazava sem esconder nada.
+     Vindo junto no mesmo arquivo, nunca fica dessincronizado. */
+  body:not(.autorizado) header, body:not(.autorizado) main { display: none !important; }
+  .lock-overlay { display: none; }
+  body:not(.autorizado) .lock-overlay {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    inset: 0;
+    height: 100vh;
+    background: #1F4E78;
+    z-index: 1000;
+  }
+</style>
 </head>
 <body>
 
 <script>
-  if (localStorage.getItem("prime_upload_autorizado") !== "1") {
-    document.body.classList.add("bloqueado");
+  if (localStorage.getItem("prime_upload_autorizado") === "1") {
+    document.body.classList.add("autorizado");
   }
 </script>
 

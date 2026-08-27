@@ -13,18 +13,9 @@
 
 * { box-sizing: border-box; }
 
-body.bloqueado header, body.bloqueado main { display: none; }
-.lock-overlay { display: none; }
-body.bloqueado .lock-overlay {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: fixed;
-  inset: 0;
-  height: 100vh;
-  background: var(--azul-escuro);
-  z-index: 1000;
-}
+/* Esconder/mostrar por senha é regra crítica e fica inline no <head> do
+   index.html (não aqui) -- só o visual do cartão de senha fica neste
+   arquivo, que pode demorar um pouco a atualizar sem quebrar o bloqueio. */
 .lock-card {
   background: white;
   border-radius: 12px;
