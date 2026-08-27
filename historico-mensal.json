@@ -1140,6 +1140,141 @@
           }
         ]
       }
+    },
+    "2026-08-20": {
+      "data": "2026-08-20",
+      "dia": {
+        "peso": 6304.84864622,
+        "chapas": 8800,
+        "velocidade": 29.5455,
+        "papeis": [
+          {
+            "papel": "P50D",
+            "chapas": 4925,
+            "peso": 4041.1040888200005
+          },
+          {
+            "papel": "P55D",
+            "chapas": 1050,
+            "peso": 1647.0277823999998
+          },
+          {
+            "papel": "PW40B",
+            "chapas": 2825,
+            "peso": 616.7167750000001
+          }
+        ],
+        "clientes": [
+          {
+            "cliente": "HARMONY EMBALAGENS",
+            "peso": 5688.13187122,
+            "chapas": 5975
+          },
+          {
+            "cliente": "Tolecaixas Indústria e Comércio Ltda",
+            "peso": 616.7167750000001,
+            "chapas": 2825
+          }
+        ]
+      },
+      "noite": {
+        "peso": 2632.0789616499997,
+        "chapas": 12995,
+        "velocidade": 19.58588095238095,
+        "papeis": [
+          {
+            "papel": "P25B",
+            "chapas": 12465,
+            "peso": 2536.6159791
+          },
+          {
+            "papel": "P40B",
+            "chapas": 530,
+            "peso": 95.46298254999999
+          }
+        ],
+        "clientes": [
+          {
+            "cliente": "RM EMBALAGENS DE PAPELÃO LTDA",
+            "peso": 1847.182302,
+            "chapas": 9065
+          },
+          {
+            "cliente": "HARMONY EMBALAGENS",
+            "peso": 320.55667165,
+            "chapas": 2020
+          },
+          {
+            "cliente": "RM Embalagens ( Daiane",
+            "peso": 304.519824,
+            "chapas": 835
+          },
+          {
+            "cliente": "FAVINCO EMBALAGENS",
+            "peso": 159.820164,
+            "chapas": 1075
+          }
+        ]
+      },
+      "total": {
+        "peso": 8936.927607869999,
+        "chapas": 21795,
+        "velocidade": 24.565690476190476,
+        "papeis": [
+          {
+            "papel": "P50D",
+            "chapas": 4925,
+            "peso": 4041.1040888200005
+          },
+          {
+            "papel": "P25B",
+            "chapas": 12465,
+            "peso": 2536.6159791
+          },
+          {
+            "papel": "P55D",
+            "chapas": 1050,
+            "peso": 1647.0277823999998
+          },
+          {
+            "papel": "PW40B",
+            "chapas": 2825,
+            "peso": 616.7167750000001
+          },
+          {
+            "papel": "P40B",
+            "chapas": 530,
+            "peso": 95.46298254999999
+          }
+        ],
+        "clientes": [
+          {
+            "cliente": "HARMONY EMBALAGENS",
+            "peso": 6008.68854287,
+            "chapas": 7995
+          },
+          {
+            "cliente": "RM EMBALAGENS DE PAPELÃO LTDA",
+            "peso": 1847.182302,
+            "chapas": 9065
+          },
+          {
+            "cliente": "Tolecaixas Indústria e Comércio Ltda",
+            "peso": 616.7167750000001,
+            "chapas": 2825
+          },
+          {
+            "cliente": "RM Embalagens ( Daiane",
+            "peso": 304.519824,
+            "chapas": 835
+          },
+          {
+            "cliente": "FAVINCO EMBALAGENS",
+            "peso": 159.820164,
+            "chapas": 1075
+          }
+        ]
+      }
     }
   },
   "2026-07": {
