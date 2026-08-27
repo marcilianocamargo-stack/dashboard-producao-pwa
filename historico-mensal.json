@@ -975,6 +975,171 @@
           }
         ]
       }
+    },
+    "2026-08-19": {
+      "data": "2026-08-19",
+      "dia": {
+        "peso": 7134.171920700001,
+        "chapas": 24060,
+        "velocidade": 35.826863095238096,
+        "papeis": [
+          {
+            "papel": "P60C",
+            "chapas": 14200,
+            "peso": 5534.0242232
+          },
+          {
+            "papel": "P25B",
+            "chapas": 2550,
+            "peso": 511.26862499999993
+          },
+          {
+            "papel": "P25C",
+            "chapas": 2505,
+            "peso": 379.83815999999996
+          },
+          {
+            "papel": "PW40B",
+            "chapas": 4130,
+            "peso": 374.45057999999995
+          },
+          {
+            "papel": "P70C",
+            "chapas": 350,
+            "peso": 174.45389500000002
+          },
+          {
+            "papel": "P45C",
+            "chapas": 325,
+            "peso": 160.1364375
+          }
+        ],
+        "clientes": [
+          {
+            "cliente": "UPAPER",
+            "peso": 5534.0242232,
+            "chapas": 14200
+          },
+          {
+            "cliente": "RENOVAPEL RECICLAGEM DE PAPEIS LTDA",
+            "peso": 714.4284925,
+            "chapas": 3180
+          },
+          {
+            "cliente": "DR Embalagens",
+            "peso": 511.26862499999993,
+            "chapas": 2550
+          },
+          {
+            "cliente": "São Miguel",
+            "peso": 374.45057999999995,
+            "chapas": 4130
+          }
+        ]
+      },
+      "noite": {
+        "peso": 2141.1366425,
+        "chapas": 12670,
+        "velocidade": 15.229761904761904,
+        "papeis": [
+          {
+            "papel": "P45C",
+            "chapas": 4770,
+            "peso": 1223.7231000000002
+          },
+          {
+            "papel": "P40B",
+            "chapas": 7900,
+            "peso": 917.4135425
+          }
+        ],
+        "clientes": [
+          {
+            "cliente": "RENOVAPEL RECICLAG",
+            "peso": 1223.7231000000002,
+            "chapas": 4770
+          },
+          {
+            "cliente": "Tolecaixas Indústria e Co",
+            "peso": 917.4135425,
+            "chapas": 7900
+          }
+        ]
+      },
+      "total": {
+        "peso": 9275.308563200002,
+        "chapas": 36730,
+        "velocidade": 25.528312500000002,
+        "papeis": [
+          {
+            "papel": "P60C",
+            "chapas": 14200,
+            "peso": 5534.0242232
+          },
+          {
+            "papel": "P45C",
+            "chapas": 5095,
+            "peso": 1383.8595375
+          },
+          {
+            "papel": "P40B",
+            "chapas": 7900,
+            "peso": 917.4135425
+          },
+          {
+            "papel": "P25B",
+            "chapas": 2550,
+            "peso": 511.26862499999993
+          },
+          {
+            "papel": "P25C",
+            "chapas": 2505,
+            "peso": 379.83815999999996
+          },
+          {
+            "papel": "PW40B",
+            "chapas": 4130,
+            "peso": 374.45057999999995
+          },
+          {
+            "papel": "P70C",
+            "chapas": 350,
+            "peso": 174.45389500000002
+          }
+        ],
+        "clientes": [
+          {
+            "cliente": "UPAPER",
+            "peso": 5534.0242232,
+            "chapas": 14200
+          },
+          {
+            "cliente": "RENOVAPEL RECICLAG",
+            "peso": 1223.7231000000002,
+            "chapas": 4770
+          },
+          {
+            "cliente": "Tolecaixas Indústria e Co",
+            "peso": 917.4135425,
+            "chapas": 7900
+          },
+          {
+            "cliente": "RENOVAPEL RECICLAGEM DE PAPEIS LTDA",
+            "peso": 714.4284925,
+            "chapas": 3180
+          },
+          {
+            "cliente": "DR Embalagens",
+            "peso": 511.26862499999993,
+            "chapas": 2550
+          },
+          {
+            "cliente": "São Miguel",
+            "peso": 374.45057999999995,
+            "chapas": 4130
+          }
+        ]
+      }
     }
   },
   "2026-07": {
