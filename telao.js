@@ -11,6 +11,12 @@ const HISTORICO_KEY = "prime_historico_mensal_v1";
 const META_MENSAL_KEY = "prime_meta_mensal_v1";
 const META_MENSAL_PADRAO = 150000;
 
+// Alterna o gráfico entre "mês inteiro" e "últimos 7 dias" -- guarda o
+// último painel calculado pra não precisar remontar tudo, só redesenhar o
+// gráfico com a janela de dias diferente.
+let visaoGrafico = "mes";
+let ultimoPainel = null;
+
 // Resumo de produção em tempo real (paletes registrados hoje pelo app de
 // etiquetas), publicado pelo mesmo GitHub Pages do app — sem depender de
 // carregar relatório manualmente.
@@ -410,12 +416,53 @@ function renderPainel() {
   document.getElementById("tl-atualizado").textContent =
     `Atualizado às ${new Date().toLocaleTimeString("pt-BR")}${p.isDemo ? " · dados de demonstração" : ""}`;
 
+  ultimoPainel = p;
   renderGrafico(p);
 }
 
+// Monta os últimos 7 dias corridos (hoje incluso), podendo atravessar a
+// virada do mês -- por isso busca o histórico do mês certo pra cada dia em
+// vez de reaproveitar só o mês atual como o resto do painel faz.
+function calcularUltimos7Dias() {
+  const hoje = new Date();
+  const dias = [];
+  for (let i = 6; i >= 0; i--) {
+    const d = new Date(hoje.getFullYear(), hoje.getMonth(), hoje.getDate() - i);
+    const ano = d.getFullYear(), mesIdx = d.getMonth(), dia = d.getDate();
+    const mesRef = `${ano}-${String(mesIdx + 1).padStart(2, "0")}`;
+    const dataISO = `${mesRef}-${String(dia).padStart(2, "0")}`;
+    const mesReal = { ...(loadHistorico()[mesRef] || {}), ...(historicoMensalCompartilhado[mesRef] || {}) };
+    const entry = mesReal[dataISO];
+    dias.push({
+      label: `${String(dia).padStart(2, "0")}/${String(mesIdx + 1).padStart(2, "0")}`,
+      peso: entry ? entry.total.peso : 0,
+      util: isDiaUtil(ano, mesIdx, dia),
+    });
+  }
+  return dias;
+}
+
+function alternarVisaoGrafico(v) {
+  visaoGrafico = v;
+  document.getElementById("btn-visao-mes").classList.toggle("ativo", v === "mes");
+  document.getElementById("btn-visao-semana").classList.toggle("ativo", v === "semana");
+  document.getElementById("tl-titulo-grafico").textContent = v === "mes"
+    ? "Produção diária do mês — realizado × meta"
+    : "Produção dos últimos 7 dias — realizado × meta";
+  if (ultimoPainel) renderGrafico(ultimoPainel);
+}
+
 function renderGrafico(p) {
-  const labels = p.porDia.map((x) => x.dia);
-  const realizado = p.porDia.map((x) => (x.dia <= p.diasCorridos ? Math.round(x.peso || 0) : null));
+  const modoSemana = visaoGrafico === "semana";
+  const diasView = modoSemana ? calcularUltimos7Dias() : p.porDia;
+
+  const labels = modoSemana ? diasView.map((x) => x.label) : diasView.map((x) => x.dia);
+  // No mês, dia futuro (ainda não chegou) fica sem barra (null); nos
+  // últimos 7 dias todo dia já é passado ou hoje, então sempre tem barra
+  // (0 quando não tem produção lançada ainda).
+  const realizado = modoSemana
+    ? diasView.map((x) => Math.round(x.peso || 0))
+    : diasView.map((x) => (x.dia <= p.diasCorridos ? Math.round(x.peso || 0) : null));
   // Sábado/domingo não têm meta (produção só acontece lá quando estão
   // recuperando atraso) — por isso o alvo de comparação cai pra zero nesses
   // dias, em vez de cobrar a meta de dia útil num dia que não deveria nem
@@ -424,12 +471,17 @@ function renderGrafico(p) {
   // enganoso (pareceria "abaixo da meta" mesmo quando é só produção extra,
   // fora do padrão). Por isso ganha uma cor própria (verde = bônus),
   // separada de azul (bateu a meta do dia útil) e vermelho (não bateu).
-  const cores = p.porDia.map((x) => {
-    if (x.dia > p.diasCorridos || x.peso === null) return "#D9D9D9";
-    if (!x.util) return x.peso > 0 ? "#1BAF7A" : "#D9D9D9";
-    return x.peso >= p.metaDiaria ? "#2E75B6" : "#C0392B";
-  });
-  const metaLinha = p.porDia.map(() => Math.round(p.metaDiaria));
+  const cores = modoSemana
+    ? diasView.map((x) => {
+        if (!x.util) return x.peso > 0 ? "#1BAF7A" : "#D9D9D9";
+        return x.peso >= p.metaDiaria ? "#2E75B6" : "#C0392B";
+      })
+    : diasView.map((x) => {
+        if (x.dia > p.diasCorridos || x.peso === null) return "#D9D9D9";
+        if (!x.util) return x.peso > 0 ? "#1BAF7A" : "#D9D9D9";
+        return x.peso >= p.metaDiaria ? "#2E75B6" : "#C0392B";
+      });
+  const metaLinha = diasView.map(() => Math.round(p.metaDiaria));
 
   const ctx = document.getElementById("tl-chart-mes");
   if (tlChart) tlChart.destroy();
@@ -464,10 +516,10 @@ function renderGrafico(p) {
       animation: false,
       plugins: {
         legend: { display: true, position: "top", labels: { boxWidth: 14, font: { size: 11 } } },
-        tooltip: { callbacks: { title: (items) => `Dia ${items[0].label}` } },
+        tooltip: { callbacks: { title: (items) => modoSemana ? items[0].label : `Dia ${items[0].label}` } },
       },
       scales: {
-        x: { title: { display: true, text: "dia do mês", font: { size: 10 } }, ticks: { font: { size: 9 } } },
+        x: { title: { display: true, text: modoSemana ? "data" : "dia do mês", font: { size: 10 } }, ticks: { font: { size: 9 } } },
         y: { title: { display: true, text: "kg", font: { size: 10 } }, ticks: { font: { size: 9 } } },
       },
     },

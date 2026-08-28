@@ -53,7 +53,13 @@
 
   <section class="tl-mid-row">
     <div class="tl-chart-card">
-      <h2>Produção diária do mês — realizado × meta</h2>
+      <div class="tl-chart-header">
+        <h2 id="tl-titulo-grafico">Produção diária do mês — realizado × meta</h2>
+        <div class="tl-toggle-periodo">
+          <button class="tl-toggle-btn ativo" id="btn-visao-mes" onclick="alternarVisaoGrafico('mes')">Mês</button>
+          <button class="tl-toggle-btn" id="btn-visao-semana" onclick="alternarVisaoGrafico('semana')">7 dias</button>
+        </div>
+      </div>
       <div class="tl-legenda-cores">
         <span><i class="tl-dot" style="background:#2E75B6"></i>bateu a meta</span>
         <span><i class="tl-dot" style="background:#C0392B"></i>abaixo da meta</span>

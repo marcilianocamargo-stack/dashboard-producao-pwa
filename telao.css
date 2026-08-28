@@ -111,6 +111,17 @@ html, body.tl-body {
 .tl-chart-card h2, .tl-turnos-card h2 {
   margin: 0 0 .8vh; font-size: 1.6vh; color: var(--azul-escuro);
 }
+.tl-chart-header {
+  display: flex; align-items: center; justify-content: space-between; gap: .6vw;
+}
+.tl-chart-header h2 { margin: 0; }
+.tl-toggle-periodo { display: flex; gap: .3vw; flex-shrink: 0; margin-bottom: .8vh; }
+.tl-toggle-btn {
+  background: white; border: 1px solid var(--azul-medio); color: var(--azul-medio);
+  border-radius: 6px; padding: .3vh .8vw; font-size: 1.15vh; font-weight: bold;
+  cursor: pointer; white-space: nowrap;
+}
+.tl-toggle-btn.ativo { background: var(--azul-medio); color: white; }
 .tl-chart-wrap { flex: 1; min-height: 0; position: relative; }
 
 .tl-numero-card { align-items: center; }
