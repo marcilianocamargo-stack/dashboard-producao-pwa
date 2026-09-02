@@ -2111,6 +2111,121 @@
           }
         ]
       }
+    },
+    "2026-08-28": {
+      "data": "2026-08-28",
+      "dia": {
+        "peso": 3909.37,
+        "chapas": 16170,
+        "velocidade": 0,
+        "papeis": [
+          {
+            "papel": "P25B",
+            "chapas": 13175,
+            "peso": 2156.27
+          },
+          {
+            "papel": "P50D",
+            "chapas": 2995,
+            "peso": 1753.1
+          }
+        ],
+        "clientes": [
+          {
+            "cliente": "RM Embalagens",
+            "peso": 1275.66,
+            "chapas": 3005
+          },
+          {
+            "cliente": "AMPÉRE EMBALAGENS",
+            "peso": 779.52,
+            "chapas": 1030
+          },
+          {
+            "cliente": "HARMONY EMBALAGENS",
+            "peso": 1541.65,
+            "chapas": 10480
+          },
+          {
+            "cliente": "Carpel",
+            "peso": 312.54,
+            "chapas": 1655
+          }
+        ]
+      },
+      "noite": {
+        "peso": 3408.39,
+        "chapas": 13830,
+        "velocidade": 0,
+        "papeis": [
+          {
+            "papel": "P25B",
+            "chapas": 10845,
+            "peso": 2150.95
+          },
+          {
+            "papel": "P35B",
+            "chapas": 2985,
+            "peso": 1257.44
+          }
+        ],
+        "clientes": [
+          {
+            "cliente": "Carpel",
+            "peso": 2100.85,
+            "chapas": 11285
+          },
+          {
+            "cliente": "AMPÉRE EMBALAGENS",
+            "peso": 1307.54,
+            "chapas": 2545
+          }
+        ]
+      },
+      "total": {
+        "peso": 7317.76,
+        "chapas": 30000,
+        "velocidade": 0,
+        "papeis": [
+          {
+            "papel": "P25B",
+            "chapas": 24020,
+            "peso": 4307.22
+          },
+          {
+            "papel": "P50D",
+            "chapas": 2995,
+            "peso": 1753.1
+          },
+          {
+            "papel": "P35B",
+            "chapas": 2985,
+            "peso": 1257.44
+          }
+        ],
+        "clientes": [
+          {
+            "cliente": "RM Embalagens",
+            "peso": 1275.66,
+            "chapas": 3005
+          },
+          {
+            "cliente": "AMPÉRE EMBALAGENS",
+            "peso": 2087.06,
+            "chapas": 3575
+          },
+          {
+            "cliente": "HARMONY EMBALAGENS",
+            "peso": 1541.65,
+            "chapas": 10480
+          },
+          {
+            "cliente": "Carpel",
+            "peso": 2413.39,
+            "chapas": 12940
+          }
+        ]
+      }
     }
   },
   "2026-07": {
