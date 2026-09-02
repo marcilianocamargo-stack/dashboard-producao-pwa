@@ -1966,6 +1966,151 @@
           }
         ]
       }
+    },
+    "2026-08-27": {
+      "data": "2026-08-27",
+      "dia": {
+        "peso": 5710.81,
+        "chapas": 16950,
+        "velocidade": 0,
+        "papeis": [
+          {
+            "papel": "P25B",
+            "chapas": 10170,
+            "peso": 1709.39
+          },
+          {
+            "papel": "P70D",
+            "chapas": 660,
+            "peso": 321.49
+          },
+          {
+            "papel": "P50D",
+            "chapas": 5145,
+            "peso": 3404.12
+          },
+          {
+            "papel": "P55D",
+            "chapas": 355,
+            "peso": 93.93
+          },
+          {
+            "papel": "P50B",
+            "chapas": 620,
+            "peso": 181.88
+          }
+        ],
+        "clientes": [
+          {
+            "cliente": "Favinco",
+            "peso": 949.59,
+            "chapas": 4375
+          },
+          {
+            "cliente": "RM Embalagens",
+            "peso": 3584.23,
+            "chapas": 5305
+          },
+          {
+            "cliente": "HARMONY EMBALAGENS",
+            "peso": 995.11,
+            "chapas": 6650
+          },
+          {
+            "cliente": "FAVINCO",
+            "peso": 181.88,
+            "chapas": 620
+          }
+        ]
+      },
+      "noite": {
+        "peso": 3084.27,
+        "chapas": 9125,
+        "velocidade": 0,
+        "papeis": [
+          {
+            "papel": "P25B",
+            "chapas": 9125,
+            "peso": 3084.27
+          }
+        ],
+        "clientes": [
+          {
+            "cliente": "AMPÉRE EMBALAGENS",
+            "peso": 1388.68,
+            "chapas": 2425
+          },
+          {
+            "cliente": "HARMONY EMBALAGENS",
+            "peso": 729.93,
+            "chapas": 4240
+          },
+          {
+            "cliente": "RM Embalagens",
+            "peso": 965.66,
+            "chapas": 2460
+          }
+        ]
+      },
+      "total": {
+        "peso": 8795.08,
+        "chapas": 26075,
+        "velocidade": 0,
+        "papeis": [
+          {
+            "papel": "P25B",
+            "chapas": 19295,
+            "peso": 4793.66
+          },
+          {
+            "papel": "P70D",
+            "chapas": 660,
+            "peso": 321.49
+          },
+          {
+            "papel": "P50D",
+            "chapas": 5145,
+            "peso": 3404.12
+          },
+          {
+            "papel": "P55D",
+            "chapas": 355,
+            "peso": 93.93
+          },
+          {
+            "papel": "P50B",
+            "chapas": 620,
+            "peso": 181.88
+          }
+        ],
+        "clientes": [
+          {
+            "cliente": "Favinco",
+            "peso": 949.59,
+            "chapas": 4375
+          },
+          {
+            "cliente": "RM Embalagens",
+            "peso": 4549.89,
+            "chapas": 7765
+          },
+          {
+            "cliente": "HARMONY EMBALAGENS",
+            "peso": 1725.04,
+            "chapas": 10890
+          },
+          {
+            "cliente": "FAVINCO",
+            "peso": 181.88,
+            "chapas": 620
+          },
+          {
+            "cliente": "AMPÉRE EMBALAGENS",
+            "peso": 1388.68,
+            "chapas": 2425
+          }
+        ]
+      }
     }
   },
   "2026-07": {
