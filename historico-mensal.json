@@ -3527,5 +3527,122 @@
         ]
       }
     }
+  },
+  "2026-09": {
+    "2026-09-01": {
+      "data": "2026-09-01",
+      "dia": {
+        "peso": 4384.65,
+        "chapas": 14580,
+        "velocidade": 0,
+        "papeis": [
+          {
+            "papel": "P25B",
+            "chapas": 815,
+            "peso": 519.44
+          },
+          {
+            "papel": "PW40B",
+            "chapas": 3055,
+            "peso": 471.91
+          },
+          {
+            "papel": "P35B",
+            "chapas": 315,
+            "peso": 302.94
+          },
+          {
+            "papel": "P60C",
+            "chapas": 10395,
+            "peso": 3090.36
+          }
+        ],
+        "clientes": [
+          {
+            "cliente": "PCBOX EMBALAGENS",
+            "peso": 822.38,
+            "chapas": 1130
+          },
+          {
+            "cliente": "DR EMBALAGEM",
+            "peso": 471.91,
+            "chapas": 3055
+          },
+          {
+            "cliente": "Z4A EMBALAGENS LTDA",
+            "peso": 3090.36,
+            "chapas": 10395
+          }
+        ]
+      },
+      "noite": {
+        "peso": 145.93,
+        "chapas": 1555,
+        "velocidade": 0,
+        "papeis": [
+          {
+            "papel": "P25B",
+            "chapas": 1555,
+            "peso": 145.93
+          }
+        ],
+        "clientes": [
+          {
+            "cliente": "RM Embalagens",
+            "peso": 145.93,
+            "chapas": 1555
+          }
+        ]
+      },
+      "total": {
+        "peso": 4530.58,
+        "chapas": 16135,
+        "velocidade": 0,
+        "papeis": [
+          {
+            "papel": "P25B",
+            "chapas": 2370,
+            "peso": 665.37
+          },
+          {
+            "papel": "PW40B",
+            "chapas": 3055,
+            "peso": 471.91
+          },
+          {
+            "papel": "P35B",
+            "chapas": 315,
+            "peso": 302.94
+          },
+          {
+            "papel": "P60C",
+            "chapas": 10395,
+            "peso": 3090.36
+          }
+        ],
+        "clientes": [
+          {
+            "cliente": "PCBOX EMBALAGENS",
+            "peso": 822.38,
+            "chapas": 1130
+          },
+          {
+            "cliente": "DR EMBALAGEM",
+            "peso": 471.91,
+            "chapas": 3055
+          },
+          {
+            "cliente": "Z4A EMBALAGENS LTDA",
+            "peso": 3090.36,
+            "chapas": 10395
+          },
+          {
+            "cliente": "RM Embalagens",
+            "peso": 145.93,
+            "chapas": 1555
+          }
+        ]
+      }
+    }
   }
 }
