@@ -1796,6 +1796,176 @@
           }
         ]
       }
+    },
+    "2026-08-26": {
+      "data": "2026-08-26",
+      "dia": {
+        "peso": 3793.22,
+        "chapas": 10082,
+        "velocidade": 0,
+        "papeis": [
+          {
+            "papel": "P25B",
+            "chapas": 4162,
+            "peso": 2482.97
+          },
+          {
+            "papel": "P35B",
+            "chapas": 5920,
+            "peso": 1310.25
+          }
+        ],
+        "clientes": [
+          {
+            "cliente": "PCBOX EMBALAGENS LTDA",
+            "peso": 1577.73,
+            "chapas": 4110
+          },
+          {
+            "cliente": "IPE EMBALAGENS LTDA",
+            "peso": 140.72,
+            "chapas": 330
+          },
+          {
+            "cliente": "Box Line",
+            "peso": 749.41,
+            "chapas": 3810
+          },
+          {
+            "cliente": "A4 Embalagens e E-Commerce LTDA",
+            "peso": 1072.19,
+            "chapas": 1355
+          },
+          {
+            "cliente": "AMPÉRE EMBALAGENS",
+            "peso": 0.0,
+            "chapas": 2
+          },
+          {
+            "cliente": "J Fer",
+            "peso": 253.17,
+            "chapas": 475
+          }
+        ]
+      },
+      "noite": {
+        "peso": 3802.15,
+        "chapas": 14010,
+        "velocidade": 0,
+        "papeis": [
+          {
+            "papel": "P35B",
+            "chapas": 1175,
+            "peso": 162.76
+          },
+          {
+            "papel": "P25B",
+            "chapas": 9790,
+            "peso": 2131.84
+          },
+          {
+            "papel": "P60C",
+            "chapas": 3045,
+            "peso": 1507.55
+          }
+        ],
+        "clientes": [
+          {
+            "cliente": "Box Line",
+            "peso": 162.76,
+            "chapas": 1175
+          },
+          {
+            "cliente": "J Fer",
+            "peso": 546.45,
+            "chapas": 1530
+          },
+          {
+            "cliente": "PCBOX EMBALAGENS LTDA",
+            "peso": 923.22,
+            "chapas": 4670
+          },
+          {
+            "cliente": "IPE EMBALAGENS LTDA",
+            "peso": 304.07,
+            "chapas": 395
+          },
+          {
+            "cliente": "UPAPER",
+            "peso": 1507.55,
+            "chapas": 3045
+          },
+          {
+            "cliente": "Favinco",
+            "peso": 358.1,
+            "chapas": 3195
+          }
+        ]
+      },
+      "total": {
+        "peso": 7595.37,
+        "chapas": 24092,
+        "velocidade": 0,
+        "papeis": [
+          {
+            "papel": "P25B",
+            "chapas": 13952,
+            "peso": 4614.81
+          },
+          {
+            "papel": "P35B",
+            "chapas": 7095,
+            "peso": 1473.01
+          },
+          {
+            "papel": "P60C",
+            "chapas": 3045,
+            "peso": 1507.55
+          }
+        ],
+        "clientes": [
+          {
+            "cliente": "PCBOX EMBALAGENS LTDA",
+            "peso": 2500.95,
+            "chapas": 8780
+          },
+          {
+            "cliente": "IPE EMBALAGENS LTDA",
+            "peso": 444.79,
+            "chapas": 725
+          },
+          {
+            "cliente": "Box Line",
+            "peso": 912.17,
+            "chapas": 4985
+          },
+          {
+            "cliente": "A4 Embalagens e E-Commerce LTDA",
+            "peso": 1072.19,
+            "chapas": 1355
+          },
+          {
+            "cliente": "AMPÉRE EMBALAGENS",
+            "peso": 0.0,
+            "chapas": 2
+          },
+          {
+            "cliente": "J Fer",
+            "peso": 799.62,
+            "chapas": 2005
+          },
+          {
+            "cliente": "UPAPER",
+            "peso": 1507.55,
+            "chapas": 3045
+          },
+          {
+            "cliente": "Favinco",
+            "peso": 358.1,
+            "chapas": 3195
+          }
+        ]
+      }
     }
   },
   "2026-07": {
