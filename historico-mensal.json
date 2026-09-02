@@ -2226,6 +2226,77 @@
           }
         ]
       }
+    },
+    "2026-08-31": {
+      "data": "2026-08-31",
+      "dia": {
+        "peso": 2596.59,
+        "chapas": 11820,
+        "velocidade": 0,
+        "papeis": [
+          {
+            "papel": "P25B",
+            "chapas": 2765,
+            "peso": 1592.22
+          },
+          {
+            "papel": "P45B",
+            "chapas": 9055,
+            "peso": 1004.37
+          }
+        ],
+        "clientes": [
+          {
+            "cliente": "AMPÉRE EMBALAGENS",
+            "peso": 1343.93,
+            "chapas": 2495
+          },
+          {
+            "cliente": "Renovapel Reciclagem de Papeis Ltda",
+            "peso": 1004.37,
+            "chapas": 9055
+          },
+          {
+            "cliente": "PCBOX EMBALAGENS",
+            "peso": 248.29,
+            "chapas": 270
+          }
+        ]
+      },
+      "total": {
+        "peso": 2596.59,
+        "chapas": 11820,
+        "velocidade": 0,
+        "papeis": [
+          {
+            "papel": "P25B",
+            "chapas": 2765,
+            "peso": 1592.22
+          },
+          {
+            "papel": "P45B",
+            "chapas": 9055,
+            "peso": 1004.37
+          }
+        ],
+        "clientes": [
+          {
+            "cliente": "AMPÉRE EMBALAGENS",
+            "peso": 1343.93,
+            "chapas": 2495
+          },
+          {
+            "cliente": "Renovapel Reciclagem de Papeis Ltda",
+            "peso": 1004.37,
+            "chapas": 9055
+          },
+          {
+            "cliente": "PCBOX EMBALAGENS",
+            "peso": 248.29,
+            "chapas": 270
+          }
+        ]
+      }
     }
   },
   "2026-07": {
