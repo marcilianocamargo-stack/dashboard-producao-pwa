@@ -3862,14 +3862,14 @@
     "2026-09-04": {
       "data": "2026-09-04",
       "dia": {
-        "peso": 3692.35,
-        "chapas": 6360,
+        "peso": 3852.96,
+        "chapas": 7005,
         "velocidade": 0,
         "papeis": [
           {
             "papel": "P25B",
-            "chapas": 3480,
-            "peso": 803.98
+            "chapas": 4125,
+            "peso": 964.59
           },
           {
             "papel": "P50D",
@@ -3895,8 +3895,8 @@
           },
           {
             "cliente": "IPE EMBALAGENS",
-            "peso": 358.53,
-            "chapas": 865
+            "peso": 519.14,
+            "chapas": 1510
           },
           {
             "cliente": "ABAPEL COMERCIO DE EMBALAGENS LTDA",
@@ -3906,14 +3906,14 @@
         ]
       },
       "total": {
-        "peso": 3692.35,
-        "chapas": 6360,
+        "peso": 3852.96,
+        "chapas": 7005,
         "velocidade": 0,
         "papeis": [
           {
             "papel": "P25B",
-            "chapas": 3480,
-            "peso": 803.98
+            "chapas": 4125,
+            "peso": 964.59
           },
           {
             "papel": "P50D",
@@ -3939,8 +3939,8 @@
           },
           {
             "cliente": "IPE EMBALAGENS",
-            "peso": 358.53,
-            "chapas": 865
+            "peso": 519.14,
+            "chapas": 1510
           },
           {
             "cliente": "ABAPEL COMERCIO DE EMBALAGENS LTDA",
