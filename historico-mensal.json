@@ -4028,27 +4028,27 @@
         ]
       },
       "noite": {
-        "peso": 274.95,
-        "chapas": 175,
+        "peso": 549.9,
+        "chapas": 350,
         "velocidade": 0,
         "papeis": [
           {
             "papel": "P50D",
-            "chapas": 175,
-            "peso": 274.95
+            "chapas": 350,
+            "peso": 549.9
           }
         ],
         "clientes": [
           {
             "cliente": "RM Embalagens",
-            "peso": 274.95,
-            "chapas": 175
+            "peso": 549.9,
+            "chapas": 350
           }
         ]
       },
       "total": {
-        "peso": 3855.18,
-        "chapas": 16470,
+        "peso": 4130.13,
+        "chapas": 16645,
         "velocidade": 0,
         "papeis": [
           {
@@ -4063,15 +4063,15 @@
           },
           {
             "papel": "P50D",
-            "chapas": 1710,
-            "peso": 1799.17
+            "chapas": 1885,
+            "peso": 2074.12
           }
         ],
         "clientes": [
           {
             "cliente": "RM Embalagens",
-            "peso": 2498.14,
-            "chapas": 5070
+            "peso": 2773.09,
+            "chapas": 5245
           },
           {
             "cliente": "CARTOMIL EMBALAGENS LTDA",
