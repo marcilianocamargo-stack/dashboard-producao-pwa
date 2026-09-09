@@ -3949,6 +3949,47 @@
           }
         ]
       }
+    },
+    "2026-09-07": {
+      "data": "2026-09-07",
+      "dia": {
+        "peso": 128.67,
+        "chapas": 375,
+        "velocidade": 0,
+        "papeis": [
+          {
+            "papel": "P25B",
+            "chapas": 375,
+            "peso": 128.67
+          }
+        ],
+        "clientes": [
+          {
+            "cliente": "IPE EMBALAGENS",
+            "peso": 128.67,
+            "chapas": 375
+          }
+        ]
+      },
+      "total": {
+        "peso": 128.67,
+        "chapas": 375,
+        "velocidade": 0,
+        "papeis": [
+          {
+            "papel": "P25B",
+            "chapas": 375,
+            "peso": 128.67
+          }
+        ],
+        "clientes": [
+          {
+            "cliente": "IPE EMBALAGENS",
+            "peso": 128.67,
+            "chapas": 375
+          }
+        ]
+      }
     }
   }
 }
