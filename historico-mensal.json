@@ -3994,40 +3994,40 @@
     "2026-09-09": {
       "data": "2026-09-09",
       "dia": {
-        "peso": 542.24,
-        "chapas": 2825,
+        "peso": 652.1,
+        "chapas": 3200,
         "velocidade": 0,
         "papeis": [
           {
             "papel": "P25B",
-            "chapas": 2825,
-            "peso": 542.24
+            "chapas": 3200,
+            "peso": 652.1
           }
         ],
         "clientes": [
           {
             "cliente": "RM Embalagens",
-            "peso": 542.24,
-            "chapas": 2825
+            "peso": 652.1,
+            "chapas": 3200
           }
         ]
       },
       "total": {
-        "peso": 542.24,
-        "chapas": 2825,
+        "peso": 652.1,
+        "chapas": 3200,
         "velocidade": 0,
         "papeis": [
           {
             "papel": "P25B",
-            "chapas": 2825,
-            "peso": 542.24
+            "chapas": 3200,
+            "peso": 652.1
           }
         ],
         "clientes": [
           {
             "cliente": "RM Embalagens",
-            "peso": 542.24,
-            "chapas": 2825
+            "peso": 652.1,
+            "chapas": 3200
           }
         ]
       }
