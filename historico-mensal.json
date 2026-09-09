@@ -3994,8 +3994,8 @@
     "2026-09-09": {
       "data": "2026-09-09",
       "dia": {
-        "peso": 2056.01,
-        "chapas": 14760,
+        "peso": 2464.9,
+        "chapas": 15115,
         "velocidade": 0,
         "papeis": [
           {
@@ -4007,13 +4007,18 @@
             "papel": "P35B",
             "chapas": 4070,
             "peso": 762.26
+          },
+          {
+            "papel": "P50D",
+            "chapas": 355,
+            "peso": 408.89
           }
         ],
         "clientes": [
           {
             "cliente": "RM Embalagens",
-            "peso": 698.97,
-            "chapas": 3360
+            "peso": 1107.86,
+            "chapas": 3715
           },
           {
             "cliente": "CARTOMIL EMBALAGENS LTDA",
@@ -4023,8 +4028,8 @@
         ]
       },
       "total": {
-        "peso": 2056.01,
-        "chapas": 14760,
+        "peso": 2464.9,
+        "chapas": 15115,
         "velocidade": 0,
         "papeis": [
           {
@@ -4036,13 +4041,18 @@
             "papel": "P35B",
             "chapas": 4070,
             "peso": 762.26
+          },
+          {
+            "papel": "P50D",
+            "chapas": 355,
+            "peso": 408.89
           }
         ],
         "clientes": [
           {
             "cliente": "RM Embalagens",
-            "peso": 698.97,
-            "chapas": 3360
+            "peso": 1107.86,
+            "chapas": 3715
           },
           {
             "cliente": "CARTOMIL EMBALAGENS LTDA",
