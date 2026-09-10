@@ -4175,8 +4175,8 @@
     "2026-09-10": {
       "data": "2026-09-10",
       "dia": {
-        "peso": 1202.84,
-        "chapas": 4950,
+        "peso": 1353.95,
+        "chapas": 5575,
         "velocidade": 0,
         "papeis": [
           {
@@ -4186,8 +4186,8 @@
           },
           {
             "papel": "PW40B",
-            "chapas": 1970,
-            "peso": 464.61
+            "chapas": 2595,
+            "peso": 615.72
           },
           {
             "papel": "P50D",
@@ -4198,8 +4198,8 @@
         "clientes": [
           {
             "cliente": "Tolecaixas Indústria e Comércio Ltda",
-            "peso": 869.17,
-            "chapas": 4145
+            "peso": 1020.28,
+            "chapas": 4770
           },
           {
             "cliente": "RM Embalagens",
@@ -4209,8 +4209,8 @@
         ]
       },
       "total": {
-        "peso": 1202.84,
-        "chapas": 4950,
+        "peso": 1353.95,
+        "chapas": 5575,
         "velocidade": 0,
         "papeis": [
           {
@@ -4220,8 +4220,8 @@
           },
           {
             "papel": "PW40B",
-            "chapas": 1970,
-            "peso": 464.61
+            "chapas": 2595,
+            "peso": 615.72
           },
           {
             "papel": "P50D",
@@ -4232,8 +4232,8 @@
         "clientes": [
           {
             "cliente": "Tolecaixas Indústria e Comércio Ltda",
-            "peso": 869.17,
-            "chapas": 4145
+            "peso": 1020.28,
+            "chapas": 4770
           },
           {
             "cliente": "RM Embalagens",
