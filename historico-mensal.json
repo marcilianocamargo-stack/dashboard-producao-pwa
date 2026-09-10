@@ -4028,8 +4028,8 @@
         ]
       },
       "noite": {
-        "peso": 2826.06,
-        "chapas": 11615,
+        "peso": 2983.22,
+        "chapas": 13170,
         "velocidade": 0,
         "papeis": [
           {
@@ -4041,6 +4041,11 @@
             "papel": "P25B",
             "chapas": 10060,
             "peso": 1295.4
+          },
+          {
+            "papel": "P40B",
+            "chapas": 1555,
+            "peso": 157.16
           }
         ],
         "clientes": [
@@ -4063,12 +4068,17 @@
             "cliente": "FAVINCO EMBALAGENS",
             "peso": 297.38,
             "chapas": 3895
+          },
+          {
+            "cliente": "Tolecaixas Indústria e Comércio Ltda",
+            "peso": 157.16,
+            "chapas": 1555
           }
         ]
       },
       "total": {
-        "peso": 6406.29,
-        "chapas": 27910,
+        "peso": 6563.45,
+        "chapas": 29465,
         "velocidade": 0,
         "papeis": [
           {
@@ -4085,6 +4095,11 @@
             "papel": "P50D",
             "chapas": 3090,
             "peso": 3054.88
+          },
+          {
+            "papel": "P40B",
+            "chapas": 1555,
+            "peso": 157.16
           }
         ],
         "clientes": [
@@ -4107,6 +4122,11 @@
             "cliente": "FAVINCO EMBALAGENS",
             "peso": 297.38,
             "chapas": 3895
+          },
+          {
+            "cliente": "Tolecaixas Indústria e Comércio Ltda",
+            "peso": 157.16,
+            "chapas": 1555
           }
         ]
       }
