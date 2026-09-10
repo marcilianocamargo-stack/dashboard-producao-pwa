@@ -4028,8 +4028,8 @@
         ]
       },
       "noite": {
-        "peso": 2528.68,
-        "chapas": 7720,
+        "peso": 2644.01,
+        "chapas": 9275,
         "velocidade": 0,
         "papeis": [
           {
@@ -4039,8 +4039,8 @@
           },
           {
             "papel": "P25B",
-            "chapas": 6165,
-            "peso": 998.02
+            "chapas": 7720,
+            "peso": 1113.35
           }
         ],
         "clientes": [
@@ -4058,18 +4058,23 @@
             "cliente": "CARTOMIL EMBALAGENS LTDA",
             "peso": 998.02,
             "chapas": 6165
+          },
+          {
+            "cliente": "FAVINCO EMBALAGENS",
+            "peso": 115.33,
+            "chapas": 1555
           }
         ]
       },
       "total": {
-        "peso": 6108.91,
-        "chapas": 24015,
+        "peso": 6224.24,
+        "chapas": 25570,
         "velocidade": 0,
         "papeis": [
           {
             "papel": "P25B",
-            "chapas": 16855,
-            "peso": 2291.77
+            "chapas": 18410,
+            "peso": 2407.1
           },
           {
             "papel": "P35B",
@@ -4097,6 +4102,11 @@
             "cliente": "HARMONY EMBALAGENS",
             "peso": 93.16,
             "chapas": 250
+          },
+          {
+            "cliente": "FAVINCO EMBALAGENS",
+            "peso": 115.33,
+            "chapas": 1555
           }
         ]
       }
