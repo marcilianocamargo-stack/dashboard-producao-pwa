@@ -4325,8 +4325,8 @@
     "2026-09-11": {
       "data": "2026-09-11",
       "dia": {
-        "peso": 1158.01,
-        "chapas": 5555,
+        "peso": 1262.91,
+        "chapas": 5915,
         "velocidade": 0,
         "papeis": [
           {
@@ -4348,13 +4348,18 @@
             "papel": "PW40B",
             "chapas": 1585,
             "peso": 362.86
+          },
+          {
+            "papel": "P55D",
+            "chapas": 360,
+            "peso": 104.9
           }
         ],
         "clientes": [
           {
             "cliente": "FAVINCO EMBALAGENS",
-            "peso": 317.13,
-            "chapas": 750
+            "peso": 422.03,
+            "chapas": 1110
           },
           {
             "cliente": "Renovapel Reciclagem de Papeis Ltda",
@@ -4369,8 +4374,8 @@
         ]
       },
       "total": {
-        "peso": 1158.01,
-        "chapas": 5555,
+        "peso": 1262.91,
+        "chapas": 5915,
         "velocidade": 0,
         "papeis": [
           {
@@ -4392,13 +4397,18 @@
             "papel": "PW40B",
             "chapas": 1585,
             "peso": 362.86
+          },
+          {
+            "papel": "P55D",
+            "chapas": 360,
+            "peso": 104.9
           }
         ],
         "clientes": [
           {
             "cliente": "FAVINCO EMBALAGENS",
-            "peso": 317.13,
-            "chapas": 750
+            "peso": 422.03,
+            "chapas": 1110
           },
           {
             "cliente": "Renovapel Reciclagem de Papeis Ltda",
