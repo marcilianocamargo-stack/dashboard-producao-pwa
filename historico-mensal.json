@@ -4325,8 +4325,8 @@
     "2026-09-11": {
       "data": "2026-09-11",
       "dia": {
-        "peso": 495.87,
-        "chapas": 2340,
+        "peso": 694.39,
+        "chapas": 3460,
         "velocidade": 0,
         "papeis": [
           {
@@ -4336,8 +4336,8 @@
           },
           {
             "papel": "P45B",
-            "chapas": 1590,
-            "peso": 178.74
+            "chapas": 2710,
+            "peso": 377.26
           }
         ],
         "clientes": [
@@ -4348,14 +4348,14 @@
           },
           {
             "cliente": "Renovapel Reciclagem de Papeis Ltda",
-            "peso": 178.74,
-            "chapas": 1590
+            "peso": 377.26,
+            "chapas": 2710
           }
         ]
       },
       "total": {
-        "peso": 495.87,
-        "chapas": 2340,
+        "peso": 694.39,
+        "chapas": 3460,
         "velocidade": 0,
         "papeis": [
           {
@@ -4365,8 +4365,8 @@
           },
           {
             "papel": "P45B",
-            "chapas": 1590,
-            "peso": 178.74
+            "chapas": 2710,
+            "peso": 377.26
           }
         ],
         "clientes": [
@@ -4377,8 +4377,8 @@
           },
           {
             "cliente": "Renovapel Reciclagem de Papeis Ltda",
-            "peso": 178.74,
-            "chapas": 1590
+            "peso": 377.26,
+            "chapas": 2710
           }
         ]
       }
