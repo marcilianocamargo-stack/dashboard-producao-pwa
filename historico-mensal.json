@@ -4388,9 +4388,28 @@
           }
         ]
       },
+      "noite": {
+        "peso": 246.65,
+        "chapas": 2010,
+        "velocidade": 0,
+        "papeis": [
+          {
+            "papel": "PW40B",
+            "chapas": 2010,
+            "peso": 246.65
+          }
+        ],
+        "clientes": [
+          {
+            "cliente": "DR Embalagens",
+            "peso": 246.65,
+            "chapas": 2010
+          }
+        ]
+      },
       "total": {
-        "peso": 4094.07,
-        "chapas": 9315,
+        "peso": 4340.72,
+        "chapas": 11325,
         "velocidade": 0,
         "papeis": [
           {
@@ -4410,8 +4429,8 @@
           },
           {
             "papel": "PW40B",
-            "chapas": 1585,
-            "peso": 362.86
+            "chapas": 3595,
+            "peso": 609.51
           },
           {
             "papel": "P55D",
@@ -4437,8 +4456,8 @@
           },
           {
             "cliente": "DR Embalagens",
-            "peso": 463.62,
-            "chapas": 2095
+            "peso": 710.27,
+            "chapas": 4105
           },
           {
             "cliente": "PCBOX EMBALAGENS LTDA",
