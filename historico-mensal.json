@@ -4476,6 +4476,47 @@
           }
         ]
       }
+    },
+    "2026-09-14": {
+      "data": "2026-09-14",
+      "dia": {
+        "peso": 96.42,
+        "chapas": 210,
+        "velocidade": 0,
+        "papeis": [
+          {
+            "papel": "P25B",
+            "chapas": 210,
+            "peso": 96.42
+          }
+        ],
+        "clientes": [
+          {
+            "cliente": "PCBOX EMBALAGENS LTDA",
+            "peso": 96.42,
+            "chapas": 210
+          }
+        ]
+      },
+      "total": {
+        "peso": 96.42,
+        "chapas": 210,
+        "velocidade": 0,
+        "papeis": [
+          {
+            "papel": "P25B",
+            "chapas": 210,
+            "peso": 96.42
+          }
+        ],
+        "clientes": [
+          {
+            "cliente": "PCBOX EMBALAGENS LTDA",
+            "peso": 96.42,
+            "chapas": 210
+          }
+        ]
+      }
     }
   }
 }
