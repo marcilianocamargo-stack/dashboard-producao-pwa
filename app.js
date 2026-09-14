@@ -56,12 +56,12 @@ function arranjoParaLargura(largMM) {
 // alguém cadastrar o valor certo em "Configurar gramatura".
 const TABELA_PAPEL = {
   onda_simples: [
-    { codigo: "P25", coluna_min_kgf_cm: 2.5, gr_m2_onda_b: 315, gr_m2_onda_c: 324 },
+    { codigo: "P25", coluna_min_kgf_cm: 2.5, gr_m2_onda_b: 320, gr_m2_onda_c: 330 },
     { codigo: "P35", coluna_min_kgf_cm: 3.5, gr_m2_onda_b: 345, gr_m2_onda_c: 354 },
     { codigo: "P40", coluna_min_kgf_cm: 4.0, gr_m2_onda_b: 355, gr_m2_onda_c: 365 },
     { codigo: "P45", coluna_min_kgf_cm: 4.5, gr_m2_onda_b: 365, gr_m2_onda_c: 375 },
-    { codigo: "P50", coluna_min_kgf_cm: 5.0, gr_m2_onda_b: 388, gr_m2_onda_c: 399 },
-    { codigo: "P55", coluna_min_kgf_cm: 5.5, gr_m2_onda_b: 398, gr_m2_onda_c: 409 },
+    { codigo: "P50", coluna_min_kgf_cm: 5.0, gr_m2_onda_b: 388, gr_m2_onda_c: 400 },
+    { codigo: "P55", coluna_min_kgf_cm: 5.5, gr_m2_onda_b: 400, gr_m2_onda_c: 409 },
     { codigo: "P60", coluna_min_kgf_cm: 6.0, gr_m2_onda_b: 428, gr_m2_onda_c: 440 },
     { codigo: "P70", coluna_min_kgf_cm: 7.0, gr_m2_onda_b: 458, gr_m2_onda_c: 470 },
     { codigo: "P80", coluna_min_kgf_cm: 8.0, gr_m2_onda_b: 514, gr_m2_onda_c: 528 },
@@ -69,7 +69,7 @@ const TABELA_PAPEL = {
   ],
   papelao_branco: [
     { codigo: "PW40", coluna_min_kgf_cm: 4.0, gr_m2_onda_b: 365, gr_m2_onda_c: 375 },
-    { codigo: "PW50", coluna_min_kgf_cm: 5.0, gr_m2_onda_b: 388, gr_m2_onda_c: 399 },
+    { codigo: "PW50", coluna_min_kgf_cm: 5.0, gr_m2_onda_b: 400, gr_m2_onda_c: 420 },
   ],
   // Código da tabela já vem com sufixo "B" de grade (não é onda). Ex.:
   // "PK45B" = grade do papel kraft; a onda real do produto (B ou C)
