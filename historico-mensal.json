@@ -4480,14 +4480,14 @@
     "2026-09-14": {
       "data": "2026-09-14",
       "dia": {
-        "peso": 96.42,
-        "chapas": 210,
+        "peso": 301.05,
+        "chapas": 1745,
         "velocidade": 0,
         "papeis": [
           {
             "papel": "P25B",
-            "chapas": 210,
-            "peso": 96.42
+            "chapas": 1745,
+            "peso": 301.05
           }
         ],
         "clientes": [
@@ -4495,18 +4495,23 @@
             "cliente": "PCBOX EMBALAGENS LTDA",
             "peso": 96.42,
             "chapas": 210
+          },
+          {
+            "cliente": "DR Embalagens",
+            "peso": 204.63,
+            "chapas": 1535
           }
         ]
       },
       "total": {
-        "peso": 96.42,
-        "chapas": 210,
+        "peso": 301.05,
+        "chapas": 1745,
         "velocidade": 0,
         "papeis": [
           {
             "papel": "P25B",
-            "chapas": 210,
-            "peso": 96.42
+            "chapas": 1745,
+            "peso": 301.05
           }
         ],
         "clientes": [
@@ -4514,6 +4519,11 @@
             "cliente": "PCBOX EMBALAGENS LTDA",
             "peso": 96.42,
             "chapas": 210
+          },
+          {
+            "cliente": "DR Embalagens",
+            "peso": 204.63,
+            "chapas": 1535
           }
         ]
       }
