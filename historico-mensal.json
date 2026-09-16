@@ -4744,8 +4744,8 @@
         ]
       },
       "noite": {
-        "peso": 2037.04,
-        "chapas": 4875,
+        "peso": 2195.81,
+        "chapas": 5235,
         "velocidade": 0,
         "papeis": [
           {
@@ -4755,8 +4755,8 @@
           },
           {
             "papel": "P55D",
-            "chapas": 2520,
-            "peso": 1111.39
+            "chapas": 2880,
+            "peso": 1270.16
           }
         ],
         "clientes": [
@@ -4767,14 +4767,14 @@
           },
           {
             "cliente": "IPE EMBALAGENS LTDA",
-            "peso": 1111.39,
-            "chapas": 2520
+            "peso": 1270.16,
+            "chapas": 2880
           }
         ]
       },
       "total": {
-        "peso": 6405.15,
-        "chapas": 23070,
+        "peso": 6563.92,
+        "chapas": 23430,
         "velocidade": 0,
         "papeis": [
           {
@@ -4799,8 +4799,8 @@
           },
           {
             "papel": "P55D",
-            "chapas": 2520,
-            "peso": 1111.39
+            "chapas": 2880,
+            "peso": 1270.16
           }
         ],
         "clientes": [
@@ -4821,8 +4821,8 @@
           },
           {
             "cliente": "IPE EMBALAGENS LTDA",
-            "peso": 1111.39,
-            "chapas": 2520
+            "peso": 1270.16,
+            "chapas": 2880
           }
         ]
       }
