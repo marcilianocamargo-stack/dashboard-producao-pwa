@@ -4700,8 +4700,8 @@
     "2026-09-16": {
       "data": "2026-09-16",
       "dia": {
-        "peso": 2624.39,
-        "chapas": 14125,
+        "peso": 2726.68,
+        "chapas": 14705,
         "velocidade": 0,
         "papeis": [
           {
@@ -4716,15 +4716,15 @@
           },
           {
             "papel": "P35B",
-            "chapas": 1000,
-            "peso": 185.05
+            "chapas": 1580,
+            "peso": 287.34
           }
         ],
         "clientes": [
           {
             "cliente": "CARPELL LTDA",
-            "peso": 1917.66,
-            "chapas": 10425
+            "peso": 2019.95,
+            "chapas": 11005
           },
           {
             "cliente": "ABAPEL COMERCIO DE EMBALAGENS LTDA",
@@ -4734,8 +4734,8 @@
         ]
       },
       "total": {
-        "peso": 2624.39,
-        "chapas": 14125,
+        "peso": 2726.68,
+        "chapas": 14705,
         "velocidade": 0,
         "papeis": [
           {
@@ -4750,15 +4750,15 @@
           },
           {
             "papel": "P35B",
-            "chapas": 1000,
-            "peso": 185.05
+            "chapas": 1580,
+            "peso": 287.34
           }
         ],
         "clientes": [
           {
             "cliente": "CARPELL LTDA",
-            "peso": 1917.66,
-            "chapas": 10425
+            "peso": 2019.95,
+            "chapas": 11005
           },
           {
             "cliente": "ABAPEL COMERCIO DE EMBALAGENS LTDA",
