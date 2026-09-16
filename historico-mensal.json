@@ -4700,40 +4700,40 @@
     "2026-09-16": {
       "data": "2026-09-16",
       "dia": {
-        "peso": 237.98,
-        "chapas": 670,
+        "peso": 356.97,
+        "chapas": 1005,
         "velocidade": 0,
         "papeis": [
           {
             "papel": "P25B",
-            "chapas": 670,
-            "peso": 237.98
+            "chapas": 1005,
+            "peso": 356.97
           }
         ],
         "clientes": [
           {
             "cliente": "CARPELL LTDA",
-            "peso": 237.98,
-            "chapas": 670
+            "peso": 356.97,
+            "chapas": 1005
           }
         ]
       },
       "total": {
-        "peso": 237.98,
-        "chapas": 670,
+        "peso": 356.97,
+        "chapas": 1005,
         "velocidade": 0,
         "papeis": [
           {
             "papel": "P25B",
-            "chapas": 670,
-            "peso": 237.98
+            "chapas": 1005,
+            "peso": 356.97
           }
         ],
         "clientes": [
           {
             "cliente": "CARPELL LTDA",
-            "peso": 237.98,
-            "chapas": 670
+            "peso": 356.97,
+            "chapas": 1005
           }
         ]
       }
