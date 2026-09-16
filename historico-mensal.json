@@ -4744,14 +4744,19 @@
         ]
       },
       "noite": {
-        "peso": 925.65,
-        "chapas": 2355,
+        "peso": 1084.42,
+        "chapas": 2715,
         "velocidade": 0,
         "papeis": [
           {
             "papel": "P50D",
             "chapas": 2355,
             "peso": 925.65
+          },
+          {
+            "papel": "P55D",
+            "chapas": 360,
+            "peso": 158.77
           }
         ],
         "clientes": [
@@ -4759,12 +4764,17 @@
             "cliente": "ABAPEL COMERCIO DE EMBALAGENS LTDA",
             "peso": 925.65,
             "chapas": 2355
+          },
+          {
+            "cliente": "IPE EMBALAGENS LTDA",
+            "peso": 158.77,
+            "chapas": 360
           }
         ]
       },
       "total": {
-        "peso": 5293.76,
-        "chapas": 20550,
+        "peso": 5452.53,
+        "chapas": 20910,
         "velocidade": 0,
         "papeis": [
           {
@@ -4786,6 +4796,11 @@
             "papel": "P50D",
             "chapas": 4815,
             "peso": 2362.05
+          },
+          {
+            "papel": "P55D",
+            "chapas": 360,
+            "peso": 158.77
           }
         ],
         "clientes": [
@@ -4803,6 +4818,11 @@
             "cliente": "RM Embalagens",
             "peso": 716.41,
             "chapas": 1110
+          },
+          {
+            "cliente": "IPE EMBALAGENS LTDA",
+            "peso": 158.77,
+            "chapas": 360
           }
         ]
       }
