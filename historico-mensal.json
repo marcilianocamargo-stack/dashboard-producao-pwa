@@ -4835,14 +4835,14 @@
     "2026-09-17": {
       "data": "2026-09-17",
       "dia": {
-        "peso": 1268.22,
-        "chapas": 4600,
+        "peso": 1690.62,
+        "chapas": 5000,
         "velocidade": 0,
         "papeis": [
           {
             "papel": "P25B",
-            "chapas": 2060,
-            "peso": 199.7
+            "chapas": 2460,
+            "peso": 622.1
           },
           {
             "papel": "P35B",
@@ -4855,18 +4855,23 @@
             "cliente": "CARPELL LTDA",
             "peso": 1268.22,
             "chapas": 4600
+          },
+          {
+            "cliente": "PCBOX EMBALAGENS LTDA",
+            "peso": 422.4,
+            "chapas": 400
           }
         ]
       },
       "total": {
-        "peso": 1268.22,
-        "chapas": 4600,
+        "peso": 1690.62,
+        "chapas": 5000,
         "velocidade": 0,
         "papeis": [
           {
             "papel": "P25B",
-            "chapas": 2060,
-            "peso": 199.7
+            "chapas": 2460,
+            "peso": 622.1
           },
           {
             "papel": "P35B",
@@ -4879,6 +4884,11 @@
             "cliente": "CARPELL LTDA",
             "peso": 1268.22,
             "chapas": 4600
+          },
+          {
+            "cliente": "PCBOX EMBALAGENS LTDA",
+            "peso": 422.4,
+            "chapas": 400
           }
         ]
       }
