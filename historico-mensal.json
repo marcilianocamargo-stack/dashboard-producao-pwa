@@ -4955,8 +4955,8 @@
     "2026-09-18": {
       "data": "2026-09-18",
       "dia": {
-        "peso": 2841.19,
-        "chapas": 12080,
+        "peso": 2982.99,
+        "chapas": 12655,
         "velocidade": 0,
         "papeis": [
           {
@@ -4966,8 +4966,8 @@
           },
           {
             "papel": "P25B",
-            "chapas": 10065,
-            "peso": 1977.81
+            "chapas": 10640,
+            "peso": 2119.61
           }
         ],
         "clientes": [
@@ -4978,8 +4978,8 @@
           },
           {
             "cliente": "CARPELL LTDA",
-            "peso": 1977.81,
-            "chapas": 10065
+            "peso": 2119.61,
+            "chapas": 10640
           }
         ]
       },
@@ -5003,8 +5003,8 @@
         ]
       },
       "total": {
-        "peso": 3354.4,
-        "chapas": 14405,
+        "peso": 3496.2,
+        "chapas": 14980,
         "velocidade": 0,
         "papeis": [
           {
@@ -5014,8 +5014,8 @@
           },
           {
             "papel": "P25B",
-            "chapas": 12390,
-            "peso": 2491.02
+            "chapas": 12965,
+            "peso": 2632.82
           }
         ],
         "clientes": [
@@ -5026,8 +5026,8 @@
           },
           {
             "cliente": "CARPELL LTDA",
-            "peso": 1977.81,
-            "chapas": 10065
+            "peso": 2119.61,
+            "chapas": 10640
           },
           {
             "cliente": "FAVINCO EMBALAGENS",
