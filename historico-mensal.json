@@ -4983,9 +4983,28 @@
           }
         ]
       },
+      "noite": {
+        "peso": 171.07,
+        "chapas": 775,
+        "velocidade": 0,
+        "papeis": [
+          {
+            "papel": "P25B",
+            "chapas": 775,
+            "peso": 171.07
+          }
+        ],
+        "clientes": [
+          {
+            "cliente": "FAVINCO EMBALAGENS",
+            "peso": 171.07,
+            "chapas": 775
+          }
+        ]
+      },
       "total": {
-        "peso": 2841.19,
-        "chapas": 12080,
+        "peso": 3012.26,
+        "chapas": 12855,
         "velocidade": 0,
         "papeis": [
           {
@@ -4995,8 +5014,8 @@
           },
           {
             "papel": "P25B",
-            "chapas": 10065,
-            "peso": 1977.81
+            "chapas": 10840,
+            "peso": 2148.88
           }
         ],
         "clientes": [
@@ -5009,6 +5028,11 @@
             "cliente": "CARPELL LTDA",
             "peso": 1977.81,
             "chapas": 10065
+          },
+          {
+            "cliente": "FAVINCO EMBALAGENS",
+            "peso": 171.07,
+            "chapas": 775
           }
         ]
       }
