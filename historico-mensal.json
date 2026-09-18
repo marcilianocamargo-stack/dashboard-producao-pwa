@@ -4955,40 +4955,40 @@
     "2026-09-18": {
       "data": "2026-09-18",
       "dia": {
-        "peso": 491.45,
-        "chapas": 1185,
+        "peso": 614.68,
+        "chapas": 1460,
         "velocidade": 0,
         "papeis": [
           {
             "papel": "P25C",
-            "chapas": 1185,
-            "peso": 491.45
+            "chapas": 1460,
+            "peso": 614.68
           }
         ],
         "clientes": [
           {
             "cliente": "ABAPEL COMERCIO DE EMBALAGENS LTDA",
-            "peso": 491.45,
-            "chapas": 1185
+            "peso": 614.68,
+            "chapas": 1460
           }
         ]
       },
       "total": {
-        "peso": 491.45,
-        "chapas": 1185,
+        "peso": 614.68,
+        "chapas": 1460,
         "velocidade": 0,
         "papeis": [
           {
             "papel": "P25C",
-            "chapas": 1185,
-            "peso": 491.45
+            "chapas": 1460,
+            "peso": 614.68
           }
         ],
         "clientes": [
           {
             "cliente": "ABAPEL COMERCIO DE EMBALAGENS LTDA",
-            "peso": 491.45,
-            "chapas": 1185
+            "peso": 614.68,
+            "chapas": 1460
           }
         ]
       }
