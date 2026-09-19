@@ -5040,21 +5040,21 @@
     "2026-09-19": {
       "data": "2026-09-19",
       "dia": {
-        "peso": 5246.37,
-        "chapas": 8583,
+        "peso": 5460.58,
+        "chapas": 8943,
         "velocidade": 0,
         "papeis": [
           {
             "papel": "P50D",
-            "chapas": 8583,
-            "peso": 5246.37
+            "chapas": 8943,
+            "peso": 5460.58
           }
         ],
         "clientes": [
           {
             "cliente": "ABAPEL COMERCIO DE EMBALAGENS LTDA",
-            "peso": 4265.52,
-            "chapas": 7068
+            "peso": 4479.73,
+            "chapas": 7428
           },
           {
             "cliente": "PCBOX EMBALAGENS LTDA",
@@ -5069,21 +5069,21 @@
         ]
       },
       "total": {
-        "peso": 5246.37,
-        "chapas": 8583,
+        "peso": 5460.58,
+        "chapas": 8943,
         "velocidade": 0,
         "papeis": [
           {
             "papel": "P50D",
-            "chapas": 8583,
-            "peso": 5246.37
+            "chapas": 8943,
+            "peso": 5460.58
           }
         ],
         "clientes": [
           {
             "cliente": "ABAPEL COMERCIO DE EMBALAGENS LTDA",
-            "peso": 4265.52,
-            "chapas": 7068
+            "peso": 4479.73,
+            "chapas": 7428
           },
           {
             "cliente": "PCBOX EMBALAGENS LTDA",
