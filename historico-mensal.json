@@ -5040,14 +5040,19 @@
     "2026-09-19": {
       "data": "2026-09-19",
       "dia": {
-        "peso": 5558.76,
-        "chapas": 9108,
+        "peso": 5676.13,
+        "chapas": 9468,
         "velocidade": 0,
         "papeis": [
           {
             "papel": "P50D",
             "chapas": 9108,
             "peso": 5558.76
+          },
+          {
+            "papel": "P70D",
+            "chapas": 360,
+            "peso": 117.37
           }
         ],
         "clientes": [
@@ -5065,18 +5070,28 @@
             "cliente": "RM Embalagens",
             "peso": 517.35,
             "chapas": 705
+          },
+          {
+            "cliente": "FAVINCO EMBALAGENS",
+            "peso": 117.37,
+            "chapas": 360
           }
         ]
       },
       "total": {
-        "peso": 5558.76,
-        "chapas": 9108,
+        "peso": 5676.13,
+        "chapas": 9468,
         "velocidade": 0,
         "papeis": [
           {
             "papel": "P50D",
             "chapas": 9108,
             "peso": 5558.76
+          },
+          {
+            "papel": "P70D",
+            "chapas": 360,
+            "peso": 117.37
           }
         ],
         "clientes": [
@@ -5094,6 +5109,11 @@
             "cliente": "RM Embalagens",
             "peso": 517.35,
             "chapas": 705
+          },
+          {
+            "cliente": "FAVINCO EMBALAGENS",
+            "peso": 117.37,
+            "chapas": 360
           }
         ]
       }
