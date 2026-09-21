@@ -5140,14 +5140,14 @@
     "2026-09-21": {
       "data": "2026-09-21",
       "dia": {
-        "peso": 4896.58,
-        "chapas": 22240,
+        "peso": 4990.7,
+        "chapas": 23290,
         "velocidade": 0,
         "papeis": [
           {
             "papel": "P25B",
-            "chapas": 9565,
-            "peso": 1342.57
+            "chapas": 10615,
+            "peso": 1436.69
           },
           {
             "papel": "P50B",
@@ -5173,20 +5173,20 @@
           },
           {
             "cliente": "FAVINCO",
-            "peso": 181.07,
-            "chapas": 2020
+            "peso": 275.19,
+            "chapas": 3070
           }
         ]
       },
       "total": {
-        "peso": 4896.58,
-        "chapas": 22240,
+        "peso": 4990.7,
+        "chapas": 23290,
         "velocidade": 0,
         "papeis": [
           {
             "papel": "P25B",
-            "chapas": 9565,
-            "peso": 1342.57
+            "chapas": 10615,
+            "peso": 1436.69
           },
           {
             "papel": "P50B",
@@ -5212,8 +5212,8 @@
           },
           {
             "cliente": "FAVINCO",
-            "peso": 181.07,
-            "chapas": 2020
+            "peso": 275.19,
+            "chapas": 3070
           }
         ]
       }
