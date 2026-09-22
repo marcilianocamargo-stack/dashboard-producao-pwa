@@ -5270,14 +5270,14 @@
     "2026-09-22": {
       "data": "2026-09-22",
       "dia": {
-        "peso": 2961.56,
-        "chapas": 13015,
+        "peso": 3127.91,
+        "chapas": 13775,
         "velocidade": 0,
         "papeis": [
           {
             "papel": "P25B",
-            "chapas": 10470,
-            "peso": 1701.56
+            "chapas": 11230,
+            "peso": 1867.91
           },
           {
             "papel": "P60C",
@@ -5288,8 +5288,8 @@
         "clientes": [
           {
             "cliente": "FAVINCO EMBALAGENS",
-            "peso": 1701.56,
-            "chapas": 10470
+            "peso": 1867.91,
+            "chapas": 11230
           },
           {
             "cliente": "Z4A EMBALAGENS LTDA",
@@ -5299,14 +5299,14 @@
         ]
       },
       "total": {
-        "peso": 2961.56,
-        "chapas": 13015,
+        "peso": 3127.91,
+        "chapas": 13775,
         "velocidade": 0,
         "papeis": [
           {
             "papel": "P25B",
-            "chapas": 10470,
-            "peso": 1701.56
+            "chapas": 11230,
+            "peso": 1867.91
           },
           {
             "papel": "P60C",
@@ -5317,8 +5317,8 @@
         "clientes": [
           {
             "cliente": "FAVINCO EMBALAGENS",
-            "peso": 1701.56,
-            "chapas": 10470
+            "peso": 1867.91,
+            "chapas": 11230
           },
           {
             "cliente": "Z4A EMBALAGENS LTDA",
