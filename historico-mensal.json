@@ -5270,40 +5270,40 @@
     "2026-09-22": {
       "data": "2026-09-22",
       "dia": {
-        "peso": 1368.86,
-        "chapas": 8950,
+        "peso": 1535.21,
+        "chapas": 9710,
         "velocidade": 0,
         "papeis": [
           {
             "papel": "P25B",
-            "chapas": 8950,
-            "peso": 1368.86
+            "chapas": 9710,
+            "peso": 1535.21
           }
         ],
         "clientes": [
           {
             "cliente": "FAVINCO EMBALAGENS",
-            "peso": 1368.86,
-            "chapas": 8950
+            "peso": 1535.21,
+            "chapas": 9710
           }
         ]
       },
       "total": {
-        "peso": 1368.86,
-        "chapas": 8950,
+        "peso": 1535.21,
+        "chapas": 9710,
         "velocidade": 0,
         "papeis": [
           {
             "papel": "P25B",
-            "chapas": 8950,
-            "peso": 1368.86
+            "chapas": 9710,
+            "peso": 1535.21
           }
         ],
         "clientes": [
           {
             "cliente": "FAVINCO EMBALAGENS",
-            "peso": 1368.86,
-            "chapas": 8950
+            "peso": 1535.21,
+            "chapas": 9710
           }
         ]
       }
