@@ -5221,40 +5221,40 @@
     "2026-09-22": {
       "data": "2026-09-22",
       "dia": {
-        "peso": 607.35,
-        "chapas": 5000,
+        "peso": 737.33,
+        "chapas": 6070,
         "velocidade": 0,
         "papeis": [
           {
             "papel": "P25B",
-            "chapas": 5000,
-            "peso": 607.35
+            "chapas": 6070,
+            "peso": 737.33
           }
         ],
         "clientes": [
           {
             "cliente": "FAVINCO EMBALAGENS",
-            "peso": 607.35,
-            "chapas": 5000
+            "peso": 737.33,
+            "chapas": 6070
           }
         ]
       },
       "total": {
-        "peso": 607.35,
-        "chapas": 5000,
+        "peso": 737.33,
+        "chapas": 6070,
         "velocidade": 0,
         "papeis": [
           {
             "papel": "P25B",
-            "chapas": 5000,
-            "peso": 607.35
+            "chapas": 6070,
+            "peso": 737.33
           }
         ],
         "clientes": [
           {
             "cliente": "FAVINCO EMBALAGENS",
-            "peso": 607.35,
-            "chapas": 5000
+            "peso": 737.33,
+            "chapas": 6070
           }
         ]
       }
