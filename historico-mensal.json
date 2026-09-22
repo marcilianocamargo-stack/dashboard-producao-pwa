@@ -5270,14 +5270,14 @@
     "2026-09-22": {
       "data": "2026-09-22",
       "dia": {
-        "peso": 3185.91,
-        "chapas": 14040,
+        "peso": 3240.44,
+        "chapas": 14290,
         "velocidade": 0,
         "papeis": [
           {
             "papel": "P25B",
-            "chapas": 11495,
-            "peso": 1925.91
+            "chapas": 11745,
+            "peso": 1980.44
           },
           {
             "papel": "P60C",
@@ -5295,18 +5295,23 @@
             "cliente": "Z4A EMBALAGENS LTDA",
             "peso": 1260.0,
             "chapas": 2545
+          },
+          {
+            "cliente": "RM Embalagens",
+            "peso": 54.53,
+            "chapas": 250
           }
         ]
       },
       "total": {
-        "peso": 3185.91,
-        "chapas": 14040,
+        "peso": 3240.44,
+        "chapas": 14290,
         "velocidade": 0,
         "papeis": [
           {
             "papel": "P25B",
-            "chapas": 11495,
-            "peso": 1925.91
+            "chapas": 11745,
+            "peso": 1980.44
           },
           {
             "papel": "P60C",
@@ -5324,6 +5329,11 @@
             "cliente": "Z4A EMBALAGENS LTDA",
             "peso": 1260.0,
             "chapas": 2545
+          },
+          {
+            "cliente": "RM Embalagens",
+            "peso": 54.53,
+            "chapas": 250
           }
         ]
       }
