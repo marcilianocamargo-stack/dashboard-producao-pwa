@@ -5178,15 +5178,34 @@
           }
         ]
       },
-      "total": {
-        "peso": 4990.7,
-        "chapas": 23290,
+      "noite": {
+        "peso": 111.06,
+        "chapas": 1165,
         "velocidade": 0,
         "papeis": [
           {
             "papel": "P25B",
-            "chapas": 10615,
-            "peso": 1436.69
+            "chapas": 1165,
+            "peso": 111.06
+          }
+        ],
+        "clientes": [
+          {
+            "cliente": "RM Embalagens",
+            "peso": 111.06,
+            "chapas": 1165
+          }
+        ]
+      },
+      "total": {
+        "peso": 5101.76,
+        "chapas": 24455,
+        "velocidade": 0,
+        "papeis": [
+          {
+            "papel": "P25B",
+            "chapas": 11780,
+            "peso": 1547.75
           },
           {
             "papel": "P50B",
@@ -5207,8 +5226,8 @@
           },
           {
             "cliente": "RM Embalagens",
-            "peso": 3590.23,
-            "chapas": 11830
+            "peso": 3701.29,
+            "chapas": 12995
           },
           {
             "cliente": "FAVINCO",
