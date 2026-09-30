@@ -5850,8 +5850,8 @@
         ]
       },
       "noite": {
-        "peso": 1711.51,
-        "chapas": 10025,
+        "peso": 1840.07,
+        "chapas": 11265,
         "velocidade": 0,
         "papeis": [
           {
@@ -5866,8 +5866,8 @@
           },
           {
             "papel": "P25B",
-            "chapas": 6660,
-            "peso": 731.11
+            "chapas": 7900,
+            "peso": 859.67
           },
           {
             "papel": "P45B",
@@ -5900,12 +5900,17 @@
             "cliente": "Renovapel Reciclagem de Papeis Ltda",
             "peso": 350.42,
             "chapas": 2275
+          },
+          {
+            "cliente": "HARMONY EMBALAGENS",
+            "peso": 128.56,
+            "chapas": 1240
           }
         ]
       },
       "total": {
-        "peso": 7980.92,
-        "chapas": 21015,
+        "peso": 8109.48,
+        "chapas": 22255,
         "velocidade": 0,
         "papeis": [
           {
@@ -5920,8 +5925,8 @@
           },
           {
             "papel": "P25B",
-            "chapas": 7310,
-            "peso": 903.62
+            "chapas": 8550,
+            "peso": 1032.18
           },
           {
             "papel": "P45B",
@@ -5937,8 +5942,8 @@
           },
           {
             "cliente": "HARMONY EMBALAGENS",
-            "peso": 1109.25,
-            "chapas": 1960
+            "peso": 1237.81,
+            "chapas": 3200
           },
           {
             "cliente": "RM Embalagens ( Daiane Marques Canossa ME",
