@@ -5850,8 +5850,8 @@
         ]
       },
       "noite": {
-        "peso": 1156.26,
-        "chapas": 6140,
+        "peso": 1207.3,
+        "chapas": 6415,
         "velocidade": 0,
         "papeis": [
           {
@@ -5866,8 +5866,8 @@
           },
           {
             "papel": "P25B",
-            "chapas": 5050,
-            "peso": 526.28
+            "chapas": 5325,
+            "peso": 577.32
           }
         ],
         "clientes": [
@@ -5888,14 +5888,14 @@
           },
           {
             "cliente": "FAVINCO",
-            "peso": 143.84,
-            "chapas": 775
+            "peso": 194.88,
+            "chapas": 1050
           }
         ]
       },
       "total": {
-        "peso": 7425.67,
-        "chapas": 17130,
+        "peso": 7476.71,
+        "chapas": 17405,
         "velocidade": 0,
         "papeis": [
           {
@@ -5910,8 +5910,8 @@
           },
           {
             "papel": "P25B",
-            "chapas": 5700,
-            "peso": 698.79
+            "chapas": 5975,
+            "peso": 749.83
           }
         ],
         "clientes": [
@@ -5947,8 +5947,8 @@
           },
           {
             "cliente": "FAVINCO",
-            "peso": 143.84,
-            "chapas": 775
+            "peso": 194.88,
+            "chapas": 1050
           }
         ]
       }
