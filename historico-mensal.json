@@ -5850,8 +5850,8 @@
         ]
       },
       "noite": {
-        "peso": 2543.9,
-        "chapas": 14280,
+        "peso": 2606.65,
+        "chapas": 14830,
         "velocidade": 0,
         "papeis": [
           {
@@ -5871,8 +5871,8 @@
           },
           {
             "papel": "P45B",
-            "chapas": 5290,
-            "peso": 1054.25
+            "chapas": 5840,
+            "peso": 1117.0
           }
         ],
         "clientes": [
@@ -5898,8 +5898,8 @@
           },
           {
             "cliente": "Renovapel Reciclagem de Papeis Ltda",
-            "peso": 699.54,
-            "chapas": 4770
+            "peso": 762.29,
+            "chapas": 5320
           },
           {
             "cliente": "HARMONY EMBALAGENS",
@@ -5909,8 +5909,8 @@
         ]
       },
       "total": {
-        "peso": 8813.31,
-        "chapas": 25270,
+        "peso": 8876.06,
+        "chapas": 25820,
         "velocidade": 0,
         "papeis": [
           {
@@ -5930,8 +5930,8 @@
           },
           {
             "papel": "P45B",
-            "chapas": 5290,
-            "peso": 1054.25
+            "chapas": 5840,
+            "peso": 1117.0
           }
         ],
         "clientes": [
@@ -5972,8 +5972,8 @@
           },
           {
             "cliente": "Renovapel Reciclagem de Papeis Ltda",
-            "peso": 699.54,
-            "chapas": 4770
+            "peso": 762.29,
+            "chapas": 5320
           }
         ]
       }
