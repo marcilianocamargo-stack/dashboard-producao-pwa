@@ -5850,8 +5850,8 @@
         ]
       },
       "noite": {
-        "peso": 1012.42,
-        "chapas": 5365,
+        "peso": 1156.26,
+        "chapas": 6140,
         "velocidade": 0,
         "papeis": [
           {
@@ -5866,8 +5866,8 @@
           },
           {
             "papel": "P25B",
-            "chapas": 4275,
-            "peso": 382.44
+            "chapas": 5050,
+            "peso": 526.28
           }
         ],
         "clientes": [
@@ -5885,12 +5885,17 @@
             "cliente": "ANSELMO E FILHOS LTDA.",
             "peso": 382.44,
             "chapas": 4275
+          },
+          {
+            "cliente": "FAVINCO",
+            "peso": 143.84,
+            "chapas": 775
           }
         ]
       },
       "total": {
-        "peso": 7281.83,
-        "chapas": 16355,
+        "peso": 7425.67,
+        "chapas": 17130,
         "velocidade": 0,
         "papeis": [
           {
@@ -5905,8 +5910,8 @@
           },
           {
             "papel": "P25B",
-            "chapas": 4925,
-            "peso": 554.95
+            "chapas": 5700,
+            "peso": 698.79
           }
         ],
         "clientes": [
@@ -5939,6 +5944,11 @@
             "cliente": "ANSELMO E FILHOS LTDA.",
             "peso": 382.44,
             "chapas": 4275
+          },
+          {
+            "cliente": "FAVINCO",
+            "peso": 143.84,
+            "chapas": 775
           }
         ]
       }
