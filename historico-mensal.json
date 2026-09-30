@@ -5801,8 +5801,8 @@
     "2026-09-30": {
       "data": "2026-09-30",
       "dia": {
-        "peso": 2421.54,
-        "chapas": 3410,
+        "peso": 2509.0,
+        "chapas": 3560,
         "velocidade": 0,
         "papeis": [
           {
@@ -5812,8 +5812,8 @@
           },
           {
             "papel": "P55D",
-            "chapas": 335,
-            "peso": 247.84
+            "chapas": 485,
+            "peso": 335.3
           }
         ],
         "clientes": [
@@ -5831,12 +5831,17 @@
             "cliente": "RM Embalagens ( Daiane Marques Canossa ME",
             "peso": 601.96,
             "chapas": 895
+          },
+          {
+            "cliente": "PCBOX EMBALAGENS LTDA",
+            "peso": 87.46,
+            "chapas": 150
           }
         ]
       },
       "total": {
-        "peso": 2421.54,
-        "chapas": 3410,
+        "peso": 2509.0,
+        "chapas": 3560,
         "velocidade": 0,
         "papeis": [
           {
@@ -5846,8 +5851,8 @@
           },
           {
             "papel": "P55D",
-            "chapas": 335,
-            "peso": 247.84
+            "chapas": 485,
+            "peso": 335.3
           }
         ],
         "clientes": [
@@ -5865,6 +5870,11 @@
             "cliente": "RM Embalagens ( Daiane Marques Canossa ME",
             "peso": 601.96,
             "chapas": 895
+          },
+          {
+            "cliente": "PCBOX EMBALAGENS LTDA",
+            "peso": 87.46,
+            "chapas": 150
           }
         ]
       }
