@@ -6013,14 +6013,14 @@
     "2026-10-01": {
       "data": "2026-10-01",
       "dia": {
-        "peso": 1703.31,
-        "chapas": 2395,
+        "peso": 1959.19,
+        "chapas": 2665,
         "velocidade": 0,
         "papeis": [
           {
             "papel": "P25B",
-            "chapas": 1500,
-            "peso": 1296.92
+            "chapas": 1770,
+            "peso": 1552.8
           },
           {
             "papel": "P45B",
@@ -6043,18 +6043,23 @@
             "cliente": "Renovapel Reciclagem de Papeis Ltda",
             "peso": 99.21,
             "chapas": 515
+          },
+          {
+            "cliente": "PCBOX EMBALAGENS LTDA",
+            "peso": 255.88,
+            "chapas": 270
           }
         ]
       },
       "total": {
-        "peso": 1703.31,
-        "chapas": 2395,
+        "peso": 1959.19,
+        "chapas": 2665,
         "velocidade": 0,
         "papeis": [
           {
             "papel": "P25B",
-            "chapas": 1500,
-            "peso": 1296.92
+            "chapas": 1770,
+            "peso": 1552.8
           },
           {
             "papel": "P45B",
@@ -6077,6 +6082,11 @@
             "cliente": "Renovapel Reciclagem de Papeis Ltda",
             "peso": 99.21,
             "chapas": 515
+          },
+          {
+            "cliente": "PCBOX EMBALAGENS LTDA",
+            "peso": 255.88,
+            "chapas": 270
           }
         ]
       }
