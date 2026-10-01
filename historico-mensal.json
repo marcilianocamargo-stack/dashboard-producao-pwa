@@ -5850,8 +5850,8 @@
         ]
       },
       "noite": {
-        "peso": 3082.63,
-        "chapas": 17330,
+        "peso": 3224.68,
+        "chapas": 18495,
         "velocidade": 0,
         "papeis": [
           {
@@ -5878,6 +5878,11 @@
             "papel": "P50B",
             "chapas": 1090,
             "peso": 245.96
+          },
+          {
+            "papel": "P60C",
+            "chapas": 1165,
+            "peso": 142.05
           }
         ],
         "clientes": [
@@ -5910,12 +5915,17 @@
             "cliente": "HARMONY EMBALAGENS",
             "peso": 128.56,
             "chapas": 1240
+          },
+          {
+            "cliente": "Z4A EMBALAGENS LTDA",
+            "peso": 142.05,
+            "chapas": 1165
           }
         ]
       },
       "total": {
-        "peso": 9352.04,
-        "chapas": 28320,
+        "peso": 9494.09,
+        "chapas": 29485,
         "velocidade": 0,
         "papeis": [
           {
@@ -5942,6 +5952,11 @@
             "papel": "P50B",
             "chapas": 1090,
             "peso": 245.96
+          },
+          {
+            "papel": "P60C",
+            "chapas": 1165,
+            "peso": 142.05
           }
         ],
         "clientes": [
@@ -5984,6 +5999,11 @@
             "cliente": "Renovapel Reciclagem de Papeis Ltda",
             "peso": 889.79,
             "chapas": 6540
+          },
+          {
+            "cliente": "Z4A EMBALAGENS LTDA",
+            "peso": 142.05,
+            "chapas": 1165
           }
         ]
       }
