@@ -6013,14 +6013,14 @@
     "2026-10-01": {
       "data": "2026-10-01",
       "dia": {
-        "peso": 631.59,
-        "chapas": 740,
+        "peso": 955.76,
+        "chapas": 1120,
         "velocidade": 0,
         "papeis": [
           {
             "papel": "P25B",
-            "chapas": 360,
-            "peso": 324.41
+            "chapas": 740,
+            "peso": 648.58
           },
           {
             "papel": "P45B",
@@ -6033,18 +6033,23 @@
             "cliente": "RM Embalagens ( Daiane Marques Canossa ME",
             "peso": 631.59,
             "chapas": 740
+          },
+          {
+            "cliente": "ABAPEL COMERCIO DE EMBALAGENS LTDA",
+            "peso": 324.17,
+            "chapas": 380
           }
         ]
       },
       "total": {
-        "peso": 631.59,
-        "chapas": 740,
+        "peso": 955.76,
+        "chapas": 1120,
         "velocidade": 0,
         "papeis": [
           {
             "papel": "P25B",
-            "chapas": 360,
-            "peso": 324.41
+            "chapas": 740,
+            "peso": 648.58
           },
           {
             "papel": "P45B",
@@ -6057,6 +6062,11 @@
             "cliente": "RM Embalagens ( Daiane Marques Canossa ME",
             "peso": 631.59,
             "chapas": 740
+          },
+          {
+            "cliente": "ABAPEL COMERCIO DE EMBALAGENS LTDA",
+            "peso": 324.17,
+            "chapas": 380
           }
         ]
       }
