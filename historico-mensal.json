@@ -6013,8 +6013,8 @@
     "2026-10-01": {
       "data": "2026-10-01",
       "dia": {
-        "peso": 1604.1,
-        "chapas": 1880,
+        "peso": 1703.31,
+        "chapas": 2395,
         "velocidade": 0,
         "papeis": [
           {
@@ -6024,8 +6024,8 @@
           },
           {
             "papel": "P45B",
-            "chapas": 380,
-            "peso": 307.18
+            "chapas": 895,
+            "peso": 406.39
           }
         ],
         "clientes": [
@@ -6038,12 +6038,17 @@
             "cliente": "ABAPEL COMERCIO DE EMBALAGENS LTDA",
             "peso": 972.51,
             "chapas": 1140
+          },
+          {
+            "cliente": "Renovapel Reciclagem de Papeis Ltda",
+            "peso": 99.21,
+            "chapas": 515
           }
         ]
       },
       "total": {
-        "peso": 1604.1,
-        "chapas": 1880,
+        "peso": 1703.31,
+        "chapas": 2395,
         "velocidade": 0,
         "papeis": [
           {
@@ -6053,8 +6058,8 @@
           },
           {
             "papel": "P45B",
-            "chapas": 380,
-            "peso": 307.18
+            "chapas": 895,
+            "peso": 406.39
           }
         ],
         "clientes": [
@@ -6067,6 +6072,11 @@
             "cliente": "ABAPEL COMERCIO DE EMBALAGENS LTDA",
             "peso": 972.51,
             "chapas": 1140
+          },
+          {
+            "cliente": "Renovapel Reciclagem de Papeis Ltda",
+            "peso": 99.21,
+            "chapas": 515
           }
         ]
       }
