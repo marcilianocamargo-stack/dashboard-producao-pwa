@@ -6071,9 +6071,28 @@
           }
         ]
       },
+      "noite": {
+        "peso": 141.1,
+        "chapas": 285,
+        "velocidade": 0,
+        "papeis": [
+          {
+            "papel": "P60C",
+            "chapas": 285,
+            "peso": 141.1
+          }
+        ],
+        "clientes": [
+          {
+            "cliente": "Z4A EMBALAGENS LTDA",
+            "peso": 141.1,
+            "chapas": 285
+          }
+        ]
+      },
       "total": {
-        "peso": 6883.03,
-        "chapas": 11220,
+        "peso": 7024.13,
+        "chapas": 11505,
         "velocidade": 0,
         "papeis": [
           {
@@ -6105,6 +6124,11 @@
             "papel": "P35B",
             "chapas": 1040,
             "peso": 336.12
+          },
+          {
+            "papel": "P60C",
+            "chapas": 285,
+            "peso": 141.1
           }
         ],
         "clientes": [
@@ -6127,6 +6151,11 @@
             "cliente": "PCBOX EMBALAGENS LTDA",
             "peso": 3565.08,
             "chapas": 4250
+          },
+          {
+            "cliente": "Z4A EMBALAGENS LTDA",
+            "peso": 141.1,
+            "chapas": 285
           }
         ]
       }
