@@ -6247,27 +6247,27 @@
         ]
       },
       "noite": {
-        "peso": 509.19,
-        "chapas": 2325,
+        "peso": 618.69,
+        "chapas": 2825,
         "velocidade": 0,
         "papeis": [
           {
             "papel": "PW40B",
-            "chapas": 2325,
-            "peso": 509.19
+            "chapas": 2825,
+            "peso": 618.69
           }
         ],
         "clientes": [
           {
             "cliente": "Tolecaixas Indústria e Comércio Ltda",
-            "peso": 509.19,
-            "chapas": 2325
+            "peso": 618.69,
+            "chapas": 2825
           }
         ]
       },
       "total": {
-        "peso": 5768.49,
-        "chapas": 32431,
+        "peso": 5877.99,
+        "chapas": 32931,
         "velocidade": 0,
         "papeis": [
           {
@@ -6282,8 +6282,8 @@
           },
           {
             "papel": "PW40B",
-            "chapas": 3501,
-            "peso": 818.59
+            "chapas": 4001,
+            "peso": 928.09
           },
           {
             "papel": "P40B",
@@ -6329,8 +6329,8 @@
           },
           {
             "cliente": "Tolecaixas Indústria e Comércio Ltda",
-            "peso": 1746.43,
-            "chapas": 10091
+            "peso": 1855.93,
+            "chapas": 10591
           },
           {
             "cliente": "ANSELMO E FILHOS LTDA.",
