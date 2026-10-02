@@ -6163,8 +6163,8 @@
     "2026-10-02": {
       "data": "2026-10-02",
       "dia": {
-        "peso": 1914.32,
-        "chapas": 12226,
+        "peso": 2037.77,
+        "chapas": 12626,
         "velocidade": 0,
         "papeis": [
           {
@@ -6184,8 +6184,8 @@
           },
           {
             "papel": "P40B",
-            "chapas": 1200,
-            "peso": 370.35
+            "chapas": 1600,
+            "peso": 493.8
           }
         ],
         "clientes": [
@@ -6221,14 +6221,14 @@
           },
           {
             "cliente": "ANSELMO E FILHOS LTDA.",
-            "peso": 370.35,
-            "chapas": 1200
+            "peso": 493.8,
+            "chapas": 1600
           }
         ]
       },
       "total": {
-        "peso": 1914.32,
-        "chapas": 12226,
+        "peso": 2037.77,
+        "chapas": 12626,
         "velocidade": 0,
         "papeis": [
           {
@@ -6248,8 +6248,8 @@
           },
           {
             "papel": "P40B",
-            "chapas": 1200,
-            "peso": 370.35
+            "chapas": 1600,
+            "peso": 493.8
           }
         ],
         "clientes": [
@@ -6285,8 +6285,8 @@
           },
           {
             "cliente": "ANSELMO E FILHOS LTDA.",
-            "peso": 370.35,
-            "chapas": 1200
+            "peso": 493.8,
+            "chapas": 1600
           }
         ]
       }
