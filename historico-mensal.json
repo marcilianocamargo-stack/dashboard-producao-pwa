@@ -6163,8 +6163,8 @@
     "2026-10-02": {
       "data": "2026-10-02",
       "dia": {
-        "peso": 1234.57,
-        "chapas": 9850,
+        "peso": 1386.11,
+        "chapas": 10426,
         "velocidade": 0,
         "papeis": [
           {
@@ -6176,6 +6176,11 @@
             "papel": "P25B",
             "chapas": 6120,
             "peso": 810.71
+          },
+          {
+            "papel": "PW40B",
+            "chapas": 576,
+            "peso": 151.54
           }
         ],
         "clientes": [
@@ -6203,12 +6208,17 @@
             "cliente": "SÃO MIGUEL",
             "peso": 187.38,
             "chapas": 2390
+          },
+          {
+            "cliente": "Tolecaixas Indústria e Comércio Ltda",
+            "peso": 151.54,
+            "chapas": 576
           }
         ]
       },
       "total": {
-        "peso": 1234.57,
-        "chapas": 9850,
+        "peso": 1386.11,
+        "chapas": 10426,
         "velocidade": 0,
         "papeis": [
           {
@@ -6220,6 +6230,11 @@
             "papel": "P25B",
             "chapas": 6120,
             "peso": 810.71
+          },
+          {
+            "papel": "PW40B",
+            "chapas": 576,
+            "peso": 151.54
           }
         ],
         "clientes": [
@@ -6247,6 +6262,11 @@
             "cliente": "SÃO MIGUEL",
             "peso": 187.38,
             "chapas": 2390
+          },
+          {
+            "cliente": "Tolecaixas Indústria e Comércio Ltda",
+            "peso": 151.54,
+            "chapas": 576
           }
         ]
       }
