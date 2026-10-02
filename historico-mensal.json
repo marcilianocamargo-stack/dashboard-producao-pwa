@@ -6072,27 +6072,27 @@
         ]
       },
       "noite": {
-        "peso": 5433.59,
-        "chapas": 10710,
+        "peso": 5582.89,
+        "chapas": 10995,
         "velocidade": 0,
         "papeis": [
           {
             "papel": "P60C",
-            "chapas": 10710,
-            "peso": 5433.59
+            "chapas": 10995,
+            "peso": 5582.89
           }
         ],
         "clientes": [
           {
             "cliente": "Z4A EMBALAGENS LTDA",
-            "peso": 5433.59,
-            "chapas": 10710
+            "peso": 5582.89,
+            "chapas": 10995
           }
         ]
       },
       "total": {
-        "peso": 12316.62,
-        "chapas": 21930,
+        "peso": 12465.92,
+        "chapas": 22215,
         "velocidade": 0,
         "papeis": [
           {
@@ -6127,8 +6127,8 @@
           },
           {
             "papel": "P60C",
-            "chapas": 10710,
-            "peso": 5433.59
+            "chapas": 10995,
+            "peso": 5582.89
           }
         ],
         "clientes": [
@@ -6154,8 +6154,8 @@
           },
           {
             "cliente": "Z4A EMBALAGENS LTDA",
-            "peso": 5433.59,
-            "chapas": 10710
+            "peso": 5582.89,
+            "chapas": 10995
           }
         ]
       }
