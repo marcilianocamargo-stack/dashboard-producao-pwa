@@ -6163,14 +6163,14 @@
     "2026-10-02": {
       "data": "2026-10-02",
       "dia": {
-        "peso": 2377.13,
-        "chapas": 14611,
+        "peso": 2480.85,
+        "chapas": 15761,
         "velocidade": 0,
         "papeis": [
           {
             "papel": "P45B",
-            "chapas": 5300,
-            "peso": 635.14
+            "chapas": 6450,
+            "peso": 738.86
           },
           {
             "papel": "P25B",
@@ -6191,8 +6191,8 @@
         "clientes": [
           {
             "cliente": "Renovapel Reciclagem de Papeis Ltda",
-            "peso": 635.14,
-            "chapas": 5300
+            "peso": 738.86,
+            "chapas": 6450
           },
           {
             "cliente": "FAVINCO",
@@ -6227,14 +6227,14 @@
         ]
       },
       "total": {
-        "peso": 2377.13,
-        "chapas": 14611,
+        "peso": 2480.85,
+        "chapas": 15761,
         "velocidade": 0,
         "papeis": [
           {
             "papel": "P45B",
-            "chapas": 5300,
-            "peso": 635.14
+            "chapas": 6450,
+            "peso": 738.86
           },
           {
             "papel": "P25B",
@@ -6255,8 +6255,8 @@
         "clientes": [
           {
             "cliente": "Renovapel Reciclagem de Papeis Ltda",
-            "peso": 635.14,
-            "chapas": 5300
+            "peso": 738.86,
+            "chapas": 6450
           },
           {
             "cliente": "FAVINCO",
