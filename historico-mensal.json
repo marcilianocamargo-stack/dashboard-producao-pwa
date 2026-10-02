@@ -6163,40 +6163,40 @@
     "2026-10-02": {
       "data": "2026-10-02",
       "dia": {
-        "peso": 290.92,
-        "chapas": 2480,
+        "peso": 423.86,
+        "chapas": 3730,
         "velocidade": 0,
         "papeis": [
           {
             "papel": "P45B",
-            "chapas": 2480,
-            "peso": 290.92
+            "chapas": 3730,
+            "peso": 423.86
           }
         ],
         "clientes": [
           {
             "cliente": "Renovapel Reciclagem de Papeis Ltda",
-            "peso": 290.92,
-            "chapas": 2480
+            "peso": 423.86,
+            "chapas": 3730
           }
         ]
       },
       "total": {
-        "peso": 290.92,
-        "chapas": 2480,
+        "peso": 423.86,
+        "chapas": 3730,
         "velocidade": 0,
         "papeis": [
           {
             "papel": "P45B",
-            "chapas": 2480,
-            "peso": 290.92
+            "chapas": 3730,
+            "peso": 423.86
           }
         ],
         "clientes": [
           {
             "cliente": "Renovapel Reciclagem de Papeis Ltda",
-            "peso": 290.92,
-            "chapas": 2480
+            "peso": 423.86,
+            "chapas": 3730
           }
         ]
       }
