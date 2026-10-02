@@ -6163,8 +6163,8 @@
     "2026-10-02": {
       "data": "2026-10-02",
       "dia": {
-        "peso": 1543.97,
-        "chapas": 11026,
+        "peso": 1667.42,
+        "chapas": 11426,
         "velocidade": 0,
         "papeis": [
           {
@@ -6181,6 +6181,11 @@
             "papel": "PW40B",
             "chapas": 1176,
             "peso": 309.4
+          },
+          {
+            "papel": "P40B",
+            "chapas": 400,
+            "peso": 123.45
           }
         ],
         "clientes": [
@@ -6213,12 +6218,17 @@
             "cliente": "Tolecaixas Indústria e Comércio Ltda",
             "peso": 309.4,
             "chapas": 1176
+          },
+          {
+            "cliente": "ANSELMO E FILHOS LTDA.",
+            "peso": 123.45,
+            "chapas": 400
           }
         ]
       },
       "total": {
-        "peso": 1543.97,
-        "chapas": 11026,
+        "peso": 1667.42,
+        "chapas": 11426,
         "velocidade": 0,
         "papeis": [
           {
@@ -6235,6 +6245,11 @@
             "papel": "PW40B",
             "chapas": 1176,
             "peso": 309.4
+          },
+          {
+            "papel": "P40B",
+            "chapas": 400,
+            "peso": 123.45
           }
         ],
         "clientes": [
@@ -6267,6 +6282,11 @@
             "cliente": "Tolecaixas Indústria e Comércio Ltda",
             "peso": 309.4,
             "chapas": 1176
+          },
+          {
+            "cliente": "ANSELMO E FILHOS LTDA.",
+            "peso": 123.45,
+            "chapas": 400
           }
         ]
       }
