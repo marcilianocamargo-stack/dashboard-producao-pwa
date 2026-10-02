@@ -6163,8 +6163,8 @@
     "2026-10-02": {
       "data": "2026-10-02",
       "dia": {
-        "peso": 4309.0,
-        "chapas": 26876,
+        "peso": 4452.67,
+        "chapas": 27836,
         "velocidade": 0,
         "papeis": [
           {
@@ -6184,8 +6184,8 @@
           },
           {
             "papel": "P40B",
-            "chapas": 9755,
-            "peso": 1721.83
+            "chapas": 10715,
+            "peso": 1865.5
           },
           {
             "papel": "P50B",
@@ -6226,8 +6226,8 @@
           },
           {
             "cliente": "ANSELMO E FILHOS LTDA.",
-            "peso": 793.99,
-            "chapas": 3165
+            "peso": 937.66,
+            "chapas": 4125
           },
           {
             "cliente": "DR EMBALAGENS",
@@ -6237,8 +6237,8 @@
         ]
       },
       "total": {
-        "peso": 4309.0,
-        "chapas": 26876,
+        "peso": 4452.67,
+        "chapas": 27836,
         "velocidade": 0,
         "papeis": [
           {
@@ -6258,8 +6258,8 @@
           },
           {
             "papel": "P40B",
-            "chapas": 9755,
-            "peso": 1721.83
+            "chapas": 10715,
+            "peso": 1865.5
           },
           {
             "papel": "P50B",
@@ -6300,8 +6300,8 @@
           },
           {
             "cliente": "ANSELMO E FILHOS LTDA.",
-            "peso": 793.99,
-            "chapas": 3165
+            "peso": 937.66,
+            "chapas": 4125
           },
           {
             "cliente": "DR EMBALAGENS",
