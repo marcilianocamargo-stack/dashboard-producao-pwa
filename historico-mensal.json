@@ -6247,8 +6247,8 @@
         ]
       },
       "noite": {
-        "peso": 857.02,
-        "chapas": 4695,
+        "peso": 959.69,
+        "chapas": 5470,
         "velocidade": 0,
         "papeis": [
           {
@@ -6258,8 +6258,8 @@
           },
           {
             "papel": "P25B",
-            "chapas": 1870,
-            "peso": 238.33
+            "chapas": 2645,
+            "peso": 341.0
           }
         ],
         "clientes": [
@@ -6275,14 +6275,14 @@
           },
           {
             "cliente": "SÃO MIGUEL",
-            "peso": 102.67,
-            "chapas": 775
+            "peso": 205.34,
+            "chapas": 1550
           }
         ]
       },
       "total": {
-        "peso": 6116.32,
-        "chapas": 34801,
+        "peso": 6218.99,
+        "chapas": 35576,
         "velocidade": 0,
         "papeis": [
           {
@@ -6292,8 +6292,8 @@
           },
           {
             "papel": "P25B",
-            "chapas": 11335,
-            "peso": 1741.34
+            "chapas": 12110,
+            "peso": 1844.01
           },
           {
             "papel": "PW40B",
@@ -6339,8 +6339,8 @@
           },
           {
             "cliente": "SÃO MIGUEL",
-            "peso": 597.32,
-            "chapas": 4250
+            "peso": 699.99,
+            "chapas": 5025
           },
           {
             "cliente": "Tolecaixas Indústria e Comércio Ltda",
