@@ -6247,8 +6247,8 @@
         ]
       },
       "noite": {
-        "peso": 3972.37,
-        "chapas": 23065,
+        "peso": 4087.65,
+        "chapas": 24115,
         "velocidade": 0,
         "papeis": [
           {
@@ -6258,8 +6258,8 @@
           },
           {
             "papel": "P25B",
-            "chapas": 18505,
-            "peso": 3040.53
+            "chapas": 19555,
+            "peso": 3155.81
           }
         ],
         "clientes": [
@@ -6270,8 +6270,8 @@
           },
           {
             "cliente": "VÔ CHICO",
-            "peso": 315.05,
-            "chapas": 2550
+            "peso": 430.33,
+            "chapas": 3600
           },
           {
             "cliente": "SÃO MIGUEL",
@@ -6296,8 +6296,8 @@
         ]
       },
       "total": {
-        "peso": 9231.67,
-        "chapas": 53171,
+        "peso": 9346.95,
+        "chapas": 54221,
         "velocidade": 0,
         "papeis": [
           {
@@ -6307,8 +6307,8 @@
           },
           {
             "papel": "P25B",
-            "chapas": 27970,
-            "peso": 4543.54
+            "chapas": 29020,
+            "peso": 4658.82
           },
           {
             "papel": "PW40B",
@@ -6349,8 +6349,8 @@
           },
           {
             "cliente": "VÔ CHICO",
-            "peso": 477.91,
-            "chapas": 3610
+            "peso": 593.19,
+            "chapas": 4660
           },
           {
             "cliente": "SÃO MIGUEL",
