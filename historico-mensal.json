@@ -6247,14 +6247,14 @@
         ]
       },
       "noite": {
-        "peso": 4381.95,
-        "chapas": 25665,
+        "peso": 4482.58,
+        "chapas": 26195,
         "velocidade": 0,
         "papeis": [
           {
             "papel": "PW40B",
-            "chapas": 6110,
-            "peso": 1226.14
+            "chapas": 6640,
+            "peso": 1326.77
           },
           {
             "papel": "P25B",
@@ -6280,8 +6280,8 @@
           },
           {
             "cliente": "DR EMBALAGENS",
-            "peso": 1885.24,
-            "chapas": 10965
+            "peso": 1985.87,
+            "chapas": 11495
           },
           {
             "cliente": "FAVINCO",
@@ -6296,8 +6296,8 @@
         ]
       },
       "total": {
-        "peso": 9641.25,
-        "chapas": 55771,
+        "peso": 9741.88,
+        "chapas": 56301,
         "velocidade": 0,
         "papeis": [
           {
@@ -6312,8 +6312,8 @@
           },
           {
             "papel": "PW40B",
-            "chapas": 7286,
-            "peso": 1535.54
+            "chapas": 7816,
+            "peso": 1636.17
           },
           {
             "papel": "P40B",
@@ -6369,8 +6369,8 @@
           },
           {
             "cliente": "DR EMBALAGENS",
-            "peso": 2098.26,
-            "chapas": 12585
+            "peso": 2198.89,
+            "chapas": 13115
           },
           {
             "cliente": "PCBOX EMBALAGENS LTDA",
