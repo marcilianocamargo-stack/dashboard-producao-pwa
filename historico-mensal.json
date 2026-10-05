@@ -6383,8 +6383,8 @@
     "2026-10-05": {
       "data": "2026-10-05",
       "dia": {
-        "peso": 5337.41,
-        "chapas": 9805,
+        "peso": 5517.85,
+        "chapas": 9975,
         "velocidade": 0,
         "papeis": [
           {
@@ -6404,8 +6404,8 @@
           },
           {
             "papel": "P55D",
-            "chapas": 2755,
-            "peso": 2010.57
+            "chapas": 2925,
+            "peso": 2191.01
           }
         ],
         "clientes": [
@@ -6431,14 +6431,14 @@
           },
           {
             "cliente": "FORBOX Soluções em Caixas de Papelão LTDA",
-            "peso": 1907.76,
-            "chapas": 2440
+            "peso": 2088.2,
+            "chapas": 2610
           }
         ]
       },
       "total": {
-        "peso": 5337.41,
-        "chapas": 9805,
+        "peso": 5517.85,
+        "chapas": 9975,
         "velocidade": 0,
         "papeis": [
           {
@@ -6458,8 +6458,8 @@
           },
           {
             "papel": "P55D",
-            "chapas": 2755,
-            "peso": 2010.57
+            "chapas": 2925,
+            "peso": 2191.01
           }
         ],
         "clientes": [
@@ -6485,8 +6485,8 @@
           },
           {
             "cliente": "FORBOX Soluções em Caixas de Papelão LTDA",
-            "peso": 1907.76,
-            "chapas": 2440
+            "peso": 2088.2,
+            "chapas": 2610
           }
         ]
       }
