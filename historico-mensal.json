@@ -6383,8 +6383,8 @@
     "2026-10-05": {
       "data": "2026-10-05",
       "dia": {
-        "peso": 3326.84,
-        "chapas": 7050,
+        "peso": 3429.65,
+        "chapas": 7365,
         "velocidade": 0,
         "papeis": [
           {
@@ -6401,6 +6401,11 @@
             "papel": "P50D",
             "chapas": 405,
             "peso": 314.94
+          },
+          {
+            "papel": "P55D",
+            "chapas": 315,
+            "peso": 102.81
           }
         ],
         "clientes": [
@@ -6418,12 +6423,17 @@
             "cliente": "PROGRAMAÇÃO ONDULADEIRA - FORBOX Soluções em Caixas de Papelão LTDA",
             "peso": 314.94,
             "chapas": 405
+          },
+          {
+            "cliente": "FAVINCO",
+            "peso": 102.81,
+            "chapas": 315
           }
         ]
       },
       "total": {
-        "peso": 3326.84,
-        "chapas": 7050,
+        "peso": 3429.65,
+        "chapas": 7365,
         "velocidade": 0,
         "papeis": [
           {
@@ -6440,6 +6450,11 @@
             "papel": "P50D",
             "chapas": 405,
             "peso": 314.94
+          },
+          {
+            "papel": "P55D",
+            "chapas": 315,
+            "peso": 102.81
           }
         ],
         "clientes": [
@@ -6457,6 +6472,11 @@
             "cliente": "PROGRAMAÇÃO ONDULADEIRA - FORBOX Soluções em Caixas de Papelão LTDA",
             "peso": 314.94,
             "chapas": 405
+          },
+          {
+            "cliente": "FAVINCO",
+            "peso": 102.81,
+            "chapas": 315
           }
         ]
       }
