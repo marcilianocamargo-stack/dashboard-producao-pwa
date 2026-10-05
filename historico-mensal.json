@@ -6383,8 +6383,8 @@
     "2026-10-05": {
       "data": "2026-10-05",
       "dia": {
-        "peso": 3011.9,
-        "chapas": 6645,
+        "peso": 3147.98,
+        "chapas": 6820,
         "velocidade": 0,
         "papeis": [
           {
@@ -6396,6 +6396,11 @@
             "papel": "P60C",
             "chapas": 2805,
             "peso": 694.24
+          },
+          {
+            "papel": "P50D",
+            "chapas": 175,
+            "peso": 136.08
           }
         ],
         "clientes": [
@@ -6408,12 +6413,17 @@
             "cliente": "IPE EMBALAGENS LTDA",
             "peso": 1194.77,
             "chapas": 1795
+          },
+          {
+            "cliente": "PROGRAMAÇÃO ONDULADEIRA - FORBOX Soluções em Caixas de Papelão LTDA",
+            "peso": 136.08,
+            "chapas": 175
           }
         ]
       },
       "total": {
-        "peso": 3011.9,
-        "chapas": 6645,
+        "peso": 3147.98,
+        "chapas": 6820,
         "velocidade": 0,
         "papeis": [
           {
@@ -6425,6 +6435,11 @@
             "papel": "P60C",
             "chapas": 2805,
             "peso": 694.24
+          },
+          {
+            "papel": "P50D",
+            "chapas": 175,
+            "peso": 136.08
           }
         ],
         "clientes": [
@@ -6437,6 +6452,11 @@
             "cliente": "IPE EMBALAGENS LTDA",
             "peso": 1194.77,
             "chapas": 1795
+          },
+          {
+            "cliente": "PROGRAMAÇÃO ONDULADEIRA - FORBOX Soluções em Caixas de Papelão LTDA",
+            "peso": 136.08,
+            "chapas": 175
           }
         ]
       }
