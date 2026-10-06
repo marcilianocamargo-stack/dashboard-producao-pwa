@@ -6437,14 +6437,19 @@
         ]
       },
       "noite": {
-        "peso": 3533.74,
-        "chapas": 4180,
+        "peso": 3702.79,
+        "chapas": 4355,
         "velocidade": 0,
         "papeis": [
           {
             "papel": "P55D",
             "chapas": 4180,
             "peso": 3533.74
+          },
+          {
+            "papel": "P50D",
+            "chapas": 175,
+            "peso": 169.05
           }
         ],
         "clientes": [
@@ -6452,12 +6457,17 @@
             "cliente": "FORBOX Soluções em Caixas de Papelão LTDA",
             "peso": 3533.74,
             "chapas": 4180
+          },
+          {
+            "cliente": "ABAPEL COMERCIO DE EMBALAGENS LTDA",
+            "peso": 169.05,
+            "chapas": 175
           }
         ]
       },
       "total": {
-        "peso": 9232.03,
-        "chapas": 14325,
+        "peso": 9401.08,
+        "chapas": 14500,
         "velocidade": 0,
         "papeis": [
           {
@@ -6472,8 +6482,8 @@
           },
           {
             "papel": "P50D",
-            "chapas": 405,
-            "peso": 314.94
+            "chapas": 580,
+            "peso": 483.99
           },
           {
             "papel": "P55D",
@@ -6506,6 +6516,11 @@
             "cliente": "FORBOX Soluções em Caixas de Papelão LTDA",
             "peso": 5802.38,
             "chapas": 6960
+          },
+          {
+            "cliente": "ABAPEL COMERCIO DE EMBALAGENS LTDA",
+            "peso": 169.05,
+            "chapas": 175
           }
         ]
       }
