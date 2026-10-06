@@ -6583,14 +6583,14 @@
     "2026-10-06": {
       "data": "2026-10-06",
       "dia": {
-        "peso": 942.13,
-        "chapas": 3390,
+        "peso": 1111.04,
+        "chapas": 4920,
         "velocidade": 0,
         "papeis": [
           {
             "papel": "P25B",
-            "chapas": 3390,
-            "peso": 942.13
+            "chapas": 4920,
+            "peso": 1111.04
           }
         ],
         "clientes": [
@@ -6603,18 +6603,23 @@
             "cliente": "FAVINCO",
             "peso": 138.07,
             "chapas": 355
+          },
+          {
+            "cliente": "HARMONY EMBALAGENS",
+            "peso": 168.91,
+            "chapas": 1530
           }
         ]
       },
       "total": {
-        "peso": 942.13,
-        "chapas": 3390,
+        "peso": 1111.04,
+        "chapas": 4920,
         "velocidade": 0,
         "papeis": [
           {
             "papel": "P25B",
-            "chapas": 3390,
-            "peso": 942.13
+            "chapas": 4920,
+            "peso": 1111.04
           }
         ],
         "clientes": [
@@ -6627,6 +6632,11 @@
             "cliente": "FAVINCO",
             "peso": 138.07,
             "chapas": 355
+          },
+          {
+            "cliente": "HARMONY EMBALAGENS",
+            "peso": 168.91,
+            "chapas": 1530
           }
         ]
       }
