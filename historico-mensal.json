@@ -3953,8 +3953,8 @@
     "2026-09-07": {
       "data": "2026-09-07",
       "dia": {
-        "peso": 763.38,
-        "chapas": 1410,
+        "peso": 821.6,
+        "chapas": 1550,
         "velocidade": 0,
         "papeis": [
           {
@@ -3964,8 +3964,8 @@
           },
           {
             "papel": "P50D",
-            "chapas": 720,
-            "peso": 395.01
+            "chapas": 860,
+            "peso": 453.23
           },
           {
             "papel": "P55D",
@@ -3981,8 +3981,8 @@
           },
           {
             "cliente": "HARMONY EMBALAGENS",
-            "peso": 132.0,
-            "chapas": 270
+            "peso": 190.22,
+            "chapas": 410
           },
           {
             "cliente": "ABAPEL COMERCIO DE EMBALAGENS LTDA",
@@ -3997,8 +3997,8 @@
         ]
       },
       "total": {
-        "peso": 763.38,
-        "chapas": 1410,
+        "peso": 821.6,
+        "chapas": 1550,
         "velocidade": 0,
         "papeis": [
           {
@@ -4008,8 +4008,8 @@
           },
           {
             "papel": "P50D",
-            "chapas": 720,
-            "peso": 395.01
+            "chapas": 860,
+            "peso": 453.23
           },
           {
             "papel": "P55D",
@@ -4025,8 +4025,8 @@
           },
           {
             "cliente": "HARMONY EMBALAGENS",
-            "peso": 132.0,
-            "chapas": 270
+            "peso": 190.22,
+            "chapas": 410
           },
           {
             "cliente": "ABAPEL COMERCIO DE EMBALAGENS LTDA",
