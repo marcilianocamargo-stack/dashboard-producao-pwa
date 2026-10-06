@@ -6583,8 +6583,8 @@
     "2026-10-06": {
       "data": "2026-10-06",
       "dia": {
-        "peso": 1813.08,
-        "chapas": 10180,
+        "peso": 1932.94,
+        "chapas": 11380,
         "velocidade": 0,
         "papeis": [
           {
@@ -6594,15 +6594,15 @@
           },
           {
             "papel": "P25C",
-            "chapas": 3300,
-            "peso": 329.62
+            "chapas": 4500,
+            "peso": 449.48
           }
         ],
         "clientes": [
           {
             "cliente": "ABAPEL COMERCIO DE EMBALAGENS LTDA",
-            "peso": 1133.68,
-            "chapas": 6335
+            "peso": 1253.54,
+            "chapas": 7535
           },
           {
             "cliente": "FAVINCO",
@@ -6617,8 +6617,8 @@
         ]
       },
       "total": {
-        "peso": 1813.08,
-        "chapas": 10180,
+        "peso": 1932.94,
+        "chapas": 11380,
         "velocidade": 0,
         "papeis": [
           {
@@ -6628,15 +6628,15 @@
           },
           {
             "papel": "P25C",
-            "chapas": 3300,
-            "peso": 329.62
+            "chapas": 4500,
+            "peso": 449.48
           }
         ],
         "clientes": [
           {
             "cliente": "ABAPEL COMERCIO DE EMBALAGENS LTDA",
-            "peso": 1133.68,
-            "chapas": 6335
+            "peso": 1253.54,
+            "chapas": 7535
           },
           {
             "cliente": "FAVINCO",
