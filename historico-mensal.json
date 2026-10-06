@@ -6437,27 +6437,27 @@
         ]
       },
       "noite": {
-        "peso": 3275.12,
-        "chapas": 3830,
+        "peso": 3404.43,
+        "chapas": 4005,
         "velocidade": 0,
         "papeis": [
           {
             "papel": "P55D",
-            "chapas": 3830,
-            "peso": 3275.12
+            "chapas": 4005,
+            "peso": 3404.43
           }
         ],
         "clientes": [
           {
             "cliente": "FORBOX Soluções em Caixas de Papelão LTDA",
-            "peso": 3275.12,
-            "chapas": 3830
+            "peso": 3404.43,
+            "chapas": 4005
           }
         ]
       },
       "total": {
-        "peso": 8973.41,
-        "chapas": 13975,
+        "peso": 9102.72,
+        "chapas": 14150,
         "velocidade": 0,
         "papeis": [
           {
@@ -6477,8 +6477,8 @@
           },
           {
             "papel": "P55D",
-            "chapas": 6925,
-            "peso": 5646.57
+            "chapas": 7100,
+            "peso": 5775.88
           }
         ],
         "clientes": [
@@ -6504,8 +6504,8 @@
           },
           {
             "cliente": "FORBOX Soluções em Caixas de Papelão LTDA",
-            "peso": 5543.76,
-            "chapas": 6610
+            "peso": 5673.07,
+            "chapas": 6785
           }
         ]
       }
