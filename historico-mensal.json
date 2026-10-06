@@ -6583,40 +6583,40 @@
     "2026-10-06": {
       "data": "2026-10-06",
       "dia": {
-        "peso": 177.45,
-        "chapas": 670,
+        "peso": 354.9,
+        "chapas": 1340,
         "velocidade": 0,
         "papeis": [
           {
             "papel": "P25B",
-            "chapas": 670,
-            "peso": 177.45
+            "chapas": 1340,
+            "peso": 354.9
           }
         ],
         "clientes": [
           {
             "cliente": "ABAPEL COMERCIO DE EMBALAGENS LTDA",
-            "peso": 177.45,
-            "chapas": 670
+            "peso": 354.9,
+            "chapas": 1340
           }
         ]
       },
       "total": {
-        "peso": 177.45,
-        "chapas": 670,
+        "peso": 354.9,
+        "chapas": 1340,
         "velocidade": 0,
         "papeis": [
           {
             "papel": "P25B",
-            "chapas": 670,
-            "peso": 177.45
+            "chapas": 1340,
+            "peso": 354.9
           }
         ],
         "clientes": [
           {
             "cliente": "ABAPEL COMERCIO DE EMBALAGENS LTDA",
-            "peso": 177.45,
-            "chapas": 670
+            "peso": 354.9,
+            "chapas": 1340
           }
         ]
       }
