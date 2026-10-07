@@ -6622,8 +6622,8 @@
         ]
       },
       "noite": {
-        "peso": 4015.89,
-        "chapas": 17820,
+        "peso": 4187.14,
+        "chapas": 18595,
         "velocidade": 0,
         "papeis": [
           {
@@ -6640,6 +6640,11 @@
             "papel": "P25B",
             "chapas": 1330,
             "peso": 503.42
+          },
+          {
+            "papel": "P35B",
+            "chapas": 775,
+            "peso": 171.25
           }
         ],
         "clientes": [
@@ -6657,12 +6662,17 @@
             "cliente": "PCBOX EMBALAGENS LTDA",
             "peso": 175.88,
             "chapas": 215
+          },
+          {
+            "cliente": "CARTOMIL EMBALAGENS LTDA",
+            "peso": 171.25,
+            "chapas": 775
           }
         ]
       },
       "total": {
-        "peso": 8633.43,
-        "chapas": 37685,
+        "peso": 8804.68,
+        "chapas": 38460,
         "velocidade": 0,
         "papeis": [
           {
@@ -6684,6 +6694,11 @@
             "papel": "P55D",
             "chapas": 205,
             "peso": 203.34
+          },
+          {
+            "papel": "P35B",
+            "chapas": 775,
+            "peso": 171.25
           }
         ],
         "clientes": [
@@ -6706,6 +6721,11 @@
             "cliente": "PCBOX EMBALAGENS LTDA",
             "peso": 175.88,
             "chapas": 215
+          },
+          {
+            "cliente": "CARTOMIL EMBALAGENS LTDA",
+            "peso": 171.25,
+            "chapas": 775
           }
         ]
       }
