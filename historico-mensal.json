@@ -6733,14 +6733,14 @@
     "2026-10-07": {
       "data": "2026-10-07",
       "dia": {
-        "peso": 4311.68,
-        "chapas": 16840,
+        "peso": 4415.41,
+        "chapas": 18180,
         "velocidade": 0,
         "papeis": [
           {
             "papel": "P25B",
-            "chapas": 7740,
-            "peso": 1488.95
+            "chapas": 9080,
+            "peso": 1592.68
           },
           {
             "papel": "P35B",
@@ -6771,8 +6771,8 @@
           },
           {
             "cliente": "CARPEL",
-            "peso": 486.51,
-            "chapas": 2550
+            "peso": 590.24,
+            "chapas": 3890
           },
           {
             "cliente": "CARTOMIL EMBALAGENS LTDA",
@@ -6787,14 +6787,14 @@
         ]
       },
       "total": {
-        "peso": 4311.68,
-        "chapas": 16840,
+        "peso": 4415.41,
+        "chapas": 18180,
         "velocidade": 0,
         "papeis": [
           {
             "papel": "P25B",
-            "chapas": 7740,
-            "peso": 1488.95
+            "chapas": 9080,
+            "peso": 1592.68
           },
           {
             "papel": "P35B",
@@ -6825,8 +6825,8 @@
           },
           {
             "cliente": "CARPEL",
-            "peso": 486.51,
-            "chapas": 2550
+            "peso": 590.24,
+            "chapas": 3890
           },
           {
             "cliente": "CARTOMIL EMBALAGENS LTDA",
