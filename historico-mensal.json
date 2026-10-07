@@ -6733,8 +6733,8 @@
     "2026-10-07": {
       "data": "2026-10-07",
       "dia": {
-        "peso": 3171.27,
-        "chapas": 12900,
+        "peso": 3335.7,
+        "chapas": 13050,
         "velocidade": 0,
         "papeis": [
           {
@@ -6754,8 +6754,8 @@
           },
           {
             "papel": "P50D",
-            "chapas": 5060,
-            "peso": 1939.73
+            "chapas": 5210,
+            "peso": 2104.16
           }
         ],
         "clientes": [
@@ -6778,12 +6778,17 @@
             "cliente": "CARTOMIL EMBALAGENS LTDA",
             "peso": 317.97,
             "chapas": 3165
+          },
+          {
+            "cliente": "ABAPEL COMERCIO DE EMBALAGENS LTDA",
+            "peso": 164.43,
+            "chapas": 150
           }
         ]
       },
       "total": {
-        "peso": 3171.27,
-        "chapas": 12900,
+        "peso": 3335.7,
+        "chapas": 13050,
         "velocidade": 0,
         "papeis": [
           {
@@ -6803,8 +6808,8 @@
           },
           {
             "papel": "P50D",
-            "chapas": 5060,
-            "peso": 1939.73
+            "chapas": 5210,
+            "peso": 2104.16
           }
         ],
         "clientes": [
@@ -6827,6 +6832,11 @@
             "cliente": "CARTOMIL EMBALAGENS LTDA",
             "peso": 317.97,
             "chapas": 3165
+          },
+          {
+            "cliente": "ABAPEL COMERCIO DE EMBALAGENS LTDA",
+            "peso": 164.43,
+            "chapas": 150
           }
         ]
       }
