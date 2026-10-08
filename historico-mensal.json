@@ -6946,9 +6946,28 @@
           }
         ]
       },
+      "noite": {
+        "peso": 192.81,
+        "chapas": 465,
+        "velocidade": 0,
+        "papeis": [
+          {
+            "papel": "P60C",
+            "chapas": 465,
+            "peso": 192.81
+          }
+        ],
+        "clientes": [
+          {
+            "cliente": "FAVINCO.",
+            "peso": 192.81,
+            "chapas": 465
+          }
+        ]
+      },
       "total": {
-        "peso": 3730.44,
-        "chapas": 24495,
+        "peso": 3923.25,
+        "chapas": 24960,
         "velocidade": 0,
         "papeis": [
           {
@@ -6965,6 +6984,11 @@
             "papel": "P40B",
             "chapas": 1035,
             "peso": 293.02
+          },
+          {
+            "papel": "P60C",
+            "chapas": 465,
+            "peso": 192.81
           }
         ],
         "clientes": [
@@ -6987,6 +7011,11 @@
             "cliente": "FAVINCO EMBALAGENS",
             "peso": 225.79,
             "chapas": 1120
+          },
+          {
+            "cliente": "FAVINCO.",
+            "peso": 192.81,
+            "chapas": 465
           }
         ]
       }
