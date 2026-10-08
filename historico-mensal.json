@@ -6787,8 +6787,8 @@
         ]
       },
       "noite": {
-        "peso": 4156.36,
-        "chapas": 8790,
+        "peso": 4215.2,
+        "chapas": 9500,
         "velocidade": 0,
         "papeis": [
           {
@@ -6803,8 +6803,8 @@
           },
           {
             "papel": "P25B",
-            "chapas": 6155,
-            "peso": 781.45
+            "chapas": 6865,
+            "peso": 840.29
           }
         ],
         "clientes": [
@@ -6825,8 +6825,8 @@
           },
           {
             "cliente": "HARMONY EMBALAGENS",
-            "peso": 640.41,
-            "chapas": 4855
+            "peso": 699.25,
+            "chapas": 5565
           },
           {
             "cliente": "CARTOMIL EMBALAGENS LTDA",
@@ -6836,14 +6836,14 @@
         ]
       },
       "total": {
-        "peso": 10492.22,
-        "chapas": 34710,
+        "peso": 10551.06,
+        "chapas": 35420,
         "velocidade": 0,
         "papeis": [
           {
             "papel": "P25B",
-            "chapas": 22175,
-            "peso": 2911.35
+            "chapas": 22885,
+            "peso": 2970.19
           },
           {
             "papel": "P35B",
@@ -6869,8 +6869,8 @@
         "clientes": [
           {
             "cliente": "HARMONY EMBALAGENS",
-            "peso": 2981.8,
-            "chapas": 13025
+            "peso": 3040.64,
+            "chapas": 13735
           },
           {
             "cliente": "RM Embalagens ( Daiane Marques Canossa ME )",
