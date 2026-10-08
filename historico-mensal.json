@@ -6787,14 +6787,14 @@
         ]
       },
       "noite": {
-        "peso": 2848.57,
-        "chapas": 2010,
+        "peso": 3119.2,
+        "chapas": 2185,
         "velocidade": 0,
         "papeis": [
           {
             "papel": "P50D",
-            "chapas": 1865,
-            "peso": 2574.05
+            "chapas": 2040,
+            "peso": 2844.68
           },
           {
             "papel": "P55D",
@@ -6815,14 +6815,14 @@
           },
           {
             "cliente": "RM Embalagens ( Daiane Marques Canossa ME )",
-            "peso": 980.67,
-            "chapas": 800
+            "peso": 1251.3,
+            "chapas": 975
           }
         ]
       },
       "total": {
-        "peso": 9184.43,
-        "chapas": 27930,
+        "peso": 9455.06,
+        "chapas": 28105,
         "velocidade": 0,
         "papeis": [
           {
@@ -6842,8 +6842,8 @@
           },
           {
             "papel": "P50D",
-            "chapas": 8025,
-            "peso": 6225.87
+            "chapas": 8200,
+            "peso": 6496.5
           },
           {
             "papel": "P55D",
@@ -6859,8 +6859,8 @@
           },
           {
             "cliente": "RM Embalagens ( Daiane Marques Canossa ME )",
-            "peso": 1817.62,
-            "chapas": 3455
+            "peso": 2088.25,
+            "chapas": 3630
           },
           {
             "cliente": "CARPEL",
