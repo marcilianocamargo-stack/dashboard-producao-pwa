@@ -6787,8 +6787,8 @@
         ]
       },
       "noite": {
-        "peso": 3526.69,
-        "chapas": 3410,
+        "peso": 3709.8,
+        "chapas": 4345,
         "velocidade": 0,
         "papeis": [
           {
@@ -6803,8 +6803,8 @@
           },
           {
             "papel": "P25B",
-            "chapas": 775,
-            "peso": 151.78
+            "chapas": 1710,
+            "peso": 334.89
           }
         ],
         "clientes": [
@@ -6830,20 +6830,20 @@
           },
           {
             "cliente": "CARTOMIL EMBALAGENS LTDA",
-            "peso": 151.78,
-            "chapas": 775
+            "peso": 334.89,
+            "chapas": 1710
           }
         ]
       },
       "total": {
-        "peso": 9862.55,
-        "chapas": 29330,
+        "peso": 10045.66,
+        "chapas": 30265,
         "velocidade": 0,
         "papeis": [
           {
             "papel": "P25B",
-            "chapas": 16795,
-            "peso": 2281.68
+            "chapas": 17730,
+            "peso": 2464.79
           },
           {
             "papel": "P35B",
@@ -6884,8 +6884,8 @@
           },
           {
             "cliente": "CARTOMIL EMBALAGENS LTDA",
-            "peso": 469.75,
-            "chapas": 3940
+            "peso": 652.86,
+            "chapas": 4875
           },
           {
             "cliente": "ABAPEL COMERCIO DE EMBALAGENS LTDA",
