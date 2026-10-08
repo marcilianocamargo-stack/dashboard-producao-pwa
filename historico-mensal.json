@@ -6787,14 +6787,14 @@
         ]
       },
       "noite": {
-        "peso": 1836.95,
-        "chapas": 1385,
+        "peso": 2060.75,
+        "chapas": 1550,
         "velocidade": 0,
         "papeis": [
           {
             "papel": "P50D",
-            "chapas": 1385,
-            "peso": 1836.95
+            "chapas": 1550,
+            "peso": 2060.75
           }
         ],
         "clientes": [
@@ -6805,8 +6805,8 @@
           },
           {
             "cliente": "PCBOX EMBALAGENS LTDA",
-            "peso": 239.91,
-            "chapas": 160
+            "peso": 463.71,
+            "chapas": 325
           },
           {
             "cliente": "RM Embalagens ( Daiane Marques Canossa ME )",
@@ -6816,8 +6816,8 @@
         ]
       },
       "total": {
-        "peso": 8172.81,
-        "chapas": 27305,
+        "peso": 8396.61,
+        "chapas": 27470,
         "velocidade": 0,
         "papeis": [
           {
@@ -6837,8 +6837,8 @@
           },
           {
             "papel": "P50D",
-            "chapas": 7545,
-            "peso": 5488.77
+            "chapas": 7710,
+            "peso": 5712.57
           }
         ],
         "clientes": [
@@ -6869,8 +6869,8 @@
           },
           {
             "cliente": "PCBOX EMBALAGENS LTDA",
-            "peso": 239.91,
-            "chapas": 160
+            "peso": 463.71,
+            "chapas": 325
           }
         ]
       }
