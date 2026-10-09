@@ -7102,14 +7102,14 @@
         ]
       },
       "noite": {
-        "peso": 950.28,
-        "chapas": 3475,
+        "peso": 1052.44,
+        "chapas": 3860,
         "velocidade": 0,
         "papeis": [
           {
             "papel": "P25B",
-            "chapas": 2850,
-            "peso": 807.84
+            "chapas": 3235,
+            "peso": 910.0
           },
           {
             "papel": "P40B",
@@ -7125,20 +7125,20 @@
           },
           {
             "cliente": "HARMONY EMBALAGENS",
-            "peso": 491.75,
-            "chapas": 1980
+            "peso": 593.91,
+            "chapas": 2365
           }
         ]
       },
       "total": {
-        "peso": 2437.34,
-        "chapas": 14830,
+        "peso": 2539.5,
+        "chapas": 15215,
         "velocidade": 0,
         "papeis": [
           {
             "papel": "P25B",
-            "chapas": 13940,
-            "peso": 2081.53
+            "chapas": 14325,
+            "peso": 2183.69
           },
           {
             "papel": "P50B",
@@ -7159,8 +7159,8 @@
           },
           {
             "cliente": "HARMONY EMBALAGENS",
-            "peso": 1521.77,
-            "chapas": 12100
+            "peso": 1623.93,
+            "chapas": 12485
           },
           {
             "cliente": "ABAPEL COMERCIO DE EMBALAGENS LTDA",
