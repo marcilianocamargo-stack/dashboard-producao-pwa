@@ -7208,14 +7208,14 @@
     "2026-10-13": {
       "data": "2026-10-13",
       "dia": {
-        "peso": 3442.01,
-        "chapas": 6665,
+        "peso": 3613.86,
+        "chapas": 7380,
         "velocidade": 0,
         "papeis": [
           {
             "papel": "P25B",
-            "chapas": 6665,
-            "peso": 3442.01
+            "chapas": 7380,
+            "peso": 3613.86
           }
         ],
         "clientes": [
@@ -7236,20 +7236,20 @@
           },
           {
             "cliente": "RM Embalagens ( Daiane Marques Canossa ME )",
-            "peso": 668.81,
-            "chapas": 1770
+            "peso": 840.66,
+            "chapas": 2485
           }
         ]
       },
       "total": {
-        "peso": 3442.01,
-        "chapas": 6665,
+        "peso": 3613.86,
+        "chapas": 7380,
         "velocidade": 0,
         "papeis": [
           {
             "papel": "P25B",
-            "chapas": 6665,
-            "peso": 3442.01
+            "chapas": 7380,
+            "peso": 3613.86
           }
         ],
         "clientes": [
@@ -7270,8 +7270,8 @@
           },
           {
             "cliente": "RM Embalagens ( Daiane Marques Canossa ME )",
-            "peso": 668.81,
-            "chapas": 1770
+            "peso": 840.66,
+            "chapas": 2485
           }
         ]
       }
