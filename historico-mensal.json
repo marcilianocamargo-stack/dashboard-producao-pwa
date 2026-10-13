@@ -7204,6 +7204,47 @@
           }
         ]
       }
+    },
+    "2026-10-13": {
+      "data": "2026-10-13",
+      "dia": {
+        "peso": 177.43,
+        "chapas": 200,
+        "velocidade": 0,
+        "papeis": [
+          {
+            "papel": "P25B",
+            "chapas": 200,
+            "peso": 177.43
+          }
+        ],
+        "clientes": [
+          {
+            "cliente": "IPE EMBALAGENS LTDA",
+            "peso": 177.43,
+            "chapas": 200
+          }
+        ]
+      },
+      "total": {
+        "peso": 177.43,
+        "chapas": 200,
+        "velocidade": 0,
+        "papeis": [
+          {
+            "papel": "P25B",
+            "chapas": 200,
+            "peso": 177.43
+          }
+        ],
+        "clientes": [
+          {
+            "cliente": "IPE EMBALAGENS LTDA",
+            "peso": 177.43,
+            "chapas": 200
+          }
+        ]
+      }
     }
   }
 }
