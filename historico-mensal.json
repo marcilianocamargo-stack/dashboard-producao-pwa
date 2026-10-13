@@ -7208,8 +7208,8 @@
     "2026-10-13": {
       "data": "2026-10-13",
       "dia": {
-        "peso": 7642.06,
-        "chapas": 28040,
+        "peso": 7959.6,
+        "chapas": 28760,
         "velocidade": 0,
         "papeis": [
           {
@@ -7229,15 +7229,15 @@
           },
           {
             "papel": "P55D",
-            "chapas": 2160,
-            "peso": 952.62
+            "chapas": 2880,
+            "peso": 1270.16
           }
         ],
         "clientes": [
           {
             "cliente": "IPE EMBALAGENS LTDA",
-            "peso": 2255.47,
-            "chapas": 3555
+            "peso": 2573.01,
+            "chapas": 4275
           },
           {
             "cliente": "PCBOX EMBALAGENS LTDA",
@@ -7267,8 +7267,8 @@
         ]
       },
       "total": {
-        "peso": 7642.06,
-        "chapas": 28040,
+        "peso": 7959.6,
+        "chapas": 28760,
         "velocidade": 0,
         "papeis": [
           {
@@ -7288,15 +7288,15 @@
           },
           {
             "papel": "P55D",
-            "chapas": 2160,
-            "peso": 952.62
+            "chapas": 2880,
+            "peso": 1270.16
           }
         ],
         "clientes": [
           {
             "cliente": "IPE EMBALAGENS LTDA",
-            "peso": 2255.47,
-            "chapas": 3555
+            "peso": 2573.01,
+            "chapas": 4275
           },
           {
             "cliente": "PCBOX EMBALAGENS LTDA",
