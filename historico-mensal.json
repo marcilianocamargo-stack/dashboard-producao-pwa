@@ -7408,40 +7408,40 @@
     "2026-10-14": {
       "data": "2026-10-14",
       "dia": {
-        "peso": 368.61,
-        "chapas": 3750,
+        "peso": 497.87,
+        "chapas": 5065,
         "velocidade": 0,
         "papeis": [
           {
             "papel": "P40B",
-            "chapas": 3750,
-            "peso": 368.61
+            "chapas": 5065,
+            "peso": 497.87
           }
         ],
         "clientes": [
           {
             "cliente": "Tolecaixas Indústria e Comércio Ltda",
-            "peso": 368.61,
-            "chapas": 3750
+            "peso": 497.87,
+            "chapas": 5065
           }
         ]
       },
       "total": {
-        "peso": 368.61,
-        "chapas": 3750,
+        "peso": 497.87,
+        "chapas": 5065,
         "velocidade": 0,
         "papeis": [
           {
             "papel": "P40B",
-            "chapas": 3750,
-            "peso": 368.61
+            "chapas": 5065,
+            "peso": 497.87
           }
         ],
         "clientes": [
           {
             "cliente": "Tolecaixas Indústria e Comércio Ltda",
-            "peso": 368.61,
-            "chapas": 3750
+            "peso": 497.87,
+            "chapas": 5065
           }
         ]
       }
