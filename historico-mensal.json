@@ -7267,8 +7267,8 @@
         ]
       },
       "noite": {
-        "peso": 5469.5,
-        "chapas": 12570,
+        "peso": 5620.7,
+        "chapas": 12870,
         "velocidade": 0,
         "papeis": [
           {
@@ -7288,8 +7288,8 @@
           },
           {
             "papel": "P25B",
-            "chapas": 2815,
-            "peso": 1688.12
+            "chapas": 3115,
+            "peso": 1839.32
           },
           {
             "papel": "PW40B",
@@ -7305,8 +7305,8 @@
           },
           {
             "cliente": "PCBOX EMBALAGENS LTDA",
-            "peso": 1972.81,
-            "chapas": 3065
+            "peso": 2124.01,
+            "chapas": 3365
           },
           {
             "cliente": "ABAPEL COMERCIO DE EMBALAGENS LTDA",
@@ -7331,14 +7331,14 @@
         ]
       },
       "total": {
-        "peso": 13746.64,
-        "chapas": 42050,
+        "peso": 13897.84,
+        "chapas": 42350,
         "velocidade": 0,
         "papeis": [
           {
             "papel": "P25B",
-            "chapas": 26745,
-            "peso": 7738.08
+            "chapas": 27045,
+            "peso": 7889.28
           },
           {
             "papel": "P25C",
@@ -7369,8 +7369,8 @@
           },
           {
             "cliente": "PCBOX EMBALAGENS LTDA",
-            "peso": 3587.1,
-            "chapas": 7170
+            "peso": 3738.3,
+            "chapas": 7470
           },
           {
             "cliente": "HARMONY EMBALAGENS",
