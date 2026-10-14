@@ -7267,8 +7267,8 @@
         ]
       },
       "noite": {
-        "peso": 4251.55,
-        "chapas": 7710,
+        "peso": 4592.1,
+        "chapas": 9265,
         "velocidade": 0,
         "papeis": [
           {
@@ -7290,6 +7290,11 @@
             "papel": "P25B",
             "chapas": 2045,
             "peso": 1300.04
+          },
+          {
+            "papel": "PW40B",
+            "chapas": 1555,
+            "peso": 340.55
           }
         ],
         "clientes": [
@@ -7312,12 +7317,17 @@
             "cliente": "HARMONY EMBALAGENS",
             "peso": 224.33,
             "chapas": 1650
+          },
+          {
+            "cliente": "PROGRAMAÇÃO ONDULADEIRA - Tolecaixas Indústria e Comércio Ltda",
+            "peso": 340.55,
+            "chapas": 1555
           }
         ]
       },
       "total": {
-        "peso": 12528.69,
-        "chapas": 37190,
+        "peso": 12869.24,
+        "chapas": 38745,
         "velocidade": 0,
         "papeis": [
           {
@@ -7339,6 +7349,11 @@
             "papel": "P55D",
             "chapas": 5170,
             "peso": 2417.32
+          },
+          {
+            "papel": "PW40B",
+            "chapas": 1555,
+            "peso": 340.55
           }
         ],
         "clientes": [
@@ -7371,6 +7386,11 @@
             "cliente": "RM Embalagens",
             "peso": 350.49,
             "chapas": 5630
+          },
+          {
+            "cliente": "PROGRAMAÇÃO ONDULADEIRA - Tolecaixas Indústria e Comércio Ltda",
+            "peso": 340.55,
+            "chapas": 1555
           }
         ]
       }
