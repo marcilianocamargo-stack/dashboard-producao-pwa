@@ -7408,14 +7408,19 @@
     "2026-10-14": {
       "data": "2026-10-14",
       "dia": {
-        "peso": 497.87,
-        "chapas": 5065,
+        "peso": 611.58,
+        "chapas": 5433,
         "velocidade": 0,
         "papeis": [
           {
             "papel": "P40B",
             "chapas": 5065,
             "peso": 497.87
+          },
+          {
+            "papel": "P25B",
+            "chapas": 368,
+            "peso": 113.71
           }
         ],
         "clientes": [
@@ -7423,18 +7428,28 @@
             "cliente": "Tolecaixas Indústria e Comércio Ltda",
             "peso": 497.87,
             "chapas": 5065
+          },
+          {
+            "cliente": "RM Embalagens ( Daiane Marques Canossa ME )",
+            "peso": 113.71,
+            "chapas": 368
           }
         ]
       },
       "total": {
-        "peso": 497.87,
-        "chapas": 5065,
+        "peso": 611.58,
+        "chapas": 5433,
         "velocidade": 0,
         "papeis": [
           {
             "papel": "P40B",
             "chapas": 5065,
             "peso": 497.87
+          },
+          {
+            "papel": "P25B",
+            "chapas": 368,
+            "peso": 113.71
           }
         ],
         "clientes": [
@@ -7442,6 +7457,11 @@
             "cliente": "Tolecaixas Indústria e Comércio Ltda",
             "peso": 497.87,
             "chapas": 5065
+          },
+          {
+            "cliente": "RM Embalagens ( Daiane Marques Canossa ME )",
+            "peso": 113.71,
+            "chapas": 368
           }
         ]
       }
