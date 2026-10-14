@@ -7267,8 +7267,8 @@
         ]
       },
       "noite": {
-        "peso": 4592.1,
-        "chapas": 9265,
+        "peso": 4772.78,
+        "chapas": 10090,
         "velocidade": 0,
         "papeis": [
           {
@@ -7293,8 +7293,8 @@
           },
           {
             "papel": "PW40B",
-            "chapas": 1555,
-            "peso": 340.55
+            "chapas": 2380,
+            "peso": 521.23
           }
         ],
         "clientes": [
@@ -7320,14 +7320,14 @@
           },
           {
             "cliente": "PROGRAMAÇÃO ONDULADEIRA - Tolecaixas Indústria e Comércio Ltda",
-            "peso": 340.55,
-            "chapas": 1555
+            "peso": 521.23,
+            "chapas": 2380
           }
         ]
       },
       "total": {
-        "peso": 12869.24,
-        "chapas": 38745,
+        "peso": 13049.92,
+        "chapas": 39570,
         "velocidade": 0,
         "papeis": [
           {
@@ -7352,8 +7352,8 @@
           },
           {
             "papel": "PW40B",
-            "chapas": 1555,
-            "peso": 340.55
+            "chapas": 2380,
+            "peso": 521.23
           }
         ],
         "clientes": [
@@ -7389,8 +7389,8 @@
           },
           {
             "cliente": "PROGRAMAÇÃO ONDULADEIRA - Tolecaixas Indústria e Comércio Ltda",
-            "peso": 340.55,
-            "chapas": 1555
+            "peso": 521.23,
+            "chapas": 2380
           }
         ]
       }
