@@ -7408,8 +7408,8 @@
     "2026-10-14": {
       "data": "2026-10-14",
       "dia": {
-        "peso": 1477.18,
-        "chapas": 8164,
+        "peso": 1583.26,
+        "chapas": 8344,
         "velocidade": 0,
         "papeis": [
           {
@@ -7424,8 +7424,8 @@
           },
           {
             "papel": "P50D",
-            "chapas": 555,
-            "peso": 368.33
+            "chapas": 735,
+            "peso": 474.41
           }
         ],
         "clientes": [
@@ -7441,8 +7441,8 @@
           },
           {
             "cliente": "RM Embalagens",
-            "peso": 269.85,
-            "chapas": 1440
+            "peso": 375.93,
+            "chapas": 1620
           },
           {
             "cliente": "ABAPEL COMERCIO DE EMBALAGENS LTDA",
@@ -7452,8 +7452,8 @@
         ]
       },
       "total": {
-        "peso": 1477.18,
-        "chapas": 8164,
+        "peso": 1583.26,
+        "chapas": 8344,
         "velocidade": 0,
         "papeis": [
           {
@@ -7468,8 +7468,8 @@
           },
           {
             "papel": "P50D",
-            "chapas": 555,
-            "peso": 368.33
+            "chapas": 735,
+            "peso": 474.41
           }
         ],
         "clientes": [
@@ -7485,8 +7485,8 @@
           },
           {
             "cliente": "RM Embalagens",
-            "peso": 269.85,
-            "chapas": 1440
+            "peso": 375.93,
+            "chapas": 1620
           },
           {
             "cliente": "ABAPEL COMERCIO DE EMBALAGENS LTDA",
