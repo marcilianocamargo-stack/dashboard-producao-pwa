@@ -7558,8 +7558,8 @@
     "2026-10-15": {
       "data": "2026-10-15",
       "dia": {
-        "peso": 4525.39,
-        "chapas": 25800,
+        "peso": 4690.8,
+        "chapas": 26560,
         "velocidade": 0,
         "papeis": [
           {
@@ -7584,8 +7584,8 @@
           },
           {
             "papel": "PW40B",
-            "chapas": 3665,
-            "peso": 553.36
+            "chapas": 4425,
+            "peso": 718.77
           },
           {
             "papel": "P45B",
@@ -7628,12 +7628,17 @@
             "cliente": "RR STELLA",
             "peso": 629.73,
             "chapas": 2800
+          },
+          {
+            "cliente": "Tolecaixas Indústria e Comércio Ltda",
+            "peso": 165.41,
+            "chapas": 760
           }
         ]
       },
       "total": {
-        "peso": 4525.39,
-        "chapas": 25800,
+        "peso": 4690.8,
+        "chapas": 26560,
         "velocidade": 0,
         "papeis": [
           {
@@ -7658,8 +7663,8 @@
           },
           {
             "papel": "PW40B",
-            "chapas": 3665,
-            "peso": 553.36
+            "chapas": 4425,
+            "peso": 718.77
           },
           {
             "papel": "P45B",
@@ -7702,6 +7707,11 @@
             "cliente": "RR STELLA",
             "peso": 629.73,
             "chapas": 2800
+          },
+          {
+            "cliente": "Tolecaixas Indústria e Comércio Ltda",
+            "peso": 165.41,
+            "chapas": 760
           }
         ]
       }
