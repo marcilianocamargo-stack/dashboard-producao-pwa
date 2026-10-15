@@ -7558,8 +7558,8 @@
     "2026-10-15": {
       "data": "2026-10-15",
       "dia": {
-        "peso": 4318.67,
-        "chapas": 25040,
+        "peso": 4525.39,
+        "chapas": 25800,
         "velocidade": 0,
         "papeis": [
           {
@@ -7579,8 +7579,8 @@
           },
           {
             "papel": "PW50B",
-            "chapas": 3405,
-            "peso": 702.56
+            "chapas": 4165,
+            "peso": 909.28
           },
           {
             "papel": "PW40B",
@@ -7626,14 +7626,14 @@
           },
           {
             "cliente": "RR STELLA",
-            "peso": 423.01,
-            "chapas": 2040
+            "peso": 629.73,
+            "chapas": 2800
           }
         ]
       },
       "total": {
-        "peso": 4318.67,
-        "chapas": 25040,
+        "peso": 4525.39,
+        "chapas": 25800,
         "velocidade": 0,
         "papeis": [
           {
@@ -7653,8 +7653,8 @@
           },
           {
             "papel": "PW50B",
-            "chapas": 3405,
-            "peso": 702.56
+            "chapas": 4165,
+            "peso": 909.28
           },
           {
             "papel": "PW40B",
@@ -7700,8 +7700,8 @@
           },
           {
             "cliente": "RR STELLA",
-            "peso": 423.01,
-            "chapas": 2040
+            "peso": 629.73,
+            "chapas": 2800
           }
         ]
       }
