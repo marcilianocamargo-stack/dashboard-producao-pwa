@@ -7558,8 +7558,8 @@
     "2026-10-15": {
       "data": "2026-10-15",
       "dia": {
-        "peso": 2484.7,
-        "chapas": 16980,
+        "peso": 2611.91,
+        "chapas": 17650,
         "velocidade": 0,
         "papeis": [
           {
@@ -7584,8 +7584,8 @@
           },
           {
             "papel": "PW40B",
-            "chapas": 1595,
-            "peso": 160.33
+            "chapas": 2265,
+            "peso": 287.54
           }
         ],
         "clientes": [
@@ -7603,12 +7603,17 @@
             "cliente": "VÔ CHICO",
             "peso": 278.81,
             "chapas": 2295
+          },
+          {
+            "cliente": "DR EMBALAGENS",
+            "peso": 127.21,
+            "chapas": 670
           }
         ]
       },
       "total": {
-        "peso": 2484.7,
-        "chapas": 16980,
+        "peso": 2611.91,
+        "chapas": 17650,
         "velocidade": 0,
         "papeis": [
           {
@@ -7633,8 +7638,8 @@
           },
           {
             "papel": "PW40B",
-            "chapas": 1595,
-            "peso": 160.33
+            "chapas": 2265,
+            "peso": 287.54
           }
         ],
         "clientes": [
@@ -7652,6 +7657,11 @@
             "cliente": "VÔ CHICO",
             "peso": 278.81,
             "chapas": 2295
+          },
+          {
+            "cliente": "DR EMBALAGENS",
+            "peso": 127.21,
+            "chapas": 670
           }
         ]
       }
