@@ -7748,8 +7748,8 @@
     "2026-10-16": {
       "data": "2026-10-16",
       "noite": {
-        "peso": 1755.95,
-        "chapas": 10640,
+        "peso": 1909.4,
+        "chapas": 11415,
         "velocidade": 0,
         "papeis": [
           {
@@ -7766,6 +7766,11 @@
             "papel": "P25B",
             "chapas": 6380,
             "peso": 912.87
+          },
+          {
+            "papel": "PW50B",
+            "chapas": 775,
+            "peso": 153.45
           }
         ],
         "clientes": [
@@ -7778,12 +7783,17 @@
             "cliente": "FAVINCO EMBALAGENS",
             "peso": 912.87,
             "chapas": 6380
+          },
+          {
+            "cliente": "RR STELLA",
+            "peso": 153.45,
+            "chapas": 775
           }
         ]
       },
       "total": {
-        "peso": 1755.95,
-        "chapas": 10640,
+        "peso": 1909.4,
+        "chapas": 11415,
         "velocidade": 0,
         "papeis": [
           {
@@ -7800,6 +7810,11 @@
             "papel": "P25B",
             "chapas": 6380,
             "peso": 912.87
+          },
+          {
+            "papel": "PW50B",
+            "chapas": 775,
+            "peso": 153.45
           }
         ],
         "clientes": [
@@ -7812,6 +7827,11 @@
             "cliente": "FAVINCO EMBALAGENS",
             "peso": 912.87,
             "chapas": 6380
+          },
+          {
+            "cliente": "RR STELLA",
+            "peso": 153.45,
+            "chapas": 775
           }
         ]
       }
