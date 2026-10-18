@@ -7849,40 +7849,40 @@
     "2026-10-18": {
       "data": "2026-10-18",
       "dia": {
-        "peso": 416.16,
-        "chapas": 1530,
+        "peso": 641.92,
+        "chapas": 2360,
         "velocidade": 0,
         "papeis": [
           {
             "papel": "PW50B",
-            "chapas": 1530,
-            "peso": 416.16
+            "chapas": 2360,
+            "peso": 641.92
           }
         ],
         "clientes": [
           {
             "cliente": "RR STELLA",
-            "peso": 416.16,
-            "chapas": 1530
+            "peso": 641.92,
+            "chapas": 2360
           }
         ]
       },
       "total": {
-        "peso": 416.16,
-        "chapas": 1530,
+        "peso": 641.92,
+        "chapas": 2360,
         "velocidade": 0,
         "papeis": [
           {
             "papel": "PW50B",
-            "chapas": 1530,
-            "peso": 416.16
+            "chapas": 2360,
+            "peso": 641.92
           }
         ],
         "clientes": [
           {
             "cliente": "RR STELLA",
-            "peso": 416.16,
-            "chapas": 1530
+            "peso": 641.92,
+            "chapas": 2360
           }
         ]
       }
