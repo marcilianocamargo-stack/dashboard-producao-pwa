@@ -7849,8 +7849,8 @@
     "2026-10-18": {
       "data": "2026-10-18",
       "dia": {
-        "peso": 3818.34,
-        "chapas": 16700,
+        "peso": 3921.94,
+        "chapas": 17465,
         "velocidade": 0,
         "papeis": [
           {
@@ -7865,8 +7865,8 @@
           },
           {
             "papel": "P25B",
-            "chapas": 2295,
-            "peso": 310.8
+            "chapas": 3060,
+            "peso": 414.4
           }
         ],
         "clientes": [
@@ -7877,14 +7877,14 @@
           },
           {
             "cliente": "DR EMBALAGENS",
-            "peso": 577.08,
-            "chapas": 4465
+            "peso": 680.68,
+            "chapas": 5230
           }
         ]
       },
       "total": {
-        "peso": 3818.34,
-        "chapas": 16700,
+        "peso": 3921.94,
+        "chapas": 17465,
         "velocidade": 0,
         "papeis": [
           {
@@ -7899,8 +7899,8 @@
           },
           {
             "papel": "P25B",
-            "chapas": 2295,
-            "peso": 310.8
+            "chapas": 3060,
+            "peso": 414.4
           }
         ],
         "clientes": [
@@ -7911,8 +7911,8 @@
           },
           {
             "cliente": "DR EMBALAGENS",
-            "peso": 577.08,
-            "chapas": 4465
+            "peso": 680.68,
+            "chapas": 5230
           }
         ]
       }
