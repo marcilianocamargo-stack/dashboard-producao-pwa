@@ -7920,40 +7920,40 @@
     "2026-10-19": {
       "data": "2026-10-19",
       "dia": {
-        "peso": 741.09,
-        "chapas": 4590,
+        "peso": 823.76,
+        "chapas": 5102,
         "velocidade": 0,
         "papeis": [
           {
             "papel": "P35B",
-            "chapas": 4590,
-            "peso": 741.09
+            "chapas": 5102,
+            "peso": 823.76
           }
         ],
         "clientes": [
           {
             "cliente": "RENOVAPEL",
-            "peso": 741.09,
-            "chapas": 4590
+            "peso": 823.76,
+            "chapas": 5102
           }
         ]
       },
       "total": {
-        "peso": 741.09,
-        "chapas": 4590,
+        "peso": 823.76,
+        "chapas": 5102,
         "velocidade": 0,
         "papeis": [
           {
             "papel": "P35B",
-            "chapas": 4590,
-            "peso": 741.09
+            "chapas": 5102,
+            "peso": 823.76
           }
         ],
         "clientes": [
           {
             "cliente": "RENOVAPEL",
-            "peso": 741.09,
-            "chapas": 4590
+            "peso": 823.76,
+            "chapas": 5102
           }
         ]
       }
