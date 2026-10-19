@@ -7920,8 +7920,8 @@
     "2026-10-19": {
       "data": "2026-10-19",
       "dia": {
-        "peso": 1212.28,
-        "chapas": 8686,
+        "peso": 1326.67,
+        "chapas": 9516,
         "velocidade": 0,
         "papeis": [
           {
@@ -7931,8 +7931,8 @@
           },
           {
             "papel": "P25B",
-            "chapas": 3072,
-            "peso": 322.44
+            "chapas": 3902,
+            "peso": 436.83
           }
         ],
         "clientes": [
@@ -7943,14 +7943,14 @@
           },
           {
             "cliente": "SÃO MIGUEL",
-            "peso": 322.44,
-            "chapas": 3072
+            "peso": 436.83,
+            "chapas": 3902
           }
         ]
       },
       "total": {
-        "peso": 1212.28,
-        "chapas": 8686,
+        "peso": 1326.67,
+        "chapas": 9516,
         "velocidade": 0,
         "papeis": [
           {
@@ -7960,8 +7960,8 @@
           },
           {
             "papel": "P25B",
-            "chapas": 3072,
-            "peso": 322.44
+            "chapas": 3902,
+            "peso": 436.83
           }
         ],
         "clientes": [
@@ -7972,8 +7972,8 @@
           },
           {
             "cliente": "SÃO MIGUEL",
-            "peso": 322.44,
-            "chapas": 3072
+            "peso": 436.83,
+            "chapas": 3902
           }
         ]
       }
