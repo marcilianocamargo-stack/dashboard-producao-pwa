@@ -7920,14 +7920,19 @@
     "2026-10-19": {
       "data": "2026-10-19",
       "dia": {
-        "peso": 889.84,
-        "chapas": 5614,
+        "peso": 1051.06,
+        "chapas": 7150,
         "velocidade": 0,
         "papeis": [
           {
             "papel": "P35B",
             "chapas": 5614,
             "peso": 889.84
+          },
+          {
+            "papel": "P25B",
+            "chapas": 1536,
+            "peso": 161.22
           }
         ],
         "clientes": [
@@ -7935,18 +7940,28 @@
             "cliente": "RENOVAPEL",
             "peso": 889.84,
             "chapas": 5614
+          },
+          {
+            "cliente": "SÃO MIGUEL",
+            "peso": 161.22,
+            "chapas": 1536
           }
         ]
       },
       "total": {
-        "peso": 889.84,
-        "chapas": 5614,
+        "peso": 1051.06,
+        "chapas": 7150,
         "velocidade": 0,
         "papeis": [
           {
             "papel": "P35B",
             "chapas": 5614,
             "peso": 889.84
+          },
+          {
+            "papel": "P25B",
+            "chapas": 1536,
+            "peso": 161.22
           }
         ],
         "clientes": [
@@ -7954,6 +7969,11 @@
             "cliente": "RENOVAPEL",
             "peso": 889.84,
             "chapas": 5614
+          },
+          {
+            "cliente": "SÃO MIGUEL",
+            "peso": 161.22,
+            "chapas": 1536
           }
         ]
       }
