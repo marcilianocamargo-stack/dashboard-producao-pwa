@@ -7920,8 +7920,8 @@
     "2026-10-19": {
       "data": "2026-10-19",
       "dia": {
-        "peso": 3091.18,
-        "chapas": 18536,
+        "peso": 3217.27,
+        "chapas": 19166,
         "velocidade": 0,
         "papeis": [
           {
@@ -7938,6 +7938,11 @@
             "papel": "P80D",
             "chapas": 565,
             "peso": 542.86
+          },
+          {
+            "papel": "P50D",
+            "chapas": 630,
+            "peso": 126.09
           }
         ],
         "clientes": [
@@ -7955,12 +7960,17 @@
             "cliente": "RM Embalagens ( Daiane Marques Canossa ME )",
             "peso": 542.86,
             "chapas": 565
+          },
+          {
+            "cliente": "FAVINCO EMBALAGENS",
+            "peso": 126.09,
+            "chapas": 630
           }
         ]
       },
       "total": {
-        "peso": 3091.18,
-        "chapas": 18536,
+        "peso": 3217.27,
+        "chapas": 19166,
         "velocidade": 0,
         "papeis": [
           {
@@ -7977,6 +7987,11 @@
             "papel": "P80D",
             "chapas": 565,
             "peso": 542.86
+          },
+          {
+            "papel": "P50D",
+            "chapas": 630,
+            "peso": 126.09
           }
         ],
         "clientes": [
@@ -7994,6 +8009,11 @@
             "cliente": "RM Embalagens ( Daiane Marques Canossa ME )",
             "peso": 542.86,
             "chapas": 565
+          },
+          {
+            "cliente": "FAVINCO EMBALAGENS",
+            "peso": 126.09,
+            "chapas": 630
           }
         ]
       }
