@@ -7979,8 +7979,8 @@
         ]
       },
       "noite": {
-        "peso": 2848.49,
-        "chapas": 9470,
+        "peso": 3052.78,
+        "chapas": 9755,
         "velocidade": 0,
         "papeis": [
           {
@@ -8005,8 +8005,8 @@
           },
           {
             "papel": "P70C",
-            "chapas": 1140,
-            "peso": 817.16
+            "chapas": 1425,
+            "peso": 1021.45
           }
         ],
         "clientes": [
@@ -8022,14 +8022,14 @@
           },
           {
             "cliente": "RENOVAPEL",
-            "peso": 817.16,
-            "chapas": 1140
+            "peso": 1021.45,
+            "chapas": 1425
           }
         ]
       },
       "total": {
-        "peso": 7681.36,
-        "chapas": 33234,
+        "peso": 7885.65,
+        "chapas": 33519,
         "velocidade": 0,
         "papeis": [
           {
@@ -8064,15 +8064,15 @@
           },
           {
             "papel": "P70C",
-            "chapas": 1140,
-            "peso": 817.16
+            "chapas": 1425,
+            "peso": 1021.45
           }
         ],
         "clientes": [
           {
             "cliente": "RENOVAPEL",
-            "peso": 1707.0,
-            "chapas": 6754
+            "peso": 1911.29,
+            "chapas": 7039
           },
           {
             "cliente": "SÃO MIGUEL",
