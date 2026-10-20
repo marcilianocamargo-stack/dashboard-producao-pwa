@@ -8110,14 +8110,14 @@
     "2026-10-20": {
       "data": "2026-10-20",
       "dia": {
-        "peso": 3865.27,
-        "chapas": 23250,
+        "peso": 4195.0,
+        "chapas": 23670,
         "velocidade": 0,
         "papeis": [
           {
             "papel": "P25B",
-            "chapas": 21670,
-            "peso": 3631.55
+            "chapas": 22090,
+            "peso": 3961.28
           },
           {
             "papel": "P45B",
@@ -8143,20 +8143,20 @@
           },
           {
             "cliente": "IPE EMBALAGENS",
-            "peso": 123.09,
-            "chapas": 560
+            "peso": 452.82,
+            "chapas": 980
           }
         ]
       },
       "total": {
-        "peso": 3865.27,
-        "chapas": 23250,
+        "peso": 4195.0,
+        "chapas": 23670,
         "velocidade": 0,
         "papeis": [
           {
             "papel": "P25B",
-            "chapas": 21670,
-            "peso": 3631.55
+            "chapas": 22090,
+            "peso": 3961.28
           },
           {
             "papel": "P45B",
@@ -8182,8 +8182,8 @@
           },
           {
             "cliente": "IPE EMBALAGENS",
-            "peso": 123.09,
-            "chapas": 560
+            "peso": 452.82,
+            "chapas": 980
           }
         ]
       }
