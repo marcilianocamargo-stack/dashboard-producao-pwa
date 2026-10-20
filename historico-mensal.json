@@ -8110,8 +8110,8 @@
     "2026-10-20": {
       "data": "2026-10-20",
       "dia": {
-        "peso": 5691.74,
-        "chapas": 29695,
+        "peso": 5842.44,
+        "chapas": 30425,
         "velocidade": 0,
         "papeis": [
           {
@@ -8123,6 +8123,11 @@
             "papel": "P45B",
             "chapas": 4000,
             "peso": 610.01
+          },
+          {
+            "papel": "P35B",
+            "chapas": 730,
+            "peso": 150.7
           }
         ],
         "clientes": [
@@ -8133,8 +8138,8 @@
           },
           {
             "cliente": "HARMONY EMBALAGENS",
-            "peso": 473.55,
-            "chapas": 4025
+            "peso": 624.25,
+            "chapas": 4755
           },
           {
             "cliente": "RENOVAPEL",
@@ -8149,8 +8154,8 @@
         ]
       },
       "total": {
-        "peso": 5691.74,
-        "chapas": 29695,
+        "peso": 5842.44,
+        "chapas": 30425,
         "velocidade": 0,
         "papeis": [
           {
@@ -8162,6 +8167,11 @@
             "papel": "P45B",
             "chapas": 4000,
             "peso": 610.01
+          },
+          {
+            "papel": "P35B",
+            "chapas": 730,
+            "peso": 150.7
           }
         ],
         "clientes": [
@@ -8172,8 +8182,8 @@
           },
           {
             "cliente": "HARMONY EMBALAGENS",
-            "peso": 473.55,
-            "chapas": 4025
+            "peso": 624.25,
+            "chapas": 4755
           },
           {
             "cliente": "RENOVAPEL",
