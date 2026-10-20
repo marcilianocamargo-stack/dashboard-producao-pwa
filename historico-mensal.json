@@ -8106,6 +8106,47 @@
           }
         ]
       }
+    },
+    "2026-10-20": {
+      "data": "2026-10-20",
+      "dia": {
+        "peso": 154.6,
+        "chapas": 350,
+        "velocidade": 0,
+        "papeis": [
+          {
+            "papel": "P25B",
+            "chapas": 350,
+            "peso": 154.6
+          }
+        ],
+        "clientes": [
+          {
+            "cliente": "RM EMBALAGENS",
+            "peso": 154.6,
+            "chapas": 350
+          }
+        ]
+      },
+      "total": {
+        "peso": 154.6,
+        "chapas": 350,
+        "velocidade": 0,
+        "papeis": [
+          {
+            "papel": "P25B",
+            "chapas": 350,
+            "peso": 154.6
+          }
+        ],
+        "clientes": [
+          {
+            "cliente": "RM EMBALAGENS",
+            "peso": 154.6,
+            "chapas": 350
+          }
+        ]
+      }
     }
   }
 }
