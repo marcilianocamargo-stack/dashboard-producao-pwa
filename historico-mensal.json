@@ -8405,8 +8405,8 @@
     "2026-10-22": {
       "data": "2026-10-22",
       "dia": {
-        "peso": 4210.34,
-        "chapas": 17425,
+        "peso": 4306.31,
+        "chapas": 18495,
         "velocidade": 0,
         "papeis": [
           {
@@ -8416,8 +8416,8 @@
           },
           {
             "papel": "P25B",
-            "chapas": 7150,
-            "peso": 992.17
+            "chapas": 8220,
+            "peso": 1088.14
           },
           {
             "papel": "PW40B",
@@ -8438,8 +8438,8 @@
           },
           {
             "cliente": "CARPEL",
-            "peso": 837.23,
-            "chapas": 7320
+            "peso": 933.2,
+            "chapas": 8390
           },
           {
             "cliente": "CAIXAS",
@@ -8454,8 +8454,8 @@
         ]
       },
       "total": {
-        "peso": 4210.34,
-        "chapas": 17425,
+        "peso": 4306.31,
+        "chapas": 18495,
         "velocidade": 0,
         "papeis": [
           {
@@ -8465,8 +8465,8 @@
           },
           {
             "papel": "P25B",
-            "chapas": 7150,
-            "peso": 992.17
+            "chapas": 8220,
+            "peso": 1088.14
           },
           {
             "papel": "PW40B",
@@ -8487,8 +8487,8 @@
           },
           {
             "cliente": "CARPEL",
-            "peso": 837.23,
-            "chapas": 7320
+            "peso": 933.2,
+            "chapas": 8390
           },
           {
             "cliente": "CAIXAS",
