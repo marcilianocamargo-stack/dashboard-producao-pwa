@@ -8454,8 +8454,8 @@
         ]
       },
       "noite": {
-        "peso": 2842.82,
-        "chapas": 8070,
+        "peso": 2981.95,
+        "chapas": 8425,
         "velocidade": 0,
         "papeis": [
           {
@@ -8480,8 +8480,8 @@
           },
           {
             "papel": "P55D",
-            "chapas": 995,
-            "peso": 457.23
+            "chapas": 1350,
+            "peso": 596.36
           }
         ],
         "clientes": [
@@ -8497,8 +8497,8 @@
           },
           {
             "cliente": "CARPEL",
-            "peso": 1447.69,
-            "chapas": 6520
+            "peso": 1586.82,
+            "chapas": 6875
           },
           {
             "cliente": "RENOVAPEL",
@@ -8508,8 +8508,8 @@
         ]
       },
       "total": {
-        "peso": 9039.85,
-        "chapas": 29300,
+        "peso": 9178.98,
+        "chapas": 29655,
         "velocidade": 0,
         "papeis": [
           {
@@ -8539,8 +8539,8 @@
           },
           {
             "papel": "P55D",
-            "chapas": 995,
-            "peso": 457.23
+            "chapas": 1350,
+            "peso": 596.36
           }
         ],
         "clientes": [
@@ -8551,8 +8551,8 @@
           },
           {
             "cliente": "CARPEL",
-            "peso": 2614.13,
-            "chapas": 16805
+            "peso": 2753.26,
+            "chapas": 17160
           },
           {
             "cliente": "CAIXAS",
