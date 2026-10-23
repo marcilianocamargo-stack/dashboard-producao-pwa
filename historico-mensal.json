@@ -8575,40 +8575,40 @@
     "2026-10-23": {
       "data": "2026-10-23",
       "dia": {
-        "peso": 325.73,
-        "chapas": 775,
+        "peso": 420.3,
+        "chapas": 1000,
         "velocidade": 0,
         "papeis": [
           {
             "papel": "P35B",
-            "chapas": 775,
-            "peso": 325.73
+            "chapas": 1000,
+            "peso": 420.3
           }
         ],
         "clientes": [
           {
             "cliente": "CARPEL",
-            "peso": 325.73,
-            "chapas": 775
+            "peso": 420.3,
+            "chapas": 1000
           }
         ]
       },
       "total": {
-        "peso": 325.73,
-        "chapas": 775,
+        "peso": 420.3,
+        "chapas": 1000,
         "velocidade": 0,
         "papeis": [
           {
             "papel": "P35B",
-            "chapas": 775,
-            "peso": 325.73
+            "chapas": 1000,
+            "peso": 420.3
           }
         ],
         "clientes": [
           {
             "cliente": "CARPEL",
-            "peso": 325.73,
-            "chapas": 775
+            "peso": 420.3,
+            "chapas": 1000
           }
         ]
       }
