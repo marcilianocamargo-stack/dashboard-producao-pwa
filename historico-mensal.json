@@ -8855,14 +8855,14 @@
         ]
       },
       "noite": {
-        "peso": 1014.73,
-        "chapas": 585,
+        "peso": 1126.06,
+        "chapas": 655,
         "velocidade": 0,
         "papeis": [
           {
             "papel": "P55D",
-            "chapas": 495,
-            "peso": 918.88
+            "chapas": 565,
+            "peso": 1030.21
           },
           {
             "papel": "P40B",
@@ -8878,8 +8878,8 @@
           },
           {
             "cliente": "SEDAMED",
-            "peso": 240.69,
-            "chapas": 175
+            "peso": 352.02,
+            "chapas": 245
           },
           {
             "cliente": "INTERNACIONAL COUROS",
@@ -8889,8 +8889,8 @@
         ]
       },
       "total": {
-        "peso": 7655.4,
-        "chapas": 15125,
+        "peso": 7766.73,
+        "chapas": 15195,
         "velocidade": 0,
         "papeis": [
           {
@@ -8910,8 +8910,8 @@
           },
           {
             "papel": "P55D",
-            "chapas": 3675,
-            "peso": 4011.56
+            "chapas": 3745,
+            "peso": 4122.89
           },
           {
             "papel": "P50D",
@@ -8947,8 +8947,8 @@
           },
           {
             "cliente": "SEDAMED",
-            "peso": 240.69,
-            "chapas": 175
+            "peso": 352.02,
+            "chapas": 245
           },
           {
             "cliente": "INTERNACIONAL COUROS",
