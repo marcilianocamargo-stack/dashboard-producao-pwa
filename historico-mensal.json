@@ -8796,8 +8796,8 @@
     "2026-10-26": {
       "data": "2026-10-26",
       "dia": {
-        "peso": 541.87,
-        "chapas": 2965,
+        "peso": 680.75,
+        "chapas": 3565,
         "velocidade": 0,
         "papeis": [
           {
@@ -8812,8 +8812,8 @@
           },
           {
             "papel": "P55C",
-            "chapas": 600,
-            "peso": 138.88
+            "chapas": 1200,
+            "peso": 277.76
           }
         ],
         "clientes": [
@@ -8824,14 +8824,14 @@
           },
           {
             "cliente": "FORBOX",
-            "peso": 138.88,
-            "chapas": 600
+            "peso": 277.76,
+            "chapas": 1200
           }
         ]
       },
       "total": {
-        "peso": 541.87,
-        "chapas": 2965,
+        "peso": 680.75,
+        "chapas": 3565,
         "velocidade": 0,
         "papeis": [
           {
@@ -8846,8 +8846,8 @@
           },
           {
             "papel": "P55C",
-            "chapas": 600,
-            "peso": 138.88
+            "chapas": 1200,
+            "peso": 277.76
           }
         ],
         "clientes": [
@@ -8858,8 +8858,8 @@
           },
           {
             "cliente": "FORBOX",
-            "peso": 138.88,
-            "chapas": 600
+            "peso": 277.76,
+            "chapas": 1200
           }
         ]
       }
