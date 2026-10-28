@@ -9220,27 +9220,27 @@
         ]
       },
       "noite": {
-        "peso": 357.44,
-        "chapas": 350,
+        "peso": 413.61,
+        "chapas": 405,
         "velocidade": 0,
         "papeis": [
           {
             "papel": "P55D",
-            "chapas": 350,
-            "peso": 357.44
+            "chapas": 405,
+            "peso": 413.61
           }
         ],
         "clientes": [
           {
             "cliente": "FORBOX",
-            "peso": 357.44,
-            "chapas": 350
+            "peso": 413.61,
+            "chapas": 405
           }
         ]
       },
       "total": {
-        "peso": 2076.09,
-        "chapas": 3425,
+        "peso": 2132.26,
+        "chapas": 3480,
         "velocidade": 0,
         "papeis": [
           {
@@ -9260,8 +9260,8 @@
           },
           {
             "papel": "P55D",
-            "chapas": 350,
-            "peso": 357.44
+            "chapas": 405,
+            "peso": 413.61
           }
         ],
         "clientes": [
@@ -9282,8 +9282,8 @@
           },
           {
             "cliente": "FORBOX",
-            "peso": 357.44,
-            "chapas": 350
+            "peso": 413.61,
+            "chapas": 405
           }
         ]
       }
