@@ -9181,14 +9181,14 @@
     "2026-10-28": {
       "data": "2026-10-28",
       "dia": {
-        "peso": 364.91,
-        "chapas": 605,
+        "peso": 444.24,
+        "chapas": 785,
         "velocidade": 0,
         "papeis": [
           {
             "papel": "P50D",
-            "chapas": 605,
-            "peso": 364.91
+            "chapas": 785,
+            "peso": 444.24
           }
         ],
         "clientes": [
@@ -9196,18 +9196,23 @@
             "cliente": "HARMONY EMBALAGENS",
             "peso": 364.91,
             "chapas": 605
+          },
+          {
+            "cliente": "RM EMBALAGENS",
+            "peso": 79.33,
+            "chapas": 180
           }
         ]
       },
       "total": {
-        "peso": 364.91,
-        "chapas": 605,
+        "peso": 444.24,
+        "chapas": 785,
         "velocidade": 0,
         "papeis": [
           {
             "papel": "P50D",
-            "chapas": 605,
-            "peso": 364.91
+            "chapas": 785,
+            "peso": 444.24
           }
         ],
         "clientes": [
@@ -9215,6 +9220,11 @@
             "cliente": "HARMONY EMBALAGENS",
             "peso": 364.91,
             "chapas": 605
+          },
+          {
+            "cliente": "RM EMBALAGENS",
+            "peso": 79.33,
+            "chapas": 180
           }
         ]
       }
