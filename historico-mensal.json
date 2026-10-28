@@ -9181,14 +9181,14 @@
     "2026-10-28": {
       "data": "2026-10-28",
       "dia": {
-        "peso": 523.57,
-        "chapas": 965,
+        "peso": 602.9,
+        "chapas": 1145,
         "velocidade": 0,
         "papeis": [
           {
             "papel": "P50D",
-            "chapas": 965,
-            "peso": 523.57
+            "chapas": 1145,
+            "peso": 602.9
           }
         ],
         "clientes": [
@@ -9199,20 +9199,20 @@
           },
           {
             "cliente": "RM EMBALAGENS",
-            "peso": 158.66,
-            "chapas": 360
+            "peso": 237.99,
+            "chapas": 540
           }
         ]
       },
       "total": {
-        "peso": 523.57,
-        "chapas": 965,
+        "peso": 602.9,
+        "chapas": 1145,
         "velocidade": 0,
         "papeis": [
           {
             "papel": "P50D",
-            "chapas": 965,
-            "peso": 523.57
+            "chapas": 1145,
+            "peso": 602.9
           }
         ],
         "clientes": [
@@ -9223,8 +9223,8 @@
           },
           {
             "cliente": "RM EMBALAGENS",
-            "peso": 158.66,
-            "chapas": 360
+            "peso": 237.99,
+            "chapas": 540
           }
         ]
       }
