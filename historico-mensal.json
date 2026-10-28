@@ -9181,40 +9181,40 @@
     "2026-10-28": {
       "data": "2026-10-28",
       "dia": {
-        "peso": 268.96,
-        "chapas": 405,
+        "peso": 364.91,
+        "chapas": 605,
         "velocidade": 0,
         "papeis": [
           {
             "papel": "P50D",
-            "chapas": 405,
-            "peso": 268.96
+            "chapas": 605,
+            "peso": 364.91
           }
         ],
         "clientes": [
           {
             "cliente": "HARMONY EMBALAGENS",
-            "peso": 268.96,
-            "chapas": 405
+            "peso": 364.91,
+            "chapas": 605
           }
         ]
       },
       "total": {
-        "peso": 268.96,
-        "chapas": 405,
+        "peso": 364.91,
+        "chapas": 605,
         "velocidade": 0,
         "papeis": [
           {
             "papel": "P50D",
-            "chapas": 405,
-            "peso": 268.96
+            "chapas": 605,
+            "peso": 364.91
           }
         ],
         "clientes": [
           {
             "cliente": "HARMONY EMBALAGENS",
-            "peso": 268.96,
-            "chapas": 405
+            "peso": 364.91,
+            "chapas": 605
           }
         ]
       }
