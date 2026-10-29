@@ -9220,8 +9220,8 @@
         ]
       },
       "noite": {
-        "peso": 1862.94,
-        "chapas": 3230,
+        "peso": 2048.86,
+        "chapas": 3905,
         "velocidade": 0,
         "papeis": [
           {
@@ -9236,8 +9236,8 @@
           },
           {
             "papel": "P25C",
-            "chapas": 600,
-            "peso": 165.27
+            "chapas": 1275,
+            "peso": 351.19
           }
         ],
         "clientes": [
@@ -9258,14 +9258,14 @@
           },
           {
             "cliente": "ABAPEL EMBALAGENS",
-            "peso": 455.0,
-            "chapas": 1560
+            "peso": 640.92,
+            "chapas": 2235
           }
         ]
       },
       "total": {
-        "peso": 3581.59,
-        "chapas": 6305,
+        "peso": 3767.51,
+        "chapas": 6980,
         "velocidade": 0,
         "papeis": [
           {
@@ -9280,8 +9280,8 @@
           },
           {
             "papel": "P25C",
-            "chapas": 1615,
-            "peso": 779.7
+            "chapas": 2290,
+            "peso": 965.62
           },
           {
             "papel": "P55D",
@@ -9302,8 +9302,8 @@
           },
           {
             "cliente": "ABAPEL EMBALAGENS",
-            "peso": 1069.43,
-            "chapas": 2575
+            "peso": 1255.35,
+            "chapas": 3250
           },
           {
             "cliente": "FORBOX",
