@@ -9399,5 +9399,48 @@
         ]
       }
     }
+  },
+  "2026-06": {
+    "2026-06-07": {
+      "data": "2026-06-07",
+      "noite": {
+        "peso": 0,
+        "chapas": 800,
+        "velocidade": 0,
+        "papeis": [
+          {
+            "papel": "P25B",
+            "chapas": 800,
+            "peso": 0.0
+          }
+        ],
+        "clientes": [
+          {
+            "cliente": "VZ Embalagens",
+            "peso": 0.0,
+            "chapas": 800
+          }
+        ]
+      },
+      "total": {
+        "peso": 0,
+        "chapas": 800,
+        "velocidade": 0,
+        "papeis": [
+          {
+            "papel": "P25B",
+            "chapas": 800,
+            "peso": 0.0
+          }
+        ],
+        "clientes": [
+          {
+            "cliente": "VZ Embalagens",
+            "peso": 0.0,
+            "chapas": 800
+          }
+        ]
+      }
+    }
   }
 }
