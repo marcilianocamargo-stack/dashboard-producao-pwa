@@ -9337,6 +9337,47 @@
           }
         ]
       }
+    },
+    "2026-10-29": {
+      "data": "2026-10-29",
+      "dia": {
+        "peso": 148.86,
+        "chapas": 390,
+        "velocidade": 0,
+        "papeis": [
+          {
+            "papel": "P25C",
+            "chapas": 390,
+            "peso": 148.86
+          }
+        ],
+        "clientes": [
+          {
+            "cliente": "ABAPEL EMBALAGENS",
+            "peso": 148.86,
+            "chapas": 390
+          }
+        ]
+      },
+      "total": {
+        "peso": 148.86,
+        "chapas": 390,
+        "velocidade": 0,
+        "papeis": [
+          {
+            "papel": "P25C",
+            "chapas": 390,
+            "peso": 148.86
+          }
+        ],
+        "clientes": [
+          {
+            "cliente": "ABAPEL EMBALAGENS",
+            "peso": 148.86,
+            "chapas": 390
+          }
+        ]
+      }
     }
   }
 }
