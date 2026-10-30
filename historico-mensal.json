@@ -9551,14 +9551,14 @@
     "2026-10-30": {
       "data": "2026-10-30",
       "dia": {
-        "peso": 2787.21,
-        "chapas": 9930,
+        "peso": 3222.41,
+        "chapas": 10330,
         "velocidade": 0,
         "papeis": [
           {
             "papel": "P25B",
-            "chapas": 6775,
-            "peso": 2219.66
+            "chapas": 7175,
+            "peso": 2654.86
           },
           {
             "papel": "P70D",
@@ -9584,20 +9584,20 @@
           },
           {
             "cliente": "PCBOX EMBALAGENS",
-            "peso": 983.32,
-            "chapas": 3530
+            "peso": 1418.52,
+            "chapas": 3930
           }
         ]
       },
       "total": {
-        "peso": 2787.21,
-        "chapas": 9930,
+        "peso": 3222.41,
+        "chapas": 10330,
         "velocidade": 0,
         "papeis": [
           {
             "papel": "P25B",
-            "chapas": 6775,
-            "peso": 2219.66
+            "chapas": 7175,
+            "peso": 2654.86
           },
           {
             "papel": "P70D",
@@ -9623,8 +9623,8 @@
           },
           {
             "cliente": "PCBOX EMBALAGENS",
-            "peso": 983.32,
-            "chapas": 3530
+            "peso": 1418.52,
+            "chapas": 3930
           }
         ]
       }
