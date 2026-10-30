@@ -9405,14 +9405,14 @@
         ]
       },
       "noite": {
-        "peso": 4261.01,
-        "chapas": 35665,
+        "peso": 4471.77,
+        "chapas": 36830,
         "velocidade": 0,
         "papeis": [
           {
             "papel": "P40B",
-            "chapas": 4225,
-            "peso": 511.56
+            "chapas": 5390,
+            "peso": 722.32
           },
           {
             "papel": "P45B",
@@ -9433,8 +9433,8 @@
         "clientes": [
           {
             "cliente": "TOLECAIXAS",
-            "peso": 511.56,
-            "chapas": 4225
+            "peso": 722.32,
+            "chapas": 5390
           },
           {
             "cliente": "RENOVAPEL",
@@ -9469,8 +9469,8 @@
         ]
       },
       "total": {
-        "peso": 9115.18,
-        "chapas": 62565,
+        "peso": 9325.94,
+        "chapas": 63730,
         "velocidade": 0,
         "papeis": [
           {
@@ -9500,8 +9500,8 @@
           },
           {
             "papel": "P40B",
-            "chapas": 4225,
-            "peso": 511.56
+            "chapas": 5390,
+            "peso": 722.32
           }
         ],
         "clientes": [
@@ -9532,8 +9532,8 @@
           },
           {
             "cliente": "TOLECAIXAS",
-            "peso": 1528.88,
-            "chapas": 8655
+            "peso": 1739.64,
+            "chapas": 9820
           },
           {
             "cliente": "PCBOX EMBALAGENS",
