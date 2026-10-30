@@ -9405,8 +9405,8 @@
         ]
       },
       "noite": {
-        "peso": 2871.38,
-        "chapas": 24260,
+        "peso": 3012.08,
+        "chapas": 25815,
         "velocidade": 0,
         "papeis": [
           {
@@ -9421,8 +9421,8 @@
           },
           {
             "papel": "P25B",
-            "chapas": 17940,
-            "peso": 2080.24
+            "chapas": 19495,
+            "peso": 2220.94
           }
         ],
         "clientes": [
@@ -9453,14 +9453,14 @@
           },
           {
             "cliente": "CARTOMIL EMBALAGENS",
-            "peso": 140.7,
-            "chapas": 1555
+            "peso": 281.4,
+            "chapas": 3110
           }
         ]
       },
       "total": {
-        "peso": 7725.55,
-        "chapas": 51160,
+        "peso": 7866.25,
+        "chapas": 52715,
         "velocidade": 0,
         "papeis": [
           {
@@ -9470,8 +9470,8 @@
           },
           {
             "papel": "P25B",
-            "chapas": 35955,
-            "peso": 3929.74
+            "chapas": 37510,
+            "peso": 4070.44
           },
           {
             "papel": "P45B",
@@ -9532,8 +9532,8 @@
           },
           {
             "cliente": "CARTOMIL EMBALAGENS",
-            "peso": 140.7,
-            "chapas": 1555
+            "peso": 281.4,
+            "chapas": 3110
           }
         ]
       }
