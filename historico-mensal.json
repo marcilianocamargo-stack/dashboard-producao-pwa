@@ -9405,8 +9405,8 @@
         ]
       },
       "noite": {
-        "peso": 3709.48,
-        "chapas": 33645,
+        "peso": 3823.07,
+        "chapas": 33930,
         "velocidade": 0,
         "papeis": [
           {
@@ -9423,6 +9423,11 @@
             "papel": "P25B",
             "chapas": 27325,
             "peso": 2918.34
+          },
+          {
+            "papel": "P25C",
+            "chapas": 285,
+            "peso": 113.59
           }
         ],
         "clientes": [
@@ -9455,18 +9460,23 @@
             "cliente": "CARTOMIL EMBALAGENS",
             "peso": 978.8,
             "chapas": 10940
+          },
+          {
+            "cliente": "ABAPEL EMBALAGENS",
+            "peso": 113.59,
+            "chapas": 285
           }
         ]
       },
       "total": {
-        "peso": 8563.65,
-        "chapas": 60545,
+        "peso": 8677.24,
+        "chapas": 60830,
         "velocidade": 0,
         "papeis": [
           {
             "papel": "P25C",
-            "chapas": 2335,
-            "peso": 882.3
+            "chapas": 2620,
+            "peso": 995.89
           },
           {
             "papel": "P25B",
@@ -9497,8 +9507,8 @@
         "clientes": [
           {
             "cliente": "ABAPEL EMBALAGENS",
-            "peso": 882.3,
-            "chapas": 2335
+            "peso": 995.89,
+            "chapas": 2620
           },
           {
             "cliente": "RM EMBALAGENS",
