@@ -9761,40 +9761,40 @@
     "2026-11-02": {
       "data": "2026-11-02",
       "noite": {
-        "peso": 132.1,
-        "chapas": 775,
+        "peso": 257.38,
+        "chapas": 1510,
         "velocidade": 0,
         "papeis": [
           {
             "papel": "P25B",
-            "chapas": 775,
-            "peso": 132.1
+            "chapas": 1510,
+            "peso": 257.38
           }
         ],
         "clientes": [
           {
             "cliente": "IPE EMBALAGENS",
-            "peso": 132.1,
-            "chapas": 775
+            "peso": 257.38,
+            "chapas": 1510
           }
         ]
       },
       "total": {
-        "peso": 132.1,
-        "chapas": 775,
+        "peso": 257.38,
+        "chapas": 1510,
         "velocidade": 0,
         "papeis": [
           {
             "papel": "P25B",
-            "chapas": 775,
-            "peso": 132.1
+            "chapas": 1510,
+            "peso": 257.38
           }
         ],
         "clientes": [
           {
             "cliente": "IPE EMBALAGENS",
-            "peso": 132.1,
-            "chapas": 775
+            "peso": 257.38,
+            "chapas": 1510
           }
         ]
       }
