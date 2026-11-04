@@ -1,9 +1,7 @@
-const CACHE_NAME = "prime-diario-v31";
+const CACHE_NAME = "prime-diario-v32";
 const APP_SHELL = [
   "./",
-  "./index.html",
-  "./app.js",
-  "./styles.css",
+  "./periodo.js",
   "./manifest.json",
   "./icons/icon-192.png",
   "./icons/icon-512.png",

@@ -1,13 +1,14 @@
 /* Painel de Produção — Telão
- * Lê o histórico mensal salvo pelo dashboard principal (app.js) e a meta
- * mensal, calcula "onde estamos" em relação ao ritmo necessário para bater
- * a meta, e desenha o calendário do mês (dia 01 até o último dia do mês).
- * Mesmas chaves de localStorage do app.js — os dois arquivos rodam
- * separados (sem bundler), então os nomes das chaves e o formato dos dados
- * salvos têm que continuar iguais nos dois lados.
+ * Lê o histórico mensal compartilhado (historico-mensal.json, alimentado
+ * automaticamente na VPS a cada palete etiquetado) e a meta mensal, calcula
+ * "onde estamos" em relação ao ritmo necessário para bater a meta, e
+ * desenha o calendário do mês (dia 01 até o último dia do mês).
+ * O botão "Produção anterior" mostra semana atual/passada, mês passado e
+ * qualquer mês que já esteja no histórico (ver periodo.js).
+ * (A antiga tela de upload manual de relatórios foi arquivada em
+ * 04/11/2026 — ver G:\Meu Drive\claude-contexto\arquivo-leitor-planilhas-dashboard.)
  */
 
-const HISTORICO_KEY = "prime_historico_mensal_v1";
 const META_MENSAL_KEY = "prime_meta_mensal_v1";
 const META_MENSAL_PADRAO = 150000;
 
@@ -37,21 +38,24 @@ async function carregarResumoHoje() {
 // publicada ainda), cai pro localStorage local do próprio aparelho.
 const META_MENSAL_URL = "https://marcilianocamargo-stack.github.io/dashboard-producao-pwa/meta-mensal.json";
 let metaMensalCompartilhada = null;
+// Depois que alguém salva uma meta nova neste aparelho, o arquivo publicado
+// no GitHub Pages demora alguns minutos pra refletir — durante esse tempo
+// não deixa a leitura remota (ainda antiga) sobrescrever o valor recém-salvo.
+let metaLocalValidaAte = 0;
 
 async function carregarMetaMensalCompartilhada() {
   try {
     const resp = await fetch(META_MENSAL_URL + "?t=" + Date.now(), { cache: "no-store" });
     if (resp.ok) {
       const dados = await resp.json();
-      if (dados && dados.metaMensal > 0) metaMensalCompartilhada = dados.metaMensal;
+      if (dados && dados.metaMensal > 0 && Date.now() > metaLocalValidaAte) metaMensalCompartilhada = dados.metaMensal;
     }
   } catch (e) { /* mantém o último valor conhecido / cai pro local */ }
 }
 
-// Histórico mensal compartilhado — publicado pelo app.js a cada dia
-// processado (em qualquer aparelho), pra o telão mostrar o mesmo mês em
-// qualquer tela. O histórico local (localStorage) continua servindo de
-// fallback pra dias que ainda não foram republicados no compartilhado.
+// Histórico mensal compartilhado — publicado automaticamente pela VPS
+// (registrar_palete_live.py) a cada palete, pra o telão mostrar o mesmo mês
+// em qualquer tela.
 const HISTORICO_MENSAL_URL = "https://marcilianocamargo-stack.github.io/dashboard-producao-pwa/historico-mensal.json";
 let historicoMensalCompartilhado = {};
 
@@ -78,12 +82,10 @@ function hojeStrBR() {
 const MESES_PT = ["janeiro","fevereiro","março","abril","maio","junho","julho","agosto","setembro","outubro","novembro","dezembro"];
 const DIAS_SEMANA_PT = ["domingo","segunda-feira","terça-feira","quarta-feira","quinta-feira","sexta-feira","sábado"];
 
-function loadHistorico() {
-  try {
-    const saved = localStorage.getItem(HISTORICO_KEY);
-    if (saved) return JSON.parse(saved);
-  } catch (e) { /* ignore */ }
-  return {};
+// Produção de um dia específico ("YYYY-MM-DD") no histórico compartilhado.
+function entradaDoDia(iso) {
+  const mes = historicoMensalCompartilhado[iso.slice(0, 7)];
+  return (mes && mes[iso]) || null;
 }
 function loadMetaMensal() {
   if (metaMensalCompartilhada > 0) return metaMensalCompartilhada;
@@ -135,74 +137,6 @@ function mergePorChave(chave, ...listas) {
 function mergePapeis(...listas) { return mergePorChave("papel", ...listas); }
 function mergeClientes(...listas) { return mergePorChave("cliente", ...listas); }
 
-// ------------------------------------------------------ DADOS DE DEMO -----
-// Padrão fixo de "% da meta diária batida" por dia — inclui altos e baixos
-// (turnos parados, manutenção etc.) pra mostrar o painel funcionando nos
-// dois estados (verde/vermelho) mesmo sem histórico real ainda. Usado só
-// quando o mês corrente não tem nenhum dia real salvo.
-const DEMO_FATORES = [
-  1.04, 0.97, 1.08, 0.62, 1.12, 0.95, 1.01, 0.89, 1.15, 0.84,
-  0.58, 1.18, 1.02, 0.93, 1.06, 0.99, 0.68, 1.11, 1.00, 0.91,
-  0.87, 1.14, 1.03, 0.96, 0.64, 1.07, 1.09, 0.90, 1.00, 0.94, 1.02,
-];
-
-const PAPEIS_DEMO = ["P25B", "P50D", "P70D", "PK45C"];
-const CLIENTES_DEMO = ["UPAPER", "RENOVAPEL RECICLAGEM DE PAPEIS LTDA", "DR EMBALAGENS", "SÃO MIGUEL"];
-
-function gerarDadosDemo(ano, mesIdx, metaDiaria) {
-  const daysInMonth = new Date(ano, mesIdx + 1, 0).getDate();
-  const diasDemo = Math.min(daysInMonth - 1, 18);
-  const dados = {};
-  for (let d = 1; d <= diasDemo; d++) {
-    const util = isDiaUtil(ano, mesIdx, d);
-    // fim de semana só produz nos dias de "recuperação" (fator baixo no dia
-    // útil anterior), pra ilustrar o mesmo padrão real da fábrica.
-    const recuperando = !util && d > 2; // 1º fim de semana do mês fica de fora só pra também mostrar o caso "parado" na demonstração
-    const fator = util ? DEMO_FATORES[(d - 1) % DEMO_FATORES.length] : (recuperando ? 0.55 : 0);
-    const totalPeso = metaDiaria * fator;
-    const shareDia = 0.5 + 0.06 * Math.sin(d * 1.7);
-    const pesoDia = totalPeso * shareDia;
-    const pesoNoite = totalPeso - pesoDia;
-    const mk = (peso, offset) => {
-      const chapas = Math.round(peso / 3.3);
-      const papelA = PAPEIS_DEMO[d % PAPEIS_DEMO.length];
-      const papelB = PAPEIS_DEMO[(d + offset + 1) % PAPEIS_DEMO.length];
-      const clienteA = CLIENTES_DEMO[d % CLIENTES_DEMO.length];
-      const clienteB = CLIENTES_DEMO[(d + offset + 2) % CLIENTES_DEMO.length];
-      const splitA = 0.62;
-      return {
-        peso,
-        chapas,
-        velocidade: peso > 0 ? 68 + ((d * 7 + offset) % 20) : 0,
-        papeis: peso > 0 ? [
-          { papel: papelA, chapas: Math.round(chapas * splitA), peso: Math.round(peso * splitA) },
-          { papel: papelB, chapas: Math.round(chapas * (1 - splitA)), peso: Math.round(peso * (1 - splitA)) },
-        ] : [],
-        clientes: peso > 0 ? [
-          { cliente: clienteA, chapas: Math.round(chapas * 0.7), peso: Math.round(peso * 0.7) },
-          { cliente: clienteB, chapas: Math.round(chapas * 0.3), peso: Math.round(peso * 0.3) },
-        ] : [],
-      };
-    };
-    const diaTurno = mk(pesoDia, 0);
-    const noiteTurno = mk(pesoNoite, 9);
-    const dataStr = `${ano}-${String(mesIdx + 1).padStart(2, "0")}-${String(d).padStart(2, "0")}`;
-    dados[dataStr] = {
-      data: dataStr,
-      dia: diaTurno,
-      noite: noiteTurno,
-      total: {
-        peso: totalPeso,
-        chapas: diaTurno.chapas + noiteTurno.chapas,
-        velocidade: totalPeso > 0 ? (diaTurno.velocidade + noiteTurno.velocidade) / 2 : 0,
-        papeis: mergePapeis(diaTurno.papeis, noiteTurno.papeis),
-        clientes: mergeClientes(diaTurno.clientes, noiteTurno.clientes),
-      },
-    };
-  }
-  return { dados, diasCorridos: diasDemo };
-}
-
 // --------------------------------------------------------------- CÁLCULO --
 function montarPainel() {
   const agora = new Date();
@@ -214,24 +148,13 @@ function montarPainel() {
   const metaMensal = loadMetaMensal();
   const metaDiaria = metaMensal / diasUteisNoMes;
 
-  const historico = loadHistorico();
-  // Compartilhado tem prioridade (é o que outros aparelhos publicaram);
-  // local preenche dias que ainda não foram republicados dali.
-  const mesReal = { ...(historico[mesRef] || {}), ...(historicoMensalCompartilhado[mesRef] || {}) };
-  const diasReais = Object.keys(mesReal).sort();
-
-  let dadosMes, diasCorridos, isDemo;
-  if (diasReais.length) {
-    dadosMes = mesReal;
-    const ultimoDia = diasReais[diasReais.length - 1];
-    diasCorridos = parseInt(ultimoDia.slice(8, 10), 10);
-    isDemo = false;
-  } else {
-    const demo = gerarDadosDemo(ano, mesIdx, metaDiaria);
-    dadosMes = demo.dados;
-    diasCorridos = demo.diasCorridos;
-    isDemo = true;
-  }
+  const dadosMes = historicoMensalCompartilhado[mesRef] || {};
+  const diasReais = Object.keys(dadosMes).sort();
+  // Sem nenhum dia lançado no mês ainda (ex.: logo na virada), o painel fica
+  // zerado em vez de inventar números.
+  const diasCorridos = diasReais.length
+    ? parseInt(diasReais[diasReais.length - 1].slice(8, 10), 10)
+    : 0;
 
   const diasUteisCorridos = contarDiasUteis(ano, mesIdx, 1, diasCorridos);
   const metaAcumulada = metaDiaria * diasUteisCorridos;
@@ -259,12 +182,12 @@ function montarPainel() {
   return {
     ano, mesIdx, daysInMonth, diasUteisNoMes, metaMensal, metaDiaria, diasCorridos, diasUteisCorridos,
     metaAcumulada, produzidoAcumulado, ondeEstamosKg, ondeEstamosDias,
-    projecaoFechamento, projecaoPct, porDia, ultimoDiaStr, ultimoDiaEntry, isDemo, dadosMes,
+    projecaoFechamento, projecaoPct, porDia, ultimoDiaStr, ultimoDiaEntry, dadosMes,
   };
 }
 
 // "DD/MM/YYYY" (formato que o app de etiquetas manda) -> "YYYY-MM-DD"
-// (formato que o relatório carregado manualmente usa como chave).
+// (formato usado como chave no histórico mensal).
 function dataBRparaISO(dataBR){
   const [d, m, y] = String(dataBR||"").split("/");
   if (!d || !m || !y) return null;
@@ -351,11 +274,9 @@ function renderPainel() {
   // tipo (nunca o que está em andamento). Cruza as duas fontes: usa o
   // tempo real (app de etiquetas) quando já existe dado pra aquela data;
   // se não existir (datas de antes do sistema em tempo real existir),
-  // cai pro relatório carregado manualmente na tela de configuração —
-  // assim cobre o histórico antigo e segue sozinho a partir de hoje.
-  function turnoFechadoOuManual(fechado, tipo){
+  // cai pro histórico mensal compartilhado.
+  function turnoFechadoOuHistorico(fechado, tipo){
     if (fechado && fechado.paletes) return fechado;
-    if (p.isDemo) return null;
     const iso = dataBRparaISO(fechado && fechado.data);
     const doMes = iso && p.dadosMes && p.dadosMes[iso];
     return (doMes && doMes[tipo] && doMes[tipo].peso) ? doMes[tipo] : null;
@@ -365,8 +286,8 @@ function renderPainel() {
   if (resumoHoje && resumoHoje.turnoDiaFechado && resumoHoje.turnoNoiteFechado) {
     const diaData = resumoHoje.turnoDiaFechado.data;
     const noiteData = resumoHoje.turnoNoiteFechado.data;
-    setTurno("dia", turnoFechadoOuManual(resumoHoje.turnoDiaFechado, "dia"));
-    setTurno("noite", turnoFechadoOuManual(resumoHoje.turnoNoiteFechado, "noite"));
+    setTurno("dia", turnoFechadoOuHistorico(resumoHoje.turnoDiaFechado, "dia"));
+    setTurno("noite", turnoFechadoOuHistorico(resumoHoje.turnoNoiteFechado, "noite"));
     setTurno("total", { peso: resumoHoje.pesoHoje, chapas: resumoHoje.chapasHoje });
     document.querySelector("#tl-box-dia .tl-turno-nome").textContent = `TURNO DIA · ${diaData}`;
     document.querySelector("#tl-box-noite .tl-turno-nome").textContent = `TURNO NOITE · ${noiteData}`;
@@ -412,9 +333,8 @@ function renderPainel() {
     ? `Só neste turno (${turnoLabel}): <b>${fmt(turnoAtualDados.peso)} kg</b> · ${fmt(turnoAtualDados.chapas)} chapas`
     : "—";
 
-  document.getElementById("tl-demo-badge").classList.toggle("hidden", !p.isDemo);
   document.getElementById("tl-atualizado").textContent =
-    `Atualizado às ${new Date().toLocaleTimeString("pt-BR")}${p.isDemo ? " · dados de demonstração" : ""}`;
+    `Atualizado às ${new Date().toLocaleTimeString("pt-BR")}`;
 
   ultimoPainel = p;
   renderGrafico(p);
@@ -431,8 +351,7 @@ function calcularUltimos7Dias() {
     const ano = d.getFullYear(), mesIdx = d.getMonth(), dia = d.getDate();
     const mesRef = `${ano}-${String(mesIdx + 1).padStart(2, "0")}`;
     const dataISO = `${mesRef}-${String(dia).padStart(2, "0")}`;
-    const mesReal = { ...(loadHistorico()[mesRef] || {}), ...(historicoMensalCompartilhado[mesRef] || {}) };
-    const entry = mesReal[dataISO];
+    const entry = entradaDoDia(dataISO);
     dias.push({
       label: `${String(dia).padStart(2, "0")}/${String(mesIdx + 1).padStart(2, "0")}`,
       peso: entry ? entry.total.peso : 0,
@@ -532,13 +451,15 @@ document.addEventListener("DOMContentLoaded", async () => {
   renderPainel();
   setInterval(renderRelogio, 1000);
   setInterval(async () => {
-    // re-lê o localStorage (relatórios carregados manualmente) e busca o
-    // resumo de tempo real, a meta mensal e o histórico do mês publicados
+    // busca o resumo de tempo real, a meta mensal e o histórico publicados
     // pelos outros apps
     await Promise.all([carregarResumoHoje(), carregarMetaMensalCompartilhada(), carregarHistoricoMensalCompartilhado()]);
     renderPainel();
+    atualizarPeriodoSeAberto();
   }, 60000);
   configurarBotaoInstalar();
+  configurarPeriodo();
+  configurarMeta();
   registrarServiceWorker();
 });
 

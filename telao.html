@@ -7,7 +7,6 @@
 <meta name="theme-color" content="#1F4E78">
 <link rel="manifest" href="manifest.json">
 <link rel="icon" href="icons/icon-192.png">
-<link rel="stylesheet" href="styles.css">
 <link rel="stylesheet" href="telao.css">
 </head>
 <body class="tl-body">
@@ -25,7 +24,8 @@
       <div id="tl-data">—</div>
     </div>
     <button class="tl-instalar-btn hidden" id="btn-instalar-app" type="button">⬇ Instalar app</button>
-    <a class="tl-config-btn" id="tl-config-btn" href="index.html" title="Configurar meta / carregar relatórios">⚙</a>
+    <button class="tl-hist-btn" id="btn-periodo" type="button">📊 Produção anterior</button>
+    <button class="tl-config-btn" id="btn-meta" type="button" title="Ajustar meta mensal (senha)">⚙</button>
   </header>
 
   <section class="tl-kpi-row">
@@ -110,13 +110,64 @@
   </section>
 
   <footer class="tl-footer">
-    <span id="tl-demo-badge" class="tl-demo-badge hidden">⚠ Exibindo dados de demonstração — carregue relatórios reais em <strong>Abrir Painel do Telão</strong> na tela principal para substituir</span>
+    <span></span>
     <span id="tl-atualizado">—</span>
   </footer>
 
 </div>
 
+<!-- Produção anterior: semana atual / passada, mês passado e outros meses -->
+<div class="tl-modal hidden" id="modal-periodo" role="dialog" aria-modal="true" aria-labelledby="per-titulo">
+  <div class="tl-modal-card">
+    <div class="per-topo">
+      <h2 id="per-titulo">Produção anterior</h2>
+      <button class="per-fechar" id="per-fechar" type="button" aria-label="Fechar">✕</button>
+    </div>
+    <div class="per-botoes" id="per-botoes">
+      <button class="per-btn" type="button" data-per="semana-atual">Semana atual</button>
+      <button class="per-btn" type="button" data-per="semana-passada">Semana passada</button>
+      <button class="per-btn" type="button" data-per="mes-passado">Mês passado</button>
+      <select class="per-select" id="per-mes" aria-label="Escolher outro mês"></select>
+    </div>
+    <div class="per-vazio hidden" id="per-vazio">Nenhuma produção registrada neste período.</div>
+    <div id="per-conteudo">
+      <div class="per-kpis" id="per-kpis"></div>
+      <div class="per-grafico"><canvas id="per-chart"></canvas></div>
+      <div class="per-legenda">
+        <span><i class="tl-dot" style="background:#2E75B6"></i>dia útil</span>
+        <span><i class="tl-dot" style="background:#1BAF7A"></i>fim de semana (bônus)</span>
+      </div>
+      <div class="per-tabelas">
+        <div id="per-papeis"></div>
+        <div id="per-clientes"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Meta mensal (único ajuste que sobrou; pede senha) -->
+<div class="tl-modal hidden" id="modal-meta" role="dialog" aria-modal="true" aria-labelledby="meta-titulo">
+  <div class="tl-modal-card tl-modal-pequeno">
+    <div class="per-topo">
+      <h2 id="meta-titulo">Meta mensal</h2>
+      <button class="per-fechar" id="meta-fechar" type="button" aria-label="Fechar">✕</button>
+    </div>
+    <div id="meta-passo-senha">
+      <p class="meta-hint">Digite a senha para ajustar a meta.</p>
+      <input type="password" id="meta-senha" class="meta-input" placeholder="Senha" inputmode="numeric" autocomplete="off">
+      <button class="per-btn ativo" id="meta-entrar" type="button">Entrar</button>
+    </div>
+    <div id="meta-passo-meta" class="hidden">
+      <p class="meta-hint">Meta de produção do mês (kg). Vale para todas as telas.</p>
+      <input type="number" id="meta-valor" class="meta-input" step="1000" min="0">
+      <button class="per-btn ativo" id="meta-salvar" type="button">Salvar meta</button>
+    </div>
+    <div class="meta-msg" id="meta-msg"></div>
+  </div>
+</div>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
 <script src="telao.js"></script>
+<script src="periodo.js"></script>
 </body>
 </html>
