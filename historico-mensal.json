@@ -10031,8 +10031,8 @@
         ]
       },
       "noite": {
-        "peso": 2364.97,
-        "chapas": 10855,
+        "peso": 2521.39,
+        "chapas": 11835,
         "velocidade": 0,
         "papeis": [
           {
@@ -10042,8 +10042,8 @@
           },
           {
             "papel": "P25B",
-            "chapas": 8315,
-            "peso": 1837.25
+            "chapas": 9295,
+            "peso": 1993.67
           }
         ],
         "clientes": [
@@ -10061,12 +10061,17 @@
             "cliente": "FAVINCO EMBALAGENS",
             "peso": 106.66,
             "chapas": 560
+          },
+          {
+            "cliente": "VÔ CHICO",
+            "peso": 156.42,
+            "chapas": 980
           }
         ]
       },
       "total": {
-        "peso": 6937.8,
-        "chapas": 20710,
+        "peso": 7094.22,
+        "chapas": 21690,
         "velocidade": 0,
         "papeis": [
           {
@@ -10076,8 +10081,8 @@
           },
           {
             "papel": "P25B",
-            "chapas": 10430,
-            "peso": 2160.54
+            "chapas": 11410,
+            "peso": 2316.96
           },
           {
             "papel": "P25C",
@@ -10145,6 +10150,11 @@
             "cliente": "RENOVAPEL",
             "peso": 351.87,
             "chapas": 1690
+          },
+          {
+            "cliente": "VÔ CHICO",
+            "peso": 156.42,
+            "chapas": 980
           }
         ]
       }
