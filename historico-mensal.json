@@ -10162,40 +10162,40 @@
     "2026-11-09": {
       "data": "2026-11-09",
       "dia": {
-        "peso": 308.99,
-        "chapas": 1000,
+        "peso": 617.98,
+        "chapas": 2000,
         "velocidade": 0,
         "papeis": [
           {
             "papel": "P25B",
-            "chapas": 1000,
-            "peso": 308.99
+            "chapas": 2000,
+            "peso": 617.98
           }
         ],
         "clientes": [
           {
             "cliente": "RM EMBALAGENS",
-            "peso": 308.99,
-            "chapas": 1000
+            "peso": 617.98,
+            "chapas": 2000
           }
         ]
       },
       "total": {
-        "peso": 308.99,
-        "chapas": 1000,
+        "peso": 617.98,
+        "chapas": 2000,
         "velocidade": 0,
         "papeis": [
           {
             "papel": "P25B",
-            "chapas": 1000,
-            "peso": 308.99
+            "chapas": 2000,
+            "peso": 617.98
           }
         ],
         "clientes": [
           {
             "cliente": "RM EMBALAGENS",
-            "peso": 308.99,
-            "chapas": 1000
+            "peso": 617.98,
+            "chapas": 2000
           }
         ]
       }
