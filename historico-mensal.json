@@ -10162,14 +10162,14 @@
     "2026-11-09": {
       "data": "2026-11-09",
       "dia": {
-        "peso": 2535.49,
-        "chapas": 9385,
+        "peso": 2736.96,
+        "chapas": 10145,
         "velocidade": 0,
         "papeis": [
           {
             "papel": "P25B",
-            "chapas": 6545,
-            "peso": 1597.56
+            "chapas": 7305,
+            "peso": 1799.03
           },
           {
             "papel": "P45B",
@@ -10205,20 +10205,20 @@
           },
           {
             "cliente": "ABAPEL EMBALAGENS",
-            "peso": 528.28,
-            "chapas": 1215
+            "peso": 729.75,
+            "chapas": 1975
           }
         ]
       },
       "total": {
-        "peso": 2535.49,
-        "chapas": 9385,
+        "peso": 2736.96,
+        "chapas": 10145,
         "velocidade": 0,
         "papeis": [
           {
             "papel": "P25B",
-            "chapas": 6545,
-            "peso": 1597.56
+            "chapas": 7305,
+            "peso": 1799.03
           },
           {
             "papel": "P45B",
@@ -10254,8 +10254,8 @@
           },
           {
             "cliente": "ABAPEL EMBALAGENS",
-            "peso": 528.28,
-            "chapas": 1215
+            "peso": 729.75,
+            "chapas": 1975
           }
         ]
       }
