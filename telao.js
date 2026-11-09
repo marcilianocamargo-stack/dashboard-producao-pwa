@@ -392,13 +392,13 @@ function renderGrafico(p) {
   // separada de azul (bateu a meta do dia útil) e vermelho (não bateu).
   const cores = modoSemana
     ? diasView.map((x) => {
-        if (!x.util) return x.peso > 0 ? "#1BAF7A" : "#D9D9D9";
-        return x.peso >= p.metaDiaria ? "#2E75B6" : "#C0392B";
+        if (!x.util) return x.peso > 0 ? "#2e7d32" : "#cfdcec";
+        return x.peso >= p.metaDiaria ? "#1a56a0" : "#c62828";
       })
     : diasView.map((x) => {
-        if (x.dia > p.diasCorridos || x.peso === null) return "#D9D9D9";
-        if (!x.util) return x.peso > 0 ? "#1BAF7A" : "#D9D9D9";
-        return x.peso >= p.metaDiaria ? "#2E75B6" : "#C0392B";
+        if (x.dia > p.diasCorridos || x.peso === null) return "#cfdcec";
+        if (!x.util) return x.peso > 0 ? "#2e7d32" : "#cfdcec";
+        return x.peso >= p.metaDiaria ? "#1a56a0" : "#c62828";
       });
   const metaLinha = diasView.map(() => Math.round(p.metaDiaria));
 
@@ -420,7 +420,7 @@ function renderGrafico(p) {
           type: "line",
           label: "Meta diária (kg)",
           data: metaLinha,
-          borderColor: "#1F4E78",
+          borderColor: "#1b2b40",
           borderWidth: 2,
           borderDash: [6, 4],
           pointRadius: 0,
@@ -443,6 +443,12 @@ function renderGrafico(p) {
       },
     },
   });
+}
+
+// fonte e cor dos textos dos gráficos no padrão visual dos apps da Prime
+if (window.Chart) {
+  Chart.defaults.font.family = '"Segoe UI", Arial, sans-serif';
+  Chart.defaults.color = "#4a6a8f";
 }
 
 document.addEventListener("DOMContentLoaded", async () => {

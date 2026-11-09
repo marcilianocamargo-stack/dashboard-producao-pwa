@@ -4,19 +4,19 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Painel de Produção — Telão</title>
-<meta name="theme-color" content="#1F4E78">
+<meta name="theme-color" content="#1a56a0">
 <link rel="manifest" href="manifest.json">
 <link rel="icon" href="icons/icon-192.png">
-<link rel="stylesheet" href="telao.css">
+<link rel="stylesheet" href="telao.css?v=33">
 </head>
 <body class="tl-body">
 
 <div class="tl-screen">
 
   <header class="tl-header">
-    <img src="icons/icon-192.png" alt="" class="tl-logo">
+    <div class="tl-logo" aria-hidden="true"><svg viewBox="0 0 100 100"><rect x="8" y="14" width="84" height="56" rx="7" fill="none" stroke="#1a56a0" stroke-width="8"/><rect x="21" y="45" width="11" height="15" rx="2" fill="#1a56a0"/><rect x="37" y="31" width="11" height="29" rx="2" fill="#1a56a0"/><rect x="53" y="39" width="11" height="21" rx="2" fill="#1a56a0"/><rect x="69" y="25" width="11" height="35" rx="2" fill="#1a56a0"/><rect x="44" y="70" width="12" height="11" fill="#1a56a0"/><rect x="28" y="79" width="44" height="8" rx="4" fill="#1a56a0"/></svg></div>
     <div class="tl-title-block">
-      <h1>PAINEL DE PRODUÇÃO — PRIME</h1>
+      <h1>Painel de Produção · Prime Ondulados</h1>
       <p id="tl-mes-nome">—</p>
     </div>
     <div class="tl-clock-block">
@@ -61,9 +61,9 @@
         </div>
       </div>
       <div class="tl-legenda-cores">
-        <span><i class="tl-dot" style="background:#2E75B6"></i>bateu a meta</span>
-        <span><i class="tl-dot" style="background:#C0392B"></i>abaixo da meta</span>
-        <span><i class="tl-dot" style="background:#1BAF7A"></i>fim de semana (bônus)</span>
+        <span><i class="tl-dot" style="background:#1a56a0"></i>bateu a meta</span>
+        <span><i class="tl-dot" style="background:#c62828"></i>abaixo da meta</span>
+        <span><i class="tl-dot" style="background:#2e7d32"></i>fim de semana (bônus)</span>
       </div>
       <div class="tl-chart-wrap"><canvas id="tl-chart-mes"></canvas></div>
     </div>
@@ -134,8 +134,8 @@
       <div class="per-kpis" id="per-kpis"></div>
       <div class="per-grafico"><canvas id="per-chart"></canvas></div>
       <div class="per-legenda">
-        <span><i class="tl-dot" style="background:#2E75B6"></i>dia útil</span>
-        <span><i class="tl-dot" style="background:#1BAF7A"></i>fim de semana (bônus)</span>
+        <span><i class="tl-dot" style="background:#1a56a0"></i>dia útil</span>
+        <span><i class="tl-dot" style="background:#2e7d32"></i>fim de semana (bônus)</span>
       </div>
       <div class="per-tabelas">
         <div id="per-papeis"></div>
@@ -167,7 +167,7 @@
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
-<script src="telao.js"></script>
-<script src="periodo.js"></script>
+<script src="telao.js?v=33"></script>
+<script src="periodo.js?v=33"></script>
 </body>
 </html>

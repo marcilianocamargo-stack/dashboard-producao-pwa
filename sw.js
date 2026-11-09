@@ -1,13 +1,13 @@
-const CACHE_NAME = "prime-diario-v32";
+const CACHE_NAME = "prime-diario-v33";
 const APP_SHELL = [
   "./",
-  "./periodo.js",
+  "./periodo.js?v=33",
   "./manifest.json",
   "./icons/icon-192.png",
   "./icons/icon-512.png",
   "./telao.html",
-  "./telao.js",
-  "./telao.css",
+  "./telao.js?v=33",
+  "./telao.css?v=33",
 ];
 
 self.addEventListener("install", (event) => {

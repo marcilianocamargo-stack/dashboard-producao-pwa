@@ -154,8 +154,8 @@ function renderPeriodo() {
 
   // gráfico de barras por dia
   const cores = r.dias.map((x) => {
-    if (x.futuro || x.peso <= 0) return "#D9D9D9";
-    return x.util ? "#2E75B6" : "#1BAF7A"; // verde = fim de semana (bônus)
+    if (x.futuro || x.peso <= 0) return "#cfdcec";
+    return x.util ? "#1a56a0" : "#2e7d32"; // verde = fim de semana (bônus)
   });
   const dados = r.dias.map((x) => (x.futuro ? null : Math.round(x.peso)));
   const ctx = document.getElementById("per-chart");
