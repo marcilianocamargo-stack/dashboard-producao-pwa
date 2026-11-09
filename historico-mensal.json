@@ -10162,8 +10162,8 @@
     "2026-11-09": {
       "data": "2026-11-09",
       "dia": {
-        "peso": 1175.63,
-        "chapas": 6330,
+        "peso": 1316.18,
+        "chapas": 6480,
         "velocidade": 0,
         "papeis": [
           {
@@ -10175,6 +10175,11 @@
             "papel": "P45B",
             "chapas": 1000,
             "peso": 106.35
+          },
+          {
+            "papel": "P80D",
+            "chapas": 150,
+            "peso": 140.55
           }
         ],
         "clientes": [
@@ -10185,8 +10190,8 @@
           },
           {
             "cliente": "RENOVAPEL",
-            "peso": 408.76,
-            "chapas": 3500
+            "peso": 549.31,
+            "chapas": 3650
           },
           {
             "cliente": "IPE EMBALAGENS",
@@ -10196,8 +10201,8 @@
         ]
       },
       "total": {
-        "peso": 1175.63,
-        "chapas": 6330,
+        "peso": 1316.18,
+        "chapas": 6480,
         "velocidade": 0,
         "papeis": [
           {
@@ -10209,6 +10214,11 @@
             "papel": "P45B",
             "chapas": 1000,
             "peso": 106.35
+          },
+          {
+            "papel": "P80D",
+            "chapas": 150,
+            "peso": 140.55
           }
         ],
         "clientes": [
@@ -10219,8 +10229,8 @@
           },
           {
             "cliente": "RENOVAPEL",
-            "peso": 408.76,
-            "chapas": 3500
+            "peso": 549.31,
+            "chapas": 3650
           },
           {
             "cliente": "IPE EMBALAGENS",
