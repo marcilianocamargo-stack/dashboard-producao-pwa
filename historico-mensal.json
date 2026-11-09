@@ -10162,8 +10162,8 @@
     "2026-11-09": {
       "data": "2026-11-09",
       "dia": {
-        "peso": 1596.81,
-        "chapas": 7670,
+        "peso": 1802.01,
+        "chapas": 7920,
         "velocidade": 0,
         "papeis": [
           {
@@ -10183,15 +10183,15 @@
           },
           {
             "papel": "P50D",
-            "chapas": 1020,
-            "peso": 121.34
+            "chapas": 1270,
+            "peso": 326.54
           }
         ],
         "clientes": [
           {
             "cliente": "RM EMBALAGENS",
-            "peso": 617.98,
-            "chapas": 2000
+            "peso": 823.18,
+            "chapas": 2250
           },
           {
             "cliente": "RENOVAPEL",
@@ -10206,8 +10206,8 @@
         ]
       },
       "total": {
-        "peso": 1596.81,
-        "chapas": 7670,
+        "peso": 1802.01,
+        "chapas": 7920,
         "velocidade": 0,
         "papeis": [
           {
@@ -10227,15 +10227,15 @@
           },
           {
             "papel": "P50D",
-            "chapas": 1020,
-            "peso": 121.34
+            "chapas": 1270,
+            "peso": 326.54
           }
         ],
         "clientes": [
           {
             "cliente": "RM EMBALAGENS",
-            "peso": 617.98,
-            "chapas": 2000
+            "peso": 823.18,
+            "chapas": 2250
           },
           {
             "cliente": "RENOVAPEL",
