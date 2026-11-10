@@ -10216,8 +10216,8 @@
         ]
       },
       "noite": {
-        "peso": 2847.0,
-        "chapas": 7280,
+        "peso": 3025.94,
+        "chapas": 8835,
         "velocidade": 0,
         "papeis": [
           {
@@ -10242,8 +10242,8 @@
           },
           {
             "papel": "PW40B",
-            "chapas": 1555,
-            "peso": 178.94
+            "chapas": 3110,
+            "peso": 357.88
           }
         ],
         "clientes": [
@@ -10274,14 +10274,14 @@
           },
           {
             "cliente": "RR STELLA",
-            "peso": 178.94,
-            "chapas": 1555
+            "peso": 357.88,
+            "chapas": 3110
           }
         ]
       },
       "total": {
-        "peso": 6577.18,
-        "chapas": 23825,
+        "peso": 6756.12,
+        "chapas": 25380,
         "velocidade": 0,
         "papeis": [
           {
@@ -10311,8 +10311,8 @@
           },
           {
             "papel": "PW40B",
-            "chapas": 1555,
-            "peso": 178.94
+            "chapas": 3110,
+            "peso": 357.88
           }
         ],
         "clientes": [
@@ -10343,8 +10343,8 @@
           },
           {
             "cliente": "RR STELLA",
-            "peso": 178.94,
-            "chapas": 1555
+            "peso": 357.88,
+            "chapas": 3110
           }
         ]
       }
