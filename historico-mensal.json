@@ -10668,6 +10668,47 @@
           }
         ]
       }
+    },
+    "2026-11-12": {
+      "data": "2026-11-12",
+      "dia": {
+        "peso": 74.53,
+        "chapas": 600,
+        "velocidade": 0,
+        "papeis": [
+          {
+            "papel": "PW40B",
+            "chapas": 600,
+            "peso": 74.53
+          }
+        ],
+        "clientes": [
+          {
+            "cliente": "VÔ CHICO",
+            "peso": 74.53,
+            "chapas": 600
+          }
+        ]
+      },
+      "total": {
+        "peso": 74.53,
+        "chapas": 600,
+        "velocidade": 0,
+        "papeis": [
+          {
+            "papel": "PW40B",
+            "chapas": 600,
+            "peso": 74.53
+          }
+        ],
+        "clientes": [
+          {
+            "cliente": "VÔ CHICO",
+            "peso": 74.53,
+            "chapas": 600
+          }
+        ]
+      }
     }
   }
 }
