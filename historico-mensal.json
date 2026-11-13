@@ -10858,6 +10858,47 @@
           }
         ]
       }
+    },
+    "2026-11-13": {
+      "data": "2026-11-13",
+      "dia": {
+        "peso": 337.72,
+        "chapas": 1530,
+        "velocidade": 0,
+        "papeis": [
+          {
+            "papel": "P25B",
+            "chapas": 1530,
+            "peso": 337.72
+          }
+        ],
+        "clientes": [
+          {
+            "cliente": "FAVINCO EMBALAGENS",
+            "peso": 337.72,
+            "chapas": 1530
+          }
+        ]
+      },
+      "total": {
+        "peso": 337.72,
+        "chapas": 1530,
+        "velocidade": 0,
+        "papeis": [
+          {
+            "papel": "P25B",
+            "chapas": 1530,
+            "peso": 337.72
+          }
+        ],
+        "clientes": [
+          {
+            "cliente": "FAVINCO EMBALAGENS",
+            "peso": 337.72,
+            "chapas": 1530
+          }
+        ]
+      }
     }
   }
 }
