@@ -10862,40 +10862,40 @@
     "2026-11-13": {
       "data": "2026-11-13",
       "dia": {
-        "peso": 581.33,
-        "chapas": 3830,
+        "peso": 934.5,
+        "chapas": 5430,
         "velocidade": 0,
         "papeis": [
           {
             "papel": "P25B",
-            "chapas": 3830,
-            "peso": 581.33
+            "chapas": 5430,
+            "peso": 934.5
           }
         ],
         "clientes": [
           {
             "cliente": "FAVINCO EMBALAGENS",
-            "peso": 581.33,
-            "chapas": 3830
+            "peso": 934.5,
+            "chapas": 5430
           }
         ]
       },
       "total": {
-        "peso": 581.33,
-        "chapas": 3830,
+        "peso": 934.5,
+        "chapas": 5430,
         "velocidade": 0,
         "papeis": [
           {
             "papel": "P25B",
-            "chapas": 3830,
-            "peso": 581.33
+            "chapas": 5430,
+            "peso": 934.5
           }
         ],
         "clientes": [
           {
             "cliente": "FAVINCO EMBALAGENS",
-            "peso": 581.33,
-            "chapas": 3830
+            "peso": 934.5,
+            "chapas": 5430
           }
         ]
       }
