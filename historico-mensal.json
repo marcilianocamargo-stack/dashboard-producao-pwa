@@ -10921,27 +10921,27 @@
         ]
       },
       "noite": {
-        "peso": 644.84,
-        "chapas": 2280,
+        "peso": 724.11,
+        "chapas": 2725,
         "velocidade": 0,
         "papeis": [
           {
             "papel": "P45B",
-            "chapas": 2280,
-            "peso": 644.84
+            "chapas": 2725,
+            "peso": 724.11
           }
         ],
         "clientes": [
           {
             "cliente": "RENOVAPEL",
-            "peso": 644.84,
-            "chapas": 2280
+            "peso": 724.11,
+            "chapas": 2725
           }
         ]
       },
       "total": {
-        "peso": 6725.07,
-        "chapas": 36656,
+        "peso": 6804.34,
+        "chapas": 37101,
         "velocidade": 0,
         "papeis": [
           {
@@ -10961,8 +10961,8 @@
           },
           {
             "papel": "P45B",
-            "chapas": 15771,
-            "peso": 2326.51
+            "chapas": 16216,
+            "peso": 2405.78
           }
         ],
         "clientes": [
@@ -10993,8 +10993,8 @@
           },
           {
             "cliente": "RENOVAPEL",
-            "peso": 2326.51,
-            "chapas": 15771
+            "peso": 2405.78,
+            "chapas": 16216
           }
         ]
       }
