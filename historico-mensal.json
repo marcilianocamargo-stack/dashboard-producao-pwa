@@ -11088,14 +11088,14 @@
     "2026-11-16": {
       "data": "2026-11-16",
       "dia": {
-        "peso": 2251.78,
-        "chapas": 7885,
+        "peso": 2263.3,
+        "chapas": 7915,
         "velocidade": 0,
         "papeis": [
           {
             "papel": "P25B",
-            "chapas": 1095,
-            "peso": 327.43
+            "chapas": 1125,
+            "peso": 338.95
           },
           {
             "papel": "P35B",
@@ -11131,20 +11131,20 @@
           },
           {
             "cliente": "AMOSTRA",
-            "peso": 84.88,
-            "chapas": 130
+            "peso": 96.4,
+            "chapas": 160
           }
         ]
       },
       "total": {
-        "peso": 2251.78,
-        "chapas": 7885,
+        "peso": 2263.3,
+        "chapas": 7915,
         "velocidade": 0,
         "papeis": [
           {
             "papel": "P25B",
-            "chapas": 1095,
-            "peso": 327.43
+            "chapas": 1125,
+            "peso": 338.95
           },
           {
             "papel": "P35B",
@@ -11180,8 +11180,8 @@
           },
           {
             "cliente": "AMOSTRA",
-            "peso": 84.88,
-            "chapas": 130
+            "peso": 96.4,
+            "chapas": 160
           }
         ]
       }
