@@ -11088,8 +11088,8 @@
     "2026-11-16": {
       "data": "2026-11-16",
       "dia": {
-        "peso": 1163.92,
-        "chapas": 5625,
+        "peso": 1326.12,
+        "chapas": 6595,
         "velocidade": 0,
         "papeis": [
           {
@@ -11099,8 +11099,8 @@
           },
           {
             "papel": "P35B",
-            "chapas": 4530,
-            "peso": 836.49
+            "chapas": 5500,
+            "peso": 998.69
           }
         ],
         "clientes": [
@@ -11111,14 +11111,14 @@
           },
           {
             "cliente": "CARTOMIL EMBALAGENS",
-            "peso": 836.49,
-            "chapas": 4530
+            "peso": 998.69,
+            "chapas": 5500
           }
         ]
       },
       "total": {
-        "peso": 1163.92,
-        "chapas": 5625,
+        "peso": 1326.12,
+        "chapas": 6595,
         "velocidade": 0,
         "papeis": [
           {
@@ -11128,8 +11128,8 @@
           },
           {
             "papel": "P35B",
-            "chapas": 4530,
-            "peso": 836.49
+            "chapas": 5500,
+            "peso": 998.69
           }
         ],
         "clientes": [
@@ -11140,8 +11140,8 @@
           },
           {
             "cliente": "CARTOMIL EMBALAGENS",
-            "peso": 836.49,
-            "chapas": 4530
+            "peso": 998.69,
+            "chapas": 5500
           }
         ]
       }
