@@ -11264,6 +11264,47 @@
           }
         ]
       }
+    },
+    "2026-11-17": {
+      "data": "2026-11-17",
+      "dia": {
+        "peso": 0,
+        "chapas": 760,
+        "velocidade": 0,
+        "papeis": [
+          {
+            "papel": "PW60B",
+            "chapas": 760,
+            "peso": 0.0
+          }
+        ],
+        "clientes": [
+          {
+            "cliente": "DR EMBALAGENS",
+            "peso": 0.0,
+            "chapas": 760
+          }
+        ]
+      },
+      "total": {
+        "peso": 0,
+        "chapas": 760,
+        "velocidade": 0,
+        "papeis": [
+          {
+            "papel": "PW60B",
+            "chapas": 760,
+            "peso": 0.0
+          }
+        ],
+        "clientes": [
+          {
+            "cliente": "DR EMBALAGENS",
+            "peso": 0.0,
+            "chapas": 760
+          }
+        ]
+      }
     }
   }
 }
