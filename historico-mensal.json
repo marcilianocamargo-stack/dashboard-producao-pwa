@@ -11332,27 +11332,27 @@
         ]
       },
       "noite": {
-        "peso": 2374.92,
-        "chapas": 4300,
+        "peso": 2836.1,
+        "chapas": 5135,
         "velocidade": 0,
         "papeis": [
           {
             "papel": "P70C",
-            "chapas": 4300,
-            "peso": 2374.92
+            "chapas": 5135,
+            "peso": 2836.1
           }
         ],
         "clientes": [
           {
             "cliente": "HARMONY EMBALAGENS",
-            "peso": 2374.92,
-            "chapas": 4300
+            "peso": 2836.1,
+            "chapas": 5135
           }
         ]
       },
       "total": {
-        "peso": 12051.61,
-        "chapas": 19975,
+        "peso": 12512.79,
+        "chapas": 20810,
         "velocidade": 0,
         "papeis": [
           {
@@ -11377,8 +11377,8 @@
           },
           {
             "papel": "P70C",
-            "chapas": 11060,
-            "peso": 6740.97
+            "chapas": 11895,
+            "peso": 7202.15
           },
           {
             "papel": "P40B",
@@ -11399,8 +11399,8 @@
           },
           {
             "cliente": "HARMONY EMBALAGENS",
-            "peso": 5201.04,
-            "chapas": 11075
+            "peso": 5662.22,
+            "chapas": 11910
           },
           {
             "cliente": "STAR VALE CARTONAGEM",
