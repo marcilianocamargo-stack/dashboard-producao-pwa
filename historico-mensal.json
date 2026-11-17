@@ -11147,8 +11147,8 @@
         ]
       },
       "noite": {
-        "peso": 5888.26,
-        "chapas": 7395,
+        "peso": 5988.1,
+        "chapas": 7570,
         "velocidade": 0,
         "papeis": [
           {
@@ -11158,8 +11158,8 @@
           },
           {
             "papel": "P55D",
-            "chapas": 4395,
-            "peso": 3009.22
+            "chapas": 4570,
+            "peso": 3109.06
           }
         ],
         "clientes": [
@@ -11175,14 +11175,14 @@
           },
           {
             "cliente": "STAR VALE CARTONAGEM",
-            "peso": 1697.28,
-            "chapas": 2975
+            "peso": 1797.12,
+            "chapas": 3150
           }
         ]
       },
       "total": {
-        "peso": 12272.35,
-        "chapas": 32885,
+        "peso": 12372.19,
+        "chapas": 33060,
         "velocidade": 0,
         "papeis": [
           {
@@ -11207,8 +11207,8 @@
           },
           {
             "papel": "P55D",
-            "chapas": 4710,
-            "peso": 3236.12
+            "chapas": 4885,
+            "peso": 3335.96
           }
         ],
         "clientes": [
@@ -11239,8 +11239,8 @@
           },
           {
             "cliente": "STAR VALE CARTONAGEM",
-            "peso": 1697.28,
-            "chapas": 2975
+            "peso": 1797.12,
+            "chapas": 3150
           }
         ]
       }
