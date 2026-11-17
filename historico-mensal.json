@@ -11268,8 +11268,8 @@
     "2026-11-17": {
       "data": "2026-11-17",
       "dia": {
-        "peso": 8754.41,
-        "chapas": 14285,
+        "peso": 8944.01,
+        "chapas": 14535,
         "velocidade": 0,
         "papeis": [
           {
@@ -11304,8 +11304,8 @@
           },
           {
             "papel": "P60C",
-            "chapas": 500,
-            "peso": 379.2
+            "chapas": 750,
+            "peso": 568.8
           }
         ],
         "clientes": [
@@ -11321,8 +11321,8 @@
           },
           {
             "cliente": "STAR VALE CARTONAGEM",
-            "peso": 6219.97,
-            "chapas": 5980
+            "peso": 6409.57,
+            "chapas": 6230
           },
           {
             "cliente": "AMOSTRA",
@@ -11332,8 +11332,8 @@
         ]
       },
       "total": {
-        "peso": 8754.41,
-        "chapas": 14285,
+        "peso": 8944.01,
+        "chapas": 14535,
         "velocidade": 0,
         "papeis": [
           {
@@ -11368,8 +11368,8 @@
           },
           {
             "papel": "P60C",
-            "chapas": 500,
-            "peso": 379.2
+            "chapas": 750,
+            "peso": 568.8
           }
         ],
         "clientes": [
@@ -11385,8 +11385,8 @@
           },
           {
             "cliente": "STAR VALE CARTONAGEM",
-            "peso": 6219.97,
-            "chapas": 5980
+            "peso": 6409.57,
+            "chapas": 6230
           },
           {
             "cliente": "AMOSTRA",
