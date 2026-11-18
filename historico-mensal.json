@@ -11332,8 +11332,8 @@
         ]
       },
       "noite": {
-        "peso": 7626.9,
-        "chapas": 13840,
+        "peso": 7752.75,
+        "chapas": 14015,
         "velocidade": 0,
         "papeis": [
           {
@@ -11345,6 +11345,11 @@
             "papel": "P60C",
             "chapas": 815,
             "peso": 951.55
+          },
+          {
+            "papel": "P50D",
+            "chapas": 175,
+            "peso": 125.85
           }
         ],
         "clientes": [
@@ -11357,12 +11362,17 @@
             "cliente": "STAR VALE CARTONAGEM",
             "peso": 951.55,
             "chapas": 815
+          },
+          {
+            "cliente": "ABAPEL EMBALAGENS",
+            "peso": 125.85,
+            "chapas": 175
           }
         ]
       },
       "total": {
-        "peso": 17303.59,
-        "chapas": 29515,
+        "peso": 17429.44,
+        "chapas": 29690,
         "velocidade": 0,
         "papeis": [
           {
@@ -11382,8 +11392,8 @@
           },
           {
             "papel": "P50D",
-            "chapas": 520,
-            "peso": 427.72
+            "chapas": 695,
+            "peso": 553.57
           },
           {
             "papel": "P70C",
@@ -11421,6 +11431,11 @@
             "cliente": "AMOSTRA",
             "peso": 61.8,
             "chapas": 150
+          },
+          {
+            "cliente": "ABAPEL EMBALAGENS",
+            "peso": 125.85,
+            "chapas": 175
           }
         ]
       }
