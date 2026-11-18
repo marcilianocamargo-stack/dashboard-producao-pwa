@@ -11522,14 +11522,14 @@
         ]
       },
       "noite": {
-        "peso": 1498.33,
-        "chapas": 4530,
+        "peso": 1615.82,
+        "chapas": 4705,
         "velocidade": 0,
         "papeis": [
           {
             "papel": "P55D",
-            "chapas": 1405,
-            "peso": 1014.54
+            "chapas": 1580,
+            "peso": 1132.03
           },
           {
             "papel": "P25B",
@@ -11550,14 +11550,14 @@
           },
           {
             "cliente": "IPE EMBALAGENS",
-            "peso": 234.98,
-            "chapas": 350
+            "peso": 352.47,
+            "chapas": 525
           }
         ]
       },
       "total": {
-        "peso": 9577.74,
-        "chapas": 20700,
+        "peso": 9695.23,
+        "chapas": 20875,
         "velocidade": 0,
         "papeis": [
           {
@@ -11592,8 +11592,8 @@
           },
           {
             "papel": "P55D",
-            "chapas": 2845,
-            "peso": 2078.62
+            "chapas": 3020,
+            "peso": 2196.11
           }
         ],
         "clientes": [
@@ -11604,8 +11604,8 @@
           },
           {
             "cliente": "IPE EMBALAGENS",
-            "peso": 3393.49,
-            "chapas": 10330
+            "peso": 3510.98,
+            "chapas": 10505
           },
           {
             "cliente": "FORBOX",
