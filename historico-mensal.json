@@ -11453,8 +11453,8 @@
     "2026-11-18": {
       "data": "2026-11-18",
       "dia": {
-        "peso": 7547.37,
-        "chapas": 15450,
+        "peso": 7680.38,
+        "chapas": 15630,
         "velocidade": 0,
         "papeis": [
           {
@@ -11489,8 +11489,8 @@
           },
           {
             "papel": "P55D",
-            "chapas": 720,
-            "peso": 532.04
+            "chapas": 900,
+            "peso": 665.05
           }
         ],
         "clientes": [
@@ -11506,8 +11506,8 @@
           },
           {
             "cliente": "FORBOX",
-            "peso": 892.28,
-            "chapas": 1120
+            "peso": 1025.29,
+            "chapas": 1300
           },
           {
             "cliente": "RM EMBALAGENS",
@@ -11522,8 +11522,8 @@
         ]
       },
       "total": {
-        "peso": 7547.37,
-        "chapas": 15450,
+        "peso": 7680.38,
+        "chapas": 15630,
         "velocidade": 0,
         "papeis": [
           {
@@ -11558,8 +11558,8 @@
           },
           {
             "papel": "P55D",
-            "chapas": 720,
-            "peso": 532.04
+            "chapas": 900,
+            "peso": 665.05
           }
         ],
         "clientes": [
@@ -11575,8 +11575,8 @@
           },
           {
             "cliente": "FORBOX",
-            "peso": 892.28,
-            "chapas": 1120
+            "peso": 1025.29,
+            "chapas": 1300
           },
           {
             "cliente": "RM EMBALAGENS",
