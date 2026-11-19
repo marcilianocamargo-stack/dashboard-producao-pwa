@@ -11674,6 +11674,47 @@
           }
         ]
       }
+    },
+    "2026-11-19": {
+      "data": "2026-11-19",
+      "dia": {
+        "peso": 319.42,
+        "chapas": 760,
+        "velocidade": 0,
+        "papeis": [
+          {
+            "papel": "P35B",
+            "chapas": 760,
+            "peso": 319.42
+          }
+        ],
+        "clientes": [
+          {
+            "cliente": "CARPEL",
+            "peso": 319.42,
+            "chapas": 760
+          }
+        ]
+      },
+      "total": {
+        "peso": 319.42,
+        "chapas": 760,
+        "velocidade": 0,
+        "papeis": [
+          {
+            "papel": "P35B",
+            "chapas": 760,
+            "peso": 319.42
+          }
+        ],
+        "clientes": [
+          {
+            "cliente": "CARPEL",
+            "peso": 319.42,
+            "chapas": 760
+          }
+        ]
+      }
     }
   }
 }
