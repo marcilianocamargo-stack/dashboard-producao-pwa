@@ -11522,8 +11522,8 @@
         ]
       },
       "noite": {
-        "peso": 3769.99,
-        "chapas": 13895,
+        "peso": 3933.86,
+        "chapas": 15060,
         "velocidade": 0,
         "papeis": [
           {
@@ -11533,8 +11533,8 @@
           },
           {
             "papel": "P25B",
-            "chapas": 8085,
-            "peso": 1588.12
+            "chapas": 9250,
+            "peso": 1751.99
           },
           {
             "papel": "P50D",
@@ -11560,8 +11560,8 @@
           },
           {
             "cliente": "CARPEL",
-            "peso": 1075.93,
-            "chapas": 6950
+            "peso": 1239.8,
+            "chapas": 8115
           },
           {
             "cliente": "IPE EMBALAGENS",
@@ -11581,8 +11581,8 @@
         ]
       },
       "total": {
-        "peso": 11849.4,
-        "chapas": 30065,
+        "peso": 12013.27,
+        "chapas": 31230,
         "velocidade": 0,
         "papeis": [
           {
@@ -11602,8 +11602,8 @@
           },
           {
             "papel": "P25B",
-            "chapas": 12345,
-            "peso": 2586.98
+            "chapas": 13510,
+            "peso": 2750.85
           },
           {
             "papel": "PW50D",
@@ -11654,8 +11654,8 @@
           },
           {
             "cliente": "CARPEL",
-            "peso": 1160.59,
-            "chapas": 7550
+            "peso": 1324.46,
+            "chapas": 8715
           },
           {
             "cliente": "VÔ CHICO",
