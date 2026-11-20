@@ -11737,8 +11737,8 @@
         ]
       },
       "noite": {
-        "peso": 2767.48,
-        "chapas": 6420,
+        "peso": 2911.93,
+        "chapas": 6640,
         "velocidade": 0,
         "papeis": [
           {
@@ -11758,8 +11758,8 @@
           },
           {
             "papel": "P55D",
-            "chapas": 125,
-            "peso": 121.28
+            "chapas": 345,
+            "peso": 265.73
           },
           {
             "papel": "P45B",
@@ -11780,8 +11780,8 @@
           },
           {
             "cliente": "PCBOX EMBALAGENS",
-            "peso": 121.28,
-            "chapas": 125
+            "peso": 265.73,
+            "chapas": 345
           },
           {
             "cliente": "IPE EMBALAGENS",
@@ -11791,8 +11791,8 @@
         ]
       },
       "total": {
-        "peso": 6748.72,
-        "chapas": 13645,
+        "peso": 6893.17,
+        "chapas": 13865,
         "velocidade": 0,
         "papeis": [
           {
@@ -11812,8 +11812,8 @@
           },
           {
             "papel": "P55D",
-            "chapas": 325,
-            "peso": 539.76
+            "chapas": 545,
+            "peso": 684.21
           },
           {
             "papel": "P25B",
@@ -11839,8 +11839,8 @@
           },
           {
             "cliente": "PCBOX EMBALAGENS",
-            "peso": 539.76,
-            "chapas": 325
+            "peso": 684.21,
+            "chapas": 545
           },
           {
             "cliente": "HARMONY EMBALAGENS",
