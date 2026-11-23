@@ -11922,8 +11922,8 @@
         ]
       },
       "noite": {
-        "peso": 4170.22,
-        "chapas": 9210,
+        "peso": 4334.72,
+        "chapas": 9385,
         "velocidade": 0,
         "papeis": [
           {
@@ -11940,6 +11940,11 @@
             "papel": "P80D",
             "chapas": 1420,
             "peso": 614.92
+          },
+          {
+            "papel": "P50D",
+            "chapas": 175,
+            "peso": 164.5
           }
         ],
         "clientes": [
@@ -11955,8 +11960,8 @@
           },
           {
             "cliente": "ABAPEL EMBALAGENS",
-            "peso": 1016.5,
-            "chapas": 3850
+            "peso": 1181.0,
+            "chapas": 4025
           },
           {
             "cliente": "RENOVAPEL",
@@ -11966,14 +11971,14 @@
         ]
       },
       "total": {
-        "peso": 7736.56,
-        "chapas": 24383,
+        "peso": 7901.06,
+        "chapas": 24558,
         "velocidade": 0,
         "papeis": [
           {
             "papel": "P50D",
-            "chapas": 3853,
-            "peso": 2689.6
+            "chapas": 4028,
+            "peso": 2854.1
           },
           {
             "papel": "P25B",
@@ -12004,8 +12009,8 @@
           },
           {
             "cliente": "ABAPEL EMBALAGENS",
-            "peso": 1016.5,
-            "chapas": 3850
+            "peso": 1181.0,
+            "chapas": 4025
           },
           {
             "cliente": "RENOVAPEL",
