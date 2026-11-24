@@ -12082,14 +12082,14 @@
         ]
       },
       "noite": {
-        "peso": 764.56,
-        "chapas": 975,
+        "peso": 864.85,
+        "chapas": 1150,
         "velocidade": 0,
         "papeis": [
           {
             "papel": "P50D",
-            "chapas": 975,
-            "peso": 764.56
+            "chapas": 1150,
+            "peso": 864.85
           }
         ],
         "clientes": [
@@ -12100,14 +12100,14 @@
           },
           {
             "cliente": "RM EMBALAGENS",
-            "peso": 100.29,
-            "chapas": 175
+            "peso": 200.58,
+            "chapas": 350
           }
         ]
       },
       "total": {
-        "peso": 6749.64,
-        "chapas": 30630,
+        "peso": 6849.93,
+        "chapas": 30805,
         "velocidade": 0,
         "papeis": [
           {
@@ -12117,8 +12117,8 @@
           },
           {
             "papel": "P50D",
-            "chapas": 3085,
-            "peso": 2040.0
+            "chapas": 3260,
+            "peso": 2140.29
           },
           {
             "papel": "P25C",
@@ -12144,8 +12144,8 @@
           },
           {
             "cliente": "RM EMBALAGENS",
-            "peso": 1375.73,
-            "chapas": 2285
+            "peso": 1476.02,
+            "chapas": 2460
           },
           {
             "cliente": "DAL PICOLI",
