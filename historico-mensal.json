@@ -12033,8 +12033,8 @@
     "2026-11-24": {
       "data": "2026-11-24",
       "dia": {
-        "peso": 5161.56,
-        "chapas": 28595,
+        "peso": 5345.47,
+        "chapas": 28775,
         "velocidade": 0,
         "papeis": [
           {
@@ -12044,8 +12044,8 @@
           },
           {
             "papel": "P50D",
-            "chapas": 1050,
-            "peso": 451.92
+            "chapas": 1230,
+            "peso": 635.83
           },
           {
             "papel": "P25C",
@@ -12071,8 +12071,8 @@
           },
           {
             "cliente": "RM EMBALAGENS",
-            "peso": 451.92,
-            "chapas": 1050
+            "peso": 635.83,
+            "chapas": 1230
           },
           {
             "cliente": "DAL PICOLI",
@@ -12082,8 +12082,8 @@
         ]
       },
       "total": {
-        "peso": 5161.56,
-        "chapas": 28595,
+        "peso": 5345.47,
+        "chapas": 28775,
         "velocidade": 0,
         "papeis": [
           {
@@ -12093,8 +12093,8 @@
           },
           {
             "papel": "P50D",
-            "chapas": 1050,
-            "peso": 451.92
+            "chapas": 1230,
+            "peso": 635.83
           },
           {
             "papel": "P25C",
@@ -12120,8 +12120,8 @@
           },
           {
             "cliente": "RM EMBALAGENS",
-            "peso": 451.92,
-            "chapas": 1050
+            "peso": 635.83,
+            "chapas": 1230
           },
           {
             "cliente": "DAL PICOLI",
