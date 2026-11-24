@@ -12033,8 +12033,8 @@
     "2026-11-24": {
       "data": "2026-11-24",
       "dia": {
-        "peso": 3934.08,
-        "chapas": 20610,
+        "peso": 4351.15,
+        "chapas": 20995,
         "velocidade": 0,
         "papeis": [
           {
@@ -12056,6 +12056,11 @@
             "papel": "P70D",
             "chapas": 355,
             "peso": 704.49
+          },
+          {
+            "papel": "P35B",
+            "chapas": 385,
+            "peso": 417.07
           }
         ],
         "clientes": [
@@ -12071,14 +12076,14 @@
           },
           {
             "cliente": "DAL PICOLI",
-            "peso": 704.49,
-            "chapas": 355
+            "peso": 1121.56,
+            "chapas": 740
           }
         ]
       },
       "total": {
-        "peso": 3934.08,
-        "chapas": 20610,
+        "peso": 4351.15,
+        "chapas": 20995,
         "velocidade": 0,
         "papeis": [
           {
@@ -12100,6 +12105,11 @@
             "papel": "P70D",
             "chapas": 355,
             "peso": 704.49
+          },
+          {
+            "papel": "P35B",
+            "chapas": 385,
+            "peso": 417.07
           }
         ],
         "clientes": [
@@ -12115,8 +12125,8 @@
           },
           {
             "cliente": "DAL PICOLI",
-            "peso": 704.49,
-            "chapas": 355
+            "peso": 1121.56,
+            "chapas": 740
           }
         ]
       }
