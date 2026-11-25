@@ -12271,9 +12271,28 @@
           }
         ]
       },
+      "noite": {
+        "peso": 211.13,
+        "chapas": 175,
+        "velocidade": 0,
+        "papeis": [
+          {
+            "papel": "P55D",
+            "chapas": 175,
+            "peso": 211.13
+          }
+        ],
+        "clientes": [
+          {
+            "cliente": "FAVINCO EMBALAGENS",
+            "peso": 211.13,
+            "chapas": 175
+          }
+        ]
+      },
       "total": {
-        "peso": 6974.06,
-        "chapas": 28480,
+        "peso": 7185.19,
+        "chapas": 28655,
         "velocidade": 0,
         "papeis": [
           {
@@ -12310,6 +12329,11 @@
             "papel": "P50D",
             "chapas": 600,
             "peso": 214.59
+          },
+          {
+            "papel": "P55D",
+            "chapas": 175,
+            "peso": 211.13
           }
         ],
         "clientes": [
@@ -12347,6 +12371,11 @@
             "cliente": "ABAPEL EMBALAGENS",
             "peso": 1610.25,
             "chapas": 5540
+          },
+          {
+            "cliente": "FAVINCO EMBALAGENS",
+            "peso": 211.13,
+            "chapas": 175
           }
         ]
       }
