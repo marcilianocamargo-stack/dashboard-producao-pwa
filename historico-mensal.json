@@ -12272,27 +12272,27 @@
         ]
       },
       "noite": {
-        "peso": 422.26,
-        "chapas": 350,
+        "peso": 633.39,
+        "chapas": 525,
         "velocidade": 0,
         "papeis": [
           {
             "papel": "P55D",
-            "chapas": 350,
-            "peso": 422.26
+            "chapas": 525,
+            "peso": 633.39
           }
         ],
         "clientes": [
           {
             "cliente": "FAVINCO EMBALAGENS",
-            "peso": 422.26,
-            "chapas": 350
+            "peso": 633.39,
+            "chapas": 525
           }
         ]
       },
       "total": {
-        "peso": 7396.32,
-        "chapas": 28830,
+        "peso": 7607.45,
+        "chapas": 29005,
         "velocidade": 0,
         "papeis": [
           {
@@ -12332,8 +12332,8 @@
           },
           {
             "papel": "P55D",
-            "chapas": 350,
-            "peso": 422.26
+            "chapas": 525,
+            "peso": 633.39
           }
         ],
         "clientes": [
@@ -12374,8 +12374,8 @@
           },
           {
             "cliente": "FAVINCO EMBALAGENS",
-            "peso": 422.26,
-            "chapas": 350
+            "peso": 633.39,
+            "chapas": 525
           }
         ]
       }
