@@ -12442,8 +12442,8 @@
         ]
       },
       "noite": {
-        "peso": 2017.09,
-        "chapas": 3365,
+        "peso": 2188.89,
+        "chapas": 3735,
         "velocidade": 0,
         "papeis": [
           {
@@ -12453,21 +12453,21 @@
           },
           {
             "papel": "P70C",
-            "chapas": 2530,
-            "peso": 1158.71
+            "chapas": 2900,
+            "peso": 1330.51
           }
         ],
         "clientes": [
           {
             "cliente": "HARMONY EMBALAGENS",
-            "peso": 2017.09,
-            "chapas": 3365
+            "peso": 2188.89,
+            "chapas": 3735
           }
         ]
       },
       "total": {
-        "peso": 5050.44,
-        "chapas": 13715,
+        "peso": 5222.24,
+        "chapas": 14085,
         "velocidade": 0,
         "papeis": [
           {
@@ -12482,8 +12482,8 @@
           },
           {
             "papel": "P70C",
-            "chapas": 2530,
-            "peso": 1158.71
+            "chapas": 2900,
+            "peso": 1330.51
           }
         ],
         "clientes": [
@@ -12494,8 +12494,8 @@
           },
           {
             "cliente": "HARMONY EMBALAGENS",
-            "peso": 3476.85,
-            "chapas": 4785
+            "peso": 3648.65,
+            "chapas": 5155
           }
         ]
       }
