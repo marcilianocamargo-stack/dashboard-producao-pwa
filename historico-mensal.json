@@ -12698,8 +12698,8 @@
     "2026-11-28": {
       "data": "2026-11-28",
       "dia": {
-        "peso": 847.43,
-        "chapas": 3045,
+        "peso": 959.86,
+        "chapas": 4090,
         "velocidade": 0,
         "papeis": [
           {
@@ -12711,6 +12711,11 @@
             "papel": "P40B",
             "chapas": 975,
             "peso": 314.62
+          },
+          {
+            "papel": "P25B",
+            "chapas": 1045,
+            "peso": 112.43
           }
         ],
         "clientes": [
@@ -12723,12 +12728,17 @@
             "cliente": "TOLECAIXAS",
             "peso": 314.62,
             "chapas": 975
+          },
+          {
+            "cliente": "DR EMBALAGENS",
+            "peso": 112.43,
+            "chapas": 1045
           }
         ]
       },
       "total": {
-        "peso": 847.43,
-        "chapas": 3045,
+        "peso": 959.86,
+        "chapas": 4090,
         "velocidade": 0,
         "papeis": [
           {
@@ -12740,6 +12750,11 @@
             "papel": "P40B",
             "chapas": 975,
             "peso": 314.62
+          },
+          {
+            "papel": "P25B",
+            "chapas": 1045,
+            "peso": 112.43
           }
         ],
         "clientes": [
@@ -12752,6 +12767,11 @@
             "cliente": "TOLECAIXAS",
             "peso": 314.62,
             "chapas": 975
+          },
+          {
+            "cliente": "DR EMBALAGENS",
+            "peso": 112.43,
+            "chapas": 1045
           }
         ]
       }
