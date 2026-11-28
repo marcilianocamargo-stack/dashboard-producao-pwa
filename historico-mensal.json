@@ -12567,8 +12567,8 @@
         ]
       },
       "noite": {
-        "peso": 6555.46,
-        "chapas": 11860,
+        "peso": 6677.35,
+        "chapas": 13100,
         "velocidade": 0,
         "papeis": [
           {
@@ -12588,8 +12588,8 @@
           },
           {
             "papel": "P40B",
-            "chapas": 4850,
-            "peso": 716.72
+            "chapas": 6090,
+            "peso": 838.61
           }
         ],
         "clientes": [
@@ -12600,14 +12600,14 @@
           },
           {
             "cliente": "TOLECAIXAS",
-            "peso": 716.72,
-            "chapas": 4850
+            "peso": 838.61,
+            "chapas": 6090
           }
         ]
       },
       "total": {
-        "peso": 12768.01,
-        "chapas": 22815,
+        "peso": 12889.9,
+        "chapas": 24055,
         "velocidade": 0,
         "papeis": [
           {
@@ -12637,8 +12637,8 @@
           },
           {
             "papel": "P40B",
-            "chapas": 4850,
-            "peso": 716.72
+            "chapas": 6090,
+            "peso": 838.61
           }
         ],
         "clientes": [
@@ -12659,8 +12659,8 @@
           },
           {
             "cliente": "TOLECAIXAS",
-            "peso": 716.72,
-            "chapas": 4850
+            "peso": 838.61,
+            "chapas": 6090
           }
         ]
       }
