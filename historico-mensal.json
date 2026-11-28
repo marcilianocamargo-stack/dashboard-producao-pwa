@@ -12698,8 +12698,8 @@
     "2026-11-28": {
       "data": "2026-11-28",
       "dia": {
-        "peso": 959.86,
-        "chapas": 4090,
+        "peso": 1222.12,
+        "chapas": 5620,
         "velocidade": 0,
         "papeis": [
           {
@@ -12716,13 +12716,18 @@
             "papel": "P25B",
             "chapas": 1045,
             "peso": 112.43
+          },
+          {
+            "papel": "P60B",
+            "chapas": 1530,
+            "peso": 262.26
           }
         ],
         "clientes": [
           {
             "cliente": "SÃO MIGUEL",
-            "peso": 532.81,
-            "chapas": 2070
+            "peso": 795.07,
+            "chapas": 3600
           },
           {
             "cliente": "TOLECAIXAS",
@@ -12737,8 +12742,8 @@
         ]
       },
       "total": {
-        "peso": 959.86,
-        "chapas": 4090,
+        "peso": 1222.12,
+        "chapas": 5620,
         "velocidade": 0,
         "papeis": [
           {
@@ -12755,13 +12760,18 @@
             "papel": "P25B",
             "chapas": 1045,
             "peso": 112.43
+          },
+          {
+            "papel": "P60B",
+            "chapas": 1530,
+            "peso": 262.26
           }
         ],
         "clientes": [
           {
             "cliente": "SÃO MIGUEL",
-            "peso": 532.81,
-            "chapas": 2070
+            "peso": 795.07,
+            "chapas": 3600
           },
           {
             "cliente": "TOLECAIXAS",
