@@ -12698,40 +12698,40 @@
     "2026-11-28": {
       "data": "2026-11-28",
       "dia": {
-        "peso": 391.24,
-        "chapas": 1520,
+        "peso": 532.81,
+        "chapas": 2070,
         "velocidade": 0,
         "papeis": [
           {
             "papel": "PW50B",
-            "chapas": 1520,
-            "peso": 391.24
+            "chapas": 2070,
+            "peso": 532.81
           }
         ],
         "clientes": [
           {
             "cliente": "SÃO MIGUEL",
-            "peso": 391.24,
-            "chapas": 1520
+            "peso": 532.81,
+            "chapas": 2070
           }
         ]
       },
       "total": {
-        "peso": 391.24,
-        "chapas": 1520,
+        "peso": 532.81,
+        "chapas": 2070,
         "velocidade": 0,
         "papeis": [
           {
             "papel": "PW50B",
-            "chapas": 1520,
-            "peso": 391.24
+            "chapas": 2070,
+            "peso": 532.81
           }
         ],
         "clientes": [
           {
             "cliente": "SÃO MIGUEL",
-            "peso": 391.24,
-            "chapas": 1520
+            "peso": 532.81,
+            "chapas": 2070
           }
         ]
       }
